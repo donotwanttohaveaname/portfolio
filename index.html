@@ -278,6 +278,45 @@
   [data-theme="party"] * { cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><text y='18' font-size='18'>✨</text></svg>") 12 12, auto; }
   [data-theme="party"] a, [data-theme="party"] button { cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><text y='18' font-size='18'>🐱</text></svg>") 12 12, pointer; }
 
+  /* force all text white on solid party cards */
+  html[data-theme="party"] .result-card:nth-child(1) .result-number,
+  html[data-theme="party"] .result-card:nth-child(2) .result-number,
+  html[data-theme="party"] .result-card:nth-child(3) .result-number,
+  html[data-theme="party"] .result-card:nth-child(4) .result-number,
+  html[data-theme="party"] .result-card:nth-child(5) .result-number,
+  html[data-theme="party"] .result-card.featured .result-number {
+    color: #FFFFFF !important;
+  }
+
+  [data-theme="party"] .result-label,
+  [data-theme="party"] .result-context,
+  [data-theme="party"] .result-card.featured .result-unit,
+  [data-theme="party"] .result-card.featured .result-story,
+  [data-theme="party"] .result-card.featured .result-divider,
+  [data-theme="party"] .service-card .service-includes span,
+  [data-theme="party"] .work-strip-item .ws-icon,
+  [data-theme="party"] .process-step h3,
+  [data-theme="party"] .community-card .big-num,
+  [data-theme="party"] .community-card a,
+  [data-theme="party"] .brand-card .brand-desc {
+    color: #FFFFFF !important;
+    border-color: rgba(255,255,255,0.4) !important;
+    opacity: 1 !important;
+  }
+
+  [data-theme="party"] .result-card.featured .result-divider {
+    background: rgba(255,255,255,0.3);
+  }
+
+  [data-theme="party"] .result-context {
+    border-top-color: rgba(255,255,255,0.2) !important;
+  }
+
+  [data-theme="party"] .skill-tag:hover {
+    background: rgba(255,255,255,0.15);
+    color: #FFFFFF;
+  }
+
   [data-theme="party"] .theme-toggle {
     background: linear-gradient(90deg, rgba(255,15,108,0.3), rgba(43,191,179,0.3));
     border-color: var(--pink);
@@ -389,10 +428,10 @@
   .hero-bg {
     position: absolute;
     top: 50%;
-    left: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-weight: 900;
-    font-size: clamp(100px, 14vw, 200px);
+    font-size: clamp(80px, 12vw, 180px);
     color: transparent;
     -webkit-text-stroke: 1px var(--hero-stroke);
     white-space: nowrap;
@@ -428,6 +467,8 @@
     font-style: normal;
     color: var(--pink);
     display: block;
+    padding-left: 4px;
+    margin-left: -4px;
   }
 
   .hero-sub {
@@ -1287,12 +1328,12 @@
     <div class="result-card featured">
       <div class="result-numbers-row">
         <div class="result-number-block">
-          <span class="result-number" style="color:var(--pink);">€250k</span>
+          <span class="result-number">€250k</span>
           <span class="result-unit">yearly ad budget</span>
         </div>
         <div class="result-divider"></div>
         <div class="result-number-block">
-          <span class="result-number" style="color:var(--pink);">4.7:1</span>
+          <span class="result-number">4.7:1</span>
           <span class="result-unit">ltv : cac</span>
         </div>
       </div>
