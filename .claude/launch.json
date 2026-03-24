@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Freelance Rate Calculator",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "8080"],
+      "port": 8080
+    },
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "8090"],
+      "port": 8090
+    },
+    {
+      "name": "community-site",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "8095", "community-site"],
+      "port": 8095
+    }
+  ]
+}
