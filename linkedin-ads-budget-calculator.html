@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Ads Budget Calculator</title>
+<style>
+  :root {
+    --li-bg: #454556;
+    --li-bg-soft: #4F4F62;
+    --li-line: rgba(255, 255, 255, 0.12);
+    --li-text: #FFFFFF;
+    --li-muted: rgba(255, 255, 255, 0.55);
+    --li-input-bg: rgba(255, 255, 255, 0.06);
+    --li-input-focus: rgba(255, 255, 255, 0.18);
+  }
+
+  html, body { background: var(--li-bg); }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--li-text);
+  }
+
+  .li-calc {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 80px 32px 96px;
+    line-height: 1.5;
+  }
+
+  .li-calc * { box-sizing: border-box; }
+
+  .li-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .li-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--li-muted);
+    margin: 0 0 18px;
+  }
+
+  .li-header h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    margin: 0 0 18px;
+  }
+
+  .li-header p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--li-muted);
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .li-field {
+    border-top: 1px solid var(--li-line);
+    padding: 22px 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .li-field:last-of-type {
+    border-bottom: 1px solid var(--li-line);
+  }
+
+  .li-field label {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--li-text);
+  }
+
+  .li-field .li-hint {
+    grid-column: 1 / -1;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--li-muted);
+    margin-top: -6px;
+  }
+
+  .li-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--li-input-bg);
+    border-radius: 10px;
+    padding: 8px 14px;
+    transition: background 0.2s;
+    min-width: 140px;
+  }
+
+  .li-input:focus-within {
+    background: var(--li-input-focus);
+  }
+
+  .li-input input[type="number"] {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--li-text);
+    text-align: right;
+    outline: none;
+    padding: 4px 0;
+    -moz-appearance: textfield;
+    letter-spacing: -0.01em;
+  }
+
+  .li-input input::-webkit-inner-spin-button,
+  .li-input input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .li-input input::placeholder {
+    color: var(--li-muted);
+  }
+
+  .li-input .li-suffix {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--li-muted);
+    white-space: nowrap;
+  }
+
+  .li-segment {
+    display: inline-flex;
+    background: var(--li-input-bg);
+    border-radius: 10px;
+    padding: 3px;
+  }
+
+  .li-segment input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .li-segment label {
+    cursor: pointer;
+    padding: 7px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--li-muted);
+    border-radius: 7px;
+    transition: all 0.2s;
+    letter-spacing: -0.01em;
+  }
+
+  .li-segment input:checked + label {
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--li-text);
+  }
+
+  /* Results */
+  .li-results {
+    margin-top: 56px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+  }
+
+  .li-results.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .li-headline {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .li-headline .li-headline-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--li-muted);
+    margin: 0 0 14px;
+  }
+
+  .li-headline .li-headline-value {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin: 0 0 6px;
+  }
+
+  .li-headline .li-headline-sub {
+    font-size: 0.95rem;
+    color: var(--li-muted);
+    margin: 0;
+  }
+
+  .li-secondary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--li-line);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+
+  .li-secondary > div {
+    background: var(--li-bg);
+    padding: 22px 20px;
+    text-align: center;
+  }
+
+  .li-secondary .s-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--li-muted);
+    margin: 0 0 8px;
+  }
+
+  .li-secondary .s-value {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  .li-breakdown-title {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--li-muted);
+    margin: 0 0 16px;
+    text-align: center;
+  }
+
+  .li-breakdown {
+    border-top: 1px solid var(--li-line);
+  }
+
+  .li-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--li-line);
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+  }
+
+  .li-row .li-label {
+    color: var(--li-muted);
+    font-weight: 400;
+  }
+
+  .li-row .li-val {
+    color: var(--li-text);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .li-row.li-emphasis .li-label {
+    color: var(--li-text);
+    font-weight: 500;
+  }
+
+  .li-row.li-emphasis .li-val {
+    font-weight: 600;
+  }
+
+  .li-note {
+    margin-top: 40px;
+    font-size: 0.82rem;
+    color: var(--li-muted);
+    line-height: 1.7;
+    text-align: center;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .li-credit {
+    margin-top: 16px;
+    font-size: 0.82rem;
+    color: var(--li-muted);
+    text-align: center;
+  }
+
+  .li-credit a {
+    color: var(--li-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--li-line);
+    padding-bottom: 1px;
+  }
+
+  .li-credit a:hover {
+    border-bottom-color: var(--li-text);
+  }
+
+  @media (max-width: 520px) {
+    .li-calc { padding: 56px 22px 72px; }
+    .li-header h1 { font-size: 1.9rem; }
+    .li-headline .li-headline-value { font-size: 3rem; }
+    .li-secondary { grid-template-columns: 1fr; }
+    .li-input { min-width: 120px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="li-calc">
+  <div class="li-header">
+    <p class="li-eyebrow">LinkedIn Ads</p>
+    <h1>Budget Calculator</h1>
+    <p>Estimate the monthly media budget you need to actually saturate your ICP on LinkedIn — before spending a euro.</p>
+  </div>
+
+  <div class="li-field">
+    <label for="liAudience">ICP audience size</label>
+    <div class="li-input">
+      <input type="number" id="liAudience" placeholder="50 000" min="0" step="1000">
+      <span class="li-suffix">people</span>
+    </div>
+    <p class="li-hint">The matched audience size LinkedIn shows in Campaign Manager.</p>
+  </div>
+
+  <div class="li-field">
+    <label for="liCpm">Estimated CPM</label>
+    <div class="li-input">
+      <input type="number" id="liCpm" placeholder="60" min="0" step="1">
+      <span class="li-suffix" id="liCpmSuffix">&euro;</span>
+    </div>
+    <p class="li-hint">Recommended bid LinkedIn shows on a Brand Awareness campaign with manual bidding on impressions.</p>
+  </div>
+
+  <div class="li-field">
+    <label for="liFreq">Frequency / month</label>
+    <div class="li-input">
+      <input type="number" id="liFreq" value="6" min="1" step="1">
+      <span class="li-suffix">x</span>
+    </div>
+    <p class="li-hint">Default is 6 across cold campaigns.</p>
+  </div>
+
+  <div class="li-field">
+    <label for="liCold">Cold split</label>
+    <div class="li-input">
+      <input type="number" id="liCold" value="75" min="1" max="100" step="5">
+      <span class="li-suffix">%</span>
+    </div>
+    <p class="li-hint">Default is 75 / 25 cold-vs-retargeting.</p>
+  </div>
+
+  <div class="li-field">
+    <label>Currency</label>
+    <div class="li-segment">
+      <input type="radio" id="liEur" name="liCur" value="eur" checked>
+      <label for="liEur">EUR</label>
+      <input type="radio" id="liUsd" name="liCur" value="usd">
+      <label for="liUsd">USD</label>
+    </div>
+  </div>
+
+  <div class="li-results" id="liResults">
+    <div class="li-headline">
+      <p class="li-headline-eyebrow">Monthly budget</p>
+      <p class="li-headline-value" id="liTotal">&mdash;</p>
+      <p class="li-headline-sub">Maximum delivery, before VAT &amp; creative</p>
+    </div>
+
+    <div class="li-secondary">
+      <div>
+        <p class="s-label">Manual bidding</p>
+        <p class="s-value" id="liManual">&mdash;</p>
+      </div>
+      <div>
+        <p class="s-label">Cost to reach once</p>
+        <p class="s-value" id="liOnce">&mdash;</p>
+      </div>
+    </div>
+
+    <p class="li-breakdown-title">How we got there</p>
+    <div class="li-breakdown">
+      <div class="li-row">
+        <span class="li-label">ICP audience size</span>
+        <span class="li-val" id="bkAud">&mdash;</span>
+      </div>
+      <div class="li-row">
+        <span class="li-label">Active reachable (&divide; 2)</span>
+        <span class="li-val" id="bkActive">&mdash;</span>
+      </div>
+      <div class="li-row li-emphasis">
+        <span class="li-label">Cost to reach once</span>
+        <span class="li-val" id="bkOnceHi">&mdash;</span>
+      </div>
+      <div class="li-row li-emphasis">
+        <span class="li-label">&times; frequency (<span id="bkFreqLbl">6</span>x)</span>
+        <span class="li-val" id="bkColdHi">&mdash;</span>
+      </div>
+      <div class="li-row">
+        <span class="li-label">Cold portion</span>
+        <span class="li-val" id="bkColdPart">&mdash;</span>
+      </div>
+      <div class="li-row">
+        <span class="li-label">Retargeting portion</span>
+        <span class="li-val" id="bkRtgPart">&mdash;</span>
+      </div>
+      <div class="li-row li-emphasis">
+        <span class="li-label">Total / month</span>
+        <span class="li-val" id="bkSplitHi">&mdash;</span>
+      </div>
+    </div>
+
+    <p class="li-note">
+      Formula: ICP &divide; 2 &divide; 1 000 &times; CPM &times; frequency &divide; cold split.
+      Audience &divide; 2 accounts for inactive users. Manual bidding figure assumes ~25% lower effective CPM than maximum delivery.
+    </p>
+    <p class="li-credit">
+      Methodology by <a href="https://www.linkedin.com/in/kirillvdov/" target="_blank" rel="noopener">Kirill Vdov</a>.
+    </p>
+  </div>
+</div>
+
+<script>
+  const liAudience = document.getElementById('liAudience');
+  const liCpm = document.getElementById('liCpm');
+  const liFreq = document.getElementById('liFreq');
+  const liCold = document.getElementById('liCold');
+  const liCurRadios = document.querySelectorAll('input[name="liCur"]');
+  const liResults = document.getElementById('liResults');
+  const liCpmSuffix = document.getElementById('liCpmSuffix');
+
+  function liCalc() {
+    const aud = parseFloat(liAudience.value);
+    const cpm = parseFloat(liCpm.value);
+    const freq = parseFloat(liFreq.value);
+    const coldPct = parseFloat(liCold.value);
+    const cur = document.querySelector('input[name="liCur"]:checked').value;
+    const symbol = cur === 'eur' ? '\u20AC' : '$';
+    liCpmSuffix.textContent = symbol;
+
+    if (!aud || aud <= 0 || !cpm || cpm <= 0 || !freq || freq <= 0 || !coldPct || coldPct <= 0 || coldPct > 100) {
+      liResults.classList.remove('visible');
+      return;
+    }
+
+    const coldSplit = coldPct / 100;
+    const active = aud / 2;
+    const onceCost = (active / 1000) * cpm;
+    const coldCost = onceCost * freq;
+    const total = coldCost / coldSplit;
+    const retargeting = total - coldCost;
+    const manual = total * 0.75;
+
+    const fmt = (n) => Math.round(n).toLocaleString('fi-FI');
+    const money = (n) => symbol + fmt(n);
+
+    document.getElementById('liTotal').textContent = money(total);
+    document.getElementById('liManual').textContent = money(manual);
+    document.getElementById('liOnce').textContent = money(onceCost);
+
+    document.getElementById('bkAud').textContent = fmt(aud);
+    document.getElementById('bkActive').textContent = fmt(active);
+    document.getElementById('bkOnceHi').textContent = money(onceCost);
+    document.getElementById('bkFreqLbl').textContent = freq;
+    document.getElementById('bkColdHi').textContent = money(coldCost);
+    document.getElementById('bkColdPart').textContent = money(coldCost) + ' (' + Math.round(coldSplit * 100) + '%)';
+    document.getElementById('bkRtgPart').textContent = money(retargeting) + ' (' + Math.round((1 - coldSplit) * 100) + '%)';
+    document.getElementById('bkSplitHi').textContent = money(total);
+
+    liResults.classList.add('visible');
+  }
+
+  [liAudience, liCpm, liFreq, liCold].forEach(el => el.addEventListener('input', liCalc));
+  liCurRadios.forEach(r => r.addEventListener('change', liCalc));
+</script>
+
+</body>
+</html>
