@@ -5,7 +5,7 @@
 <script defer src="https://cloud.umami.is/script.js" data-website-id="c9024d31-0fc1-4dad-97e9-2502daf05b4c"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>anna pogrebniak · fractional growth marketer · b2b saas</title>
-<meta name="description" content="fractional growth marketer for b2b saas. 11 years, 13 brands, €1.5M in ad spend managed. growth strategy, paid ads, gtm, and marketing ops.">
+<meta name="description" content="fractional growth marketer for b2b saas. 11 years, 19 brands, €2.5M in ad spend managed. growth strategy, paid ads, gtm, and marketing ops.">
 <meta name="author" content="Anna Pogrebniak">
 <link rel="canonical" href="https://awesomemarketer.fi/">
 
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://awesomemarketer.fi/">
 <meta property="og:title" content="anna pogrebniak · fractional growth marketer · b2b saas">
-<meta property="og:description" content="fractional growth marketer for b2b saas. 11 years, 13 brands, €1.5M in ad spend managed. growth strategy, paid ads, gtm, and marketing ops.">
+<meta property="og:description" content="fractional growth marketer for b2b saas. 11 years, 19 brands, €2.5M in ad spend managed. growth strategy, paid ads, gtm, and marketing ops.">
 <meta property="og:site_name" content="anna pogrebniak">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://awesomemarketer.fi/thumbnail-portfolio.png">
@@ -23,7 +23,7 @@
 <!-- twitter card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="anna pogrebniak · fractional growth marketer · b2b saas">
-<meta name="twitter:description" content="fractional growth marketer for b2b saas. 11 years, 13 brands, €1.5M in ad spend managed. growth strategy, paid ads, gtm, and marketing ops.">
+<meta name="twitter:description" content="fractional growth marketer for b2b saas. 11 years, 19 brands, €2.5M in ad spend managed. growth strategy, paid ads, gtm, and marketing ops.">
 <meta name="twitter:image" content="https://awesomemarketer.fi/thumbnail-portfolio.png">
 
 <!-- additional seo -->
@@ -138,15 +138,11 @@
   }
 
   [data-theme="party"] .hero-bg {
-    -webkit-text-stroke-color: var(--pink);
-    animation: heroGlow 3s ease-in-out infinite alternate;
-  }
-
-  @keyframes heroGlow {
-    0% { -webkit-text-stroke-color: var(--pink); opacity: 0.3; }
-    33% { -webkit-text-stroke-color: var(--teal); opacity: 0.5; }
-    66% { -webkit-text-stroke-color: var(--yellow); opacity: 0.4; }
-    100% { -webkit-text-stroke-color: var(--orange); opacity: 0.6; }
+    background:
+      radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 15, 108, 0.55), transparent 70%),
+      radial-gradient(220px circle at var(--mx2, 50%) var(--my2, 50%), rgba(43, 191, 179, 0.50), transparent 70%),
+      radial-gradient(220px circle at var(--mx3, 50%) var(--my3, 50%), rgba(255, 174, 0, 0.45), transparent 70%);
+    mix-blend-mode: screen;
   }
 
   [data-theme="party"] .hero h1 em {
@@ -301,6 +297,7 @@
   html[data-theme="party"] .result-card:nth-child(3) .result-number,
   html[data-theme="party"] .result-card:nth-child(4) .result-number,
   html[data-theme="party"] .result-card:nth-child(5) .result-number,
+  html[data-theme="party"] .result-card:nth-child(6) .result-number,
   html[data-theme="party"] .result-card.featured .result-number {
     color: #FFFFFF !important;
   }
@@ -444,19 +441,18 @@
 
   .hero-bg {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 900;
-    font-size: clamp(80px, 12vw, 180px);
-    color: transparent;
-    -webkit-text-stroke: 1px var(--hero-stroke);
-    white-space: nowrap;
+    inset: 0;
     pointer-events: none;
     user-select: none;
-    letter-spacing: -0.04em;
-    opacity: 0.5;
-    text-transform: lowercase;
+    z-index: 0;
+    background: radial-gradient(
+      var(--spotlight-size, 600px) circle at var(--mx, 50%) var(--my, 50%),
+      rgba(255, 15, 108, 0.10),
+      rgba(240, 90, 40, 0.05) 40%,
+      transparent 70%
+    );
+    opacity: var(--spotlight-opacity, 0);
+    transition: opacity 0.5s ease;
   }
 
   .hero-tag {
@@ -645,12 +641,70 @@
     letter-spacing: 0.04em;
     text-transform: lowercase;
     transition: border-color 0.2s, color 0.2s, background 0.2s;
+    position: relative;
   }
 
   .skill-tag:hover {
     border-color: var(--pink);
     color: var(--pink);
     background: var(--tint-pink);
+  }
+
+  .skill-tag[data-tooltip] { cursor: help; }
+
+  .skill-tag[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text);
+    color: var(--bg);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    white-space: normal;
+    width: max-content;
+    max-width: 280px;
+    text-align: left;
+    z-index: 200;
+    pointer-events: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    animation: tooltipFade 0.18s ease;
+  }
+
+  .skill-tag[data-tooltip]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--text);
+    z-index: 200;
+    pointer-events: none;
+  }
+
+  @keyframes tooltipFade {
+    from { opacity: 0; transform: translateX(-50%) translateY(4px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+
+  /* party-mode tooltip: rainbow gradient + glow */
+  [data-theme="party"] .skill-tag[data-tooltip]:hover::after {
+    background: linear-gradient(90deg, var(--pink), var(--orange), var(--yellow), var(--teal), var(--sky), var(--pink));
+    background-size: 300% auto;
+    color: #FFFFFF;
+    box-shadow: 0 8px 32px rgba(255, 15, 108, 0.45);
+    animation: tooltipFade 0.18s ease, rainbowText 4s linear infinite;
+  }
+
+  [data-theme="party"] .skill-tag[data-tooltip]:hover::before {
+    border-top-color: var(--pink);
   }
 
   /* === HOW I ACTUALLY WORK STRIP === */
@@ -686,7 +740,7 @@
   /* === RESULTS === */
   .results-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 2px;
   }
 
@@ -695,6 +749,7 @@
     transition: background 0.3s;
     position: relative;
     overflow: hidden;
+    grid-column: span 2;
   }
 
   .result-card::before {
@@ -734,13 +789,28 @@
   .result-card:nth-child(5):hover { background: var(--tint-green-hover); }
   .result-card:nth-child(5)::before { background: var(--green); }
 
+  /* 6th card */
+  .result-card:nth-child(6) { background: var(--tint-sky); }
+  .result-card:nth-child(6):hover { background: var(--tint-sky-hover); }
+  .result-card:nth-child(6)::before { background: var(--sky, #29B8DC); }
+
   .result-card.featured {
-    grid-column: span 3;
+    grid-column: span 6;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px;
     align-items: center;
     padding: 48px 40px;
+  }
+
+  /* duo: half-width featured-style card (two per row) */
+  .result-card.featured.duo {
+    grid-column: span 3;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .result-card.featured.duo .result-number {
+    font-size: clamp(32px, 4vw, 44px);
   }
 
   .result-card.featured .result-numbers-row {
@@ -795,6 +865,7 @@
   .result-card:nth-child(3) .result-number { color: var(--orange); }
   .result-card:nth-child(4) .result-number { color: var(--yellow); }
   .result-card:nth-child(5) .result-number { color: var(--green); }
+  .result-card:nth-child(6) .result-number { color: #29B8DC; }
 
   .result-label {
     font-size: 15px;
@@ -1139,6 +1210,15 @@
     text-transform: lowercase;
   }
 
+  footer .footer-year {
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--text);
+    letter-spacing: 0.08em;
+    margin-left: 8px;
+    opacity: 0.6;
+  }
+
   footer .footer-links {
     display: flex;
     gap: 24px;
@@ -1172,7 +1252,9 @@
   @media (max-width: 900px) {
     .services-grid { grid-template-columns: 1fr; }
     .results-grid { grid-template-columns: 1fr; }
+    .result-card { grid-column: span 1; }
     .result-card.featured { grid-column: span 1; grid-template-columns: 1fr; gap: 24px; }
+    .result-card.featured.duo { grid-column: span 1; }
     .result-card.featured .result-numbers-row { gap: 24px; }
     .process-steps { grid-template-columns: repeat(2, 1fr); }
     .reviews-track { grid-template-columns: 1fr; }
@@ -1219,7 +1301,7 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-bg">growth</div>
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-tag">anna pogrebniak · fractional growth marketer · b2b saas</div>
   <h1>
     hi, i'm anna<br>
@@ -1237,11 +1319,11 @@
     </div>
     <div class="hero-stat">
       <label>brands worked with</label>
-      <span>13</span>
+      <span>19</span>
     </div>
     <div class="hero-stat">
       <label>ad spend managed</label>
-      <span>€1.5M</span>
+      <span>€2.5M</span>
     </div>
     <div class="hero-stat">
       <label>marketing teams of one</label>
@@ -1269,7 +1351,7 @@
     </div>
     <div class="service-card">
       <h3>fractional performance marketing</h3>
-      <p>i take over your paid ads. strategy, execution, optimisation. linkedin, google, meta, reddit, wherever your buyers actually are. budgets from €3k to €50k/month.</p>
+      <p>i take over your paid ads. strategy, execution, optimisation. linkedin, google, meta, wherever your buyers actually are. budgets from €3k to €50k/month.</p>
       <div class="service-includes">
         <span>→</span> paid ads strategy<br>
         <span>→</span> campaign management<br>
@@ -1280,7 +1362,7 @@
     </div>
     <div class="service-card">
       <h3>fractional gtm</h3>
-      <p>cold outreach that doesn't make people cringe. i set up your prospecting engine: email, linkedin, multi-channel automation. so your pipeline doesn't depend on luck.</p>
+      <p>cold outreach that reads like a human wrote it. i set up your prospecting engine: email, linkedin, multi-channel automation. so your pipeline doesn't depend on luck.</p>
       <div class="service-includes">
         <span>→</span> icp targeting<br>
         <span>→</span> outbound sequences<br>
@@ -1292,20 +1374,21 @@
   </div>
 
   <div class="skills-strip">
-    <div class="skill-tag">hubspot</div>
-    <div class="skill-tag">google ads</div>
-    <div class="skill-tag">linkedin ads</div>
-    <div class="skill-tag">meta ads</div>
-    <div class="skill-tag">reddit ads</div>
-    <div class="skill-tag">seo & geo</div>
-    <div class="skill-tag">email nurture</div>
-    <div class="skill-tag">marketing automation</div>
-    <div class="skill-tag">abm</div>
-    <div class="skill-tag">lead scoring</div>
-    <div class="skill-tag">content strategy</div>
-    <div class="skill-tag">webinars</div>
-    <div class="skill-tag">cold outreach</div>
-    <div class="skill-tag">claude & agentic ai</div>
+    <div class="skill-tag" data-tooltip="solo marketer at 3 companies. led growth strategy for 6 more, in-house, at an agency, and as a freelancer.">marketing and growth strategy</div>
+    <div class="skill-tag" data-tooltip="running google ads since 2017.">google ads</div>
+    <div class="skill-tag" data-tooltip="main channel for 11 brands. now driving pipeline through thought leadership content.">linkedin ads</div>
+    <div class="skill-tag" data-tooltip="small budgets that still convert post-andromeda. tight targeting, careful creative.">meta ads</div>
+    <div class="skill-tag" data-tooltip="managed seo for 7 brands. content, link building, and now ai visibility too.">seo & geo</div>
+    <div class="skill-tag" data-tooltip="outbound and inbound email campaigns to your audience. nurture inbound leads, warm cold lists, move both toward calls.">email nurture</div>
+    <div class="skill-tag" data-tooltip="implemented marketing automation and lead scoring at scale-ups. nurture sequences and qualified hand-offs to sales.">marketing automation</div>
+    <div class="skill-tag" data-tooltip="set up hubspot from scratch at 3 companies. ran the bigger, messier setups for full teams.">hubspot</div>
+    <div class="skill-tag" data-tooltip="i've been a solo marketer long enough to run full-funnel marketing on my own. ops, strategy, execution, all of it.">marketing operations</div>
+    <div class="skill-tag" data-tooltip="multi-channel campaigns to reach your target accounts. linkedin, email, ads, all in sync.">abm</div>
+    <div class="skill-tag" data-tooltip="scoring models that tell sales who's actually ready. fewer wasted calls.">lead scoring</div>
+    <div class="skill-tag" data-tooltip="long-form content that answers buyer questions before sales has to.">content strategy</div>
+    <div class="skill-tag" data-tooltip="webinar programmes for brand and pipeline. one of mine pulled 150 icp leads from cold.">webinars</div>
+    <div class="skill-tag" data-tooltip="email and linkedin sequences that read like a human wrote them. icp-targeted, automated, calendar-booking.">cold outreach</div>
+    <div class="skill-tag" data-tooltip="i build systems that handle the busywork. vibe-coded pages, content drafts, reporting dashboards. less manual, more strategy.">claude & agentic ai</div>
   </div>
 
   <!-- how i actually work strip -->
@@ -1320,15 +1403,15 @@
     </div>
     <div class="work-strip-item">
       <span class="ws-icon">■</span>
-      <p>built multilingual ad funnels across european markets with ai.</p>
+      <p>local-first: reaches european audiences in their own language. ai for scale, judgment for nuance.</p>
     </div>
     <div class="work-strip-item">
       <span class="ws-icon">■</span>
-      <p>uses agentic ai (claude, automation) daily. always learning what to optimise next.</p>
+      <p>builds smart automation systems with claude. full-funnel marketing, end to end.</p>
     </div>
     <div class="work-strip-item">
       <span class="ws-icon">■</span>
-      <p>consistent track record of lowering cost per lead and cost per customer.</p>
+      <p>gtm-first: picks channels and approach that engage your icp. cost-efficient by design.</p>
     </div>
   </div>
 </section>
@@ -1356,6 +1439,40 @@
         <div class="result-context">enterprise sales-led tool</div>
       </div>
     </div>
+    <div class="result-card featured duo">
+      <div class="result-numbers-row">
+        <div class="result-number-block">
+          <span class="result-number">50%</span>
+          <span class="result-unit">of pipeline brand-influenced</span>
+        </div>
+        <div class="result-divider"></div>
+        <div class="result-number-block">
+          <span class="result-number">€1M</span>
+          <span class="result-unit">open pipeline</span>
+        </div>
+      </div>
+      <div class="result-story">
+        sales-led, 6 months as solo marketer. brand-influenced half of €1m open pipeline before sales ever picked up the phone. paid linkedin + thought leadership content.
+        <div class="result-context">sales-led · solo marketer</div>
+      </div>
+    </div>
+    <div class="result-card featured duo">
+      <div class="result-numbers-row">
+        <div class="result-number-block">
+          <span class="result-number">200</span>
+          <span class="result-unit">leads at €20 cpl</span>
+        </div>
+        <div class="result-divider"></div>
+        <div class="result-number-block">
+          <span class="result-number">€4k</span>
+          <span class="result-unit">budget · one month</span>
+        </div>
+      </div>
+      <div class="result-story">
+        icp nailed on a new product launch. 5% lead-to-meeting blended, 15% on linkedin.
+        <div class="result-context">new product launch · ads only</div>
+      </div>
+    </div>
     <div class="result-card">
       <span class="result-number">150</span>
       <span class="result-label">icp leads from one webinar.<br>budget: €2.5k</span>
@@ -1376,7 +1493,7 @@
 
 <!-- BRANDS -->
 <section>
-  <div class="section-label">03 · brands i've worked with</div>
+  <div class="section-label">03 · b2b saas brands i've worked with</div>
   <h2 class="section-title">good company, <span class="pink">literally</span></h2>
 
   <div class="brands-grid">
@@ -1385,7 +1502,7 @@
         <span class="flag">🇫🇮</span>
         <span class="brand-name">lumoa</span>
       </div>
-      <span class="brand-desc">ai customer feedback analytics</span>
+      <span class="brand-desc">feedback analytics</span>
       <span class="brand-scope">growth strategy + execution + seo + paid ads + gtm. in-house as solo marketer.</span>
     </div>
     <div class="brand-card">
@@ -1409,7 +1526,7 @@
         <span class="flag">🇧🇪</span>
         <span class="brand-name">hello customer</span>
       </div>
-      <span class="brand-desc">ai voice of customer platform</span>
+      <span class="brand-desc">ai voc platform</span>
       <span class="brand-scope">growth strategy + execution.</span>
     </div>
     <div class="brand-card">
@@ -1566,7 +1683,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-name">anna pogrebniak</div>
+  <div class="footer-name">anna pogrebniak <span class="footer-year">© 2026</span></div>
   <div class="footer-links">
     <a href="https://awesomemarketer.fi">awesomemarketer.fi</a>
     <a href="https://www.linkedin.com/in/annapogrebniak/">linkedin</a>
@@ -1697,6 +1814,53 @@
       html.setAttribute('data-theme', e.matches ? 'light' : 'dark');
       updateButton();
     }
+  });
+})();
+
+// hero spotlight - radial gradient that follows the cursor inside the hero
+(function() {
+  const hero = document.querySelector('.hero');
+  const bg = hero && hero.querySelector('.hero-bg');
+  if (!hero || !bg) return;
+
+  let targetX = 50, targetY = 50;
+  let currentX = 50, currentY = 50;
+  let trail2X = 50, trail2Y = 50;
+  let trail3X = 50, trail3Y = 50;
+  let rafId = null;
+
+  function tick() {
+    currentX += (targetX - currentX) * 0.18;
+    currentY += (targetY - currentY) * 0.18;
+    trail2X += (currentX - trail2X) * 0.10;
+    trail2Y += (currentY - trail2Y) * 0.10;
+    trail3X += (trail2X - trail3X) * 0.06;
+    trail3Y += (trail2Y - trail3Y) * 0.06;
+    bg.style.setProperty('--mx', currentX + '%');
+    bg.style.setProperty('--my', currentY + '%');
+    bg.style.setProperty('--mx2', trail2X + '%');
+    bg.style.setProperty('--my2', trail2Y + '%');
+    bg.style.setProperty('--mx3', trail3X + '%');
+    bg.style.setProperty('--my3', trail3Y + '%');
+    if (Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1
+        || Math.abs(currentX - trail2X) > 0.1 || Math.abs(currentY - trail2Y) > 0.1
+        || Math.abs(trail2X - trail3X) > 0.1 || Math.abs(trail2Y - trail3Y) > 0.1) {
+      rafId = requestAnimationFrame(tick);
+    } else {
+      rafId = null;
+    }
+  }
+
+  hero.addEventListener('mousemove', function(e) {
+    const rect = hero.getBoundingClientRect();
+    targetX = ((e.clientX - rect.left) / rect.width) * 100;
+    targetY = ((e.clientY - rect.top) / rect.height) * 100;
+    bg.style.setProperty('--spotlight-opacity', '1');
+    if (!rafId) rafId = requestAnimationFrame(tick);
+  });
+
+  hero.addEventListener('mouseleave', function() {
+    bg.style.setProperty('--spotlight-opacity', '0');
   });
 })();
 
