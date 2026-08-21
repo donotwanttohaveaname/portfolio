@@ -44,7 +44,7 @@ Anna builds her own client reporting dashboards with Claude: budget pacing, per-
 ## Key pages
 
 - [Homepage](https://awesomemarketer.fi/): services, results, brands worked with, recommendations, and how she works.
-- [About](https://awesomemarketer.fi/about.html): background, how she works with teams, values, and a full summary.
+- [About](https://awesomemarketer.fi/about/): background, how she works with teams, values, and a full summary.
 
 ## Contact
 
