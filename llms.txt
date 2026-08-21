@@ -1,31 +1,54 @@
 # Anna Pogrebniak
 
-> Fractional growth marketer for B2B SaaS, based in Helsinki, Finland. 11 years of experience, 19 brands worked with, 2.5M EUR in ad spend managed. Builds the marketing engine, runs the ads, sets up the ops. Founder of The Awesome Marketers, Finland's largest English-speaking marketing community.
+> Fractional growth marketer for B2B SaaS, based in Ghent, Belgium and working across Europe. Eleven years of experience, 23 brands, EUR 3M in ad spend managed. Builds the marketing engine, runs the ads, and gets companies found in AI search. Founder of Awesome Marketers, a 2,000-member marketing community in Finland.
 
-Anna works with European B2B SaaS companies as a fractional (part-time, senior) marketer, typically as the first or only marketing hire. First marketing hire for 3 brands. Ad budgets managed range from 3k to 50k EUR per month.
+Anna works with European B2B SaaS companies as a fractional (part-time, senior) marketer, typically as the first or only marketing hire. She was the first marketing hire at three companies. She is strongest where marketing strategy and hands-on execution have to live in the same person, and where the sales cycle is long and enterprise-shaped.
 
 ## Services
-- Fractional growth marketing: full-stack marketing lead, strategy and execution in one person. Growth strategy, demand gen, HubSpot and ops setup, content and SEO, LinkedIn thought leadership.
-- Fractional performance marketing: paid ads strategy, execution, and optimisation on LinkedIn, Google, and Meta. Multi-market funnels, retargeting and ABM, reporting and iteration.
-- Fractional GTM: outbound prospecting engine. ICP targeting, cold email and LinkedIn sequences, multi-channel automation, CRM and calendar setup, landing pages.
+
+- **Fractional growth**: the whole marketing function in one person. Growth strategy and ICP, demand generation, HubSpot and marketing operations, content and SEO, LinkedIn thought leadership, pipeline reporting.
+- **Fractional ads**: paid acquisition on LinkedIn, Meta and Google. Full-funnel ad strategy, multi-market funnels, retargeting and light ABM, ad concepts, copy and creative. Ad budgets from EUR 3k to EUR 50k per month, currently around EUR 90k a month live across eight ad accounts.
+- **Fractional AEO**: answer engine optimisation. AI visibility audits, prompt and mention tracking, comparison and alternatives pages, schema and structured data, and content that LLMs actually cite.
 
 ## Selected results
-- 250k EUR yearly ad budget managed at 4.7:1 LTV:CAC across five European markets for an enterprise sales-led tool.
-- 50% of a 1M EUR open pipeline brand-influenced as a solo marketer, via paid LinkedIn and thought leadership content.
-- 200 leads at 20 EUR CPL on a 4k EUR one-month budget for a new product launch; 5% lead-to-meeting blended, 15% on LinkedIn.
-- 150 ICP leads from one webinar on a 2.5k EUR ad and tool budget, for an enterprise sales tool with zero prior marketing.
-- Cost per MQL cut by 40% in 3 months after taking over existing ads for a PLG brand.
-- 15 ICP meetings booked from zero for a pre-PMF startup with no website and no marketing, on a 400 EUR/month tool budget.
+
+- EUR 288k new ARR from ads in twelve months at 4.7:1 LTV:CAC, across five European markets on a EUR 250k yearly budget, for an enterprise sales-led platform with a six-month-plus sales cycle.
+- 2.8x more visibility in Google's AI Overviews and other generative surfaces within a month of starting AEO work, measured across the whole site rather than one market.
+- 49% of open pipeline already touched by brand before sales opened a conversation, via account-targeted paid LinkedIn.
+- 50% of a EUR 1M open pipeline brand-influenced as a solo marketer, via paid LinkedIn and thought leadership content.
+- 200 leads at EUR 20 CPL on a EUR 4k one-month budget for a new product launch. 5% lead-to-meeting blended, 15% on LinkedIn.
+- Cost per MQL cut by 40% in three months after taking over an existing ad account at a PLG brand mid-repositioning.
+- 150 ICP leads from a single webinar on a EUR 2.5k tools and ads budget, for a scale-up with no marketing investment for three years.
+- A EUR 14.5k deal closed after a prospect attended three thought-leadership webinars, then returned for a fourth as a customer.
 
 ## Brands worked with
-Lumoa (feedback analytics, FI), Netigate (survey tech, SE), AddSearch (website search, FI), Hello Customer (AI VoC platform, BE), Trustmary (AI visibility tool, FI), QPR Software (business intelligence, FI), Tangently (AI fintech, FI), GetSharedContacts (Gmail widget, FR), and more across Europe.
+
+In-house: Lumoa (feedback analytics, Finland), Netigate (survey tech, Sweden), AddSearch (site search, Finland).
+Agency-side: QPR Software (business intelligence, Finland), Shared Contacts for Gmail (France), AdvanceB2B (B2B SaaS agency, Finland), AIContentfy (AI content platform).
+Fractional: Hello Customer (voice of customer platform, Belgium), Trustmary (Finland), Remotion (LinkedIn Ads agency), Tangently (Finland), Inklusiiv (Finland), Euro Car Wash.
+Freelance SEO and link building: Droppe (Finland), Glassix.
 
 ## Skills
-Marketing and growth strategy, Google Ads, LinkedIn Ads, Meta Ads, SEO and GEO, email nurture, marketing automation, HubSpot, marketing operations, ABM, lead scoring, content strategy, webinars, cold outreach, Claude and agentic AI.
+
+Marketing and growth strategy, LinkedIn Ads, Google Ads, Meta Ads, SEO, AEO and AI search visibility, demand generation, email nurture, marketing automation, HubSpot, marketing operations, ABM, lead scoring, content strategy, webinars, landing pages, custom reporting dashboards, Claude and agentic AI.
+
+## Tooling
+
+Anna builds her own client reporting dashboards with Claude: budget pacing, per-creative performance and status tracking, refreshed daily across eight live ad accounts and three currencies.
+
+## Free work
+
+- **Awesome Marketers**: a 2,000-member marketing community in Finland. Events, an active Slack, and a yearly salary report for the Finnish market. https://awesomemarketers.fi
+- **Mentoring**: free one-to-one sessions with marketers and founders on GrowthMentor. 20+ sessions so far, rated five stars.
 
 ## Key pages
-- [Homepage](https://awesomemarketer.fi/): Services, results, brands, and recommendations.
+
+- [Homepage](https://awesomemarketer.fi/): services, results, brands worked with, recommendations, and how she works.
+- [About](https://awesomemarketer.fi/about.html): background, how she works with teams, values, and a full summary.
 
 ## Contact
+
+- Book a call: https://calendar.app.google/DE57tdntDCfmr17U7
 - LinkedIn: https://www.linkedin.com/in/annapogrebniak/
-- Community: https://awesomemarketers.fi/
+- Location: Ghent, Belgium. Works across Europe, remote-first.
+- Availability: currently taking on fractional clients.
