@@ -162,7 +162,14 @@
   .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-2);display:flex;flex-direction:column;align-items:center;gap:8px}
   .scroll-hint svg{width:14px;height:14px;animation:bob 2s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
-  @media(max-width:900px){.scroll-hint{display:none}.hs .l{max-width:none}}
+  @media(max-width:900px){
+    .scroll-hint{display:none}
+    /* stacked stats read as ragged when each block keeps its own left edge */
+    .hero-stats{gap:34px}
+    .hs{text-align:center;width:100%;max-width:280px;margin:0 auto}
+    .hs .bar{margin-left:auto;margin-right:auto}
+    .hs .l{max-width:none;margin:0 auto}
+  }
 
   /* ══ LOGO WALL ══ */
   .wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
@@ -425,7 +432,12 @@
   .purr[data-on="true"] svg{animation:purrpulse 1.6s ease-in-out infinite}
   @keyframes purrpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
   @media(prefers-reduced-motion:reduce){.purr svg{animation:none!important}}
-  @media(max-width:620px){.purr{right:12px;bottom:12px;padding:8px 12px 8px 10px;font-size:9px}}
+    /* icon only on small screens, so it stops covering the CTA */
+  @media(max-width:620px){
+    .purr{right:12px;bottom:12px;padding:10px;gap:0;border-radius:50%}
+    .purr span{display:none}
+    .purr svg{width:17px;height:17px}
+  }
 
   .rv{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
   .rv.in{opacity:1;transform:none}
@@ -782,7 +794,7 @@
       </div>
       <div class="pw num rv">
         <div class="n">50<small>%</small></div>
-        <div class="l">of a €1M open pipeline, brand-influenced</div>
+        <div class="l">of a €1M open pipeline, ad-influenced</div>
         <p>Six months as the solo marketer. Paid LinkedIn plus thought leadership content touched half the open pipeline before sales ever picked up the phone.</p>
         <span class="who">sales-led · solo marketer</span>
       </div>
@@ -814,8 +826,8 @@
       </div>
       <div class="pw num rv">
         <div class="n" style="color:var(--pink)">49<small>%</small></div>
-        <div class="l">of open pipeline already touched by brand before sales opened a conversation</div>
-        <p>Paid LinkedIn aimed at exact accounts and titles rather than broad reach. Nearly half the live pipeline had already seen the brand on their own account before anyone from sales got in touch.</p>
+        <div class="l">of open pipeline already touched by ads before sales opened a conversation</div>
+        <p>Paid LinkedIn aimed at exact accounts and titles rather than broad reach. Nearly half the live pipeline had already seen the ads on their own account before anyone from sales got in touch.</p>
         <span class="who">b2b saas · enterprise, benelux</span>
       </div>
       <div class="pw num rv">
