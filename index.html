@@ -273,6 +273,44 @@
   .c-orange .card-ico{background:rgba(240,90,40,.10)}
   @media(max-width:960px){.cards3{grid-template-columns:1fr;gap:18px}.cards3 .card{margin-top:0!important}}
 
+  /* bonus band under the three services */
+  .bonus{
+    margin-top:44px;border:1px solid var(--line);border-radius:24px;background:var(--surface);
+    padding:34px 32px 32px;
+  }
+  .bonus-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:44px;align-items:end;margin-bottom:28px}
+  .bonus-tag{
+    display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;font-weight:700;color:var(--ink);
+    background:var(--yellow);padding:5px 10px;border-radius:6px;margin-bottom:14px;
+  }
+  .bonus-head h3{margin-bottom:0}
+  .bonus-head p{color:var(--muted);font-size:15.5px;line-height:1.6;margin-bottom:2px}
+  .bonus-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+  .bl{
+    position:relative;display:block;border:1px solid var(--line);border-radius:16px;background:#fff;
+    padding:16px 17px 17px;transition:border-color .16s,transform .16s;
+  }
+  .bl .go{position:absolute;top:15px;right:15px;width:13px;height:13px;opacity:.28;transition:opacity .16s,transform .16s}
+  .bl:hover .go{opacity:1;transform:translate(2px,-2px)}
+  .bl:hover{border-color:var(--ink);transform:translateY(-3px)}
+  .bl .k{
+    display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.13em;
+    text-transform:uppercase;font-weight:700;color:var(--ink);
+    background:var(--bk,var(--teal));padding:4px 8px;border-radius:5px;
+  }
+  .bl .t{font-family:var(--display);font-weight:700;font-size:15.5px;letter-spacing:-.02em;line-height:1.25;margin:11px 0 7px;padding-right:14px;min-height:2.5em}
+  .bl p{font-size:13.5px;color:var(--muted);line-height:1.5}
+  @media(max-width:980px){
+    .bonus-head{grid-template-columns:1fr;gap:16px;align-items:start}
+    .bonus-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media(max-width:620px){
+    .bonus{padding:26px 20px 24px;border-radius:20px}
+    .bonus-links{grid-template-columns:minmax(0,1fr)}
+    .bl .t{min-height:0}
+  }
+
   /* ══ PROBLEM ══ */
   .prob{display:grid;grid-template-columns:1fr 1.06fr;gap:56px;align-items:center}
   .bigstat-card{border:1px solid var(--line);border-radius:24px;padding:48px 34px 38px;text-align:center;background:linear-gradient(180deg,#fff 0%,var(--surface) 100%);box-shadow:var(--shadow);position:relative;overflow:hidden}
@@ -543,6 +581,42 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>content llms actually cite</li>
         </ul>
         <div class="proof"><b>2.8×</b>more AI-search visibility after starting AEO</div>
+      </div>
+    </div>
+
+    <div class="bonus rv">
+      <div class="bonus-head">
+        <div>
+          <span class="bonus-tag">bonus</span>
+          <h3>pages, widgets and tools</h3>
+        </div>
+        <p>I build the interactive things too: a report you can filter, a calculator that sits inside the article explaining it, a landing page for one campaign, or a whole site rebuilt around how people and AI both read it. One-off, or alongside the rest of the work.</p>
+      </div>
+      <div class="bonus-links">
+        <a class="bl" style="--bk:var(--yellow)" href="https://awesomemarketers.fi/marketing-salary-finland-2026/" target="_blank" rel="noopener">
+          <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          <span class="k">interactive report</span>
+          <div class="t">Finland&rsquo;s marketing salary report</div>
+          <p>148 responses you can filter by role, seniority and company size. Built from the raw survey data.</p>
+        </a>
+        <a class="bl" style="--bk:var(--sky)" href="https://www.hellocustomer.com/en/blog/how-to-calculate-nps" target="_blank" rel="noopener">
+          <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          <span class="k">in-content widget</span>
+          <div class="t">An NPS calculator, in the article</div>
+          <p>The page explains how NPS works, then lets you work out your own score without leaving it.</p>
+        </a>
+        <a class="bl" style="--bk:var(--pink)" href="https://get.trustmary.com/ai-visibility-report/" target="_blank" rel="noopener">
+          <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          <span class="k">landing page</span>
+          <div class="t">Trustmary&rsquo;s AI visibility report</div>
+          <p>Landing page design and build for a single offer, ready to point ads at.</p>
+        </a>
+        <a class="bl" style="--bk:var(--green)" href="https://www.hellocustomer.com/en/" target="_blank" rel="noopener">
+          <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          <span class="k">full site rebuild</span>
+          <div class="t">A B2B SaaS site, rebuilt</div>
+          <p>Structured for AEO and SEO from the first wireframe, and made good to look at.</p>
+        </a>
       </div>
     </div>
   </div>

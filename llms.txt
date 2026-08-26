@@ -9,6 +9,11 @@ Anna works with European B2B SaaS companies as a fractional (part-time, senior) 
 - **Fractional growth**: the whole marketing function in one person. Growth strategy and ICP, demand generation, HubSpot and marketing operations, content and SEO, LinkedIn thought leadership, pipeline reporting.
 - **Fractional ads**: paid acquisition on LinkedIn, Meta and Google. Full-funnel ad strategy, multi-market funnels, retargeting and light ABM, ad concepts, copy and creative. Ad budgets from EUR 3k to EUR 50k per month, currently around EUR 90k a month live across eight ad accounts.
 - **Fractional AEO**: answer engine optimisation. AI visibility audits, prompt and mention tracking, comparison and alternatives pages, schema and structured data, and content that LLMs actually cite.
+- **Pages, widgets and tools** (one-off projects, or alongside the fractional work): interactive reports, calculators and widgets embedded inside content, campaign landing pages, and full website rebuilds structured for AEO and SEO. Examples:
+  - Interactive salary report, filterable by role, seniority and company size: https://awesomemarketers.fi/marketing-salary-finland-2026/
+  - NPS calculator built into the article that explains NPS: https://www.hellocustomer.com/en/blog/how-to-calculate-nps
+  - Campaign landing page for an AI visibility report: https://get.trustmary.com/ai-visibility-report/
+  - Full B2B SaaS website rebuild, designed for AEO and SEO: https://www.hellocustomer.com/en/
 
 ## Selected results
 
@@ -30,7 +35,7 @@ Freelance SEO and link building: Droppe (Finland), Glassix.
 
 ## Skills
 
-Marketing and growth strategy, LinkedIn Ads, Google Ads, Meta Ads, SEO, AEO and AI search visibility, demand generation, email nurture, marketing automation, HubSpot, marketing operations, ABM, lead scoring, content strategy, webinars, landing pages, custom reporting dashboards, Claude and agentic AI.
+Marketing and growth strategy, LinkedIn Ads, Google Ads, Meta Ads, SEO, AEO and AI search visibility, demand generation, email nurture, marketing automation, HubSpot, marketing operations, ABM, lead scoring, content strategy, webinars, landing pages, interactive reports and in-content widgets, website builds, custom reporting dashboards, Claude and agentic AI.
 
 ## Tooling
 
