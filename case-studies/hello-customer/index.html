@@ -191,7 +191,7 @@
   /* hero */
   .hero{padding:84px 0 60px;text-align:left}
   .hero .eyebrow{margin-bottom:22px}
-  .hero h1{max-width:1040px;margin-bottom:26px}
+  .hero h1{max-width:1100px;margin-bottom:26px;font-size:clamp(36px,5.6vw,74px)}
   .hero h1 .grey{color:var(--muted-2)}
   .hero .lede{max-width:720px;margin-bottom:34px}
   .hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
@@ -214,7 +214,7 @@
   .receipts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
   .rcpt{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);display:flex;flex-direction:column}
   .rcpt .shot{background:#0F0F10;position:relative;aspect-ratio:16/10;overflow:hidden}
-  .rcpt .shot img{width:100%;height:100%;object-fit:cover;object-position:top left}
+  .rcpt .shot img{width:100%;height:100%;object-fit:contain;background:#0F0F10}
   .rcpt .shot .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:30px;color:#fff;gap:10px}
   .rcpt .shot .ph .q{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.03em;line-height:1.15}
   .rcpt .shot .ph .m{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:700}
@@ -389,12 +389,12 @@
 <section class="hero" id="top">
   <div class="wrap">
     <span class="eyebrow rv" style="--eb:var(--pink)"><i>cs</i>case study · hello customer · b2b saas, belgium</span>
-    <h1 class="rv"><span class="grey">from page four</span><br>to the answer box.</h1>
+    <h1 class="rv"><span class="grey">three times the ai visibility in six weeks.</span><br>here's the rebuild behind it.</h1>
     <p class="lede rv">Hello Customer is a voice of customer platform from Belgium. In the summer of 2026 I repositioned the brand, rebuilt the whole website in three languages with search engines and AI answer engines in the room, and then cleaned up everything around it. <b>This is what the first seven weeks look like, with the data.</b> The new site went live on 18 July 2026 and every number here was exported on 4 September, so read it as an early reading, not a final one. SEO compounds; this is the start of the curve.</p>
 
     <div class="trio rv">
       <div class="stat"><div class="k">google ai overviews</div><div class="v grad">3&times;</div><div class="d"><b>more impressions per day</b> in AI answers, six weeks after launch. Late May against August, per day.</div></div>
-      <div class="stat"><div class="k">google search</div><div class="v">p4 &rarr; p2</div><div class="d"><b>average position across every query</b> the site shows for, August 2025 against August 2026. From 38 to 18.</div><div class="bar" style="--c:var(--green);--w:53%"></div></div>
+      <div class="stat"><div class="k">google search</div><div class="v">2.2&times;</div><div class="d"><b>more queries on page one</b> of Google, the same 28 days in August 2025 against August 2026.</div><div class="bar" style="--c:var(--green);--w:100%"></div></div>
       <div class="stat"><div class="k">bing copilot</div><div class="v">24%</div><div class="d"><b>citation share</b> across 146 buyer questions where Copilot grounded its answer on the site. One answer in four.</div><div class="bar" style="--c:var(--teal);--w:24%"></div></div>
     </div>
 
@@ -415,33 +415,33 @@
     <div class="sec-head rv">
       <span class="eyebrow" style="--eb:var(--pink)"><i>01</i>the receipts</span>
       <h2>ask an ai about voice of customer platforms. hello customer is in the answer.</h2>
-      <p class="lede">Four screenshots from the first week of September 2026, unedited. The same questions in May came back with a different set of names.</p>
+      <p class="lede">Four screenshots taken on 28 August 2026, six weeks after launch, unedited. The same questions in May came back with a different set of names.</p>
     </div>
 
     <div class="receipts">
       <div class="rcpt wide rv">
-        <div class="shot">
+        <div class="shot" style="aspect-ratio:1600/935">
           <img src="img/google-alternatives.png" alt="Google AI Overview for a best-alternatives search naming Hello Customer in the enterprise section, with Hello Customer's own alternatives article as a source" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ph" style="display:none"><div class="m">google · ai overview</div><div class="q">"best alternatives to [the market leader]"</div><div class="ph-note">screenshot pending: img/google-alternatives.png</div></div>
         </div>
         <div class="cap"><span class="eng" style="--c:var(--yellow)">google</span><p><b>"best alternatives to [the market leader]."</b> Listed in the enterprise CX section next to the category's biggest names, and the third source card is Hello Customer's own alternatives article, published on 3 August. The comparison page did exactly the job it was built for.</p></div>
       </div>
       <div class="rcpt rv">
-        <div class="shot">
+        <div class="shot" style="aspect-ratio:1600/521">
           <img src="img/google-good-nps.png" alt="Google AI Overview for 'what is a good nps' with the definition sourced to Hello Customer" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ph" style="display:none"><div class="m">google · ai overview</div><div class="q">"what is a good nps"</div><div class="ph-note">screenshot pending: img/google-good-nps.png</div></div>
         </div>
         <div class="cap"><span class="eng" style="--c:var(--yellow)">google</span><p><b>"what is a good nps."</b> The definition sentence is sourced "Hello Customer +4". This is one of the highest-volume questions in the category, and the site's rewritten NPS cluster is the reference.</p></div>
       </div>
       <div class="rcpt rv">
-        <div class="shot">
+        <div class="shot" style="aspect-ratio:1600/851">
           <img src="img/google-choose-voc-platform.png" alt="Google AI Overview for 'how to choose voice of customer platform' with the opening line cited to Hello Customer" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ph" style="display:none"><div class="m">google · ai overview</div><div class="q">"how to choose voice of customer platform"</div><div class="ph-note">screenshot pending: img/google-choose-voc-platform.png</div></div>
         </div>
         <div class="cap"><span class="eng" style="--c:var(--yellow)">google</span><p><b>"how to choose voice of customer platform."</b> The opening line of the answer is cited to Hello Customer, first source card. The category we repositioned into, answered by the site we built for it.</p></div>
       </div>
       <div class="rcpt wide rv">
-        <div class="shot">
+        <div class="shot" style="aspect-ratio:1600/1344">
           <img src="img/chatgpt-best-voc-platform.png" alt="ChatGPT answer to 'what is best voice of customer platform' with Hello Customer in the shortlist beside the largest enterprise suites" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ph" style="display:none"><div class="m">chatgpt</div><div class="q">"what is best voice of customer platform"</div><div class="ph-note">screenshot pending: img/chatgpt-best-voc-platform.png</div></div>
         </div>
