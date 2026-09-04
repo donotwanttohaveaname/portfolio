@@ -248,19 +248,6 @@
   .tl p{font-size:13.5px;color:var(--muted);line-height:1.45}
   @media(max-width:760px){.tl{grid-template-columns:1fr 1fr}}
 
-  /* SERP pager widget */
-  .serp{border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);padding:26px 28px 24px;position:relative;overflow:hidden}
-  .serp .pages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:20px}
-  .serp .pg{border:1px solid var(--line);border-radius:14px;padding:12px 12px 10px;background:var(--surface);position:relative;min-height:190px}
-  .serp .pg .n{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted-2);margin-bottom:10px}
-  .serp .slot{height:9px;border-radius:2px;background:rgba(0,0,0,.07);margin-bottom:6px;position:relative}
-  .serp .slot.you{background:var(--pink);box-shadow:0 0 0 3px rgba(255,15,108,.18)}
-  .serp .slot.you::after{content:'hello customer';position:absolute;left:0;top:-19px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--pink);white-space:nowrap}
-  .serp .legend{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
-  .serp .legend .big{font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-.05em;line-height:1}
-  .serp .legend .big small{font-size:14px;font-weight:600;letter-spacing:-.01em;color:var(--muted);margin-left:8px}
-  .serp .legend p{font-size:14px;color:var(--muted);max-width:520px;line-height:1.45}
-  @media(max-width:760px){.serp .pages{grid-template-columns:repeat(2,minmax(0,1fr))}.serp .pg{min-height:150px}}
 
   /* generic chart card */
   .chart-card{border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:var(--shadow);padding:22px 24px 20px;position:relative}
@@ -544,7 +531,7 @@
       <div class="rv">
         <p class="body">The customer-logo searches went from nearly a quarter of impressions to under one percent. That traffic was never going to buy anything, so I let it go, and it's the reason the total impression count looks flat while everything inside it moved.</p>
         <p class="body">What replaced it: the site now earns impressions on <span class="hl" style="--c:var(--green)">57% more pages</span>, sits on page one for <span class="hl" style="--c:var(--green)">2.2 times as many queries</span>, and clicks from non-brand searches are up by about a third. The "voice of customer" family of queries doubled in count, grew 78% in impressions, and moved from page six to page three on average.</p>
-        <p class="body muted">The average position across everything is the number I watch most, because it's the one that can't be gamed by adding pages. It went from 38 to 18. And keep the calendar in mind: the 2026 window starts eighteen days after launch, so this is Google's first read of the new site, not its settled opinion.</p>
+        <p class="body muted">Keep the calendar in mind: the 2026 window starts eighteen days after launch, so this is Google's first read of the new site, not its settled opinion.</p>
       </div>
       <div class="pairs rv">
         <div class="key"><span><i></i>aug 2025</span><span><i class="a"></i>aug 2026</span></div>
@@ -557,16 +544,8 @@
       </div>
     </div>
 
-    <div class="serp rv" id="serp">
-      <div class="qhead">
-        <div><div class="micro">where the site sat on google, on average</div><div style="font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.02em;margin-top:4px">impression-weighted average position, every query the site appeared for</div></div>
-        <div class="toggle"><button class="on" data-s="before">aug 2025</button><button data-s="after">aug 2026</button></div>
-      </div>
-      <div class="pages" id="serpPages"></div>
-      <div class="legend"><div class="big" id="serpBig">38<small>page four</small></div><p id="serpText">One result in ten gets clicked on page one. Almost nothing gets clicked on page four. Moving the average from 38 to 18 is the difference between existing and being seen.</p></div>
-    </div>
 
-    <div class="chart-card rv" style="margin-top:18px">
+    <div class="chart-card rv">
       <div class="l">average google position, day by day</div>
       <div class="s">Lower is better. Two windows of 28 days, one year apart. Hover for the value.</div>
       <svg id="posChart" viewBox="0 0 900 260" preserveAspectRatio="none" role="img" aria-label="Daily average Google position, August 2025 between 28 and 47, August 2026 between 15 and 22"></svg>
@@ -730,11 +709,6 @@ function renderQ(which){var d=which==='before'?Q_B:Q_A,max=Math.max.apply(null,d
 document.querySelectorAll('#qwrap .toggle button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#qwrap .toggle button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');renderQ(b.dataset.q);});});
 renderQ('before');
 
-/* ---------- SERP pager ---------- */
-var serpPages=document.getElementById('serpPages');
-function renderSerp(which){var pos=which==='before'?38.5:18.1,slot=Math.round(pos),html='';for(var p=1;p<=5;p++){html+='<div class="pg"><div class="n">page '+p+'</div>';for(var s=1;s<=10;s++){var idx=(p-1)*10+s;html+='<div class="slot'+(idx===slot?' you':'')+'"></div>';}html+='</div>';}serpPages.innerHTML=html;document.getElementById('serpBig').innerHTML=(which==='before'?'38<small>page four</small>':'18<small>page two</small>');document.getElementById('serpText').textContent=which==='before'?'Almost nothing gets clicked on page four. In August 2025 that is where the average query found the site: position 38, a long way below anything a buyer scrolls to.':'One year and one rebuild later the average is 18, on page two, and 2.2 times as many queries sit on page one. Same site, same product, different words.';}
-document.querySelectorAll('#serp .toggle button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#serp .toggle button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');renderSerp(b.dataset.s);});});
-renderSerp('before');
 
 /* ---------- charts ---------- */
 var NS='http://www.w3.org/2000/svg';
