@@ -226,7 +226,9 @@
   .rcpt .cap p b{color:var(--ink);font-weight:600}
   .rcpt.wide{grid-column:1/-1}
   .rcpt.wide .shot{aspect-ratio:21/9}
-  @media(max-width:760px){.receipts{grid-template-columns:1fr}.rcpt.wide .shot{aspect-ratio:16/10}}
+  .rcpt.chat .shot{aspect-ratio:21/9}
+  .rcpt.chat .shot img{padding:14px 0}
+  @media(max-width:760px){.receipts{grid-template-columns:1fr}.rcpt.wide .shot{aspect-ratio:16/10}.rcpt.chat .shot{aspect-ratio:1600/1344}.rcpt.chat .shot img{padding:0}}
 
   /* before/after positioning */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
@@ -438,8 +440,8 @@
         </div>
         <div class="cap"><span class="eng" style="--c:var(--yellow)">google</span><p><b>"how to choose voice of customer platform."</b> The opening line of the answer is cited to Hello Customer, first source card. The category we repositioned into, answered by the site we built for it.</p></div>
       </div>
-      <div class="rcpt wide rv">
-        <div class="shot" style="aspect-ratio:1600/1344">
+      <div class="rcpt wide chat rv">
+        <div class="shot">
           <img src="img/chatgpt-best-voc-platform.png" alt="ChatGPT answer to 'what is best voice of customer platform' with Hello Customer in the shortlist beside the largest enterprise suites" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="ph" style="display:none"><div class="m">chatgpt</div><div class="q">"what is best voice of customer platform"</div><div class="ph-note">screenshot pending: img/chatgpt-best-voc-platform.png</div></div>
         </div>
