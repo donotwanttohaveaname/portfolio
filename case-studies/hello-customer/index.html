@@ -38,32 +38,65 @@
       "dateModified": "2026-09-04",
       "inLanguage": "en",
       "image": "https://awesomemarketer.fi/case-studies/hello-customer/og.png",
-      "author": {"@type": "Person", "@id": "https://awesomemarketer.fi/#person", "name": "Anna Pogrebniak", "url": "https://awesomemarketer.fi/", "jobTitle": "Fractional Growth Marketer"},
-      "publisher": {"@type": "Person", "@id": "https://awesomemarketer.fi/#person"},
+      "author": {
+        "@type": "Person",
+        "@id": "https://awesomemarketer.fi/#person",
+        "name": "Anna Pogrebniak",
+        "url": "https://awesomemarketer.fi/",
+        "jobTitle": "Fractional Growth Marketer"
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": "https://awesomemarketer.fi/#person"
+      },
       "about": [
-        {"@type": "Organization", "name": "Hello Customer", "url": "https://www.hellocustomer.com/", "description": "AI-native voice of customer platform, built and hosted in Belgium."},
-        {"@type": "Thing", "name": "Answer engine optimisation"},
-        {"@type": "Thing", "name": "Search engine optimisation"},
-        {"@type": "Thing", "name": "Website redesign"}
+        {
+          "@type": "Organization",
+          "name": "Hello Customer",
+          "url": "https://www.hellocustomer.com/",
+          "description": "AI-native voice of customer platform, built and hosted in Belgium."
+        },
+        {
+          "@type": "Thing",
+          "name": "Answer engine optimisation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Search engine optimisation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Website redesign"
+        }
       ],
       "keywords": "AEO case study, SEO case study, AI visibility, website redesign, B2B SaaS, voice of customer, Google AI Overviews, Bing Copilot citations",
-      "isPartOf": {"@type": "WebSite", "name": "anna pogrebniak", "url": "https://awesomemarketer.fi/"}
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "anna pogrebniak",
+        "url": "https://awesomemarketer.fi/"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "anna pogrebniak", "item": "https://awesomemarketer.fi/"},
-        {"@type": "ListItem", "position": 2, "name": "case studies", "item": "https://awesomemarketer.fi/case-studies/"},
-        {"@type": "ListItem", "position": 3, "name": "hello customer", "item": "https://awesomemarketer.fi/case-studies/hello-customer/"}
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "What is AEO (answer engine optimisation)?", "acceptedAnswer": {"@type": "Answer", "text": "AEO is the work of making a company the answer when someone asks ChatGPT, Google AI Overviews, Perplexity or Bing Copilot a question in its category. It uses the same discipline as SEO (one intent per page, clear structure, structured data, sources) but is measured in citations and mentions rather than clicks."}},
-        {"@type": "Question", "name": "How long did the Hello Customer results take?", "acceptedAnswer": {"@type": "Answer", "text": "The rebuilt site went live on 18 July 2026. Google AI Overview impressions per day roughly tripled between late May 2026 and August 2026, within six weeks of launch. Average Google position moved from page four to page two comparing August 2025 with August 2026."}},
-        {"@type": "Question", "name": "Where do the numbers in this case study come from?", "acceptedAnswer": {"@type": "Answer", "text": "Google Search Console (Performance on Search and the Generative AI features report), exported 4 September 2026, and the Bing Webmaster Tools AI search citations report for the same date. Search Console figures are shown as percentages; AI figures are shown as impressions per day and citation share."}},
-        {"@type": "Question", "name": "Did organic traffic go up?", "acceptedAnswer": {"@type": "Answer", "text": "Clicks from non-brand searches rose by about a third year on year, while a large block of irrelevant traffic (people searching for the logos of Hello Customer's customers, nearly a quarter of all impressions before) was deliberately removed. The goal was traffic from the buyer, not more traffic."}}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "anna pogrebniak",
+          "item": "https://awesomemarketer.fi/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "case studies",
+          "item": "https://awesomemarketer.fi/case-studies/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "hello customer",
+          "item": "https://awesomemarketer.fi/case-studies/hello-customer/"
+        }
       ]
     }
   ]
@@ -305,14 +338,6 @@
   .take p{font-size:15px;color:var(--muted);line-height:1.55}
   @media(max-width:760px){.takes{grid-template-columns:1fr}}
 
-  /* faq */
-  .faq{display:grid;gap:0;border-top:1px solid var(--line-2)}
-  .faq details{border-bottom:1px solid var(--line)}
-  .faq summary{list-style:none;cursor:pointer;padding:20px 0;font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.025em;display:flex;justify-content:space-between;gap:16px;align-items:center}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:'+';font-weight:500;color:var(--pink);font-size:24px;flex:none}
-  .faq details[open] summary::after{content:'\2013'}
-  .faq .a{padding:0 0 22px;font-size:15.5px;color:var(--muted);line-height:1.6;max-width:720px}
 
   /* cta */
   .cta{padding:100px 0 110px;text-align:center}
@@ -623,18 +648,6 @@
   </div>
 </section>
 
-<!-- ═══ FAQ ═══ -->
-<section class="tight band" id="faq">
-  <div class="wrap narrow">
-    <div class="sec-head rv" style="margin-bottom:26px"><span class="eyebrow" style="--eb:var(--cyan)"><i>?</i>questions</span></div>
-    <div class="faq rv">
-      <details><summary>what is aeo, answer engine optimisation?</summary><div class="a">AEO is the work of making a company the answer when someone asks ChatGPT, Google AI Overviews, Perplexity or Bing Copilot a question in its category. It uses the same discipline as SEO, one intent per page, clear structure, structured data, sources, but it's measured in citations and mentions rather than clicks.</div></details>
-      <details><summary>how long did the results take?</summary><div class="a">The rebuilt site went live on 18 July 2026. Google AI Overview impressions per day roughly tripled between late May and August, within six weeks of launch. The Google position change compares August 2025 with August 2026, the same 28 days a year apart, because that's the fairest like-for-like window Search Console allows. Either way it is early data: the site had been live for seven weeks when these exports were taken.</div></details>
-      <details><summary>where do the numbers come from?</summary><div class="a">Google Search Console (Performance on Search, and the Generative AI features report) exported on 4 September 2026, and the Bing Webmaster Tools AI search citations report for the same date. Search Console figures are shown as percentages; AI figures as impressions per day and citation share. The screenshots are from the first week of September, unedited.</div></details>
-      <details><summary>did organic traffic go up?</summary><div class="a">Clicks from non-brand searches rose by about a third year on year, while a large block of irrelevant traffic, people searching for the logos of Hello Customer's customers, nearly a quarter of all impressions before, was deliberately removed. The goal was traffic from the buyer, not more traffic.</div></details>
-    </div>
-  </div>
-</section>
 
 <!-- ═══ CTA ═══ -->
 <section class="cta" id="cta">
