@@ -332,6 +332,15 @@
   .geo .g .bb i.a{background:var(--teal)}
   .geo .g .x{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:-.04em;text-align:right;white-space:nowrap}
 
+  /* sales: self-reported attribution */
+  .leads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .lead{background:#fff;border:1px solid var(--line);border-left:4px solid var(--c,var(--sky));border-radius:16px;padding:22px 22px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
+  .lead .q{font-family:var(--display);font-weight:700;font-size:clamp(19px,1.7vw,23px);letter-spacing:-.03em;line-height:1.2}
+  .lead .w{font-size:13.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:auto}
+  .lead .w .chip{font-size:9px;padding:4px 8px}
+  .lead .tr{font-family:var(--script);font-size:15px;color:var(--muted-2)}
+  @media(max-width:860px){.leads{grid-template-columns:1fr}}
+
   /* takeaways */
   .takes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
   .take{border:1px solid var(--line);border-radius:20px;padding:24px 24px 22px;background:#fff;box-shadow:var(--shadow)}
@@ -370,6 +379,7 @@
       <a href="#build">the rebuild</a>
       <a href="#google">google</a>
       <a href="#ai">ai search</a>
+      <a href="#sales">sales</a>
     </div>
     <div class="nav-right"><a class="btn btn-pink btn-sm" href="https://calendar.app.google/DE57tdntDCfmr17U7" target="_blank" rel="noopener">book a call</a></div>
   </div>
@@ -382,7 +392,8 @@
   <a href="#build" style="--ck:var(--yellow)"><i></i><span>the rebuild</span></a>
   <a href="#google" style="--ck:var(--green)"><i></i><span>google</span></a>
   <a href="#ai" style="--ck:var(--teal)"><i></i><span>ai search</span></a>
-  <a href="#takeaways" style="--ck:var(--sky)"><i></i><span>takeaways</span></a>
+  <a href="#sales" style="--ck:var(--sky)"><i></i><span>sales</span></a>
+  <a href="#takeaways" style="--ck:var(--cyan)"><i></i><span>takeaways</span></a>
 </nav>
 
 <main>
@@ -633,6 +644,53 @@
   </div>
 </section>
 
+<!-- ═══ 06 SALES ═══ -->
+<section id="sales">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--sky)"><i>06</i>what sales sees</span>
+      <h2>and then the leads started saying it out loud.</h2>
+      <p class="lede">The demo form asks one question at the end: how did you hear about us? Since the rebuild, some of the answers look different. These are real, self-reported, unprompted, and copied from the CRM with the company names removed.</p>
+    </div>
+    <div class="leads">
+      <div class="lead rv" style="--c:var(--sky)"><div class="q">&ldquo;Claude&rdquo;</div><div class="w">customer success manager <span class="chip" style="--c:var(--green)">now an opportunity</span></div></div>
+      <div class="lead rv" style="--c:var(--teal)"><div class="q">&ldquo;By asking an AI&rdquo;</div><div class="w">customer listening lead <span class="tr">translated from French</span></div></div>
+      <div class="lead rv" style="--c:var(--green)"><div class="q">&ldquo;Found online while searching for a Belgian/European NPS provider&rdquo;</div><div class="w">insurance company <span class="chip" style="--c:var(--green)">now an opportunity</span></div></div>
+    </div>
+    <p class="body muted rv" style="max-width:720px;margin-top:28px">Small numbers, early days. But this is what the search and AI work looks like from the sales side: people naming the AI they asked, and describing the exact search we built the site to win.</p>
+  </div>
+</section>
+
+<!-- ═══ 07 TAKEAWAYS ═══ -->
+<section id="takeaways">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--cyan)"><i>07</i>takeaways</span>
+      <h2>what i'd tell you, if this were your site</h2>
+    </div>
+    <div class="takes">
+      <div class="take rv"><span class="chip k" style="--c:var(--pink)">positioning</span><h3>positioning is a search decision</h3><p>The category name in the title did more than any single page. Before you write anything, pick the word buyers and models already use for what you are, and then say it, plainly, in the places machines read first.</p></div>
+      <div class="take rv"><span class="chip k" style="--c:var(--yellow)">architecture</span><h3>one intent per page, and mean it</h3><p>Feature names squatting on keywords, three schema blocks disagreeing with each other, ten product pages with no FAQ. None of it is glamorous to fix. All of it is what a crawler and a model actually see.</p></div>
+      <div class="take rv"><span class="chip k" style="--c:var(--green)">content</span><h3>be the comparison</h3><p>Buyers ask "alternatives to X" and models answer with a list. Write the honest list yourself, in every language you sell in. The comparison pages went from a tenth of AI visibility to nearly a quarter in six weeks.</p></div>
+      <div class="take rv"><span class="chip k" style="--c:var(--teal)">hygiene</span><h3>update your old content, retire the rest</h3><p>Old pages don't get better by being left alone. Refresh the ones that still answer a real question, on a schedule, and let go of the ones that don't. Nobody needs the ebook from 2019, and neither does the crawler. A site that agrees with itself gets cited more than a big one.</p></div>
+    </div>
+    <p class="body muted rv" style="max-width:760px;margin-top:40px">I did this hands-on: the positioning, the pages, the schema, the redirects, the calculator inside the article. With Claude, extensively, which is how one person rebuilds a site in three languages in seven weeks. And I'll say it once more because it matters: this is seven weeks of data. It's enough to show the direction, not the destination. If you'd like the same done to yours, the button is below.</p>
+  </div>
+</section>
+
+
+<!-- ═══ CTA ═══ -->
+<section class="cta" id="cta">
+  <div class="wrap">
+    <h2 class="rv">want your site<br>in the answer?</h2>
+    <p class="lede rv">Book a call. We look at what Google and the models currently think your site is about, and whether that's what you'd like them to think.</p>
+    <div class="cta-row rv">
+      <a class="btn btn-pink" href="https://calendar.app.google/DE57tdntDCfmr17U7" target="_blank" rel="noopener"><img class="btn-avatar" src="/anna.jpg" alt="" width="38" height="38"><span class="btn-stack">book a call with me<em>(say hi, get to know each other)</em></span></a>
+      <a class="btn btn-ghost" href="/">see the rest of my work</a>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -665,7 +723,7 @@ var prog=document.getElementById('progress');
 function onScroll(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight);prog.style.width=(p*100).toFixed(2)+'%';}
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 var chap=document.querySelectorAll('.chapters a');
-if('IntersectionObserver' in window){var so=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){chap.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)});}});},{rootMargin:'-40% 0px -50% 0px'});['receipts','before','build','google','ai','takeaways'].forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s);});}
+if('IntersectionObserver' in window){var so=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){chap.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)});}});},{rootMargin:'-40% 0px -50% 0px'});['receipts','before','build','google','ai','sales','takeaways'].forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s);});}
 
 /* ---------- count-up tiles ---------- */
 function countUp(el){var to=parseFloat(el.dataset.count),dec=parseInt(el.dataset.dec||'0'),t0=null;function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1100);k=1-Math.pow(1-k,3);el.textContent=(to*k).toFixed(dec);if(k<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
