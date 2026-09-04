@@ -275,30 +275,20 @@
   .pairs .key i.a{background:var(--pink)}
   @media(max-width:620px){.pair{grid-template-columns:110px minmax(0,1fr) 56px;font-size:13px}}
 
-  /* bing explorer */
-  .bing{border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);padding:24px 26px 20px}
-  .bing-top{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
-  .bing input{flex:1;min-width:200px;border:1px solid var(--line-2);border-radius:999px;padding:10px 16px;font-family:var(--sans);font-size:14.5px;outline:none}
-  .bing input:focus{border-color:var(--pink)}
-  .fchips{display:flex;gap:6px;flex-wrap:wrap}
-  .fchips button{border:1px solid var(--line-2);background:#fff;border-radius:999px;padding:7px 12px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;cursor:pointer;color:var(--muted);transition:all .14s}
-  .fchips button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-  .btable{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed}
-  .bscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .btable th{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);font-weight:700;text-align:left;padding:0 10px 9px;border-bottom:1px solid var(--line-2);cursor:pointer;user-select:none;white-space:nowrap}
-  .btable th.r{text-align:right}
-  .btable th:nth-child(2),.btable td:nth-child(2){width:96px}
-  .btable td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
-  .btable td.q{max-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .btable td.r{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
-  .btable td.sh{width:200px}
-  .sh .bar{height:9px;border-radius:2px;background:rgba(0,0,0,.07);position:relative;overflow:hidden}
-  .sh .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:2px;background:var(--pink)}
-  .sh .bar i.hi{background:var(--green)}
-  .bfoot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px;font-size:12.5px;color:var(--muted-2)}
-  .bfoot button{border:0;background:transparent;font-family:var(--display);font-weight:600;color:var(--pink);cursor:pointer;font-size:13.5px}
-  @media(max-width:620px){.btable td.sh,.btable th:nth-child(3){width:118px}.btable th:nth-child(2),.btable td:nth-child(2){display:none}}
-
+  /* bing themes */
+  .themes{border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);padding:24px 26px 20px}
+  .tkey{display:flex;gap:18px;font-size:12.5px;color:var(--muted);margin-bottom:14px;flex-wrap:wrap}
+  .tkey i{display:inline-block;width:14px;height:8px;border-radius:2px;background:rgba(0,0,0,.14);margin-right:6px;vertical-align:middle}
+  .tkey i.a{background:var(--teal)}
+  .tlist{display:grid;gap:12px}
+  .th{display:grid;grid-template-columns:260px minmax(0,1fr) 92px;gap:14px;align-items:center;font-size:14.5px}
+  .th .n{font-weight:600;line-height:1.3}
+  .th .bb{display:grid;gap:4px}
+  .th .bb i{display:block;height:9px;border-radius:2px;background:rgba(0,0,0,.14);width:var(--w);transition:width .6s cubic-bezier(.16,1,.3,1)}
+  .th .bb i.a{background:var(--teal)}
+  .th .x{display:grid;gap:2px;font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;text-align:right;font-size:14px;line-height:1.1}
+  .th .x .a{color:var(--muted)}
+  @media(max-width:720px){.th{grid-template-columns:minmax(0,1fr) 64px;grid-template-areas:"n x" "b b"}.th .n{grid-area:n}.th .bb{grid-area:b}.th .x{grid-area:x}}
   /* country rows */
   .geo{display:grid;gap:10px}
   .geo .g{display:grid;grid-template-columns:110px minmax(0,1fr) 64px;gap:12px;align-items:center;font-size:14px}
@@ -591,31 +581,30 @@
     <div style="margin-top:64px" class="rv">
       <span class="eyebrow" style="--eb:var(--sky)"><i>&middot;</i>bing copilot</span>
       <h3 style="margin:16px 0 12px;max-width:760px">cited in one answer out of four</h3>
-      <p class="body" style="max-width:760px">Bing's report doesn't give a before, so this one is a snapshot. Across <b>146 buyer questions</b> where Copilot grounded its answer on hellocustomer.com, the site was cited <b>5,122 times</b> in the window, a citation-weighted share of <b>24.5%</b>. On 65 of those questions it's in at least a quarter of the answers. Type a word to filter, or click a column to sort.</p>
+      <p class="body" style="max-width:760px">Bing's report doesn't give a before, so this one is a snapshot. Across <b>146 buyer questions</b> where Copilot grounded its answer on hellocustomer.com, the citation-weighted share is <b>24.5%</b>. On 65 of those questions the site is in at least a quarter of the answers, and on ten it's in at least 40%. Below, the same report by theme: how the citations split, and how often the site is in the answer for each.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 22px">
         <span class="chip" style="--c:var(--green)">41% · "what is a good net promoter score"</span>
         <span class="chip" style="--c:var(--yellow)">69% · "what triggers a voice of the customer survey"</span>
-        <span class="chip" style="--c:var(--sky)">8 competitor-comparison questions · 222 citations</span>
-        <span class="chip" style="--c:var(--orange)">1,039 citations · "indicateurs clés satisfaction client"</span>
+        <span class="chip" style="--c:var(--sky)">47% · voice of customer survey questions, on average</span>
+        <span class="chip" style="--c:var(--orange)">a third of all citations are french-language questions</span>
       </div>
     </div>
 
-    <div class="bing rv" id="bing">
-      <div class="bing-top">
-        <input type="search" id="bingQ" placeholder="filter questions, e.g. nps, competitor, retail, satisfaction…" aria-label="filter questions">
-        <div class="fchips" id="bingChips">
-          <button data-f="">all</button><button data-f="nps|net promoter">nps</button><button data-f="voice of|voc">voice of customer</button><button data-f="competitor|alternative| vs ">comparisons</button><button data-f="retail">retail</button><button data-f="csat|ces|effort">csat &amp; ces</button><button data-f="feedback loop|loop">feedback loops</button><button data-f="satisfaction client|indicateurs|logiciel|outils|plateformes|mesurer|améliorer|réaliser|calcul">french</button>
-        </div>
+    <div class="themes rv">
+      <div class="micro" style="margin-bottom:6px">where copilot cites the site, by theme</div>
+      <div class="tkey"><span><i></i>share of all citations</span><span><i class="a"></i>how often the site is in the answer</span></div>
+      <div class="tlist">
+        <div class="th"><div class="n">nps & net promoter score</div><div class="bb"><i style="--w:100%" title="33.8% of citations"></i><i class="a" style="--w:22%" title="in 22.5% of answers"></i></div><div class="x"><span>34%</span><span class="a">22%</span></div></div>
+        <div class="th"><div class="n">satisfaction, csat & effort scores</div><div class="bb"><i style="--w:88%" title="29.7% of citations"></i><i class="a" style="--w:23%" title="in 22.6% of answers"></i></div><div class="x"><span>30%</span><span class="a">23%</span></div></div>
+        <div class="th"><div class="n">voice of customer surveys</div><div class="bb"><i style="--w:10%" title="3.4% of citations"></i><i class="a" style="--w:47%" title="in 47.2% of answers"></i></div><div class="x"><span>3%</span><span class="a">47%</span></div></div>
+        <div class="th"><div class="n">cx strategy & retail experience</div><div class="bb"><i style="--w:55%" title="18.7% of citations"></i><i class="a" style="--w:26%" title="in 26.2% of answers"></i></div><div class="x"><span>19%</span><span class="a">26%</span></div></div>
+        <div class="th"><div class="n">feedback loops & automation</div><div class="bb"><i style="--w:22%" title="7.3% of citations"></i><i class="a" style="--w:26%" title="in 25.9% of answers"></i></div><div class="x"><span>7%</span><span class="a">26%</span></div></div>
+        <div class="th"><div class="n">choosing a platform (comparisons)</div><div class="bb"><i style="--w:12%" title="4.0% of citations"></i><i class="a" style="--w:24%" title="in 23.7% of answers"></i></div><div class="x"><span>4%</span><span class="a">24%</span></div></div>
+        <div class="th"><div class="n">everything else</div><div class="bb"><i style="--w:9%" title="3.1% of citations"></i><i class="a" style="--w:28%" title="in 28.1% of answers"></i></div><div class="x"><span>3%</span><span class="a">28%</span></div></div>
       </div>
-      <div class="bscroll"><table class="btable">
-        <thead><tr><th data-k="q">question copilot was answering</th><th class="r" data-k="c">citations</th><th data-k="s" class="r">share of answers</th></tr></thead>
-        <tbody id="bingBody"></tbody>
-      </table></div>
-      <div class="bfoot"><span id="bingCount"></span><button id="bingMore">show all 146</button></div>
-      <span class="src"><b>Source</b> Bing Webmaster Tools, AI search citations report, 4 September 2026. Share = the proportion of Copilot answers to that question that cited hellocustomer.com. Green bars are 30% or more. Competitor names in the questions are masked.</span>
+      <span class="src"><b>Source</b> Bing Webmaster Tools, AI search citations report, 4 September 2026, 146 questions grouped by theme. Grey = this theme's share of every citation the site earned. Teal = across the theme's questions, the proportion of Copilot answers that cited the site.</span>
     </div>
-  </div>
-</section>
+  </section>
 
 <!-- ═══ 06 TAKEAWAYS ═══ -->
 <section id="takeaways">
@@ -681,7 +670,6 @@ var POS_B=[38.7, 40.1, 39.3, 42.5, 47.2, 45.1, 39.5, 37.7, 37.8, 37.0, 39.8, 45.
 var AI_B=[150, 140, 135, 108, 75, 53, 53, 75, 120, 109, 119, 98, 64, 77, 125], AI_A=[425, 358, 298, 185, 204, 424, 559, 474, 386, 333, 235, 228, 322, 340, 353, 319, 278, 169, 190, 297, 288, 308, 306, 243, 158, 181, 311, 367];
 var AI_DB=["2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-23", "2026-05-24", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-30", "2026-05-31", "2026-06-01"], AI_DA=["2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01"];
 var Q_B=[["luminus", 10.5, 1], ["colora", 4.7, 1], ["securitas", 2.3, 1], ["csat", 2.0, 0], ["customer effort score", 1.9, 0], ["voice of the customer", 1.6, 0], ["securitas logo", 1.6, 1], ["customer satisfaction score", 1.6, 0], ["retail customer experience", 1.2, 0], ["nps", 1.1, 0], ["klanttevredenheid", 1.1, 0], ["binckbank", 0.9, 1]], Q_A=[["customer effort score", 2.6, 0], ["retail customer experience", 2.3, 0], ["csat", 1.9, 0], ["voice of the customer", 1.6, 0], ["klanttevredenheid", 1.6, 0], ["klanttevredenheid meten", 1.4, 0], ["net promoter score", 1.4, 0], ["nps score", 1.1, 0], ["klanttevredenheidsonderzoek", 1.1, 0], ["voice of customer", 0.9, 0], ["what is customer effort score", 0.8, 0], ["voice of the customer survey", 0.7, 0]];
-var BING=[["indicateurs clés satisfaction client", 1039, 25.87], ["nps calculation", 359, 20.8], ["nps scores", 350, 21.57], ["tips for better customer feedback loops in business", 163, 32.15], ["nps score range", 158, 26.33], ["good customer experience in retail", 123, 35.55], ["csat", 120, 0.77], ["nps rating", 119, 16.55], ["nps formula", 109, 11.71], ["cx strategy", 101, 33.89], ["customer audit", 95, 30.55], ["indicateurs clés amélioration satisfaction client", 83, 29.23], ["[competitor] vs [competitor] enterprise customer experience management comparison", 81, 24.11], ["net promoter score calculation", 80, 22.66], ["retail feedback", 66, 12.2], ["what triggers a voice of the customer survey? choose all that apply.", 63, 69.23], ["ces score", 61, 19.49], ["[competitor] competitors comparison management consulting", 59, 30.26], ["how to create a customer experience strategy", 57, 26.64], ["calculate nps", 55, 23.5], ["how to build a customer experience strategy", 54, 27.55], ["what is a good nps", 52, 38.81], ["large companies customer journey management team structure", 50, 33.78], ["effectieve retailstrategieën klantbetrokkenheid verhogen", 47, 33.81], ["what is a good Net Promoter Score", 46, 40.71], ["nps score interpretation", 45, 22.17], ["customer experience metrics", 45, 18.6], ["net promoter score formula", 42, 23.73], ["retail experience", 39, 17.41], ["AI optimization companies customer feedback practices", 38, 8.19], ["aligner équipes satisfaction client", 31, 1.34], ["voc survey", 30, 32.61], ["nps scoring", 30, 10.34], ["indicateurs satisfaction client suivi relation gérant", 30, 26.79], ["customer experience strategy", 29, 19.46], ["what is the voc survey timing? choose all that apply.", 28, 43.75], ["digitale klantervaring telecomsector België beste opties", 27, 25.47], ["customer experience strategy framework", 27, 23.89], ["customer effort score", 26, 6.0], ["whats a good nps score", 25, 32.47], ["nps customer satisfaction", 24, 14.12], ["nps satisfaction", 24, 25.0], ["csat score", 23, 2.64], ["[competitor] alternatives reasons", 23, 22.12], ["customer experience transformation steps", 22, 11.89], ["consumer insights platforms user engagement post-implementation", 21, 11.41], ["the voice of the customer survey takes about ________ to complete.", 20, 35.71], ["inclure indicateurs satisfaction clients contrat-cadre", 20, 21.51], ["nps percentage", 20, 32.79], ["customer experience meten", 19, 22.62], ["nps score scale", 18, 12.5], ["automate customer feedback collection", 18, 24.66], ["réaliser étude de satisfaction engageante", 18, 25.71], ["feedback automation event-based triggers operational survey programs", 17, 26.56], ["[competitor] vs [competitor] privacy-first first-party data collection consumer brands incentives survey management", 17, 36.17], ["real time customer support automation solutions feedback capture", 17, 12.59], ["cx maturity model", 16, 22.22], ["cx level", 16, 45.71], ["VOC marketing meaning", 16, 21.62], ["what is a good nps score", 16, 28.07], ["[competitor] vs [competitor] privacy-first first-party data collection consumer incentives survey management", 15, 22.39], ["nps score formula", 15, 25.86], ["défis collecte analyse feedback client", 15, 23.08], ["meilleures plateformes analyse digitale banques comportement clients en ligne", 15, 22.06], ["nps 4", 15, 36.59], ["nps detractor score", 14, 26.42], ["factors good customer experience retail", 13, 31.71], ["measure customer experience improvements CRM", 13, 22.81], ["logiciel market in[competitor]gence anticiper tendances consommateurs retail", 13, 32.5], ["mesurer satisfaction client efficacité support", 13, 20.63], ["customer insights experimentation business analytics", 13, 16.88], ["customer feedback software reduce churn improve retention", 12, 38.71], ["measure customer experience web mobile", 12, 13.95], ["top digital customer experience solutions telecom Belgium", 12, 14.63], ["[competitor] vs [competitor] real-time customer feedback experience management comparison", 12, 22.22], ["retail customer experience", 11, 12.22], ["how to set up continuous customer feedback loop", 11, 37.93], ["plateformes feedback client gestion réponses efficaces", 11, 21.15], ["najlepsze narzędzia do badania opinii z zaawansowaną analityką", 11, 22.45], ["défis suivi NPS CSAT", 11, 23.91], ["lire interpréter enquêtes satisfaction clients automobile", 11, 20.37], ["trusted platforms unify customer employee feedback", 11, 21.15], ["calculating net promoter score", 10, 26.32], ["NPS betekenis", 10, 7.41], ["indicateurs clés satisfaction client amélioration", 10, 29.41], ["[competitor] AI product feedback analysis competitors strongest platforms", 10, 20.41], ["logiciel analyse écarts commentaires IA", 9, 32.14], ["real-time consumer insight tools marketing campaigns", 9, 1.47], ["customer experience week 2026", 9, 14.75], ["outils marketing feedback humain IA générative", 9, 31.03], ["how consumer insights leaders understand customer demand", 9, 37.5], ["[competitor] customer experience platform CX telecom monitoring", 8, 21.62], ["companies switch from [competitor] consumer research", 8, 20.0], ["how do you calculate nps", 8, 17.78], ["voice of customer survey", 8, 34.78], ["calculating nps score", 8, 28.57], ["closing the loop with NPS detractors at scale", 8, 16.67], ["good net promoter score", 8, 50.0], ["voice of the customer survey", 8, 33.33], ["main customer journey metrics", 7, 28.0], ["AI customer reviews and recommendations", 7, 29.17], ["beste digital analytics software complexe klantreizen financiële dienstverlening", 7, 22.58], ["benchmarks indépendants satisfaction client gestion d’actifs institutionnelle", 7, 23.33], ["customer journey insights business strategy", 7, 17.5], ["real-time customer support automation solutions feedback capture", 7, 19.44], ["how to measure customer churn", 7, 50.0], ["[competitor] vs [competitor] real-time customer feedback comparison", 7, 11.11], ["good NPS score", 6, 27.27], ["customer effort score (ces)", 6, 28.57], ["ways to improve customer experience in retail United States", 6, 24.0], ["nps berekenen", 6, 37.5], ["Accenture customer effort score evaluation", 6, 25.0], ["how to calculate nps score", 6, 15.79], ["meilleurs outils mesure satisfaction client", 6, 25.0], ["what is a good nps score?", 5, 26.32], ["CSAT score definition and improvement strategies", 5, 41.67], ["leading customer experience solutions text feedback", 5, 19.23], ["how to calculate nps", 5, 14.29], ["customer experience management strategy steps", 5, 31.25], ["améliorer Net Promoter Score entreprise", 5, 35.71], ["clv", 5, 0.63], ["nps number", 5, 45.45], ["automating response workflows customer feedback solutions", 5, 26.32], ["Influitive customer evidence company evaluation mistakes misunderstandings", 5, 15.62], ["customer attrition", 5, 11.63], ["metrics to measure emotional engagement in customer journeys", 5, 31.25], ["how is net promoter score calculated", 4, 44.44], ["fastest customer feedback loop platforms retail service", 4, 14.81], ["important metrics in customer analytics", 4, 20.0], ["top consumer decision-making platforms", 4, 8.51], ["how to calculate net promoter score", 4, 7.41], ["Telecom customer experience management platforms", 4, 12.12], ["fournisseurs analyse digitale insights audience fidélisation abonnés", 4, 14.81], ["CX leaders omnichannel feedback decision making", 4, 36.36], ["continuous customer feedback loop setup", 4, 28.57], ["most reliable NLP platforms customer feedback analysis", 3, 9.38], ["measure improvement in customer experience", 3, 33.33], ["réaliser étude de satisfaction engageante méthodes conseils", 3, 33.33], ["impact valeur annuelle contrat sur Customer Lifetime Value CLV", 3, 20.0], ["how to calculate Net Promoter Score NPS", 3, 17.65], ["gestion expérience client post-vente France support succès client ventes plateformes séparées intégration temps réel", 3, 14.29], ["outils pilotage croissance satisfaction client", 3, 21.43], ["NLP platforms customer feedback analysis", 3, 23.08], ["najlepsze aplikacje do badań satysfakcji klientów z funkcjami analitycznymi", 3, 23.08], ["impact marketing mix valeur vie client", 3, 50.0], ["customer nps", 3, 13.64]];
 
 /* ---------- reveal ---------- */
 var els=document.querySelectorAll('.rv');
@@ -743,15 +731,6 @@ svg.addEventListener('mousemove',function(ev){var r=svg.getBoundingClientRect();
 svg.addEventListener('mouseleave',function(){dot.setAttribute('opacity',0);hideTip(tip);});}
 draw('aiBefore',AI_B,AI_DB,'gB');draw('aiAfter',AI_A,AI_DA,'gA');})();
 
-/* ---------- bing explorer ---------- */
-(function(){var body=document.getElementById('bingBody'),q=document.getElementById('bingQ'),chips=document.querySelectorAll('#bingChips button'),more=document.getElementById('bingMore'),count=document.getElementById('bingCount');var filter='',text='',sortK='c',sortDir=-1,limit=30;
-function rows(){var re=filter?new RegExp(filter,'i'):null,t=text.toLowerCase();var r=BING.filter(function(x){return (!re||re.test(x[0]))&&(!t||x[0].toLowerCase().indexOf(t)>-1)});r.sort(function(a,b){var ka=sortK==='q'?a[0].toLowerCase():(sortK==='c'?a[1]:a[2]),kb=sortK==='q'?b[0].toLowerCase():(sortK==='c'?b[1]:b[2]);return (ka>kb?1:ka<kb?-1:0)*sortDir});return r;}
-function render(){var r=rows(),shown=r.slice(0,limit);body.innerHTML=shown.map(function(x){return '<tr><td class="q" title="'+x[0].replace(/"/g,'&quot;')+'">'+x[0]+'</td><td class="r">'+x[1].toLocaleString('en-GB')+'</td><td class="sh"><div style="display:flex;align-items:center;gap:10px"><div class="bar" style="flex:1"><i class="'+(x[2]>=30?'hi':'')+'" style="width:'+Math.min(100,x[2])+'%"></i></div><span style="font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;width:46px;text-align:right">'+x[2].toFixed(1)+'%</span></div></td></tr>'}).join('');var cites=r.reduce(function(a,x){return a+x[1]},0),w=r.length?r.reduce(function(a,x){return a+x[1]*x[2]},0)/cites:0;count.textContent=shown.length+' of '+r.length+' questions · '+cites.toLocaleString('en-GB')+' citations · weighted share '+w.toFixed(1)+'%';more.style.display=r.length>limit?'':'none';more.textContent='show all '+r.length;}
-q.addEventListener('input',function(){text=q.value;limit=30;render();});
-chips.forEach(function(b){b.addEventListener('click',function(){chips.forEach(function(x){x.classList.remove('on')});b.classList.add('on');filter=b.dataset.f;limit=30;render();});});chips[0].classList.add('on');
-document.querySelectorAll('.btable th').forEach(function(th){th.addEventListener('click',function(){var k=th.dataset.k;if(sortK===k)sortDir*=-1;else{sortK=k;sortDir=k==='q'?1:-1;}render();});});
-more.addEventListener('click',function(){limit=999;render();});
-render();})();
 })();
 </script>
 </body>
