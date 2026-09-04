@@ -225,7 +225,7 @@
   @media(max-width:620px){.qrow{grid-template-columns:minmax(0,1fr) 90px}}
 
   /* build inventory counters */
-  .inv{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+  .inv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
   .tile{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 19px 17px}
   .tile .v{font-family:var(--display);font-weight:800;font-size:38px;letter-spacing:-.05em;line-height:1;margin:8px 0 6px}
   .tile .v small{font-size:20px;letter-spacing:-.03em}
@@ -487,32 +487,28 @@
     </div>
 
     <div class="inv rv">
-      <div class="tile"><div class="micro">pages rebuilt</div><div class="v" data-count="98">0</div><div class="d">marketing pages and customer stories, in three languages, on a new shell</div></div>
-      <div class="tile"><div class="micro">legacy posts retired</div><div class="v" data-count="158">0</div><div class="d">drafted and 301'd to the page that answers the same question. Blog from 280 posts to 119.</div></div>
+      <div class="tile"><div class="micro">pages rebuilt</div><div class="v"><small>~</small><span data-count="100">0</span></div><div class="d">marketing pages and customer stories on one new shell, built around what the company is rather than what it has</div></div>
+      <div class="tile"><div class="micro">languages</div><div class="v" data-count="3">0</div><div class="d">English, French and Dutch on every page and every article, written from native glossaries and reviewed line by line</div></div>
+      <div class="tile"><div class="micro">intent per page</div><div class="v" data-count="1">0</div><div class="d">one job, one keyword and one title a stranger would type, for every page on the site</div></div>
       <div class="tile"><div class="micro">comparison pages</div><div class="v"><span data-count="50">0</span><small>+</small></div><div class="d">"best X software" lists and alternatives pages, in three languages, with more being added every month</div></div>
-      <div class="tile"><div class="micro">schema &amp; machine files</div><div class="v" data-count="75">0</div><div class="d">templates with Organization, WebSite, SoftwareApplication and FAQ schema, deduplicated. Plus llms.txt, IndexNow and an updated robots.txt.</div></div>
-      <div class="tile"><div class="micro">pages with faq schema</div><div class="v" data-count="30">0</div><div class="d">FAQ sections and FAQPage markup on every product page, three languages</div></div>
-      <div class="tile"><div class="micro">slow urls fixed</div><div class="v" data-count="168">0</div><div class="d">mobile LCP over 2.5s in Search Console. One render-blocking script no page used.</div></div>
-      <div class="tile"><div class="micro">weeks to launch</div><div class="v" data-count="7">0</div><div class="d">from first draft page to the new site on the production URLs, 18 July</div></div>
+      <div class="tile"><div class="micro">pages with faq schema</div><div class="v" data-count="30">0</div><div class="d">FAQ sections and FAQPage markup on every product page, in all three languages</div></div>
+      <div class="tile"><div class="micro">weeks to launch</div><div class="v" data-count="7">0</div><div class="d">from the first draft page to the new site on the production URLs, 18 July</div></div>
     </div>
 
     <div class="rules rv">
-      <div class="rule" style="--c:var(--pink)"><i>1</i><div><h4>one intent per page, named the way people search</h4><p>Product pages were named after features ("CX Signals", "Forward-looking alerts"). Buyers search for "customer feedback alerts" and "CX reporting". Every page got one job and a title that a stranger would type.</p></div></div>
+      <div class="rule" style="--c:var(--pink)"><i>1</i><div><h4>one intent per page, named the way people search</h4><p>Pages used to be named after features. Buyers search for problems. Every page got one job and a title a stranger would type.</p></div></div>
       <div class="rule" style="--c:var(--orange)"><i>2</i><div><h4>the category in the title, everywhere</h4><p>"Voice of customer platform" in the homepage title, the hubs, the schema and the llms.txt. If you want to be filed under a category, say the category.</p></div></div>
       <div class="rule" style="--c:var(--yellow)"><i>3</i><div><h4>be the comparison</h4><p>Buyers ask for alternatives to whatever they already use, and models answer with lists. So the site now has the honest list, category by category, in three languages, and the set keeps growing. Comparison pages went from 9% to 22% of all AI impressions.</p></div></div>
-      <div class="rule" style="--c:var(--green)"><i>4</i><div><h4>answer the question on the page</h4><p>FAQ sections with FAQPage schema on every product page. BlogPosting plus FAQPage on every article. And an NPS calculator built into the article that explains NPS, so the page does the thing it describes.</p></div></div>
-      <div class="rule" style="--c:var(--teal)"><i>5</i><div><h4>entities, not just keywords</h4><p>The site already had schema. It had three overlapping blocks per page, a LinkedIn sameAs pointing at a company that no longer exists, and no FAQ on ten product pages. Fixed on 75 templates.</p></div></div>
-      <div class="rule" style="--c:var(--orange)"><i>6</i><div><h4>retire ruthlessly</h4><p>Everything that no longer earned its place was retired and redirected to the surviving page on the same subject. Less for the crawler to waste a budget on, and the model reads a site that agrees with itself.</p></div></div>
-      <div class="rule" style="--c:var(--cyan)"><i>7</i><div><h4>speak the language properly</h4><p>French and Dutch built from native glossaries mined from the client's own older writing, not translated. Then reviewed line by line: nearly 4,000 fixes, including one listicle that claimed a competitor's product was end-of-life. It wasn't.</p></div></div>
-      <div class="rule" style="--c:var(--yellow)"><i>8</i><div><h4>make it fast and easy to read by machines</h4><p>A render-blocking script loaded on every page and used by none was removed. llms.txt, IndexNow, hreflang with x-default, self-referencing canonicals, a sitemap with nothing stale in it.</p></div></div>
+      <div class="rule" style="--c:var(--green)"><i>4</i><div><h4>answer the question on the page</h4><p>FAQ sections with FAQPage schema on every product page, article schema on every post, and an interactive calculator inside the article that explains the metric it calculates. The page does the thing it describes.</p></div></div>
+      <div class="rule" style="--c:var(--teal)"><i>5</i><div><h4>one clean description for machines</h4><p>Organization, WebSite and SoftwareApplication schema, deduplicated and consistent across the site. llms.txt, IndexNow, an updated robots.txt, hreflang, clean canonicals, and a render-blocking script nobody used removed.</p></div></div>
+      <div class="rule" style="--c:var(--sky)"><i>6</i><div><h4>retire ruthlessly</h4><p>Everything that no longer earned its place was retired and redirected to the surviving page on the same subject. Less for the crawler to waste a budget on, and the model reads a site that agrees with itself.</p></div></div>
     </div>
 
-    <div class="tl rv">
-      <div style="--c:var(--pink)"><b>june</b><p>Positioning. New shell, 15 product pages, homepage with interactive Listen, Analyse and Act sections.</p></div>
-      <div style="--c:var(--orange)"><b>16 to 18 july</b><p>French and Dutch variants of every page. Go-live on the production URLs, 18 July.</p></div>
-      <div style="--c:var(--yellow)"><b>18 to 19 july</b><p>Blog refresh, schema overhaul, legacy sweep, Core Web Vitals, llms.txt.</p></div>
-      <div style="--c:var(--green)"><b>august</b><p>Comparison project, CX article series, full French and Dutch language reviews, IndexNow.</p></div>
-      <div style="--c:var(--teal)"><b>september</b><p>Measure. Everything on this page is from the 4 September exports.</p></div>
+    <div class="tl rv" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+      <div style="--c:var(--pink)"><b>june</b><p>Positioning, then the new site.</p></div>
+      <div style="--c:var(--orange)"><b>july</b><p>Three languages, then live on the production URLs on 18 July.</p></div>
+      <div style="--c:var(--yellow)"><b>august</b><p>Comparison pages, new articles, language reviews, the machine-readable layer.</p></div>
+      <div style="--c:var(--teal)"><b>september</b><p>First measurement. Everything on this page is from the 4 September exports.</p></div>
     </div>
   </div>
 </section>
@@ -632,9 +628,9 @@
       <div class="take rv"><span class="chip k" style="--c:var(--pink)">positioning</span><h3>positioning is a search decision</h3><p>The category name in the title did more than any single page. Before you write anything, pick the word buyers and models already use for what you are, and then say it, plainly, in the places machines read first.</p></div>
       <div class="take rv"><span class="chip k" style="--c:var(--yellow)">architecture</span><h3>one intent per page, and mean it</h3><p>Feature names squatting on keywords, three schema blocks disagreeing with each other, ten product pages with no FAQ. None of it is glamorous to fix. All of it is what a crawler and a model actually see.</p></div>
       <div class="take rv"><span class="chip k" style="--c:var(--green)">content</span><h3>be the comparison</h3><p>Buyers ask "alternatives to X" and models answer with a list. Write the honest list yourself, in every language you sell in. The comparison pages went from a tenth of AI visibility to nearly a quarter in six weeks.</p></div>
-      <div class="take rv"><span class="chip k" style="--c:var(--teal)">hygiene</span><h3>retire more than you add</h3><p>158 posts and 63 old case-study pages redirected. Less for the crawler to waste a budget on, and the model reads a site that agrees with itself. Cleaning up did as much as building.</p></div>
+      <div class="take rv"><span class="chip k" style="--c:var(--teal)">hygiene</span><h3>retire more than you add</h3><p>Everything that no longer earned its place was redirected to the page that answers the same question. Less for the crawler to waste a budget on, and the model reads a site that agrees with itself. Cleaning up did as much as building.</p></div>
     </div>
-    <p class="body muted rv" style="max-width:760px;margin-top:40px">I did this hands-on: the positioning, the pages, the schema, the redirects, the calculator inside the NPS article. With Claude, extensively, which is how one person rebuilds a site in three languages in seven weeks and then reviews four thousand lines of French and Dutch. And I'll say it once more because it matters: this is seven weeks of data. It's enough to show the direction, not the destination. If you'd like the same done to yours, the button is below.</p>
+    <p class="body muted rv" style="max-width:760px;margin-top:40px">I did this hands-on: the positioning, the pages, the schema, the redirects, the calculator inside the article. With Claude, extensively, which is how one person rebuilds a site in three languages in seven weeks. And I'll say it once more because it matters: this is seven weeks of data. It's enough to show the direction, not the destination. If you'd like the same done to yours, the button is below.</p>
   </div>
 </section>
 
