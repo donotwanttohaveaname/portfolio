@@ -19,6 +19,7 @@ Anna works with European B2B SaaS companies as a fractional (part-time, senior) 
 
 - EUR 288k new ARR from ads in twelve months at 4.7:1 LTV:CAC, across five European markets on a EUR 250k yearly budget, for an enterprise sales-led platform with a six-month-plus sales cycle.
 - 2.8x more visibility in Google's AI Overviews and other generative surfaces within a month of starting AEO work, measured across the whole site rather than one market.
+- Hello Customer website rebuild (live 18 July 2026): Google AI Overview impressions about 3x per day within six weeks, pages cited in AI answers from 198 to 315, US AI impressions 7.6x; average Google position from 38 to 18 year on year with customer-logo junk traffic cut from 23% of impressions to under 1%; 24.5% citation share in Bing Copilot. Full write-up: https://awesomemarketer.fi/case-studies/hello-customer/
 - 49% of open pipeline already touched by ads before sales opened a conversation, via account-targeted paid LinkedIn.
 - 50% of a EUR 1M open pipeline ad-influenced as a solo marketer, via paid LinkedIn and thought leadership content.
 - 200 leads at EUR 20 CPL on a EUR 4k one-month budget for a new product launch. 5% lead-to-meeting blended, 15% on LinkedIn.
@@ -50,6 +51,7 @@ Anna builds her own client reporting dashboards with Claude: budget pacing, per-
 
 - [Homepage](https://awesomemarketer.fi/): services, results, brands worked with, recommendations, and how she works.
 - [About](https://awesomemarketer.fi/about/): background, how she works with teams, values, and a full summary.
+- [Case study: Hello Customer](https://awesomemarketer.fi/case-studies/hello-customer/): a B2B SaaS website repositioned as a voice of customer platform and rebuilt SEO and AEO first, in three languages. Seven weeks after launch: 3x more Google AI Overview impressions per day, average Google position from page 4 to page 2, 24% citation share in Bing Copilot across 146 buyer questions.
 
 ## Contact
 
