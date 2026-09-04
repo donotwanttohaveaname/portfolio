@@ -342,12 +342,18 @@
   @media(max-width:860px){.leads{grid-template-columns:1fr}}
 
   /* ceo quote */
-  .ceo{max-width:880px}
-  .ceo .eyebrow{margin-bottom:22px}
-  .ceo .eyebrow i{font-family:var(--display);font-size:18px;line-height:1;padding-top:6px}
-  .ceo blockquote{font-family:var(--display);font-weight:500;font-size:clamp(20px,2.1vw,27px);letter-spacing:-.025em;line-height:1.35;color:var(--ink);margin:0 0 22px}
+  .ceo{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);gap:44px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px 36px;box-shadow:var(--shadow)}
+  .ceo-photo{position:relative;border-radius:16px;overflow:hidden;background:var(--surface);aspect-ratio:4/4.2}
+  .ceo-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .ceo-photo.missing{display:none}
+  .ceo-cap{position:absolute;left:12px;bottom:12px;font-family:var(--script);font-size:17px;color:#fff;background:rgba(10,10,10,.55);padding:3px 10px;border-radius:999px}
+  .ceo-body .eyebrow{margin-bottom:20px}
+  .ceo-body .eyebrow i{font-family:var(--display);font-size:18px;line-height:1;padding-top:6px}
+  .ceo blockquote{font-family:var(--display);font-weight:500;font-size:clamp(17px,1.5vw,20px);letter-spacing:-.015em;line-height:1.45;color:var(--ink);margin:0 0 20px}
   .ceo .who{font-size:14.5px;color:var(--muted)}
   .ceo .who b{display:block;font-family:var(--display);font-weight:700;color:var(--ink);font-size:16px;letter-spacing:-.02em}
+  .ceo:has(.ceo-photo.missing){grid-template-columns:1fr;max-width:880px}
+  @media(max-width:860px){.ceo{grid-template-columns:1fr;gap:22px;padding:22px}.ceo-photo{aspect-ratio:4/3;max-width:420px}}
 
   /* takeaways */
   .takes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
@@ -467,6 +473,23 @@
           <div class="ph" style="display:none"><div class="m">chatgpt</div><div class="q">"what is best voice of customer platform"</div><div class="ph-note">screenshot pending: img/chatgpt-best-voc-platform.png</div></div>
         </div>
         <div class="cap"><span class="eng" style="--c:var(--teal)">chatgpt</span><p><b>"what is best voice of customer platform."</b> In a shortlist of six, alongside the two largest enterprise suites and the newer AI-native tools, tagged "European mid-market" with "a strong balance of collection, AI analysis and action". In the July baseline, unbranded English prompts mentioned Hello Customer zero times out of fifteen.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CEO QUOTE ═══ -->
+<section class="tight" id="words">
+  <div class="wrap">
+    <div class="ceo rv">
+      <div class="ceo-photo">
+        <img src="img/bram-and-anna.jpg" alt="Bram De Vos and Anna Pogrebniak on a canal bridge in Bruges" loading="lazy" onerror="this.parentNode.classList.add('missing')">
+        <span class="ceo-cap">bram and me, bruges</span>
+      </div>
+      <div class="ceo-body">
+        <span class="eyebrow" style="--eb:var(--pink)"><i>&ldquo;</i>in his words</span>
+        <blockquote>I have worked with Anna for just over a year now, in a weekly rhythm that has never needed enforcing. She takes ownership of a subject and from that moment it is hers: she thinks it through, builds it with her own hands, and comes back with something finished.<br><br>Part of what makes that possible is that she keeps teaching herself. She opens the new tools, tries them on something real, and forms her own view of what they are worth, so the work stays current while the ground underneath marketing keeps moving.<br><br>The practical effect is momentum. Ideas that would otherwise sit on a list get built, tested and out the door. A year of that compounds into something you can see, and into a kind of trust that no proposal can promise in advance.</blockquote>
+        <div class="who"><b>Bram De Vos</b>CEO, Hello Customer</div>
       </div>
     </div>
   </div>
@@ -666,17 +689,6 @@
       <div class="lead rv" style="--c:var(--green)"><div class="q">&ldquo;Found online while searching for a Belgian/European NPS provider&rdquo;</div><div class="w">insurance company <span class="chip" style="--c:var(--green)">now an opportunity</span></div></div>
     </div>
     <p class="body muted rv" style="max-width:720px;margin-top:28px">Small numbers, early days. But this is what the search and AI work looks like from the sales side: people naming the AI they asked, and describing the exact search we built the site to win.</p>
-  </div>
-</section>
-
-<!-- ═══ CEO QUOTE ═══ -->
-<section class="tight band" id="words">
-  <div class="wrap">
-    <div class="ceo rv">
-      <span class="eyebrow" style="--eb:var(--pink)"><i>&ldquo;</i>in his words</span>
-      <blockquote>I have worked with Anna for just over a year now, in a weekly rhythm that has never needed enforcing. She takes ownership of a subject and from that moment it is hers: she thinks it through, builds it with her own hands, and comes back with something finished. Part of what makes that possible is that she keeps teaching herself. She opens the new tools, tries them on something real, and forms her own view of what they are worth, so the work stays current while the ground underneath marketing keeps moving. The practical effect is momentum. Ideas that would otherwise sit on a list get built, tested and out the door. A year of that compounds into something you can see, and into a kind of trust that no proposal can promise in advance.</blockquote>
-      <div class="who"><b>Bram De Vos</b>CEO, Hello Customer</div>
-    </div>
   </div>
 </section>
 
