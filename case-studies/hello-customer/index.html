@@ -195,7 +195,9 @@
   .hero h1 .grey{color:var(--muted-2);display:block;text-wrap:balance;max-width:16ch}
   .hero h1{text-wrap:balance}
   .hero .lede{max-width:720px;margin-bottom:34px}
-  .hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+  .hero-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 36px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+  @media(max-width:900px){.hero-meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:560px){.hero-meta{grid-template-columns:1fr}}
   .hero-meta div{font-size:14px;color:var(--muted);line-height:1.45}
   .hero-meta b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-bottom:4px;font-weight:700}
   .hero-meta div span{color:var(--ink);font-weight:500}
