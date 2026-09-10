@@ -316,11 +316,15 @@
   .cs-link:hover{text-decoration:underline}
   a.proof{cursor:pointer;transition:transform .16s}
   a.proof:hover{transform:translateY(-1px)}
-  .proof.cs{flex-direction:column;align-items:stretch;gap:0;padding-bottom:12px}
+  .proof.cs{flex-direction:column;align-items:stretch;gap:0;padding-bottom:13px;transition:transform .16s,box-shadow .16s}
+  .proof.cs:hover{box-shadow:0 14px 30px -18px rgba(0,0,0,.28)}
   .proof.cs .pnum{display:flex;align-items:center;gap:12px}
-  .proof.cs .how{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:11px;padding-top:10px;border-top:1px dashed rgba(0,0,0,.16);font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--ink);line-height:1.35}
-  .proof.cs .how i{font-style:normal;font-family:var(--display);font-size:16px;flex:none;transition:transform .16s}
-  .proof.cs:hover .how i{transform:translateX(5px)}
+  .proof.cs .how{display:flex;align-items:center;gap:10px;margin-top:12px;padding-top:12px;border-top:1px dashed rgba(0,0,0,.16);font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:-.015em;color:var(--ink);line-height:1.25}
+  .proof.cs .cschip{flex:none;font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;background:var(--acc,var(--pink));color:var(--ink);padding:4px 7px;border-radius:5px}
+  .proof.cs .howt{flex:1;min-width:0}
+  .proof.cs .how i{font-style:normal;flex:none;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:15px;transition:transform .18s,background .18s,color .18s}
+  .proof.cs:hover .how i{transform:translateX(4px);background:var(--acc,var(--pink));color:var(--ink)}
+  @media(max-width:420px){.proof.cs .how{flex-wrap:wrap}.proof.cs .howt{flex-basis:100%;order:3}}
 
   /* ══ PROBLEM ══ */
   .prob{display:grid;grid-template-columns:1fr 1.06fr;gap:56px;align-items:center}
@@ -632,7 +636,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>retargeting &amp; light abm</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>ad concepts, copy &amp; creative</li>
         </ul>
-        <a class="proof cs" href="/case-studies/trustmary/"><span class="pnum"><b>~€90k</b>a month live across eight ad accounts</span><span class="how">how i got 112 sales meetings at ~€150 each<i>&rarr;</i></span></a>
+        <a class="proof cs" href="/case-studies/trustmary/"><span class="pnum"><b>~€90k</b>a month live across eight ad accounts</span><span class="how"><span class="cschip">case study</span><span class="howt">how i got 112 sales meetings at ~€150 each</span><i>&rarr;</i></span></a>
       </div>
 
       <div class="card c-orange rv">
@@ -647,7 +651,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>schema &amp; structured data</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>content llms actually cite</li>
         </ul>
-        <a class="proof cs" href="/case-studies/hello-customer/"><span class="pnum"><b>2.8×</b>more AI-search visibility after starting AEO</span><span class="how">how i got a b2b saas cited by chatgpt and google<i>&rarr;</i></span></a>
+        <a class="proof cs" href="/case-studies/hello-customer/"><span class="pnum"><b>2.8×</b>more AI-search visibility after starting AEO</span><span class="how"><span class="cschip">case study</span><span class="howt">how i rebuilt a b2b saas site for google and chatgpt</span><i>&rarr;</i></span></a>
       </div>
     </div>
 
