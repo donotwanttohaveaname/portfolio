@@ -109,20 +109,9 @@
   .btn-stack em{font-family:var(--script);font-style:normal;font-weight:500;font-size:15px;opacity:.88;margin-top:1px}
 
   /* type */
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:11px;
-    font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.2em;
-    text-transform:uppercase;color:var(--ink);
-  }
-  .eyebrow i{
-    font-style:normal;display:grid;place-items:center;width:27px;height:27px;flex:none;
-    border-radius:9px;background:var(--eb,var(--pink));color:var(--ink);
-    font-size:11.5px;letter-spacing:0;font-weight:700;
-  }
-  .eyebrow::after{
-    content:'';height:2px;width:38px;border-radius:2px;flex:none;
-    background:linear-gradient(90deg,var(--eb,var(--pink)),transparent);
-  }
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-size:14px;font-weight:700;letter-spacing:-.01em;text-transform:none;color:var(--ink);background:var(--eb,var(--pink));padding:5px 10px 6px;border-radius:6px;line-height:1.2}
+  .eyebrow i{font-style:normal;font-weight:500;opacity:.72;letter-spacing:0;display:inline;width:auto;height:auto;background:none;color:inherit;font-size:inherit}
+  .eyebrow::after{content:none}
   .giveback .eyebrow{color:#fff}
   h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.035em;line-height:1.02}
   h1{font-size:clamp(42px,7.4vw,100px);letter-spacing:-.045em}
@@ -328,7 +317,6 @@
   .giveback{background:var(--ink);color:#fff}
   .giveback h2{color:#fff}
   .giveback .lede{color:rgba(255,255,255,.6)}
-  .giveback .eyebrow{color:rgba(255,255,255,.42)}
   .gb{display:grid;grid-template-columns:1fr 1fr;gap:22px}
   .gbc{
     border-radius:24px;padding:38px 34px 32px;position:relative;overflow:hidden;color:var(--ink);
@@ -484,7 +472,7 @@
 
   <div class="wrap">
     <section class="ab-sec rv">
-      <span class="eyebrow" style="--eb:var(--yellow)"><i>&middot;</i>things i also build</span>
+      <span class="eyebrow" style="--eb:var(--yellow)"><i>also</i>things i also build</span>
       <h2>pages, widgets and tools</h2>
       <p class="ab-lede">Alongside the fractional work I build the interactive things: a report you can filter, a calculator that sits inside the article explaining it, a landing page for one campaign, or a whole site rebuilt around how people and AI both read it. One-off, or alongside the rest of the work.</p>
       <div class="builds">

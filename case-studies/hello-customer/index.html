@@ -151,9 +151,9 @@
   .btn-stack em{font-family:var(--script);font-style:normal;font-weight:500;font-size:15px;opacity:.88;margin-top:1px}
 
   /* type */
-  .eyebrow{display:inline-flex;align-items:center;gap:11px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
-  .eyebrow i{font-style:normal;display:grid;place-items:center;width:27px;height:27px;flex:none;border-radius:9px;background:var(--eb,var(--pink));color:var(--ink);font-size:11.5px;letter-spacing:0;font-weight:700}
-  .eyebrow::after{content:'';height:2px;width:38px;border-radius:2px;flex:none;background:linear-gradient(90deg,var(--eb,var(--pink)),transparent)}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-size:14px;font-weight:700;letter-spacing:-.01em;text-transform:none;color:var(--ink);background:var(--eb,var(--pink));padding:5px 10px 6px;border-radius:6px;line-height:1.2}
+  .eyebrow i{font-style:normal;font-weight:500;opacity:.72;letter-spacing:0;display:inline;width:auto;height:auto;background:none;color:inherit;font-size:inherit}
+  .eyebrow::after{content:none}
   h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-.035em;line-height:1.02}
   h1{font-size:clamp(40px,6.4vw,84px);letter-spacing:-.045em}
   h2{font-size:clamp(32px,4.4vw,56px)}
@@ -192,7 +192,7 @@
   .hero{padding:84px 0 60px;text-align:left}
   .hero .eyebrow{margin-bottom:22px}
   .hero h1{max-width:1100px;margin-bottom:26px;font-size:clamp(36px,5.6vw,74px)}
-  .hero h1 .grey{color:var(--muted-2);display:block;text-wrap:balance;max-width:16ch}
+  .hero h1 .grey{color:var(--muted-2);display:block;text-wrap:balance;max-width:22ch}
   .hero h1{text-wrap:balance}
   .hero .lede{max-width:720px;margin-bottom:34px}
   .hero-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 36px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
@@ -348,7 +348,6 @@
   .ceo-photo.missing{display:none}
   .ceo-cap{position:absolute;left:12px;bottom:12px;font-family:var(--script);font-size:17px;color:#fff;background:rgba(10,10,10,.55);padding:3px 10px;border-radius:999px}
   .ceo-body .eyebrow{margin-bottom:20px}
-  .ceo-body .eyebrow i{font-family:var(--display);font-size:18px;line-height:1;padding-top:6px}
   .ceo blockquote{font-family:var(--display);font-weight:500;font-size:clamp(17px,1.5vw,20px);letter-spacing:-.015em;line-height:1.45;color:var(--ink);margin:0 0 20px}
   .ceo .who{font-size:14.5px;color:var(--muted)}
   .ceo .who b{display:block;font-family:var(--display);font-weight:700;color:var(--ink);font-size:16px;letter-spacing:-.02em}
@@ -415,8 +414,8 @@
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="top">
   <div class="wrap">
-    <span class="eyebrow rv" style="--eb:var(--pink)"><i>cs</i>case study · hello customer · b2b saas, belgium</span>
-    <h1 class="rv"><span class="grey">three times the ai visibility in six weeks.</span>here's the rebuild behind it.</h1>
+    <span class="eyebrow rv" style="--eb:var(--pink)"><i>case study</i>hello customer · b2b saas, belgium</span>
+    <h1 class="rv"><span class="grey">three times the ai visibility, twice the google rankings.</span>here's the rebuild behind it.</h1>
     <p class="lede rv">Hello Customer is a voice of customer platform from Belgium. In the summer of 2026 I repositioned the brand, rebuilt the whole website in three languages with search engines and AI answer engines in the room, and then cleaned up everything around it. <b>This is what the first seven weeks look like, with the data.</b> The new site went live on 18 July 2026 and every number here was exported on 4 September, so read it as an early reading, not a final one. SEO compounds; this is the start of the curve.</p>
 
     <div class="trio rv">
@@ -487,7 +486,7 @@
         <span class="ceo-cap">bram and me, bruges</span>
       </div>
       <div class="ceo-body">
-        <span class="eyebrow" style="--eb:var(--pink)"><i>&ldquo;</i>from the client's ceo</span>
+        <span class="eyebrow" style="--eb:var(--pink)"><i>quote</i>from the client's ceo</span>
         <blockquote>I have worked with Anna for just over a year now, in a weekly rhythm that has never needed enforcing. She takes ownership of a subject and from that moment it is hers: she thinks it through, builds it with her own hands, and comes back with something finished.<br><br>Part of what makes that possible is that she keeps teaching herself. She opens the new tools, tries them on something real, and forms her own view of what they are worth, so the work stays current while the ground underneath marketing keeps moving.<br><br>The practical effect is momentum. Ideas that would otherwise sit on a list get built, tested and out the door. A year of that compounds into something you can see, and into a kind of trust that no proposal can promise in advance.</blockquote>
         <div class="who"><b>Bram De Vos</b>CEO, Hello Customer</div>
       </div>
@@ -648,7 +647,7 @@
     </div>
 
     <div style="margin-top:64px" class="rv">
-      <span class="eyebrow" style="--eb:var(--sky)"><i>&middot;</i>bing copilot</span>
+      <span class="eyebrow" style="--eb:var(--sky)"><i>also</i>bing copilot</span>
       <h3 style="margin:16px 0 12px;max-width:760px">cited in one answer out of four</h3>
       <p class="body" style="max-width:760px">Bing's report doesn't give a before, so this one is a snapshot. Across <b>146 buyer questions</b> where Copilot grounded its answer on hellocustomer.com, the citation-weighted share is <b>24.5%</b>. On 65 of those questions the site is in at least a quarter of the answers, and on ten it's in at least 40%. Below, the same report by topic: how often the site is in the answer when the question is about each one.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 22px">
