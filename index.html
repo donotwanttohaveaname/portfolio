@@ -316,6 +316,11 @@
   .cs-link:hover{text-decoration:underline}
   a.proof{cursor:pointer;transition:transform .16s}
   a.proof:hover{transform:translateY(-1px)}
+  .proof.cs{flex-direction:column;align-items:stretch;gap:0;padding-bottom:12px}
+  .proof.cs .pnum{display:flex;align-items:center;gap:12px}
+  .proof.cs .how{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:11px;padding-top:10px;border-top:1px dashed rgba(0,0,0,.16);font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--ink);line-height:1.35}
+  .proof.cs .how i{font-style:normal;font-family:var(--display);font-size:16px;flex:none;transition:transform .16s}
+  .proof.cs:hover .how i{transform:translateX(5px)}
 
   /* ══ PROBLEM ══ */
   .prob{display:grid;grid-template-columns:1fr 1.06fr;gap:56px;align-items:center}
@@ -627,7 +632,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>retargeting &amp; light abm</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>ad concepts, copy &amp; creative</li>
         </ul>
-        <div class="proof"><b>~€90k</b>a month live across eight ad accounts</div>
+        <a class="proof cs" href="/case-studies/trustmary/"><span class="pnum"><b>~€90k</b>a month live across eight ad accounts</span><span class="how">how i got 112 sales meetings at ~€150 each<i>&rarr;</i></span></a>
       </div>
 
       <div class="card c-orange rv">
@@ -642,7 +647,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>schema &amp; structured data</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>content llms actually cite</li>
         </ul>
-        <div class="proof"><b>2.8×</b>more AI-search visibility after starting AEO</div>
+        <a class="proof cs" href="/case-studies/hello-customer/"><span class="pnum"><b>2.8×</b>more AI-search visibility after starting AEO</span><span class="how">how i got a b2b saas cited by chatgpt and google<i>&rarr;</i></span></a>
       </div>
     </div>
 
@@ -904,6 +909,7 @@
 </svg>
         <p>Impressions in Google's AI Overviews and other generative surfaces. Nearly three times as many in the four weeks after the AEO work started as in the four weeks before, across the whole site rather than one cherry-picked market.</p>
         <span class="who">b2b saas · three languages, five markets</span>
+        <a class="cs-link" href="/case-studies/hello-customer/">read the full case study &rarr;</a>
       </div>
       <div class="pw num toolcard rv">
         <div class="l">I build my own reporting tools, and they find the details that shape your growth</div>
@@ -1103,6 +1109,7 @@
       <div>anna pogrebniak · fractional growth marketer · © 2026</div>
       <div class="foot-links">
         <a href="/about/">about</a>
+        <a href="/case-studies/">case studies</a>
         <a href="https://www.linkedin.com/in/annapogrebniak/" target="_blank" rel="noopener">linkedin</a>
       </div>
     </div>

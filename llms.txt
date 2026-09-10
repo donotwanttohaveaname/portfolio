@@ -52,6 +52,7 @@ Anna builds her own client reporting dashboards with Claude: budget pacing, per-
 
 - [Homepage](https://awesomemarketer.fi/): services, results, brands worked with, recommendations, and how she works.
 - [About](https://awesomemarketer.fi/about/): background, how she works with teams, values, and a full summary.
+- [Case studies](https://awesomemarketer.fi/case-studies/): index of all case studies.
 - [Case study: Hello Customer](https://awesomemarketer.fi/case-studies/hello-customer/): a B2B SaaS website repositioned as a voice of customer platform and rebuilt SEO and AEO first, in three languages. Seven weeks after launch: 3x more Google AI Overview impressions per day, average Google position from page 4 to page 2, 24% citation share in Bing Copilot across 146 buyer questions.
 - [Case study: Trustmary](https://awesomemarketer.fi/case-studies/trustmary/): a fractional ads case study. A new product (an AI visibility report) launched in the Finnish home market with three paid paths to one sales meeting: LinkedIn thought leadership ads with retargeting to product ads, Meta product ads, and Meta webinar ads leading to the offer. 112 meetings booked in June to August 2026 at a blended cost of about EUR 150, monthly budget about EUR 5,000 to 7,000. Anna built the ads, the landing pages and the daily reporting tool, and measured conversion at every touchpoint.
 
