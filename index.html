@@ -276,6 +276,14 @@
   .bonus-head h3{margin-bottom:0}
   .bonus-head p{color:var(--muted);font-size:15.5px;line-height:1.6;margin-bottom:2px}
   .bonus-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+  .bonus-quote{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:28px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--yellow);border-radius:16px;padding:18px 22px}
+  .bonus-quote q{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.6vw,20px);letter-spacing:-.02em;line-height:1.35;quotes:'\201C' '\201D'}
+  .bonus-quote mark{background:var(--yellow);color:var(--ink);padding:0 5px 1px;border-radius:4px}
+  .bonus-quote .by{display:flex;align-items:center;gap:11px;flex:none}
+  .bonus-quote .av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:13px;color:var(--ink);background:var(--yellow)}
+  .bonus-quote .nm{font-weight:650;font-size:14px;letter-spacing:-.01em;line-height:1.2}
+  .bonus-quote .rl{font-size:12.5px;color:var(--muted-2);line-height:1.2}
+  @media(max-width:760px){.bonus-quote{flex-direction:column;align-items:flex-start;gap:14px}}
   .bl{
     position:relative;display:block;border:1px solid var(--line);border-radius:16px;background:#fff;
     padding:16px 17px 17px;transition:border-color .16s,transform .16s;
@@ -677,6 +685,10 @@
           <p>Structured for AEO and SEO from the first wireframe, and made good to look at.</p>
         </a>
       </div>
+      <div class="bonus-quote">
+        <q>Need a new website and a complete messaging repositioning in a month or two? <mark>Anna is your person!</mark></q>
+        <div class="by"><span class="av">PZ</span><div><div class="nm">Polina Zyaparova</div><div class="rl">Product Marketing Lead, Qt Group</div></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -692,7 +704,7 @@
     <div class="wall rv">
 
       <div class="lg" style="--acc:var(--pink)" tabindex="0">
-        <div class="pop"><div class="tagline">fractional growth · aeo</div><div class="big">2.8×</div><div class="biglabel">more AI-search visibility within a month of starting AEO</div><div class="desc">Starting AEO properly: a run of comparison and category pages, plus the technical groundwork. Four weeks later the site was being quoted across AI Overviews nearly three times as often, and average search position improved in every market.</div></div>
+        <div class="pop"><div class="tagline">fractional growth · aeo</div><div class="big">2.8×</div><div class="biglabel">more AI-search visibility within a month of starting AEO</div><q>A subject handed to her stops being a subject on my list. She thinks it through, builds it with her own hands, and comes back with something finished.</q><div class="by"><span class="av">BD</span><div><div class="nm">Bram De Vos</div><div class="rl">CEO, Hello Customer</div></div></div></div>
         <span class="role">fractional growth</span><span class="mark"><img src="logos/hellocustomer.png" alt="Hello Customer" loading="lazy"></span>
       </div>
 
