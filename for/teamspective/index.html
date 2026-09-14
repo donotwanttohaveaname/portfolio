@@ -498,7 +498,7 @@
   .terms li:first-child{border-top:0;padding-top:0}
   .terms li b{display:block;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.02em;margin-bottom:2px}
   @media(max-width:860px){.price{grid-template-columns:minmax(0,1fr)}.calc{grid-template-columns:repeat(3,minmax(0,1fr))}}
-  @media(max-width:560px){.pcard{padding:22px 18px 20px}.calc b{font-size:20px}.calc>div{padding:12px 10px 10px}.slabels em{display:none}.rate b{font-size:52px}}
+  @media(max-width:560px){.pcard{padding:22px 18px 20px}.calc{gap:6px}.calc b{font-size:18px;letter-spacing:-.04em}.calc>div{padding:11px 8px 10px}.calc .k{letter-spacing:.08em}.slabels em{display:none}.rate b{font-size:52px}}
   .slabels em{font-style:normal}
 
   .closing{padding:100px 0 110px;text-align:center}
@@ -971,7 +971,7 @@
         <div class="slider"><input type="range" id="hrs" min="20" max="40" step="5" value="30" aria-label="hours per month"></div>
         <div class="slabels"><span>20 h</span><span>25 h</span><span>30 h<em> &middot; recommended</em></span><span>35 h</span><span>40 h</span></div>
         <div class="calc">
-          <div class="hi"><div class="k">hours a month</div><b id="c-h">30</b></div>
+          <div class="hi"><div class="k">hours</div><b id="c-h">30</b></div>
           <div><div class="k">per month</div><b id="c-m">&euro;2,700</b></div>
           <div><div class="k">six months</div><b id="c-s">&euro;16,200</b></div>
         </div>
