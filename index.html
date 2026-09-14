@@ -168,6 +168,11 @@
     display:flex;flex-direction:column;gap:11px;align-items:center;text-align:center;
   }
   .lg:hover,.lg.open{border-color:var(--acc,var(--pink));box-shadow:var(--shadow);transform:translateY(-2px)}
+  .wall .lg{justify-content:center}
+  .lg .lg-cs{display:inline-flex;align-items:center;gap:6px;margin-top:3px;font-family:var(--display);font-weight:600;font-size:13.5px;letter-spacing:-.01em;line-height:1;padding:8px 14px 9px;border-radius:999px;border:1.5px solid rgba(255,15,108,.45);color:var(--pink);background:#fff;transition:background .16s,color .16s,border-color .16s,transform .16s;white-space:nowrap}
+  .lg .lg-cs:hover,.lg .lg-cs:focus-visible{background:var(--pink);border-color:var(--pink);color:#fff;transform:translateY(-1px)}
+  .lg .lg-cs span{transition:transform .16s}
+  .lg .lg-cs:hover span{transform:translateX(2px)}
   .lg .role{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted-2);font-weight:700}
   .lg .mark{display:flex;align-items:center;justify-content:center;min-height:50px;width:100%}
   .lg .mark img{height:auto;max-height:34px;max-width:min(100%,172px);width:auto;height:auto;object-fit:contain}
@@ -706,12 +711,12 @@
 
       <div class="lg" style="--acc:var(--pink)" tabindex="0">
         <div class="pop"><div class="tagline">fractional growth · aeo</div><div class="big">2.8×</div><div class="biglabel">more AI-search visibility within a month of starting AEO</div><q>A subject handed to her stops being a subject on my list. She thinks it through, builds it with her own hands, and comes back with something finished.</q><div class="by"><span class="av">BD</span><div><div class="nm">Bram De Vos</div><div class="rl">CEO, Hello Customer</div></div></div></div>
-        <span class="role">fractional growth</span><span class="mark"><img src="logos/hellocustomer.png" alt="Hello Customer" loading="lazy"></span>
+        <span class="role">fractional growth</span><span class="mark"><img src="logos/hellocustomer.png" alt="Hello Customer" loading="lazy"></span><a class="lg-cs" href="/case-studies/hello-customer/">case study <span aria-hidden="true">&rarr;</span></a>
       </div>
 
       <div class="lg" style="--acc:var(--orange)" tabindex="0">
         <div class="pop"><div class="tagline">fractional ads</div><q>Technically speaking, I was Anna's client, but it felt more like working together as one team than outsourcing a part of our marketing efforts to her.</q><div class="by"><span class="av">EY</span><div><div class="nm">Erica Ylimäki</div><div class="rl">Growth Marketing, Trustmary</div></div></div></div>
-        <span class="role">fractional ads</span><span class="mark"><img src="logos/trustmary.png" alt="Trustmary" loading="lazy"></span>
+        <span class="role">fractional ads</span><span class="mark"><img src="logos/trustmary.png" alt="Trustmary" loading="lazy"></span><a class="lg-cs" href="/case-studies/trustmary/">case study <span aria-hidden="true">&rarr;</span></a>
       </div>
 
       <div class="lg" style="--acc:var(--yellow)" tabindex="0">
@@ -1225,12 +1230,14 @@
   // logo wall: tap to open on touch / narrow screens, one at a time
   var tiles = document.querySelectorAll('.wall .lg');
   tiles.forEach(function(t){
-    t.addEventListener('click', function(){
+    t.addEventListener('click', function(e){
+      if(e.target.closest('a')) return;
       var wasOpen = t.classList.contains('open');
       tiles.forEach(function(o){o.classList.remove('open')});
       if(!wasOpen) t.classList.add('open');
     });
     t.addEventListener('keydown', function(e){
+      if(e.target.closest('a')) return;
       if(e.key==='Enter'||e.key===' '){ e.preventDefault(); t.click(); }
       if(e.key==='Escape'){ t.classList.remove('open'); }
     });
