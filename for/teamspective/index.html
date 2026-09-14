@@ -535,6 +535,25 @@
   .wy.bonus{grid-column:1/-1;background:var(--yellow);border-color:var(--yellow);box-shadow:none}
   .wy.bonus p{color:var(--ink)}
   .wy.bonus h3{font-size:24px}
+  /* warm hero */
+  .hi-grid{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:56px;align-items:start}
+  .hero h1.hi-big{font-size:clamp(64px,10.6vw,152px);letter-spacing:-.06em;line-height:.9;margin:6px 0 10px;white-space:nowrap;text-wrap:initial;max-width:none}
+  .hi-big .mark{background:linear-gradient(transparent 50%,var(--yellow) 50%,var(--yellow) 82%,transparent 82%);padding:0 .04em;margin-left:-.02em}
+  .wave{display:inline-block;font-size:.62em;margin-left:.12em;vertical-align:.12em;transform-origin:70% 80%;animation:wave 2.2s ease-in-out .5s 2}
+  .hi-big:hover .wave{animation:wave 1.2s ease-in-out 1}
+  @keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(16deg)}20%,40%{transform:rotate(-10deg)}50%{transform:rotate(10deg)}}
+  .hi-script{font-family:var(--script);font-weight:600;font-size:clamp(28px,3vw,38px);line-height:1.1;transform:rotate(-2deg);transform-origin:left;margin:18px 0 28px 6px}
+  .hi-sub{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.2vw,42px);letter-spacing:-.035em;line-height:1.08;max-width:760px;margin-bottom:20px;text-wrap:balance}
+  .hero .hi-grid .lede{max-width:700px;margin-bottom:0}
+  .note{position:relative;margin-top:84px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 24px 20px;box-shadow:var(--shadow-lg);transform:rotate(2.5deg)}
+  .note .tape{position:absolute;top:-13px;left:50%;width:96px;height:26px;margin-left:-48px;background:var(--yellow);opacity:.85;border-radius:3px;transform:rotate(-4deg)}
+  .note img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--pink);margin-bottom:12px}
+  .note p{font-family:var(--script);font-weight:500;font-size:25px;line-height:1.18}
+  .note .sig{margin-top:10px;font-weight:600;font-size:30px}
+  @media(max-width:900px){.hi-grid{grid-template-columns:minmax(0,1fr);gap:28px}.note{max-width:340px;margin:8px 0 0 6px;transform:rotate(1.5deg)}}
+  @media(max-width:520px){.hero h1.hi-big{font-size:15.5vw}}
+  @media(prefers-reduced-motion:reduce){.wave{animation:none!important}}
+
   @media print{
     .nav,.rail,.chapters,.progress,.ptabs,.mtabs,.slider,.slabels{display:none!important}
     .rv{opacity:1!important;transform:none!important}
@@ -567,9 +586,21 @@
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="wrap">
-    <span class="eyebrow rv" style="--eb:var(--pink)"><i>proposal</i>seo + aeo for teamspective</span>
-    <h1 class="rv">six months to make search bring you leads.</h1>
-    <p class="lede rv">Sanna, thank you for the call on 8 September. You asked what I'd do with six months, what would move the needle, and what it would cost, written down so you can share it internally. This is that plan. <b>The short version: the work starts in week one. The audit runs alongside the first fixes, each month ships 10 to 20 pieces and is judged on qualified leads.</b></p>
+    <div class="hi-grid">
+      <div>
+        <span class="eyebrow rv" style="--eb:var(--pink)"><i>made for</i>teamspective</span>
+        <h1 class="hi-big rv">hi <span class="mark">sanna</span><span class="wave" aria-hidden="true">&#128075;</span></h1>
+        <p class="hi-script rv">it was so lovely talking to you!</p>
+        <p class="hi-sub rv">here's how search can start bringing you leads, from week one.</p>
+        <p class="lede rv">Thank you so much for our call on 8 September. I loved hearing about Teamspective and everything you've built in your first six months. You asked what I'd do with six months, what would move the needle and what it would cost, in writing you can share with the team. So I made you this page. <b>The short version: the work starts in week one. The audit runs alongside the first fixes, each month ships 10 to 20 pieces and is judged on qualified leads.</b></p>
+      </div>
+      <aside class="note rv" aria-label="a note from Anna">
+        <span class="tape" aria-hidden="true"></span>
+        <img src="/anna.jpg" alt="Anna Pogrebniak" width="72" height="72">
+        <p>made this one just for you. read it whenever you have a quiet moment, and send me anything that pops up!</p>
+        <p class="sig">anna</p>
+      </aside>
+    </div>
 
     <div class="trio rv">
       <div class="stat"><div class="k">from the first week</div><div class="v">week 1</div><div class="d"><b>work goes live from the start</b>: the first fixes and refreshes ship while the audit runs next to them.</div><div class="bar" style="--c:var(--yellow);--w:30%"></div></div>
