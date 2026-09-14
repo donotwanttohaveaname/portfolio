@@ -78,10 +78,10 @@
   .lede b{color:var(--ink);font-weight:600}
   p.body{font-size:17px;line-height:1.65;color:var(--ink);margin:0 0 18px}
   p.body.muted{color:var(--muted)}
-  .chip{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--ink);background:var(--c,var(--yellow));padding:5px 10px;border-radius:6px}
+  .chip{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:none;font-weight:700;color:var(--ink);background:var(--c,var(--yellow));padding:5px 10px;border-radius:6px}
   .num{display:inline-block;font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:-.045em;line-height:1;color:var(--ink);background:var(--c,var(--yellow));padding:7px 11px 8px;border-radius:6px}
   .hl{background:var(--c,var(--yellow));color:var(--ink);padding:1px 6px 2px;border-radius:4px;font-weight:600}
-  .micro{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted-2)}
+  .micro{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;font-weight:700;color:var(--muted-2)}
   .src{font-size:12.5px;color:var(--muted-2);border-top:1px dashed var(--line-2);padding-top:9px;margin-top:14px;display:inline-block;line-height:1.45}
   .src b{color:var(--muted);font-weight:600}
 
@@ -95,7 +95,7 @@
 
   /* chapter rail (desktop) */
   .chapters{position:fixed;left:22px;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:14px}
-  .chapters a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted-2);transition:color .2s}
+  .chapters a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;font-weight:700;color:var(--muted-2);transition:color .2s}
   .chapters a i{width:10px;height:10px;border-radius:50%;border:2px solid var(--line-2);background:#fff;flex:none;transition:background .2s,border-color .2s;font-style:normal}
   .chapters a span{opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s;white-space:nowrap}
   .chapters a:hover span,.chapters a.on span{opacity:1;transform:none}
@@ -114,13 +114,13 @@
   @media(max-width:900px){.hero-meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
   @media(max-width:560px){.hero-meta{grid-template-columns:1fr}}
   .hero-meta div{font-size:14px;color:var(--muted);line-height:1.45}
-  .hero-meta b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-bottom:4px;font-weight:700}
+  .hero-meta b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;color:var(--muted-2);margin-bottom:4px;font-weight:700}
   .hero-meta div span{color:var(--ink);font-weight:500}
 
   /* headline stat trio */
   .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:52px}
   .stat{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 24px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-  .stat .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);font-weight:700}
+  .stat .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;color:var(--muted-2);font-weight:700}
   .stat .v{font-family:var(--display);font-weight:800;font-size:clamp(44px,4.8vw,64px);letter-spacing:-.055em;line-height:.95;margin:12px 0 10px}
   .stat .v.grad{background:linear-gradient(96deg,var(--orange) 0%,var(--pink) 62%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .stat .d{font-size:14px;color:var(--muted);line-height:1.45}
@@ -135,10 +135,10 @@
   .rcpt .shot img{width:100%;height:100%;object-fit:contain;background:#0F0F10}
   .rcpt .shot .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:30px;color:#fff;gap:10px}
   .rcpt .shot .ph .q{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.03em;line-height:1.15}
-  .rcpt .shot .ph .m{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:700}
+  .rcpt .shot .ph .m{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;color:rgba(255,255,255,.55);font-weight:700}
   .rcpt .shot .ph .ph-note{font-size:12px;color:rgba(255,255,255,.45);font-family:var(--mono);margin-top:auto}
   .rcpt .cap{padding:16px 18px 18px;display:flex;gap:12px;align-items:flex-start}
-  .rcpt .cap .eng{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--ink);background:var(--c,var(--yellow));padding:4px 8px;border-radius:5px;flex:none;margin-top:2px}
+  .rcpt .cap .eng{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;font-weight:700;color:var(--ink);background:var(--c,var(--yellow));padding:4px 8px;border-radius:5px;flex:none;margin-top:2px}
   .rcpt .cap p{font-size:14px;color:var(--muted);line-height:1.45}
   .rcpt .cap p b{color:var(--ink);font-weight:600}
   .rcpt.wide{grid-column:1/-1}
@@ -197,7 +197,7 @@
   /* timeline strip */
   .tl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:40px}
   .tl div{border-top:3px solid var(--c,var(--pink));padding-top:12px}
-  .tl b{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:6px}
+  .tl b{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:none;font-weight:700;display:block;margin-bottom:6px}
   .tl p{font-size:13.5px;color:var(--muted);line-height:1.45}
   @media(max-width:760px){.tl{grid-template-columns:1fr 1fr}}
 
@@ -207,7 +207,7 @@
   .chart-card .l{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.02em;margin-bottom:4px}
   .chart-card .s{font-size:13px;color:var(--muted);margin-bottom:12px}
   .chart-card svg{width:100%;height:auto;display:block}
-  .chart-card .cl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;fill:var(--ink);font-weight:700}
+  .chart-card .cl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:none;fill:var(--ink);font-weight:700}
   .chart-card .cx{font-family:var(--mono);font-size:9px;fill:#8E8E93}
   .chart-card .cy{font-family:var(--mono);font-size:9px;fill:#8E8E93}
   .tip{position:absolute;pointer-events:none;background:var(--ink);color:#fff;font-family:var(--mono);font-size:10.5px;padding:6px 9px;border-radius:6px;white-space:nowrap;opacity:0;transform:translate(-50%,-120%);transition:opacity .12s;z-index:5;letter-spacing:.02em}
@@ -321,10 +321,10 @@
   /* decisions timeline */
   .dec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
   .mo{border-top:3px solid var(--c,var(--pink));padding-top:14px}
-  .mo b{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:10px}
+  .mo b{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:none;font-weight:700;display:block;margin-bottom:10px}
   .mo .d{display:grid;gap:10px}
   .mo .d div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 14px;font-size:14px;line-height:1.45}
-  .mo .d div em{font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);font-weight:700;display:block;margin-bottom:4px}
+  .mo .d div em{font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:none;color:var(--muted-2);font-weight:700;display:block;margin-bottom:4px}
   .mo .d div.win{border-color:var(--green);background:rgba(127,173,92,.08)}
   .mo .d div.cut{border-color:var(--orange);background:rgba(240,90,40,.07)}
   @media(max-width:860px){.dec{grid-template-columns:1fr}}
@@ -402,7 +402,7 @@
   .mpanel li::before{content:'';position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:2px;background:var(--c)}
   .mside{display:grid;gap:12px;align-content:start}
   .mbox{border-radius:16px;padding:16px 18px;background:var(--surface);border:1px solid var(--line)}
-  .mbox .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted-2);margin-bottom:8px}
+  .mbox .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;font-weight:700;color:var(--muted-2);margin-bottom:8px}
   .mbox p{font-size:14.5px;line-height:1.5}
   .mbox.pieces{background:var(--c);border-color:transparent}
   .mbox.pieces .k{color:var(--ink);opacity:.7}
@@ -419,10 +419,10 @@
   .ppanel{display:none}
   .ppanel.on{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:30px}
   .ppanel h3{font-size:26px;margin-bottom:6px}
-  .ppanel .eg{font-family:var(--mono);font-size:12px;color:var(--muted-2);margin-bottom:14px}
+  .ppanel .eg{font-family:var(--sans);font-size:13.5px;color:var(--muted);margin-bottom:14px}
   .ppanel p{font-size:15.5px;line-height:1.55;margin-bottom:12px}
   .today{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
-  .today .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted-2);margin:0 0 8px}
+  .today .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;font-weight:700;color:var(--muted-2);margin:0 0 8px}
   .today .k + .tags{margin-bottom:14px}
   .tags{display:flex;flex-wrap:wrap;gap:6px}
   .tags span{font-size:13px;font-weight:600;padding:5px 9px;border-radius:6px;background:var(--c,#fff);border:1px solid var(--line-2);line-height:1.25}
@@ -450,7 +450,7 @@
   .ksec ul,.kwatch ul{list-style:none;display:grid;gap:8px}
   .ksec li,.kwatch li{font-size:14.5px;line-height:1.45;padding-left:18px;position:relative}
   .ksec li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:var(--yellow)}
-  .kwatch li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;border:1.5px solid var(--muted-2)}
+  .kwatch li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:var(--green)}
   .kwatch p{font-size:13.5px;color:var(--muted);margin-top:10px;line-height:1.45}
   @media(max-width:860px){.kpi{grid-template-columns:1fr}}
 
@@ -488,7 +488,7 @@
   .calc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
   .calc>div{border-radius:14px;padding:14px 14px 12px;background:var(--surface);border:1px solid var(--line)}
   .calc>div.hi{background:var(--yellow);border-color:var(--yellow)}
-  .calc .k{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--muted-2)}
+  .calc .k{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:none;font-weight:700;color:var(--muted-2)}
   .calc>div.hi .k{color:var(--ink);opacity:.7}
   .calc b{display:block;font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.045em;line-height:1;margin-top:6px;font-variant-numeric:tabular-nums}
   .rec{font-size:13.5px;color:var(--muted);margin-top:12px}
@@ -501,11 +501,36 @@
   @media(max-width:560px){.pcard{padding:22px 18px 20px}.calc{gap:6px}.calc b{font-size:18px;letter-spacing:-.04em}.calc>div{padding:11px 8px 10px}.calc .k{letter-spacing:.08em}.slabels em{display:none}.rate b{font-size:52px}}
   .slabels em{font-style:normal}
 
-  .closing{padding:100px 0 110px;text-align:center}
+  .closing{padding:100px 0 110px;text-align:center;border-top:1px solid var(--line)}
   .closing h2{margin:14px 0 16px}
   .closing .lede{max-width:640px;margin:0 auto 32px;text-wrap:pretty}
   h2{text-wrap:balance}
   .lede,.fd p,.pr p,.wy p{text-wrap:pretty}
+
+  /* v2: lowercase labels, process, map */
+  .chip{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:-.01em;text-transform:none;padding:4px 9px 5px;line-height:1.2}
+  .micro,.hero-meta b,.stat .k,.mbox .k,.today .k,.calc .k{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:-.01em;text-transform:none;color:var(--muted)}
+  .mbox.pieces .k,.calc>div.hi .k{color:var(--ink)}
+  .slabels{font-family:var(--sans);font-size:12px;letter-spacing:0}
+  .princ{grid-template-columns:repeat(4,minmax(0,1fr))}
+  @media(max-width:1060px){.princ{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:620px){.princ{grid-template-columns:minmax(0,1fr)}}
+  .mpanel h5{display:inline-block;font-family:var(--display);font-size:14px;font-weight:700;letter-spacing:-.01em;background:var(--c);color:var(--ink);padding:3px 9px 4px;border-radius:6px;margin:4px 0 12px}
+  .mpanel h5.alt{background:var(--surface);border:1px solid var(--line-2);margin-top:22px}
+  .proc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .ps{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 16px 16px;box-shadow:var(--shadow)}
+  .ps b{display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--c);font-family:var(--display);font-weight:800;font-size:14px;margin-bottom:12px}
+  .ps h4{font-size:17px;margin-bottom:6px}
+  .ps p{font-size:14px;color:var(--muted);line-height:1.5}
+  @media(max-width:900px){.proc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:620px){.proc{grid-template-columns:minmax(0,1fr)}}
+  .cmap{margin-top:22px;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+  .cmh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;padding:14px 26px;background:var(--surface);border-bottom:1px solid var(--line);font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:-.01em;color:var(--muted)}
+  .cm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;padding:16px 26px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.5}
+  .cm:last-child{border-bottom:0}
+  .cm>div:first-child{color:var(--muted);font-size:14px;border-left:4px solid var(--c);padding-left:14px}
+  .cm>div:first-child b{display:block;color:var(--ink);font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.02em;margin-bottom:3px}
+  @media(max-width:760px){.cmh{display:none}.cm{grid-template-columns:minmax(0,1fr);gap:10px;padding:16px 18px}}
 
   @media print{
     .nav,.rail,.chapters,.progress,.ptabs,.mtabs,.slider,.slabels{display:none!important}
@@ -541,11 +566,11 @@
   <div class="wrap">
     <span class="eyebrow rv" style="--eb:var(--pink)"><i>proposal</i>seo + aeo for teamspective</span>
     <h1 class="rv">six months to make search bring you leads.</h1>
-    <p class="lede rv">Sanna, thank you for the call on 8 September. You asked what I'd do with six months, what would move the needle, and what it would cost, written down so you can share it internally. This is that plan. <b>The short version: fix what already exists before adding anything, build the pages HR buyers use to choose a vendor, and judge every month on qualified leads.</b></p>
+    <p class="lede rv">Sanna, thank you for the call on 8 September. You asked what I'd do with six months, what would move the needle, and what it would cost, written down so you can share it internally. This is that plan. <b>The short version: the work starts in week one. The audit runs alongside the first fixes, each month ships 10 to 20 pieces and is judged on qualified leads.</b></p>
 
     <div class="trio rv">
-      <div class="stat"><div class="k">month one</div><div class="v">audit</div><div class="d"><b>what works, what's broken, what's missing</b> in SEO and AI search, with a baseline to measure against.</div><div class="bar" style="--c:var(--yellow);--w:30%"></div></div>
-      <div class="stat"><div class="k">months two to six</div><div class="v">10&ndash;20</div><div class="d"><b>pieces a month</b>, mostly updates to pages that already exist plus new money pages. Co-written with AI, finished by me.</div><div class="bar" style="--c:var(--orange);--w:65%"></div></div>
+      <div class="stat"><div class="k">from the first week</div><div class="v">week 1</div><div class="d"><b>work goes live from the start</b>: the first fixes and refreshes ship while the audit runs next to them.</div><div class="bar" style="--c:var(--yellow);--w:30%"></div></div>
+      <div class="stat"><div class="k">every month, one to six</div><div class="v">10&ndash;20</div><div class="d"><b>pieces a month</b>, updates to pages you already have plus new money pages. Co-written with AI, finished by me.</div><div class="bar" style="--c:var(--orange);--w:65%"></div></div>
       <div class="stat"><div class="k">main kpi</div><div class="v">leads</div><div class="d"><b>qualified demo requests</b> from HR decision makers who found you through Google or an AI assistant.</div><div class="bar" style="--c:var(--pink);--w:100%"></div></div>
     </div>
 
@@ -577,7 +602,6 @@
       <div class="hd" style="--c:var(--sky)"><i></i>You're positioned as leadership enablement, while buyers still search for surveys, 360 feedback and performance reviews.</div>
       <div class="hd" style="--c:var(--cyan)"><i></i>The competitors are large American companies with thousands of links, so outspending them isn't the plan.</div>
       <div class="hd" style="--c:var(--pink)"><i></i>You want to see the needle move in the first months, in numbers that mean business.</div>
-      <div class="hd key"><i></i>And the one I took most seriously: more blog posts, on their own, won't change anything.</div>
     </div>
   </div>
 </section>
@@ -588,7 +612,7 @@
     <div class="sec-head rv">
       <span class="eyebrow" style="--eb:var(--orange)"><i>02</i>a first look</span>
       <h2>what i noticed before we've even started</h2>
-      <p class="lede">From your public site only, without any access. The month one audit checks each of these against your own data, but they're worth knowing now.</p>
+      <p class="lede">From your public site only, without any access. Most of these get fixed in the first weeks, while the audit checks the rest against your own data.</p>
     </div>
     <div class="scale rv">
       <span><b>241</b>urls in your sitemap</span>
@@ -611,14 +635,16 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow" style="--eb:var(--yellow)"><i>03</i>the approach</span>
-      <h2>why the plan starts with what you already have</h2>
+      <h2>how i'd approach it</h2>
+      <p class="lede">Good SEO covers most of what AI assistants need: the same pages, the same authority. So the plan treats Google and AI search as one job, and the work goes live from the first week.</p>
     </div>
     <div class="princ">
-      <div class="pr rv" style="--c:var(--pink)"><div class="n">1</div><h3>fix before adding</h3><p>With 119 English posts and two drops this year, the site needs to be clearer before it gets bigger. Every existing post gets a decision: keep, update, merge or redirect. Some of your best results in the first months will come from pages you already have.</p></div>
-      <div class="pr rv" style="--c:var(--teal)"><div class="n">2</div><h3>build the pages buyers choose from</h3><p>HR leaders comparing vendors search for alternatives, head-to-head comparisons and best-of lists. AI assistants build their shortlists from the same pages. That's where demo requests come from, so that's where the new work goes.</p></div>
-      <div class="pr rv" style="--c:var(--yellow)"><div class="n">3</div><h3>leads are the scoreboard</h3><p>Impressions and traffic are early signals and we'll watch them. The number that decides whether a month was good is qualified leads who say they found you through Google or an AI assistant.</p></div>
+      <div class="pr rv" style="--c:var(--pink)"><div class="n">1</div><h3>ship from week one</h3><p>Nothing waits for a report. Fixes and refreshes go live while the audit runs next to them, and the audit decides what comes after. You'll see live changes in the first month.</p></div>
+      <div class="pr rv" style="--c:var(--teal)"><div class="n">2</div><h3>fix before adding</h3><p>With 119 English posts and two drops this year, the site needs to be clearer before it gets bigger. Every post gets a decision: keep, update, merge or redirect. AI assistants favour pages that are current, whatever their length.</p></div>
+      <div class="pr rv" style="--c:var(--yellow)"><div class="n">3</div><h3>be the source, and be in the sources</h3><p>HR leaders and AI assistants build shortlists from alternatives pages, comparisons and best-of lists. Teamspective should own those pages on its own site, and be described correctly on the few outside pages the assistants already cite.</p></div>
+      <div class="pr rv" style="--c:var(--green)"><div class="n">4</div><h3>leads are the scoreboard</h3><p>Impressions and traffic move first and we'll watch them. The number that decides whether a month was good is qualified leads who say they found you through Google or an AI assistant.</p></div>
     </div>
-    <p class="body rv" style="max-width:820px;margin-top:34px"><b>About the 10 to 20 pieces a month.</b> You said more blog posts won't change anything, and I agree when they're more of the same. Most of those pieces are pages you already have, rewritten to answer the question better, with fresh facts, clearer structure and links to your product. The new ones are money pages: comparisons, alternatives, industry pages and integration pages. I draft with AI and edit every piece myself against a fixed quality bar, and I release them on a steady schedule. After two drops this year, a steady rhythm is safer than a burst.</p>
+    <p class="body rv" style="max-width:820px;margin-top:34px"><b>About the 10 to 20 pieces a month.</b> Roughly half are pages you already have, rebuilt around the question people search: answer first, fresh facts, a clear structure and links to your product. About a quarter are new money pages: comparisons, alternatives, industry and integration pages. The rest are supporting guides and small tools that keep the site credible on the topics around them. After two drops this year, they go live on a steady rhythm, since Google can react badly to sudden spikes of new pages.</p>
   </div>
 </section>
 
@@ -627,14 +653,14 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow" style="--eb:var(--green)"><i>04</i>the plan</span>
-      <h2>six months, one month at a time</h2>
-      <p class="lede">Month one is the audit and the plan. From month two the work starts, and every month ends with a short report on what shipped and what moved. Click through the months.</p>
+      <h2>six months, shipping every month</h2>
+      <p class="lede">Execution starts in week one and runs all six months. Month one adds the audit alongside the first fixes, and each month ends with a short report on what shipped and what moved. Click through the months.</p>
     </div>
 
     <div class="mx rv">
       <div class="mtabs" role="tablist">
-        <button class="on" style="--c:var(--pink)" data-m="1" role="tab" aria-selected="true"><b>01</b><span>audit and plan</span></button>
-        <button style="--c:var(--orange)" data-m="2" role="tab" aria-selected="false"><b>02</b><span>fix the base</span></button>
+        <button class="on" style="--c:var(--pink)" data-m="1" role="tab" aria-selected="true"><b>01</b><span>first fixes and the audit</span></button>
+        <button style="--c:var(--orange)" data-m="2" role="tab" aria-selected="false"><b>02</b><span>refreshes and positioning</span></button>
         <button style="--c:var(--yellow)" data-m="3" role="tab" aria-selected="false"><b>03</b><span>comparison pages</span></button>
         <button style="--c:var(--green)" data-m="4" role="tab" aria-selected="false"><b>04</b><span>industries and integrations</span></button>
         <button style="--c:var(--teal)" data-m="5" role="tab" aria-selected="false"><b>05</b><span>authority, no link buying</span></button>
@@ -644,41 +670,49 @@
       <div class="mpanel on" data-m="1" style="--c:var(--pink)">
         <div>
           <span class="chip" style="--c:var(--pink)">month 1</span>
-          <h3>audit and plan</h3>
-          <p class="goal">Find out what already brings qualified leads, what's broken, and what's missing, before anything gets written.</p>
+          <h3>first fixes, with the audit alongside</h3>
+          <p class="goal">Get the obvious problems fixed and the first pages improved, while finding out what already brings qualified leads.</p>
+          <h5>ships this month</h5>
           <ul>
-            <li><b>Performance.</b> Sixteen months of Search Console, brand and non-brand split, and the pages that lead to demo requests from companies with 500+ people. The March and May drops get dated against Google's update history.</li>
-            <li><b>Technical set-up.</b> Duplicate and competing pages, language tags, sitemap, titles, internal links, schema, page speed, AI crawler access and Bing Webmaster Tools.</li>
-            <li><b>Positioning.</b> Does the whole site tell the same leadership enablement story, from the homepage to the oldest blog post, in words buyers use?</li>
-            <li><b>SEO keyword plan.</b> A money keyword map built from how HR buyers describe the problem, the industries you win in and the competitors that come up in sales calls.</li>
-            <li><b>Map every existing blog post.</b> Each of the 119 English posts gets a target keyword and a decision: keep, update, merge or redirect.</li>
-            <li><b>Missing money keywords.</b> The buyer searches that have no page on your site yet.</li>
-            <li><b>AEO audit.</b> Around 50 real buyer questions asked in ChatGPT, Google AI Overviews, Perplexity and Copilot. Are you mentioned, cited, described correctly, and which sources and competitors show up instead?</li>
-            <li><b>Measurement.</b> A "how did you hear about us?" field on the demo form if there isn't one, and the baselines we'll compare against.</li>
+            <li><b>Fixes already visible from outside.</b> The four product pages competing with blog posts, the broken Finnish language tags, sitemap dates, doubled title suffixes and the thank-you page in the index.</li>
+            <li><b>Your comparison pages, linked in.</b> Culture Amp, Leapsome and Ennova vs Teamspective get links from the alternatives page, product pages and related posts.</li>
+            <li><b>Crawlers and Bing.</b> AI crawler access checked, Bing Webmaster Tools and IndexNow set up. ChatGPT search runs on Bing, and HR teams in Microsoft companies ask Copilot.</li>
+            <li><b>First refreshes.</b> In week one, Search Console shows which posts sit on pages two and three for money keywords. The best of them get rebuilt first.</li>
+            <li><b>Lead tracking.</b> A "how did you hear about us?" field on the demo form, if there isn't one yet.</li>
+          </ul>
+          <h5 class="alt">the audit, running alongside</h5>
+          <ul>
+            <li><b>Performance.</b> Sixteen months of Search Console, brand and non-brand split, the pages that lead to demo requests from 500+ companies, and the March and May drops dated against Google's updates.</li>
+            <li><b>Positioning.</b> Which words buyers and AI assistants use for what Teamspective does, and whether the site says it the same way on every page.</li>
+            <li><b>SEO keyword plan.</b> A money keyword map from how HR buyers describe the problem, your industries and the competitors in sales calls. Every English post mapped to keep, update, merge or redirect, and the missing money keywords listed.</li>
+            <li><b>AEO audit.</b> Around 50 real buyer questions in ChatGPT, Google AI Overviews, Perplexity and Copilot. Are you mentioned, cited and described correctly? Which competitors and source pages show up instead?</li>
           </ul>
         </div>
         <div class="mside">
-          <div class="mbox pieces"><div class="k">you get</div><b>1 plan</b><p>The audit, a prioritised backlog, the keyword map and the KPI baseline, walked through together on one call.</p></div>
-          <div class="mbox"><div class="k">from your side</div><p>Access to Search Console, analytics, the CMS and CRM source data, plus 30 minutes with sales about who's asking for demos and why they switch.</p></div>
+          <div class="mbox pieces"><div class="k">pieces this month</div><b>10&ndash;20</b><p>Mostly fixes and refreshes of pages you already have.</p></div>
+          <div class="mbox"><div class="k">by the end of the month</div><p>The audit, the keyword map, the question set and one backlog sorted quick wins first, walked through together on a call.</p></div>
+          <div class="mbox"><div class="k">from your side</div><p>Access to Search Console, analytics, the CMS and CRM source data, plus 30 minutes with sales about who asks for demos and why they switch.</p></div>
         </div>
       </div>
 
       <div class="mpanel" data-m="2" style="--c:var(--orange)">
         <div>
           <span class="chip" style="--c:var(--orange)">month 2</span>
-          <h3>fix the base, take the quick wins</h3>
-          <p class="goal">Make the site clear to Google and AI assistants, and push pages that are close to page one over the line.</p>
+          <h3>refresh what's close, and say what you are</h3>
+          <p class="goal">Turn impressions into clicks on pages you already have, and make sure Google and AI assistants file Teamspective under the right category.</p>
+          <h5>ships this month</h5>
           <ul>
-            <li>Technical fixes from the audit, starting with the four product pages that compete with blog posts and the language tags.</li>
-            <li>Positioning pass on the homepage, product pages and the most-visited posts, so they tell one story.</li>
-            <li>Update the posts ranking on pages two and three for money keywords: better answers, fresh facts, clear structure, links to the product.</li>
-            <li>Merge posts that compete with each other, and redirect the ones that no longer serve anyone.</li>
-            <li>Link the comparison pages that already exist into the site, from the alternatives page, product pages and related posts.</li>
+            <li>Posts with lots of impressions and few clicks, rebuilt around the query people type: answer first, a table, an FAQ, fresh sources and a new date. You mentioned keywords with 50,000 impressions a month and almost no traffic, so those go first.</li>
+            <li>Posts that compete for the same search merged, and the ones nobody needs redirected to the closest useful page.</li>
+            <li>Positioning pass: the category words chosen in month one go into the homepage, product page titles, headings and schema.</li>
+            <li>One consistent description for machines: Organization and SoftwareApplication schema with your review rating, FAQ sections on product pages, author and date on every post.</li>
+            <li>Wrong descriptions fixed at the source. If AI assistants repeat an outdated line about you, it usually comes from a profile like G2 or Capterra, and updating it is one of the fastest wins in AI search.</li>
+            <li>The first alternatives page, for the competitor whose users have the most reason to switch right now.</li>
           </ul>
         </div>
         <div class="mside">
-          <div class="mbox pieces"><div class="k">pieces this month</div><b>10&ndash;20</b><p>Mostly updates and merges of pages you already have.</p></div>
-          <div class="mbox"><div class="k">first report</div><p>What shipped, what moved, and the first read on quick wins.</p></div>
+          <div class="mbox pieces"><div class="k">pieces this month</div><b>10&ndash;20</b><p>Rebuilt posts and merges, plus the first money page.</p></div>
+          <div class="mbox"><div class="k">first report</div><p>What shipped, what moved, and the backlog re-ordered by what the first data shows.</p></div>
         </div>
       </div>
 
@@ -686,17 +720,18 @@
         <div>
           <span class="chip" style="--c:var(--yellow)">month 3</span>
           <h3>the pages buyers compare with</h3>
-          <p class="goal">Own the searches of HR leaders in final selection, and the sources AI assistants use to answer them.</p>
+          <p class="goal">Own the searches of HR leaders in final selection, and the pages AI assistants use to answer them.</p>
+          <h5>ships this month</h5>
           <ul>
-            <li>Alternatives pages for the competitors your buyers are leaving, built on the switching reasons sales hears.</li>
-            <li>Teamspective vs pages for the competitors AI assistants already name next to you, fair about where each tool fits better.</li>
-            <li>Best-of lists for your categories refreshed, with a quick answer, a comparison table and who each tool suits.</li>
-            <li>First AEO re-run on the same question set, to see what changed.</li>
+            <li>Alternatives and Teamspective vs pages for the competitors AI assistants name next to you, which aren't always the ones sales meets. Neutral language, and every fact about a competitor cited to their own site.</li>
+            <li>Best-of lists refreshed with a quick answer, a comparison table and who each tool suits, marked up so machines can read the list.</li>
+            <li>A small interactive tool inside one of your most-read guides, for example an eNPS calculator in the eNPS article. At Hello Customer, an NPS calculator inside the article did this job.</li>
+            <li>New pages released one or two at a time across the month.</li>
           </ul>
         </div>
         <div class="mside">
           <div class="mbox pieces"><div class="k">pieces this month</div><b>10&ndash;20</b><p>New comparison pages plus updates to the ones you have.</p></div>
-          <div class="mbox"><div class="k">why now</div><p>A buyer searching "Leapsome alternatives" is already shopping. These pages turn into demo requests faster than anything else on a B2B site.</p></div>
+          <div class="mbox"><div class="k">first re-run</div><p>The same ~50 buyer questions as month one: mentions, citations and how you're described, compared side by side.</p></div>
         </div>
       </div>
 
@@ -705,14 +740,15 @@
           <span class="chip" style="--c:var(--green)">month 4</span>
           <h3>industries and integrations</h3>
           <p class="goal">Show a 500+ company that you already work in their world and their stack.</p>
+          <h5>ships this month</h5>
           <ul>
             <li>Industry pages built from your customer stories: manufacturing with Danfoss, healthcare with Mehiläinen, tech with Silo AI and ZoomInfo. Workflows, problems, compliance and a real example on each.</li>
             <li>Integration pages for Slack, Microsoft Teams, HRIS systems and Okta that explain what data moves, how set-up works and what job it does for a leader.</li>
-            <li>Quarterly refresh of the best-of lists and comparison pages from month three.</li>
+            <li>Comparison pages kept current: when a competitor changes pricing or features, the page changes too. Dates only move when the content does.</li>
           </ul>
         </div>
         <div class="mside">
-          <div class="mbox pieces"><div class="k">pieces this month</div><b>10&ndash;20</b><p>Industry and integration pages, plus the refresh round.</p></div>
+          <div class="mbox pieces"><div class="k">pieces this month</div><b>10&ndash;20</b><p>Industry and integration pages, plus refreshes.</p></div>
           <div class="mbox"><div class="k">good to know</div><p>These searches are small in volume. The people behind them are exactly your buyer.</p></div>
         </div>
       </div>
@@ -722,16 +758,17 @@
           <span class="chip" style="--c:var(--teal)">month 5</span>
           <h3>authority without link buying</h3>
           <p class="goal">Give Google, AI assistants and journalists a reason to cite Teamspective.</p>
+          <h5>ships this month</h5>
           <ul>
             <li>One piece built on Teamspective's own anonymised data, if the data allows it. Original numbers get cited and linked without outreach.</li>
-            <li>Check your G2 and Capterra profiles for accuracy, since AI assistants quote them when they describe you.</li>
-            <li>AI-assisted Finnish and Swedish versions of the best money pages, if Nordic leads are worth it by then.</li>
-            <li>Keep updating the posts that are climbing.</li>
+            <li>Your CEO's event talks turned into pages with the video and a transcript, plus LinkedIn articles. AI assistants cite video and LinkedIn often, and your brand searches already follow those talks.</li>
+            <li>The handful of outside pages AI assistants cite for your buyer questions checked, with a request for a correct description where you're listed wrongly or missing.</li>
+            <li>Finnish and Swedish versions of the best money pages, if Nordic leads are worth it by then, adapted with local sources and examples.</li>
           </ul>
         </div>
         <div class="mside">
-          <div class="mbox pieces"><div class="k">pieces this month</div><b>10&ndash;20</b><p>The data piece, localised money pages and updates.</p></div>
-          <div class="mbox"><div class="k">second AEO re-run</div><p>Same questions, same engines, so the change is comparable.</p></div>
+          <div class="mbox pieces"><div class="k">pieces this month</div><b>10&ndash;20</b><p>The data piece, talk pages, localised money pages and refreshes.</p></div>
+          <div class="mbox"><div class="k">second re-run</div><p>Same questions, same engines, so the change is comparable.</p></div>
         </div>
       </div>
 
@@ -740,9 +777,10 @@
           <span class="chip" style="--c:var(--sky)">month 6</span>
           <h3>measure, double down, plan the next six</h3>
           <p class="goal">Put more time into what brought leads, and less into what didn't.</p>
+          <h5>ships this month</h5>
           <ul>
-            <li>Full re-measure against the month one baseline: leads, non-brand clicks, money keywords on page one and AI visibility.</li>
             <li>More pages of the kind that brought demo requests, and fewer of the rest.</li>
+            <li>Full re-measure against the month one baseline: leads, non-brand clicks, money keywords on page one and AI visibility.</li>
             <li>A plan for the next six months, including an honest answer on whether link building is worth paying for.</li>
           </ul>
         </div>
@@ -752,7 +790,7 @@
         </div>
       </div>
 
-      <div class="mnote">Every piece is co-written with AI and finished by me: fact-checked, edited in your voice, linked into the site and released on a steady schedule.</div>
+      <div class="mnote">The audit sets the first order, and the monthly numbers keep changing it. Every piece goes through the same process, below.</div>
     </div>
   </div>
 </section>
@@ -785,9 +823,9 @@
         <div class="today">
           <div class="k">you have today</div>
           <div class="tags have"><span>360 feedback software</span><span>employee survey tools</span><span>performance review software</span><span>eNPS software</span><span>leadership development software</span></div>
-          <div class="k">candidates to confirm with search data</div>
+          <div class="k">candidates to confirm with search data and your positioning</div>
           <div class="tags todo"><span>people analytics software</span><span>pulse survey tools</span><span>manager effectiveness tools</span></div>
-          <p class="fine">Three of your lists share a keyword with a product page. Month two decides which page owns it.</p>
+          <p class="fine">Three of your lists share a keyword with a product page. Month one decides which page owns it.</p>
         </div>
       </div>
 
@@ -796,12 +834,12 @@
           <h3>alternatives pages</h3>
           <div class="eg">culture amp alternatives · leapsome alternatives</div>
           <p>Built on the real reasons people switch, taken from sales calls: pricing, missing features, poor support, slow set-up, or a tool that grew too heavy for what they need.</p>
-          <p>The person searching is already unhappy with a tool and has a budget. The page has to recognise their reason in the first screen.</p>
+          <p>The person searching is already unhappy with a tool and has a budget. The page has to recognise their reason in the first screen. Competitors whose users are being moved, merged or repriced go first, because those buyers are searching now.</p>
         </div>
         <div class="today">
           <div class="k">you have today</div>
           <div class="tags have"><span>Culture Amp</span><span>Lattice</span><span>Peakon</span><span>Qualtrics</span><span>Viva Glint</span><span>Ennova</span></div>
-          <div class="k">candidates to confirm with search data</div>
+          <div class="k">candidates to confirm with search data and your positioning</div>
           <div class="tags todo"><span>Leapsome</span><span>15Five</span><span>Officevibe</span></div>
           <p class="fine">Most of these exist as blog posts. Month one checks whether they rank, and whether sales hears the reasons they list.</p>
         </div>
@@ -817,9 +855,9 @@
         <div class="today">
           <div class="k">you have today</div>
           <div class="tags have"><span>vs Culture Amp</span><span>vs Leapsome</span><span>vs Ennova</span></div>
-          <div class="k">candidates to confirm with search data</div>
+          <div class="k">candidates to confirm with search data and your positioning</div>
           <div class="tags todo"><span>vs Lattice</span><span>vs Peakon</span><span>vs Qualtrics</span><span>vs Viva Glint</span></div>
-          <p class="fine">The three you have sit under /lp/ with no internal links. A quick win for month two.</p>
+          <p class="fine">The three you have sit under /lp/ with no internal links. They get linked in during month one.</p>
         </div>
       </div>
 
@@ -833,7 +871,7 @@
         <div class="today">
           <div class="k">you have today</div>
           <div class="tags have"><span>leadership enablement for manufacturing</span></div>
-          <div class="k">candidates to confirm with search data</div>
+          <div class="k">candidates to confirm with search data and your positioning</div>
           <div class="tags todo"><span>healthcare</span><span>technology</span><span>professional services</span></div>
           <p class="fine">Your case studies already cover manufacturing, healthcare and tech, so the proof exists.</p>
         </div>
@@ -849,7 +887,7 @@
         <div class="today">
           <div class="k">you have today</div>
           <div class="tags have"><span>Slack</span><span>HRIS post</span><span>Okta post</span></div>
-          <div class="k">candidates to confirm with search data</div>
+          <div class="k">candidates to confirm with search data and your positioning</div>
           <div class="tags todo"><span>Microsoft Teams</span><span>HRIS systems by name</span><span>Okta page</span></div>
           <p class="fine">Which HRIS systems to name depends on what your 500+ customers use. Sales will know.</p>
         </div>
@@ -858,13 +896,33 @@
   </div>
 </section>
 
-<!-- 06 KPIS -->
-<section id="kpis">
+<!-- 06 PROCESS -->
+<section id="process">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--pink)"><i>06</i>kpis</span>
+      <span class="eyebrow" style="--eb:var(--sky)"><i>06</i>how it's made</span>
+      <h2>how every piece gets made</h2>
+      <p class="lede">The same publishing process I run for each Hello Customer article. It's what makes AI-assisted writing safe to publish at 10 to 20 pieces a month.</p>
+    </div>
+    <div class="proc">
+      <div class="ps rv" style="--c:var(--pink)"><b>1</b><h4>brief</h4><p>One target search and one buyer question per piece, with input from sales on how buyers phrase it.</p></div>
+      <div class="ps rv" style="--c:var(--orange)"><b>2</b><h4>draft</h4><p>Co-written with AI from your product facts and customer stories, then rewritten by me in your voice.</p></div>
+      <div class="ps rv" style="--c:var(--yellow)"><b>3</b><h4>fact check</h4><p>Every number, date and competitor claim checked against a current source. Outdated facts cost trust with Google and AI assistants alike.</p></div>
+      <div class="ps rv" style="--c:var(--green)"><b>4</b><h4>publish</h4><p>Answer first, a table where it helps, an FAQ, schema, author and date, and links to the product.</p></div>
+      <div class="ps rv" style="--c:var(--teal)"><b>5</b><h4>check it live</h4><p>Does the page answer the question in a way an AI assistant can quote, with Teamspective named in the answer?</p></div>
+      <div class="ps rv" style="--c:var(--sky)"><b>6</b><h4>link it in</h4><p>Four or five links from existing pages, so no new page goes live on its own.</p></div>
+    </div>
+    <p class="body rv" style="max-width:820px;margin-top:28px"><b>And a refresh rule.</b> Every quarter, the comparison pages get checked for competitor pricing, features, mergers and rebrands, and they change when the facts do.</p>
+  </div>
+</section>
+
+<!-- 07 KPIS -->
+<section id="kpis" class="band">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--pink)"><i>07</i>kpis</span>
       <h2>how we'll know it's working</h2>
-      <p class="lede">We'll follow impressions and traffic, because they move first. The number that decides whether this is worth your money is leads.</p>
+      <p class="lede">Impressions and traffic move first, and they're worth celebrating as early signs. The number that decides whether this is worth your money is leads.</p>
     </div>
 
     <div class="kpi">
@@ -885,30 +943,31 @@
           <ul>
             <li>Non-brand clicks to money pages</li>
             <li>Money keywords on page one of Google</li>
-            <li>Mentions and citations across the AI question set</li>
+            <li>Mentions and citations across ~50 buyer questions, counted separately</li>
+            <li>How AI assistants describe Teamspective</li>
             <li>Demo conversion rate from organic visits</li>
           </ul>
         </div>
         <div class="kwatch rv">
-          <span class="chip" style="--c:#fff">watched, not celebrated</span>
-          <h4>useful context only</h4>
+          <span class="chip" style="--c:var(--green)">early indicators</span>
+          <h4>the first wins to share</h4>
           <ul>
-            <li>Impressions</li>
-            <li>Total traffic</li>
+            <li>Impressions in Google and AI answers</li>
+            <li>Total and non-brand traffic</li>
             <li>Domain rating</li>
           </ul>
-          <p>Targets get set in month one, once we've seen the baseline. Any number I'd promise today would be a guess.</p>
+          <p>These usually move within weeks, so they're the first good news to take to the team. Targets for everything here get set in month one, once we've seen the baseline.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 07 PROOF -->
-<section id="proof" class="band">
+<!-- 08 PROOF -->
+<section id="proof">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--sky)"><i>07</i>proof</span>
+      <span class="eyebrow" style="--eb:var(--sky)"><i>08</i>proof</span>
       <h2>the same approach, seven weeks in</h2>
       <p class="lede">Hello Customer is a voice of customer platform, so survey tech like you. I rebuilt their site with SEO and AI search in mind from the first page, updated the old content that still had value and retired the rest.</p>
     </div>
@@ -934,14 +993,24 @@
         <p class="src">Your site is newer than theirs was, so for Teamspective the work leans less on design and more on content, structure and the pages buyers compare with.</p>
       </div>
     </div>
+
+    <div class="cmap">
+      <div class="cmh rv"><span>what worked at hello customer</span><span>what it means for teamspective</span></div>
+      <div class="cm rv" style="--c:var(--pink)"><div><b>the category in the title, everywhere</b>"Voice of customer platform" in the homepage title, the hubs, the schema and llms.txt.</div><div>Pick the words buyers and AI assistants use for what Teamspective is, then use them the same way in titles, headings and schema. Month one decides how leadership enablement sits next to the survey, 360 and performance review words buyers type.</div></div>
+      <div class="cm rv" style="--c:var(--orange)"><div><b>one intent per page</b>Every page got one job and a title a stranger would type.</div><div>Each of the four product and blog pairs gets one owner page for its keyword, and the other one merges or redirects.</div></div>
+      <div class="cm rv" style="--c:var(--yellow)"><div><b>be the comparison</b>Comparison pages went from 9% to 22% of all AI impressions.</div><div>Your alternatives, vs and best-of pages, made factual, current, connected and easy for machines to read.</div></div>
+      <div class="cm rv" style="--c:var(--green)"><div><b>answer the question on the page</b>FAQ sections everywhere, and a calculator inside the article that explains the metric.</div><div>FAQ sections on product pages, and small tools inside your most-read guides, starting with eNPS.</div></div>
+      <div class="cm rv" style="--c:var(--teal)"><div><b>one clean description for machines</b>Consistent schema, llms.txt, IndexNow, robots, hreflang and clean canonicals.</div><div>Working language tags, honest sitemap dates, one consistent schema description, Bing and IndexNow.</div></div>
+      <div class="cm rv" style="--c:var(--sky)"><div><b>update the old, retire the rest</b>Old pages refreshed where they still answered a real question, redirected where they didn't.</div><div>A keep, update, merge or redirect decision for every one of the 119 English posts.</div></div>
+    </div>
   </div>
 </section>
 
-<!-- 08 WHY ME -->
-<section id="why">
+<!-- 09 WHY ME -->
+<section id="why" class="band">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--orange)"><i>08</i>working together</span>
+      <span class="eyebrow" style="--eb:var(--orange)"><i>09</i>working together</span>
       <h2>why work with me</h2>
     </div>
     <div class="why5">
@@ -954,11 +1023,11 @@
   </div>
 </section>
 
-<!-- 09 PRICING -->
-<section id="pricing" class="band">
+<!-- 10 PRICING -->
+<section id="pricing">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--yellow)"><i>09</i>pricing</span>
+      <span class="eyebrow" style="--eb:var(--yellow)"><i>10</i>pricing</span>
       <h2>simple pricing, flexible hours</h2>
       <p class="lede">An hourly rate, a recommended monthly amount, and room to go up or down as the work needs.</p>
     </div>
@@ -967,7 +1036,7 @@
       <div class="pcard rv">
         <span class="chip" style="--c:var(--pink)">the rate</span>
         <div class="rate"><b>&euro;90</b><span>an hour, excl. VAT</span></div>
-        <p class="rec">I recommend <b>30 hours a month</b>. It fits the audit in month one and 10 to 20 pieces a month after that. Try other amounts:</p>
+        <p class="rec">I recommend <b>30 hours a month</b>. It fits the first fixes and the audit in month one, and 10 to 20 pieces every month. Try other amounts:</p>
         <div class="slider"><input type="range" id="hrs" min="20" max="40" step="5" value="30" aria-label="hours per month"></div>
         <div class="slabels"><span>20 h</span><span>25 h</span><span>30 h<em> &middot; recommended</em></span><span>35 h</span><span>40 h</span></div>
         <div class="calc">
@@ -979,10 +1048,10 @@
       <div class="pcard rv">
         <span class="chip" style="--c:var(--green)">what's in it</span>
         <ul class="terms">
-          <li><b>everything in the plan</b>The audit, keyword plan, AEO audits and re-runs, writing and updating pages, technical fixes with your developer, and a monthly report.</li>
+          <li><b>everything in the plan</b>Execution from week one, the audit, the keyword and question plans, monthly AI re-runs, writing and updating pages, technical fixes with your developer, and a monthly report.</li>
           <li><b>hours flex month to month</b>If a month needs more, or less, we agree it in advance. You only pay for hours worked.</li>
           <li><b>link building is separate</b>And most likely not needed in the first six months. At this stage the website itself can do the heavy lifting: fixing structure, internal links and the pages buyers compare with.</li>
-          <li><b>six months to see it properly</b>SEO takes time to show in leads. Quick wins show earlier, and the monthly reports show the direction from month two.</li>
+          <li><b>six months to see it properly</b>Fixes and refreshes can move within weeks. Comparison pages and AI visibility usually take 60 to 90 days of steady work, and leads follow.</li>
         </ul>
       </div>
     </div>
