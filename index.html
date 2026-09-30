@@ -474,6 +474,18 @@
   .gmr .stars{color:var(--ink);letter-spacing:.08em;font-size:18px;margin:4px 0 6px}
   .gmr .cnt{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.75}
   /* reviews marquee */
+  .am{margin-top:22px;background:var(--orange);border-radius:24px;padding:32px 34px 30px;color:var(--ink)}
+  .am .amtag{display:inline-block;font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:-.01em;background:#fff;color:var(--ink);padding:4px 10px 5px;border-radius:6px;margin-bottom:16px}
+  .am h3{font-size:clamp(22px,2.4vw,32px);margin-bottom:10px;max-width:560px}
+  .am p{font-size:15px;line-height:1.5;opacity:.92;margin-bottom:20px;max-width:520px}
+  .am .go{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--ink);border-radius:999px;padding:13px 21px;font-family:var(--display);font-weight:650;font-size:14.5px;transition:transform .16s;box-shadow:var(--shadow)}
+  .am .go:hover{transform:translateX(3px)}
+  .am .go svg{width:14px;height:14px;color:var(--orange)}
+  .amr{text-align:center;background:#fff;border-radius:20px;padding:22px 18px 20px;box-shadow:var(--shadow)}
+  .am-logo{height:19px;width:auto;margin:0 auto 14px}
+  .amr .big{font-family:var(--display);font-weight:800;font-size:64px;letter-spacing:-.06em;line-height:1}
+  .amr .lbl{font-size:14px;font-weight:600;margin-top:4px}
+  .amr .nxt{font-family:var(--display);font-weight:650;font-size:13.5px;letter-spacing:-.01em;margin-top:12px;padding-top:11px;border-top:1px solid var(--line);color:var(--muted)}
   .mqw{margin-top:18px;display:grid;gap:14px;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
   .mqrow{overflow:hidden}
   .mqt{display:flex;gap:14px;width:max-content;animation:mq 70s linear infinite}
@@ -489,7 +501,7 @@
   .rvw p{font-size:13.5px;line-height:1.5;color:var(--ink);display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
   .rvw:hover p{-webkit-line-clamp:unset}
   @media(prefers-reduced-motion:reduce){.mqt{animation:none;flex-wrap:wrap;width:auto}.mqw{mask-image:none;-webkit-mask-image:none}}
-  @media(max-width:900px){.gb{grid-template-columns:1fr}.gbc{min-height:0}.gmh{grid-template-columns:1fr}.gmr{max-width:260px}}
+  @media(max-width:900px){.gb{grid-template-columns:1fr}.gbc{min-height:0}.gmh{grid-template-columns:1fr}.gmr,.amr{max-width:260px}.am{padding:26px 22px 24px}}
 
   /* ══ TLDR ══ */
   .tldr{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -1085,6 +1097,20 @@
       <div class="mqrow"><div class="mqt"><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--pink)">AG</span><div><b>Adam Gebauer</b><span>28 Aug 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>Anna was the only true mentor that could help me with hands-on marketing solution for our problem. Straight to the point, responsive, fast, just how great marketeer should work. I highly recommend her!</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--orange)">EO</span><div><b>Ekaterina Orlova</b><span>17 Aug 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>Everything went really well. Anna was very professional, knowledgeable, and gave practical, helpful advice. Thank you!</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--yellow)">I</span><div><b>Ihab</b><span>28 Jul 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>Great short call! Learned a lot on Google Ads and multi-channel marketing best practices.</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--green)">RG</span><div><b>Russell Greenhill</b><span>16 Jul 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>Anna and I had a great call. She reviewed all my numbers within my Google Ads and gave advice on how to proceed. She was highly approachable and experienced and gave valuable advice. I'd recommend a call with Anna if you need help with Meta or Google Ads.</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--teal)">D</span><div><b>Deni</b><span>16 Jul 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>I had a pleasant call with Anna. She helped me identify concrete actions to take that will help me resolve my issues.</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--sky)">SA</span><div><b>Saleh A</b><span>11 Jul 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>It was a great session.</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--cyan)">LS</span><div><b>Luisa Sheiko</b><span>1 Jun 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>Anna is very knowledgable in B2B SaaS industry. Her insights helped me a lot with kicking new ads strategy for Meta and LI. Looking forward to apply it and also speak with Anna again. Definitely recommend!</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--pink)">AS</span><div><b>Arun Sharma</b><span>25 May 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>Very knowledgable B2B marketer/mentor. I really appreciated that Anna was honest with me and even recommended a different mentor for me to speak to.</p></div></div></div>
       <div class="mqrow rev"><div class="mqt"><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--orange)">MM</span><div><b>Mayur M Mistry</b><span>19 May 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>The session was quite insightful. Anna was very honest and transparent with the guidance.</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--yellow)">MF</span><div><b>Milad Faili</b><span>4 May 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>Anna was super helpful in giving me strategic GTM feedback and insights as a noob in this space. She provided great resources to check out and even pointed me to other mentors that can give me more specialist support.</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--green)">NS</span><div><b>Natalea Saeb</b><span>29 Apr 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>Anna was very informative on LinkedIn ads. She helped me map out the next steps and answered all my questions very clearly. I'll be working with her more!</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--teal)">DA</span><div><b>Dilip Adityan</b><span>13 Apr 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>Anna is surely a good ideation partner for growth marketing.</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--sky)">JS</span><div><b>Jeel Shah</b><span>7 Apr 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>Anna was extremely helpful with her suggestions! Thank you Anna for your insights!</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--cyan)">J</span><div><b>Jekabs</b><span>23 Mar 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>10/10. Got some great advice, will definitely book another session.</p></div><div class="rvw"><div class="rvh"><span class="av" style="--c:var(--pink)">DR</span><div><b>Danial Ranjha</b><span>11 Mar 2026 · GrowthMentor</span></div><span class="stars">★★★★★</span></div><p>Anna was fantastic to work with. She was incredibly patient and got straight to the point, wasting no time in identifying key areas where I could improve my Facebook ad campaigns. I really appreciated her expertise; even when a specific technical detail wasn't immediately on hand, she dove right in, logged into her own campaigns and found the answer quickly, and gave me the exact guidance I needed. She was a great second pair of eyes to have looking over my ads and gave me much more confidence in my strategy, and tons of next steps to improve them.</p></div></div></div>
     </div>
+    <div class="am rv">
+      <div class="gmh">
+        <div>
+          <span class="amtag">awesome meets &middot; new in 2026</span>
+          <h3>one-to-one networking in helsinki</h3>
+          <p>The newest thing out of the community, and the one I'm most excited about. You tell us what you do and what you're into, we find you one person worth meeting, and the two of you take it from there over lunch, coffee or a walk. No stage, no badges, no circle of small talk.</p>
+          <a class="go" href="https://awesomemeets.com/" target="_blank" rel="noopener">see awesomemeets.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="amr"><img class="am-logo" src="logos/awesome-meets.png" alt="Awesome Meets" loading="lazy"><div class="big">40</div><div class="lbl">people joined round one</div><div class="nxt">round two opens in november</div></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
