@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="c9024d31-0fc1-4dad-97e9-2502daf05b4c"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<title>new ecw.fi: redesign, eight languages and ai visibility · anna pogrebniak</title>
+<meta name="description" content="A proposal for Euro Car Wash: a new ecw.fi built around EasyWash and the OKQ8 numbers, localised into eight languages, and made visible to AI assistants. Measured on qualified leads.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="new ecw.fi: redesign, eight languages and ai visibility · anna pogrebniak">
+<meta property="og:description" content="One project, three workstreams: a new ecw.fi, eight languages, and AI visibility. With a concept homepage you can click through.">
+<meta property="og:image" content="https://awesomemarketer.fi/for/ecw/homepage-top.webp">
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#FF0F6C; --orange:#F05A28; --yellow:#FFAE00; --green:#7FAD5C;
+    --teal:#2BBFB3; --sky:#29B8DC; --cyan:#00AEEF;
+    --ink:#0A0A0A; --bg:#FFFFFF; --muted:#6E6E73; --muted-2:#8E8E93;
+    --line:rgba(0,0,0,.09); --line-2:rgba(0,0,0,.14); --surface:#FAFAFA;
+    --shadow:0 1px 2px rgba(0,0,0,.04), 0 8px 24px -12px rgba(0,0,0,.10);
+    --shadow-lg:0 2px 4px rgba(0,0,0,.04), 0 24px 48px -20px rgba(0,0,0,.16);
+    --maxw:1180px;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    --display:'Inter Tight','Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --script:'Caveat','Bradley Hand',cursive;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:rgba(255,15,108,.22);color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .narrow{max-width:760px}
+
+  .rail{position:fixed;top:0;left:0;right:0;height:4px;z-index:60;display:flex}
+  .rail span{flex:1}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:var(--maxw);margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;gap:30px}
+  .brand{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.03em;display:flex;align-items:center;gap:10px}
+  .brand-dot{width:10px;height:10px;border-radius:50%;background:var(--pink)}
+  .nav-links{display:flex;gap:26px;font-size:15px;color:var(--muted);font-weight:500}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-right{margin-left:auto}
+  @media(max-width:940px){.nav-links{display:none}}
+  .progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--pink);width:0;transition:width .15s linear}
+
+  /* buttons (shared) */
+  .btn{display:inline-flex;align-items:center;gap:11px;border-radius:999px;font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:-.01em;padding:15px 26px;transition:transform .16s ease,box-shadow .16s ease,background .16s;border:1.5px solid transparent;white-space:nowrap;cursor:pointer}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-pink{background:var(--pink);color:#fff;box-shadow:0 8px 20px -8px rgba(255,15,108,.55)}
+  .btn-ghost{border-color:rgba(255,15,108,.45);color:var(--pink);background:#fff}
+  .btn-ghost:hover{border-color:var(--pink);background:rgba(255,15,108,.04)}
+  .btn-sm{padding:11px 20px;font-size:14.5px}
+  .btn-avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none;margin-left:-13px;border:2px solid rgba(255,255,255,.85);background:var(--surface)}
+  .btn-stack{display:flex;flex-direction:column;align-items:flex-start;line-height:1.15}
+  .btn-stack em{font-family:var(--script);font-style:normal;font-weight:500;font-size:15px;opacity:.88;margin-top:1px}
+
+  /* type */
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-size:14px;font-weight:700;letter-spacing:-.01em;text-transform:none;color:var(--ink);background:var(--eb,var(--pink));padding:5px 10px 6px;border-radius:6px;line-height:1.2}
+  .eyebrow i{font-style:normal;font-weight:500;opacity:.72;letter-spacing:0;display:inline;width:auto;height:auto;background:none;color:inherit;font-size:inherit}
+  .eyebrow::after{content:none}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-.035em;line-height:1.02}
+  h1{font-size:clamp(40px,6.4vw,84px);letter-spacing:-.045em}
+  h2{font-size:clamp(32px,4.4vw,56px)}
+  h3{font-size:clamp(21px,2.2vw,28px);letter-spacing:-.03em;line-height:1.12}
+  h4{font-size:17px;letter-spacing:-.02em;line-height:1.25}
+  .lede{font-size:clamp(17px,1.4vw,20px);color:var(--muted);line-height:1.55;letter-spacing:-.01em}
+  .lede b{color:var(--ink);font-weight:600}
+  p.body{font-size:17px;line-height:1.65;color:var(--ink);margin:0 0 18px}
+  p.body.muted{color:var(--muted)}
+  .chip{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:none;font-weight:700;color:var(--ink);background:var(--c,var(--yellow));padding:5px 10px;border-radius:6px}
+  .num{display:inline-block;font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:-.045em;line-height:1;color:var(--ink);background:var(--c,var(--yellow));padding:7px 11px 8px;border-radius:6px}
+  .hl{background:var(--c,var(--yellow));color:var(--ink);padding:1px 6px 2px;border-radius:4px;font-weight:600}
+  .micro{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;font-weight:700;color:var(--muted-2)}
+  .src{font-size:12.5px;color:var(--muted-2);border-top:1px dashed var(--line-2);padding-top:9px;margin-top:14px;display:inline-block;line-height:1.45}
+  .src b{color:var(--muted);font-weight:600}
+
+  /* sections */
+  section{padding:96px 0}
+  section.tight{padding:64px 0}
+  .sec-head{max-width:800px;margin-bottom:40px}
+  .sec-head .eyebrow{margin-bottom:16px}
+  .sec-head h2{margin-bottom:16px}
+  .band{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+  /* chapter rail (desktop) */
+  .chapters{position:fixed;left:22px;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:14px}
+  .chapters a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;font-weight:700;color:var(--muted-2);transition:color .2s}
+  .chapters a i{width:10px;height:10px;border-radius:50%;border:2px solid var(--line-2);background:#fff;flex:none;transition:background .2s,border-color .2s;font-style:normal}
+  .chapters a span{opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s;white-space:nowrap}
+  .chapters a:hover span,.chapters a.on span{opacity:1;transform:none}
+  .chapters a.on{color:var(--ink)}
+  .chapters a.on i{background:var(--ck,var(--pink));border-color:var(--ck,var(--pink))}
+  @media(max-width:1380px){.chapters{display:none}}
+
+  /* hero */
+  .hero{padding:84px 0 60px;text-align:left}
+  .hero .eyebrow{margin-bottom:22px}
+  .hero h1{max-width:1100px;margin-bottom:26px;font-size:clamp(36px,5.6vw,74px)}
+  .hero h1 .grey{color:var(--muted-2);display:block;text-wrap:balance;max-width:16ch}
+  .hero h1{text-wrap:balance}
+  .hero .lede{max-width:720px;margin-bottom:34px}
+  .hero-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 36px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+  @media(max-width:900px){.hero-meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:560px){.hero-meta{grid-template-columns:1fr}}
+  .hero-meta div{font-size:14px;color:var(--muted);line-height:1.45}
+  .hero-meta b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;color:var(--muted-2);margin-bottom:4px;font-weight:700}
+  .hero-meta div span{color:var(--ink);font-weight:500}
+
+  /* headline stat trio */
+  .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:52px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 24px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .stat .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;color:var(--muted-2);font-weight:700}
+  .stat .v{font-family:var(--display);font-weight:800;font-size:clamp(44px,4.8vw,64px);letter-spacing:-.055em;line-height:.95;margin:12px 0 10px}
+  .stat .v.grad{background:linear-gradient(96deg,var(--orange) 0%,var(--pink) 62%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stat .d{font-size:14px;color:var(--muted);line-height:1.45}
+  .stat .d b{color:var(--ink);font-weight:600}
+  .stat .bar{height:8px;border-radius:2px;background:var(--c,var(--pink));margin:14px 0 0;width:var(--w,60%)}
+  @media(max-width:860px){.trio{grid-template-columns:1fr}}
+
+  /* receipts (screenshots) */
+  .receipts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .rcpt{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);display:flex;flex-direction:column}
+  .rcpt .shot{background:#0F0F10;position:relative;aspect-ratio:16/10;overflow:hidden}
+  .rcpt .shot img{width:100%;height:100%;object-fit:contain;background:#0F0F10}
+  .rcpt .shot .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:30px;color:#fff;gap:10px}
+  .rcpt .shot .ph .q{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.03em;line-height:1.15}
+  .rcpt .shot .ph .m{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;color:rgba(255,255,255,.55);font-weight:700}
+  .rcpt .shot .ph .ph-note{font-size:12px;color:rgba(255,255,255,.45);font-family:var(--mono);margin-top:auto}
+  .rcpt .cap{padding:16px 18px 18px;display:flex;gap:12px;align-items:flex-start}
+  .rcpt .cap .eng{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;font-weight:700;color:var(--ink);background:var(--c,var(--yellow));padding:4px 8px;border-radius:5px;flex:none;margin-top:2px}
+  .rcpt .cap p{font-size:14px;color:var(--muted);line-height:1.45}
+  .rcpt .cap p b{color:var(--ink);font-weight:600}
+  .rcpt.wide{grid-column:1/-1}
+  .rcpt.wide .shot{aspect-ratio:21/9}
+  .rcpt.wide .shot{aspect-ratio:21/9}
+  .rcpt.wide .shot img{padding:14px 0}
+  @media(max-width:760px){.receipts{grid-template-columns:1fr}.rcpt.wide .shot{aspect-ratio:1600/935}.rcpt.chat .shot{aspect-ratio:1600/1344}.rcpt.wide .shot img{padding:0}}
+
+  /* before/after positioning */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+  .pos-card{border:1px solid var(--line);border-radius:20px;padding:26px 26px 24px;background:#fff;box-shadow:var(--shadow);position:relative}
+  .pos-card.old{background:var(--surface);box-shadow:none}
+  .pos-card .tag{margin-bottom:18px;display:inline-block}
+  .pos-card .t{font-family:var(--mono);font-size:12px;color:var(--muted-2);line-height:1.5;margin-bottom:12px;word-break:break-word}
+  .pos-card .h{font-family:var(--display);font-weight:700;font-size:clamp(20px,2vw,26px);letter-spacing:-.03em;line-height:1.15;margin-bottom:12px}
+  .pos-card .why{font-size:14px;color:var(--muted);line-height:1.5;border-top:1px solid var(--line);padding-top:12px;margin-top:6px}
+  .pos-card.old .h{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--pink);text-decoration-thickness:3px}
+  @media(max-width:760px){.split{grid-template-columns:1fr}}
+
+  /* diagnosis: query lists */
+  .qwrap{border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);padding:26px 28px 24px}
+  .qhead{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+  .toggle{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+  .toggle button{border:0;background:transparent;font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:-.01em;padding:9px 16px;border-radius:999px;cursor:pointer;color:var(--muted);transition:background .16s,color .16s}
+  .toggle button.on{background:var(--ink);color:#fff}
+  .qlist{display:grid;gap:9px}
+  .qrow{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:14px;align-items:center;font-size:15px;transition:opacity .25s,transform .25s}
+  .qrow .t{display:flex;align-items:center;gap:9px;min-width:0}
+  .qrow .t span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .qrow .t .chip{font-size:8.5px;padding:3px 6px;flex:none}
+  .qrow.junk .t > span:first-child{color:var(--muted-2);text-decoration:line-through;text-decoration-color:var(--orange);text-decoration-thickness:2px}
+  .qrow .b{height:10px;border-radius:2px;background:var(--pink);transition:width .5s cubic-bezier(.16,1,.3,1)}
+  .qrow.junk .b{background:var(--orange);opacity:.55}
+  .qnote{display:flex;gap:14px;align-items:center;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);flex-wrap:wrap}
+  .qnote .num{font-size:26px}
+  .qnote p{font-size:14px;color:var(--muted);line-height:1.45;flex:1;min-width:220px}
+  @media(max-width:620px){.qrow{grid-template-columns:minmax(0,1fr) 90px}}
+
+  /* build inventory counters */
+  .inv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .tile{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 19px 17px}
+  .tile .v{font-family:var(--display);font-weight:800;font-size:38px;letter-spacing:-.05em;line-height:1;margin:8px 0 6px}
+  .tile .v small{font-size:20px;letter-spacing:-.03em}
+  .tile .d{font-size:13.5px;color:var(--muted);line-height:1.4}
+  @media(max-width:980px){.inv{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:520px){.inv{grid-template-columns:1fr}}
+
+  /* rules list */
+  .rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px;margin-top:34px}
+  .rule{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line)}
+  .rule i{font-style:normal;flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-weight:700;background:var(--c,var(--yellow));color:var(--ink)}
+  .rule h4{margin-bottom:4px}
+  .rule p{font-size:14.5px;color:var(--muted);line-height:1.5}
+  @media(max-width:760px){.rules{grid-template-columns:1fr}}
+
+  /* timeline strip */
+  .tl{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:40px}
+  .tl div{border-top:3px solid var(--c,var(--pink));padding-top:12px}
+  .tl b{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:none;font-weight:700;display:block;margin-bottom:6px}
+  .tl p{font-size:13.5px;color:var(--muted);line-height:1.45}
+  @media(max-width:760px){.tl{grid-template-columns:1fr 1fr}}
+
+
+  /* generic chart card */
+  .chart-card{border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:var(--shadow);padding:22px 24px 20px;position:relative}
+  .chart-card .l{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.02em;margin-bottom:4px}
+  .chart-card .s{font-size:13px;color:var(--muted);margin-bottom:12px}
+  .chart-card svg{width:100%;height:auto;display:block}
+  .chart-card .cl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:none;fill:var(--ink);font-weight:700}
+  .chart-card .cx{font-family:var(--mono);font-size:9px;fill:#8E8E93}
+  .chart-card .cy{font-family:var(--mono);font-size:9px;fill:#8E8E93}
+  .tip{position:absolute;pointer-events:none;background:var(--ink);color:#fff;font-family:var(--mono);font-size:10.5px;padding:6px 9px;border-radius:6px;white-space:nowrap;opacity:0;transform:translate(-50%,-120%);transition:opacity .12s;z-index:5;letter-spacing:.02em}
+  .tip b{color:var(--yellow)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:860px){.two{grid-template-columns:1fr}}
+
+  /* pair bars (before/after) */
+  .pairs{display:grid;gap:14px}
+  .pair{display:grid;grid-template-columns:150px minmax(0,1fr) 86px;gap:14px;align-items:center;font-size:14.5px}
+  .pair .n{font-weight:600}
+  .pair .bars{display:grid;gap:4px}
+  .pair .bars i{display:block;height:9px;border-radius:2px;background:rgba(0,0,0,.14);width:var(--w)}
+  .pair .bars i.a{background:var(--pink)}
+  .pair .x{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.04em;text-align:right}
+  .pairs .key{display:flex;gap:16px;font-size:12px;color:var(--muted);margin-bottom:4px}
+  .pairs .key i{display:inline-block;width:14px;height:8px;border-radius:2px;background:rgba(0,0,0,.14);margin-right:6px;vertical-align:middle}
+  .pairs .key i.a{background:var(--pink)}
+  @media(max-width:620px){.pair{grid-template-columns:110px minmax(0,1fr) 56px;font-size:13px}}
+
+  /* bing themes */
+  .themes{border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);padding:24px 26px 20px}
+  .tlist{display:grid;gap:12px}
+  .th{display:grid;grid-template-columns:270px minmax(0,1fr) 60px;gap:16px;align-items:center;font-size:15px}
+  .th .n{font-weight:600;line-height:1.3}
+  .th .bb{display:grid;gap:4px}
+  .th .bb i{display:block;height:12px;border-radius:3px;background:rgba(0,0,0,.14);width:var(--w);transition:width .6s cubic-bezier(.16,1,.3,1)}
+  .th .bb i.a{background:var(--teal)}
+  .th .x{font-family:var(--display);font-weight:800;font-variant-numeric:tabular-nums;text-align:right;font-size:18px;letter-spacing:-.03em}
+  .th .x .a{color:var(--muted)}
+  @media(max-width:720px){.th{grid-template-columns:minmax(0,1fr) 64px;grid-template-areas:"n x" "b b"}.th .n{grid-area:n}.th .bb{grid-area:b}.th .x{grid-area:x}}
+  /* country rows */
+  .geo{display:grid;gap:10px}
+  .geo .g{display:grid;grid-template-columns:110px minmax(0,1fr) 64px;gap:12px;align-items:center;font-size:14px}
+  .geo .g .bb{display:grid;gap:3px}
+  .geo .g .bb i{display:block;height:8px;border-radius:2px;background:rgba(0,0,0,.14);width:var(--w)}
+  .geo .g .bb i.a{background:var(--teal)}
+  .geo .g .x{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:-.04em;text-align:right;white-space:nowrap}
+
+  /* sales: self-reported attribution */
+  .leads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .lead{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
+  .lead .q{font-family:var(--display);font-weight:700;font-size:clamp(19px,1.7vw,23px);letter-spacing:-.03em;line-height:1.2}
+  .lead .w{font-size:13.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:auto}
+  .lead .w .chip{font-size:9px;padding:4px 8px}
+  .lead .tr{font-family:var(--script);font-size:15px;color:var(--muted-2)}
+  @media(max-width:860px){.leads{grid-template-columns:1fr}}
+
+  /* ceo quote */
+  .ceo{max-width:880px}
+  .ceo .eyebrow{margin-bottom:22px}
+  .ceo .eyebrow i{font-family:var(--display);font-size:18px;line-height:1;padding-top:6px}
+  .ceo blockquote{font-family:var(--display);font-weight:500;font-size:clamp(20px,2.1vw,27px);letter-spacing:-.025em;line-height:1.35;color:var(--ink);margin:0 0 22px}
+  .ceo .who{font-size:14.5px;color:var(--muted)}
+  .ceo .who b{display:block;font-family:var(--display);font-weight:700;color:var(--ink);font-size:16px;letter-spacing:-.02em}
+
+  /* takeaways */
+  .takes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .take{border:1px solid var(--line);border-radius:20px;padding:24px 24px 22px;background:#fff;box-shadow:var(--shadow)}
+  .take .k{margin-bottom:12px;display:inline-block}
+  .take h3{margin-bottom:10px;font-size:22px}
+  .take p{font-size:15px;color:var(--muted);line-height:1.55}
+  @media(max-width:760px){.takes{grid-template-columns:1fr}}
+
+
+  /* cta */
+  .cta{padding:100px 0 110px;text-align:center}
+  .cta h2{margin-bottom:16px}
+  .cta .lede{max-width:600px;margin:0 auto 34px}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  footer{padding:32px 0 46px;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+  .foot-links{display:flex;gap:20px}
+  .foot-links a:hover{color:var(--ink)}
+
+  .rv{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+  @media(max-width:900px){section{padding:64px 0}.hero{padding:56px 0 40px}}
+</style>
+<style>
+  /* trustmary-specific */
+  .paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .path{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 22px 20px;box-shadow:var(--shadow);position:relative}
+  .path .k{margin-bottom:14px;display:inline-block}
+  .path h3{font-size:22px;margin-bottom:10px}
+  .path p{font-size:14.5px;color:var(--muted);line-height:1.5}
+  .flow{display:flex;flex-direction:column;gap:6px;margin:18px 0 6px}
+  .flow span{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:500}
+  .flow span i{font-style:normal;flex:none;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;font-family:var(--mono);font-size:10px;font-weight:700;background:var(--c,var(--pink));color:var(--ink)}
+  .flow span.end{font-family:var(--display);font-weight:700;letter-spacing:-.02em}
+  .flow span.end i{background:var(--ink);color:#fff}
+  @media(max-width:860px){.paths{grid-template-columns:1fr}}
+
+  /* funnel explorer */
+  .fx{border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);padding:26px 28px 24px}
+  .fx .tabs{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px;flex-wrap:wrap}
+  .fx .tabs button{border:0;background:transparent;font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:-.01em;padding:9px 16px;border-radius:999px;cursor:pointer;color:var(--muted);transition:background .16s,color .16s}
+  .fx .tabs button.on{background:var(--ink);color:#fff}
+  .steps{display:grid;gap:12px;margin-top:22px}
+  .st{display:grid;grid-template-columns:200px minmax(0,1fr) 120px;gap:14px;align-items:center;font-size:14.5px}
+  .st .n{font-weight:600;line-height:1.3}
+  .st .n small{display:block;font-weight:400;color:var(--muted-2);font-size:12px}
+  .st .b{height:14px;border-radius:3px;background:var(--fc,var(--pink));width:var(--w);transition:width .6s cubic-bezier(.16,1,.3,1);min-width:3px}
+  .st .r{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.03em;text-align:right;white-space:nowrap}
+  .st .r small{display:block;font-family:var(--sans);font-weight:400;font-size:11.5px;color:var(--muted-2);letter-spacing:0}
+  .fxnote{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);line-height:1.5}
+  @media(max-width:620px){.st{grid-template-columns:minmax(0,1fr) 84px;grid-template-areas:"n r" "b b"}.st .n{grid-area:n}.st .b{grid-area:b}.st .r{grid-area:r}}
+
+  /* decisions timeline */
+  .dec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .mo{border-top:3px solid var(--c,var(--pink));padding-top:14px}
+  .mo b{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:none;font-weight:700;display:block;margin-bottom:10px}
+  .mo .d{display:grid;gap:10px}
+  .mo .d div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 14px;font-size:14px;line-height:1.45}
+  .mo .d div em{font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:none;color:var(--muted-2);font-weight:700;display:block;margin-bottom:4px}
+  .mo .d div.win{border-color:var(--green);background:rgba(127,173,92,.08)}
+  .mo .d div.cut{border-color:var(--orange);background:rgba(240,90,40,.07)}
+  @media(max-width:860px){.dec{grid-template-columns:1fr}}
+
+  /* cost per meeting bars */
+  .cpm{display:grid;gap:14px}
+  .cp{display:grid;grid-template-columns:200px minmax(0,1fr) 92px;gap:14px;align-items:center;font-size:14.5px}
+  .cp .n{font-weight:600}
+  .cp .n small{display:block;font-weight:400;color:var(--muted-2);font-size:12px}
+  .cp .b{height:12px;border-radius:3px;background:var(--fc,var(--pink));width:var(--w)}
+  .cp .r{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.03em;text-align:right}
+  @media(max-width:620px){.cp{grid-template-columns:110px minmax(0,1fr) 70px;font-size:13px}}
+
+  /* built list */
+  .built{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .bl{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 22px 20px;box-shadow:var(--shadow)}
+  .bl .k{margin-bottom:12px;display:inline-block}
+  .bl h3{font-size:21px;margin-bottom:10px}
+  .bl ul{list-style:none;display:grid;gap:8px;margin-top:6px}
+  .bl li{font-size:14px;color:var(--muted);line-height:1.45;padding-left:16px;position:relative}
+  .bl li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:2px;background:var(--c,var(--pink))}
+  @media(max-width:860px){.built{grid-template-columns:1fr}}
+  .pairs.pm .pair{grid-template-columns:90px minmax(0,1fr) 120px}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-bottom:10px}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px}
+</style>
+<style>
+  /* proposal */
+  .hero h1{max-width:980px}
+  .heard{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .hd{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;font-size:15.5px;line-height:1.5;display:flex;gap:12px;align-items:flex-start}
+  .hd i{font-style:normal;flex:none;width:10px;height:10px;border-radius:3px;background:var(--c,var(--pink));margin-top:7px}
+  .hd.key{grid-column:1/-1;background:var(--yellow);border-color:var(--yellow);font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.02em}
+  .hd.key i{background:var(--ink)}
+  @media(max-width:760px){.heard{grid-template-columns:1fr}}
+
+  .scale{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px}
+  .scale span{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--muted)}
+  .scale b{display:block;font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-.04em;color:var(--ink);line-height:1}
+  .finds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .fd{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 20px 18px;box-shadow:var(--shadow)}
+  .fd .chip{margin-bottom:12px}
+  .fd h4{font-size:17.5px;margin-bottom:8px;line-height:1.25}
+  .fd p{font-size:14.5px;color:var(--muted);line-height:1.5}
+  .fd p code{font-family:var(--mono);font-size:12px;background:var(--surface);border:1px solid var(--line);padding:1px 5px;border-radius:4px;color:var(--ink)}
+  .fd .why{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line-2);font-size:13.5px;color:var(--ink)}
+  .fd.good{background:var(--green);border-color:var(--green);box-shadow:none}
+  .fd.good p,.fd.good .why{color:var(--ink)}
+  .fd.good .why{border-top-color:rgba(0,0,0,.2)}
+  @media(max-width:760px){.finds{grid-template-columns:1fr}}
+
+  .princ{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .pr{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 22px 22px;box-shadow:var(--shadow)}
+  .pr .n{font-family:var(--display);font-weight:800;font-size:15px;background:var(--c);color:var(--ink);width:34px;height:34px;border-radius:9px;display:grid;place-items:center;margin-bottom:16px}
+  .pr h3{font-size:22px;margin-bottom:10px}
+  .pr p{font-size:15px;color:var(--muted);line-height:1.55}
+  @media(max-width:860px){.princ{grid-template-columns:1fr}}
+
+  /* month stepper */
+  .mx{border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+  .mtabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-bottom:1px solid var(--line)}
+  .mtabs button{border:0;background:#fff;cursor:pointer;padding:16px 10px 14px;text-align:left;border-right:1px solid var(--line);position:relative;font-family:var(--sans)}
+  .mtabs button:last-child{border-right:0}
+  .mtabs button b{display:block;font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.04em;line-height:1}
+  .mtabs button span{display:block;font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.3}
+  .mtabs button::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:4px;background:var(--c);opacity:0;transition:opacity .16s}
+  .mtabs button.on{background:var(--surface)}
+  .mtabs button.on::after{opacity:1}
+  .mpanel{display:none;padding:28px 30px 26px}
+  .mpanel.on{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:34px}
+  .mpanel h3{font-size:28px;margin:12px 0 10px}
+  .mpanel .goal{font-size:16px;color:var(--muted);line-height:1.5;margin-bottom:18px}
+  .mpanel ul{list-style:none;display:grid;gap:10px}
+  .mpanel li{font-size:15px;line-height:1.5;padding-left:20px;position:relative}
+  .mpanel li::before{content:'';position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:2px;background:var(--c)}
+  .mside{display:grid;gap:12px;align-content:start}
+  .mbox{border-radius:16px;padding:16px 18px;background:var(--surface);border:1px solid var(--line)}
+  .mbox .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;font-weight:700;color:var(--muted-2);margin-bottom:8px}
+  .mbox p{font-size:14.5px;line-height:1.5}
+  .mbox.pieces{background:var(--c);border-color:transparent}
+  .mbox.pieces .k{color:var(--ink);opacity:.7}
+  .mbox.pieces b{font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-.05em;line-height:1;display:block}
+  .mbox.pieces p{margin-top:6px}
+  .mnote{font-size:13.5px;color:var(--muted);padding:14px 30px;border-top:1px solid var(--line);background:var(--surface)}
+  @media(max-width:860px){.mtabs{grid-template-columns:repeat(3,minmax(0,1fr))}.mtabs button:nth-child(3){border-right:0}.mtabs button:nth-child(-n+3){border-bottom:1px solid var(--line)}.mpanel.on{grid-template-columns:1fr;gap:20px}.mpanel{padding:22px 20px}}
+
+  /* page types */
+  .ptx{border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);padding:24px 26px 24px}
+  .ptabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+  .ptabs button{border:1px solid var(--line-2);background:#fff;border-radius:999px;padding:9px 15px;font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:-.01em;cursor:pointer;color:var(--muted);transition:all .14s}
+  .ptabs button.on{background:var(--c);border-color:var(--c);color:var(--ink)}
+  .ppanel{display:none}
+  .ppanel.on{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:30px}
+  .ppanel h3{font-size:26px;margin-bottom:6px}
+  .ppanel .eg{font-family:var(--sans);font-size:13.5px;color:var(--muted);margin-bottom:14px}
+  .ppanel p{font-size:15.5px;line-height:1.55;margin-bottom:12px}
+  .today{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+  .today .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:none;font-weight:700;color:var(--muted-2);margin:0 0 8px}
+  .today .k + .tags{margin-bottom:14px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tags span{font-size:13px;font-weight:600;padding:5px 9px;border-radius:6px;background:var(--c,#fff);border:1px solid var(--line-2);line-height:1.25}
+  .tags.have span{background:var(--green);border-color:var(--green)}
+  .tags.todo span{background:#fff}
+  .today .fine{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+  @media(max-width:860px){.ppanel.on{grid-template-columns:1fr;gap:18px}.ptx{padding:20px}}
+
+  /* kpis */
+  .kpi{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px;align-items:stretch}
+  .kmain{background:var(--pink);border-radius:24px;padding:30px 30px 28px;color:var(--ink);display:flex;flex-direction:column}
+  .kmain .chip{background:#fff;align-self:flex-start;margin-bottom:18px}
+  .kmain h3{font-size:clamp(28px,3vw,40px);margin-bottom:14px}
+  .kmain p{font-size:16px;line-height:1.55;margin-bottom:12px}
+  .kmain .form{margin-top:auto;background:#fff;border-radius:14px;padding:14px 16px}
+  .kmain .form .q{font-family:var(--display);font-weight:700;font-size:15px;margin-bottom:9px}
+  .kmain .form .opts{display:flex;flex-wrap:wrap;gap:6px}
+  .kmain .form .opts span{font-size:13px;border:1px solid var(--line-2);border-radius:999px;padding:5px 11px}
+  .kmain .form .opts span.hit{background:var(--yellow);border-color:var(--yellow);font-weight:600}
+  .kside{display:grid;gap:16px}
+  .ksec,.kwatch{border-radius:20px;padding:22px 22px 20px;border:1px solid var(--line)}
+  .ksec{background:#fff;box-shadow:var(--shadow)}
+  .kwatch{background:var(--surface)}
+  .ksec h4,.kwatch h4{font-size:18px;margin:10px 0 10px}
+  .ksec ul,.kwatch ul{list-style:none;display:grid;gap:8px}
+  .ksec li,.kwatch li{font-size:14.5px;line-height:1.45;padding-left:18px;position:relative}
+  .ksec li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:var(--yellow)}
+  .kwatch li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:var(--green)}
+  .kwatch p{font-size:13.5px;color:var(--muted);margin-top:10px;line-height:1.45}
+  @media(max-width:860px){.kpi{grid-template-columns:1fr}}
+
+  /* proof */
+  .proof2{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:34px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px 32px;box-shadow:var(--shadow)}
+  .p3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0 18px}
+  .p3 div{border-radius:14px;padding:14px 14px 12px;background:var(--c)}
+  .p3 b{display:block;font-family:var(--display);font-weight:800;font-size:32px;letter-spacing:-.05em;line-height:1}
+  .p3 span{display:block;font-size:12.5px;font-weight:600;margin-top:6px;line-height:1.25}
+  .said{display:grid;gap:10px}
+  .said div{background:var(--surface);border-radius:12px;padding:12px 14px}
+  .said div::before{content:"";display:block;width:10px;height:10px;border-radius:3px;background:var(--c);margin-bottom:8px}
+  .said q{display:block;font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.02em;line-height:1.25;quotes:'\201C' '\201D'}
+  .said small{display:block;font-size:12.5px;color:var(--muted);margin-top:5px}
+  .golink{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink);border-bottom:2px solid var(--pink);padding-bottom:1px}
+  @media(max-width:860px){.proof2{grid-template-columns:1fr;padding:22px}.p3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+  /* why me */
+  .why5{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+  .wy{grid-column:span 2;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 22px 20px;box-shadow:var(--shadow)}
+  .wy:nth-child(4),.wy:nth-child(5){grid-column:span 3}
+  .wy .chip{margin-bottom:12px}
+  .wy h3{font-size:21px;margin-bottom:8px}
+  .wy p{font-size:14.5px;color:var(--muted);line-height:1.55}
+  @media(max-width:860px){.why5{grid-template-columns:1fr}.wy,.wy:nth-child(4),.wy:nth-child(5){grid-column:auto}}
+
+  /* pricing */
+  .price{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:stretch}
+  .pcard{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px 28px 24px;box-shadow:var(--shadow)}
+  .rate{display:flex;align-items:baseline;gap:8px;margin:12px 0 4px}
+  .rate b{font-family:var(--display);font-weight:800;font-size:64px;letter-spacing:-.06em;line-height:1}
+  .rate span{font-size:16px;color:var(--muted)}
+  .slider{margin:22px 0 8px}
+  .slider input{width:100%;accent-color:#FF0F6C}
+  .slabels{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--muted-2);letter-spacing:.08em}
+  .calc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+  .calc>div{border-radius:14px;padding:14px 14px 12px;background:var(--surface);border:1px solid var(--line)}
+  .calc>div.hi{background:var(--yellow);border-color:var(--yellow)}
+  .calc .k{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:none;font-weight:700;color:var(--muted-2)}
+  .calc>div.hi .k{color:var(--ink);opacity:.7}
+  .calc b{display:block;font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.045em;line-height:1;margin-top:6px;font-variant-numeric:tabular-nums}
+  .rec{font-size:13.5px;color:var(--muted);margin-top:12px}
+  .rec b{color:var(--ink)}
+  .terms{list-style:none;display:grid;gap:12px;margin-top:6px}
+  .terms li{font-size:15px;line-height:1.5;padding:12px 0 0 0;border-top:1px solid var(--line)}
+  .terms li:first-child{border-top:0;padding-top:0}
+  .terms li b{display:block;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.02em;margin-bottom:2px}
+  @media(max-width:860px){.price{grid-template-columns:minmax(0,1fr)}.calc{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  @media(max-width:560px){.pcard{padding:22px 18px 20px}.calc{gap:6px}.calc b{font-size:18px;letter-spacing:-.04em}.calc>div{padding:11px 8px 10px}.calc .k{letter-spacing:.08em}.slabels em{display:none}.rate b{font-size:52px}}
+  .slabels em{font-style:normal}
+
+  .closing{padding:100px 0 110px;text-align:center;border-top:1px solid var(--line)}
+  .closing h2{margin:14px 0 16px}
+  .closing .lede{max-width:640px;margin:0 auto 32px;text-wrap:pretty}
+  h2{text-wrap:balance}
+  .lede,.fd p,.pr p,.wy p{text-wrap:pretty}
+
+  /* v2: lowercase labels, process, map */
+  .chip{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:-.01em;text-transform:none;padding:4px 9px 5px;line-height:1.2}
+  .micro,.hero-meta b,.stat .k,.mbox .k,.today .k,.calc .k{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:-.01em;text-transform:none;color:var(--muted)}
+  .mbox.pieces .k,.calc>div.hi .k{color:var(--ink)}
+  .slabels{font-family:var(--sans);font-size:12px;letter-spacing:0}
+  .princ{grid-template-columns:repeat(4,minmax(0,1fr))}
+  @media(max-width:1060px){.princ{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:620px){.princ{grid-template-columns:minmax(0,1fr)}}
+  .mpanel h5{display:inline-block;font-family:var(--display);font-size:14px;font-weight:700;letter-spacing:-.01em;background:var(--c);color:var(--ink);padding:3px 9px 4px;border-radius:6px;margin:4px 0 12px}
+  .mpanel h5.alt{background:var(--surface);border:1px solid var(--line-2);margin-top:22px}
+  .proc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .ps{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 16px 16px;box-shadow:var(--shadow)}
+  .ps b{display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--c);font-family:var(--display);font-weight:800;font-size:14px;margin-bottom:12px}
+  .ps h4{font-size:17px;margin-bottom:6px}
+  .ps p{font-size:14px;color:var(--muted);line-height:1.5}
+  @media(max-width:900px){.proc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:620px){.proc{grid-template-columns:minmax(0,1fr)}}
+  .cmap{margin-top:22px;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+  .cmh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;padding:14px 26px;background:var(--surface);border-bottom:1px solid var(--line);font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:-.01em;color:var(--muted)}
+  .cm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;padding:16px 26px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.5}
+  .cm:last-child{border-bottom:0}
+  .cm>div:first-child{color:var(--muted);font-size:14px}
+  .cm>div:first-child b::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--c);margin-right:8px;vertical-align:1px}
+  .cm>div:first-child b{display:block;color:var(--ink);font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.02em;margin-bottom:3px}
+  @media(max-width:760px){.cmh{display:none}.cm{grid-template-columns:minmax(0,1fr);gap:10px;padding:16px 18px}}
+
+  .wy.bonus{grid-column:1/-1;background:var(--yellow);border-color:var(--yellow);box-shadow:none}
+  .wy.bonus p{color:var(--ink)}
+  .wy.bonus h3{font-size:24px}
+  /* warm hero */
+  .hi-grid{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:56px;align-items:start}
+  .hero h1.hi-big{font-size:clamp(64px,10.6vw,152px);letter-spacing:-.06em;line-height:.9;margin:6px 0 10px;white-space:nowrap;text-wrap:initial;max-width:none}
+  .hi-big .mark{background:linear-gradient(transparent 50%,var(--yellow) 50%,var(--yellow) 82%,transparent 82%);padding:0 .04em;margin-left:-.02em}
+  .wave{display:inline-block;font-size:.62em;margin-left:.12em;vertical-align:.12em;transform-origin:70% 80%;animation:wave 2.2s ease-in-out .5s 2}
+  .hi-big:hover .wave{animation:wave 1.2s ease-in-out 1}
+  @keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(16deg)}20%,40%{transform:rotate(-10deg)}50%{transform:rotate(10deg)}}
+  .hi-script{font-family:var(--script);font-weight:600;font-size:clamp(28px,3vw,38px);line-height:1.1;transform:rotate(-2deg);transform-origin:left;margin:18px 0 28px 6px}
+  .hi-sub{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.2vw,42px);letter-spacing:-.035em;line-height:1.08;max-width:760px;margin-bottom:20px;text-wrap:balance}
+  .hero .hi-grid .lede{max-width:700px;margin-bottom:0}
+  .note{position:relative;margin-top:84px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 24px 20px;box-shadow:var(--shadow-lg);transform:rotate(2.5deg)}
+  .note .tape{position:absolute;top:-13px;left:50%;width:96px;height:26px;margin-left:-48px;background:var(--yellow);opacity:.85;border-radius:3px;transform:rotate(-4deg)}
+  .note img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--pink);margin-bottom:12px}
+  .note p{font-family:var(--script);font-weight:500;font-size:25px;line-height:1.18}
+  .note .sig{margin-top:10px;font-weight:600;font-size:30px}
+  @media(max-width:900px){.hi-grid{grid-template-columns:minmax(0,1fr);gap:28px}.note{max-width:340px;margin:8px 0 0 6px;transform:rotate(1.5deg)}}
+  @media(max-width:520px){.hero h1.hi-big{font-size:15.5vw}}
+  @media(prefers-reduced-motion:reduce){.wave{animation:none!important}}
+
+  .kmain .form .fnote{font-size:13px;color:var(--muted);line-height:1.45;margin-top:12px;padding-top:10px;border-top:1px dashed var(--line-2)}
+  @media print{
+    .nav,.rail,.chapters,.progress,.ptabs,.mtabs,.slider,.slabels{display:none!important}
+    .rv{opacity:1!important;transform:none!important}
+    .mpanel,.ppanel{display:grid!important;grid-template-columns:1fr!important;border-top:1px solid #ddd;page-break-inside:avoid}
+    section{padding:36px 0!important}
+    .fd,.pr,.wy,.pcard,.kmain,.ksec,.kwatch,.proof2{box-shadow:none!important;page-break-inside:avoid}
+  }
+</style>
+<style>
+  /* ecw-specific */
+  .shot-card{border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow-lg);overflow:hidden}
+  .shot-card .bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--surface);border-bottom:1px solid var(--line)}
+  .shot-card .bar i{width:10px;height:10px;border-radius:50%;background:var(--line-2);display:block}
+  .shot-card .bar span{margin-left:8px;font-family:var(--mono);font-size:12px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:6px;padding:4px 10px;flex:1}
+  .shot-card .shot{position:relative;max-height:620px;overflow:hidden}
+  .shot-card .shot img{width:100%;height:auto}
+  .shot-card .shot::after{content:'';position:absolute;left:0;right:0;bottom:0;height:140px;background:linear-gradient(transparent,#fff)}
+  .shot-card .act{display:flex;gap:12px;align-items:center;justify-content:center;padding:18px;flex-wrap:wrap;position:relative;margin-top:-50px}
+  .shot-card .act small{width:100%;text-align:center;font-size:13px;color:var(--muted)}
+  .changes{margin-top:34px}
+  .lgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+  .lg{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 18px 16px;box-shadow:var(--shadow)}
+  .lg b{display:block;font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:-.04em;line-height:1;margin-bottom:6px}
+  .lg b small{font-size:14px;font-weight:600;color:var(--muted);letter-spacing:0;margin-left:6px}
+  .lg p{font-size:13.5px;color:var(--muted);line-height:1.45}
+  .lg p strong{color:var(--ink);font-weight:600;display:block;margin-bottom:2px}
+  .lg.new{border-color:var(--c);box-shadow:none;background:color-mix(in srgb,var(--c) 14%,#fff)}
+  @media(max-width:980px){.lgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:520px){.lgrid{grid-template-columns:1fr}}
+  .fixes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .fx1{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;font-size:15px;line-height:1.5}
+  .fx1 i{font-style:normal;width:28px;height:28px;border-radius:8px;background:var(--c,var(--green));display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:13px}
+  .fx1 b{display:block;font-family:var(--display);font-weight:700;letter-spacing:-.01em}
+  .fx1 span{color:var(--muted);font-size:14px}
+  @media(max-width:760px){.fixes{grid-template-columns:1fr}}
+  .mtabs.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+  @media(max-width:860px){.mtabs.four{grid-template-columns:repeat(2,minmax(0,1fr))}.mtabs.four button:nth-child(2){border-right:0}.mtabs.four button:nth-child(-n+2){border-bottom:1px solid var(--line)}.mtabs.four button:nth-child(3){border-right:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<div class="rail"><span style="background:var(--pink)"></span><span style="background:var(--orange)"></span><span style="background:var(--yellow)"></span><span style="background:var(--green)"></span><span style="background:var(--teal)"></span><span style="background:var(--sky)"></span><span style="background:var(--cyan)"></span></div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="/" class="brand"><span class="brand-dot"></span>anna pogrebniak</a>
+    <div class="nav-links">
+      <a href="#today">where we start</a>
+      <a href="#audit">the audit</a>
+      <a href="#homepage">new homepage</a>
+      <a href="#plan">the plan</a>
+      <a href="#kpis">kpis</a>
+    </div>
+    <div class="nav-right"><a class="btn btn-pink btn-sm" href="https://calendar.app.google/DE57tdntDCfmr17U7" target="_blank" rel="noopener">book a call</a></div>
+  </div>
+  <div class="progress" id="progress"></div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hi-grid">
+      <div>
+        <span class="eyebrow rv" style="--eb:var(--pink)"><i>made for</i>euro car wash</span>
+        <h1 class="hi-big rv">hi <span class="mark">jouni</span><span class="wave" aria-hidden="true">&#128075;</span></h1>
+        <p class="hi-script rv">thanks for thinking of me for ecw.fi!</p>
+        <p class="hi-sub rv">one project: a new ecw.fi, in eight languages, that AI assistants recommend to car wash operators.</p>
+        <p class="lede rv">You already have the hardest part: a product that OKQ8 runs 100,000 subscriptions on, 700 live sites, and a market that is opening up in Poland, the Baltics and Germany. The website doesn't say any of that yet, in any language, and when an operator asks ChatGPT which car wash payment system to look at, the answer names Superoperator and DRB. So I made you this page, with a concept homepage you can click through. <b>The short version: one project with three workstreams, redesign, localisation and AI visibility, live in about twelve weeks and measured on qualified leads.</b></p>
+      </div>
+      <aside class="note rv" aria-label="a note from Anna">
+        <span class="tape" aria-hidden="true"></span>
+        <img src="/anna.jpg" alt="Anna Pogrebniak" width="72" height="72">
+        <p>made this one just for you. click the homepage first, then read the rest with a coffee!</p>
+        <p class="sig">anna</p>
+      </aside>
+    </div>
+
+    <div class="trio rv">
+      <div class="stat"><div class="k">ai readiness today</div><div class="v">69<small style="font-size:.45em;letter-spacing:0">/100</small></div><div class="d"><b>9 of 13 checks passed</b> on ecw.fi. The foundation is fine; the content and structure are what AI assistants can't use yet.</div><div class="bar" style="--c:var(--orange);--w:69%"></div></div>
+      <div class="stat"><div class="k">organic ai inclusion</div><div class="v">0%</div><div class="d"><b>never mentioned</b> when operators ask AI assistants about car wash payment or membership systems without naming you.</div><div class="bar" style="--c:var(--pink);--w:4%"></div></div>
+      <div class="stat"><div class="k">languages on the new site</div><div class="v">8</div><div class="d"><b>Finnish, English, Swedish, Norwegian</b> you have, plus <b>German, Polish, Lithuanian and Latvian</b> for the markets you're entering.</div><div class="bar" style="--c:var(--green);--w:100%"></div></div>
+    </div>
+
+    <div class="hero-meta rv">
+      <div><b>prepared for</b><span>Jouni Partanen, Euro Car Wash</span><br>October 2026</div>
+      <div><b>prepared by</b><span>Anna Pogrebniak</span><br>fractional growth marketer for B2B</div>
+      <div><b>scope</b><span>website redesign, localisation, AI visibility</span><br>one project, three workstreams</div>
+      <div><b>length</b><span>about twelve weeks to launch</span><br>then three months of AI visibility work</div>
+      <div><b>languages</b><span>FI, EN, SV, NO + DE, PL, LT, LV</span><br>native reviewers for every language</div>
+      <div><b>investment</b><span>on our call</span><br>scoped per workstream, so you can start with one</div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 WHERE WE START -->
+<section id="today" class="band">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--pink)"><i>01</i>where we start</span>
+      <h2>what ecw.fi says today, and what it doesn't</h2>
+      <p class="lede">From the public site and the work we've already done together on outreach. If I've got something wrong, tell me and the plan changes with it.</p>
+    </div>
+    <div class="heard rv">
+      <div class="hd" style="--c:var(--pink)"><i></i>The homepage sells four things at once: EasyWash, Christ machines, Pineline chemicals and Clewer water treatment. A first-time visitor needs a full scroll to work out what ECW is.</div>
+      <div class="hd" style="--c:var(--orange)"><i></i>The strongest number in the company, OKQ8's 100,000 subscriptions and €3M a month, is not on the homepage. Neither are Circle K, Neste, Shell or Esso.</div>
+      <div class="hd" style="--c:var(--yellow)"><i></i>The headline says "Smarter Payment Terminal". Nowhere does the site say the category in plain words: an unattended car wash payment and subscription system.</div>
+      <div class="hd" style="--c:var(--green)"><i></i>Four languages today. Poland, the Baltics and Germany, the markets you're expanding into, read the site in English or not at all. Sweden is the 2026 priority and gets the same English pages as everyone.</div>
+      <div class="hd" style="--c:var(--teal)"><i></i>Independent dealers are the biggest opportunity this year, and the site has no page for them. The Superoperator counter-message lives only in cold emails.</div>
+      <div class="hd" style="--c:var(--sky)"><i></i>Operators ask ChatGPT and Perplexity "which car wash payment system should we look at" before they search Google. ecw.fi is not in those answers; superoperator.com, drb.com and paygasus.com are.</div>
+      <div class="hd" style="--c:var(--cyan)"><i></i>Every page checked loads in over two seconds. AI fetchers give up long before a human notices.</div>
+      <div class="hd key" style="--c:var(--ink)"><i></i>The product, the references and the awards are all there. The site just needs to say them, in the buyer's language, in a form machines can quote.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 AUDIT -->
+<section id="audit">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--orange)"><i>02</i>the audit</span>
+      <h2>what AI assistants see when they look at ecw.fi</h2>
+      <p class="lede">I ran ecw.fi through an AI visibility audit on 9 October: 13 technical checks, around 100 buyer prompts across the main assistants, and the pages they cite instead of yours.</p>
+    </div>
+    <div class="scale rv">
+      <span><b>69/100</b>AI readiness score</span>
+      <span><b>9 of 13</b>technical checks passed</span>
+      <span><b>50%</b>of the time AI puts you in the right category</span>
+      <span><b>11%</b>capability mention rate</span>
+      <span><b>0%</b>organic inclusion</span>
+      <span><b>15 of 15</b>pages too slow for AI fetchers</span>
+    </div>
+    <div class="finds">
+      <div class="fd rv"><span class="chip" style="--c:var(--pink)">category</span><h4>AI gets what you are right only half the time</h4><p>Asked directly about Euro Car Wash, assistants file you under "car wash equipment distributor" or "generic car wash POS" as often as under payment and membership systems. The homepage and about page never state the category, so they guess.</p><p class="why">Fix: say "unattended car wash payment and subscription system" in the first line of the homepage, the about page, the title tags and the schema. The concept homepage below already does.</p></div>
+      <div class="fd rv"><span class="chip" style="--c:var(--orange)">content</span><h4>no page explains the category, so AI learns it from competitors</h4><p>There is no "what is an unattended car wash payment system" page and no guide on running car wash memberships. Assistants build their understanding of the category from superoperator.com (13 citations), drb.com (11) and paygasus.com (8). eurocarwash: 0.</p><p class="why">Fix: a small set of educational pages written from your 37 years in the industry, with the OKQ8 numbers as the worked example. This is what moves organic inclusion off 0%.</p></div>
+      <div class="fd rv"><span class="chip" style="--c:var(--yellow)">trust</span><h4>adjectives where AI wants facts</h4><p>"The most used payment system in car washes in Scandinavia" and "quadruple your turnover" read as advertising, and assistants skip advertising when they form capability associations. "Contactless, licence plate recognition, IP55, works with Christ and PDQ" gets quoted.</p><p class="why">Fix: every product page rewritten as checkable facts. This is the main reason the capability mention rate sits at 11%.</p></div>
+      <div class="fd rv"><span class="chip" style="--c:var(--teal)">technical</span><h4>four checks failed, all quick to fix</h4><p>No <code>llms.txt</code>. No FAQ schema. <code>robots.txt</code> exists but returns a web page instead of a text file, so crawlers can't read it. The site isn't in the latest Common Crawl, which several assistants train and search on.</p><p class="why">Fix: all four in week one, on the current site, before the redesign. No reason to wait.</p></div>
+      <div class="fd rv"><span class="chip" style="--c:var(--sky)">speed</span><h4>every page is slow for a machine</h4><p>Average response 2.1 seconds across the 15 pages checked. <code>/why-us</code> 2.4 s, <code>/about-us</code> 2.4 s, <code>/features</code> 2.3 s, <code>/pricing</code> 2.3 s. AI fetchers abandon requests well before that.</p><p class="why">Fix: the new site is built to a speed budget of under one second, with no page builder in the way.</p></div>
+      <div class="fd rv"><span class="chip" style="--c:var(--cyan)">competition</span><h4>the comparison slots are taken</h4><p>When an operator asks for a comparison of car wash payment or membership software, the answers name Superoperator, DRB, Rinsed and Liquid Barcodes. You're not in the set, so there's nothing for the assistant to compare.</p><p class="why">Fix: "EasyWash vs Superoperator" and "EasyWash alternatives" pages written neutrally, plus listings on the directories those answers cite.</p></div>
+      <div class="fd good rv" style="grid-column:1/-1"><span class="chip" style="--c:#fff">the good news</span><h4>the foundation passed</h4><p>HTTPS, canonical tags, a sitemap, server-side rendering, a sensible heading structure, meta descriptions, Organization and Article schema, and every AI crawler (GPTBot, ClaudeBot, PerplexityBot, Google-Extended) allowed in. Nothing is blocking assistants from reading the site.</p><p class="why">So this isn't a rescue. It's giving the assistants something worth repeating, in eight languages.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 NEW HOMEPAGE -->
+<section id="homepage" class="band">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--yellow)"><i>03</i>the new homepage</span>
+      <h2>a concept you can click through</h2>
+      <p class="lede">Built in your colours, with your terminal and your numbers. The copy is a first draft and the links are placeholders; the structure is the point. Open it in a new tab and scroll.</p>
+    </div>
+    <div class="shot-card rv">
+      <div class="bar"><i></i><i></i><i></i><span>ecw.fi (concept)</span></div>
+      <div class="shot"><img src="homepage-full.webp" alt="Concept homepage for ecw.fi: dark navy hero with the EasyWash terminal, OKQ8 proof numbers, three operator segments, how a subscription wash works, facts table, one-supplier section, eight languages and an FAQ" width="900" height="3865"></div>
+      <div class="act">
+        <a class="btn btn-pink" href="homepage/" target="_blank" rel="noopener">open the concept homepage <span>&rarr;</span></a>
+        <small>Desktop and mobile. Press the language codes in the top bar to see the eight languages.</small>
+      </div>
+    </div>
+
+    <div class="cmap changes rv">
+      <div class="cmh"><div>what changed</div><div>why</div></div>
+      <div class="cm" style="--c:var(--pink)"><div><b>the category in the first line</b>"Unattended car wash payment and subscription system", above the headline.</div><div>AI assistants place you in the right category 50% of the time today. The first line of the homepage is where they look first.</div></div>
+      <div class="cm" style="--c:var(--orange)"><div><b>OKQ8 above the fold</b>100,000+ subscriptions, €3M a month, 700+ locations, since 1987. Then the logos: OKQ8, Circle K, Neste, Shell, Esso.</div><div>It's the single most convincing asset the company has, and it does the selling for you. Today it's not on the site.</div></div>
+      <div class="cm" style="--c:var(--yellow)"><div><b>three doors for three buyers</b>Wash chains, fuel networks, dealers and installers. Each with its own pain, its own reference and its own page.</div><div>A category manager at a fuel network and an independent Christ dealer need different pages. Today they both get the same scroll.</div></div>
+      <div class="cm" style="--c:var(--green)"><div><b>facts instead of adjectives</b>A specification table and a "what EasyWash is not" box.</div><div>Assistants quote specifications and skip marketing claims. The "is not" box stops them filing you as a generic POS or a distributor.</div></div>
+      <div class="cm" style="--c:var(--teal)"><div><b>Christ, Pineline and Clewer stay, after EasyWash</b>One section: "one supplier for the whole wash site".</div><div>The group story is a real differentiator, nobody else makes both the chemistry and the terminal. It just shouldn't compete with EasyWash for the first screen.</div></div>
+      <div class="cm" style="--c:var(--sky)"><div><b>eight languages in the header</b>FI, EN, SV, NO and the four new ones, with a markets section.</div><div>A procurement manager in Gdańsk or Riga sees in the first second that you work in their market.</div></div>
+      <div class="cm" style="--c:var(--cyan)"><div><b>an FAQ with schema, and a form that asks about sites</b>Five operator questions marked up for machines. The form asks "how many sites?" so Jouni knows who to call first.</div><div>FAQ schema failed the audit. The form turns a contact request into a qualified lead.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 APPROACH -->
+<section id="approach">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--green)"><i>04</i>the approach</span>
+      <h2>three workstreams, one project</h2>
+      <p class="lede">Redesign, localisation and AI visibility are usually sold by three different suppliers who never meet. Done together, each one makes the other two cheaper: the copy is written once in a form that works in every language and that assistants can quote.</p>
+    </div>
+    <div class="princ">
+      <div class="pr rv" style="--c:var(--pink)"><div class="n">1</div><h3>one site, one category</h3><p>EasyWash first, the group second. Every page says what ECW is in the same words, in the title, the first line and the schema. The current four-products-at-once homepage becomes one story with three doors.</p></div>
+      <div class="pr rv" style="--c:var(--yellow)"><div class="n">2</div><h3>numbers before adjectives</h3><p>OKQ8, Neste, Corrimex, the Warsaw award, the zero-emission sites. Named customers and checkable facts on every page. Nothing an assistant would flag as advertising.</p></div>
+      <div class="pr rv" style="--c:var(--teal)"><div class="n">3</div><h3>local, not translated</h3><p>Each language gets a glossary first (a Polish operator says "myjnia bezdotykowa", not a translation of "self-service jet wash"), a native reviewer, local references and a local phone number. Same facts in every language.</p></div>
+      <div class="pr rv" style="--c:var(--green)"><div class="n">4</div><h3>built to be cited</h3><p>Fast pages, FAQ and product schema, llms.txt, author and date on every article, and the educational pages that teach assistants the category with EasyWash as the example.</p></div>
+    </div>
+    <p class="body rv" style="max-width:820px;margin-top:34px"><b>About the technology.</b> The site runs on WordPress today. I'd keep WordPress if your team wants to edit pages themselves, with a lighter theme and no page builder, or move to a static site if speed and simplicity matter more. We decide that in week one, together with your IT contact. Either way the speed budget is under one second per page.</p>
+  </div>
+</section>
+
+<!-- 05 PLAN -->
+<section id="plan" class="band">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--teal)"><i>05</i>the plan</span>
+      <h2>twelve weeks to launch, then three months of AI visibility</h2>
+      <p class="lede">Quick fixes go live on the current site in week one, so nothing waits for the new one. Click through the phases.</p>
+    </div>
+
+    <div class="mx rv">
+      <div class="mtabs four" role="tablist">
+        <button class="on" style="--c:var(--pink)" data-m="1" role="tab" aria-selected="true"><b>01</b><span>weeks 1 to 2: foundations and quick fixes</span></button>
+        <button style="--c:var(--yellow)" data-m="2" role="tab" aria-selected="false"><b>02</b><span>weeks 3 to 6: build the English site</span></button>
+        <button style="--c:var(--teal)" data-m="3" role="tab" aria-selected="false"><b>03</b><span>weeks 7 to 10: eight languages</span></button>
+        <button style="--c:var(--green)" data-m="4" role="tab" aria-selected="false"><b>04</b><span>weeks 11 to 12 and after: launch, then AI visibility</span></button>
+      </div>
+
+      <div class="mpanel on" data-m="1" style="--c:var(--pink)">
+        <div>
+          <span class="chip" style="--c:var(--pink)">weeks 1 to 2</span>
+          <h3>foundations, with the quick fixes live</h3>
+          <p class="goal">Agree what the site says and how it's built, and fix on the current site what the audit already found.</p>
+          <h5>ships in these weeks</h5>
+          <ul>
+            <li><b>The four failed checks, fixed on ecw.fi today.</b> A working <code>robots.txt</code>, an <code>llms.txt</code>, FAQ schema on the homepage, and a submission to get the site into Common Crawl.</li>
+            <li><b>The category statement, added to the current homepage and about page.</b> One sentence, so assistants start learning the right category while the new site is being built.</li>
+            <li><b>Site map and page list.</b> EasyWash, the three buyer pages, Christ, Pineline, Clewer, the compliance download hub, articles, company, contact, in every language.</li>
+            <li><b>Messaging decisions.</b> The category words, the proof points per page, the "what EasyWash is not" line. Signed off by you and Esa before any design.</li>
+            <li><b>Technology decision with your IT contact.</b> Lighter WordPress or static site, hosting, forms, analytics, and the redirect plan for every current URL.</li>
+            <li><b>The AI baseline.</b> Around 50 real operator questions in ChatGPT, Perplexity, Google AI Overviews and Copilot, in English, Finnish, Swedish, Polish and German. Are you mentioned, cited and described correctly, and who is instead?</li>
+          </ul>
+        </div>
+        <div class="mside">
+          <div class="mbox pieces"><div class="k">you get</div><b>1 page list</b><p>plus the baseline report and the messaging one-pager, walked through on a call.</p></div>
+          <div class="mbox"><div class="k">from your side</div><p>Two hours with Jouni and Esa for messaging, 30 minutes with your IT contact, access to the current WordPress and analytics.</p></div>
+        </div>
+      </div>
+
+      <div class="mpanel" data-m="2" style="--c:var(--yellow)">
+        <div>
+          <span class="chip" style="--c:var(--yellow)">weeks 3 to 6</span>
+          <h3>build the English site</h3>
+          <p class="goal">Design and write every page once, in English, in the form that works in every language and that assistants can quote.</p>
+          <h5>ships in these weeks</h5>
+          <ul>
+            <li><b>Design system from the concept homepage.</b> Your navy, the green of the terminal, Exo 2 for headings. Components reused on every page, so the eight languages don't need eight designs.</li>
+            <li><b>Homepage and EasyWash page.</b> The concept, finished: real photos, the specification table, the FAQ, the form.</li>
+            <li><b>Three buyer pages.</b> Wash chains (WashXL, Washman), fuel networks (OKQ8, Neste, Circle K) and dealers and installers (the Superoperator counter, Corrimex, the revenue share). Each with its own call to action.</li>
+            <li><b>Product pages for the group.</b> Christ wash systems and the Compact Module, Pineline chemicals with the ADR-free argument, Clewer water treatment with the zero-emission sites.</li>
+            <li><b>Compliance download hub.</b> Datasheets, ADR-free certificates, Nordic Swan, ISO 9001 and 14001, EcoVadis. Today these are sent by email one at a time; procurement teams and assistants want them on a page.</li>
+            <li><b>Forms that qualify.</b> "How many sites?" and "how did you hear about us?" on every form, routed to the right salesperson by country.</li>
+            <li><b>Speed, schema and tracking.</b> Under one second per page, Organization, Product and FAQ schema, analytics with lead tracking to the CRM.</li>
+          </ul>
+        </div>
+        <div class="mside">
+          <div class="mbox pieces"><div class="k">pages built</div><b>12 to 15</b><p>in English, reviewed with you page by page as they're ready, not all at the end.</p></div>
+          <div class="mbox"><div class="k">from your side</div><p>Product photos and the certificates, one review round per page, and a yes or no on the dealer revenue share wording.</p></div>
+        </div>
+      </div>
+
+      <div class="mpanel" data-m="3" style="--c:var(--teal)">
+        <div>
+          <span class="chip" style="--c:var(--teal)">weeks 7 to 10</span>
+          <h3>eight languages, each one local</h3>
+          <p class="goal">Finnish, Swedish, Norwegian, German, Polish, Lithuanian and Latvian versions of every page, written for the operator in that market.</p>
+          <h5>ships in these weeks</h5>
+          <ul>
+            <li><b>A glossary per language first.</b> The words operators and procurement teams actually use for wash types, subscriptions, terminals and chemicals. The Polish one already exists from our outreach work.</li>
+            <li><b>Drafts co-written with AI from the English pages and the glossary, then reviewed by a native speaker per language.</b> Not a translation agency; someone who knows how a car wash owner in Vilnius talks.</li>
+            <li><b>Local proof on every version.</b> OKQ8 and Shell for Sweden and Norway, Neste for Finland, Corrimex and the Warsaw award for Poland, the first self-service subscription model in Latvia for the Baltics.</li>
+            <li><b>Local contacts.</b> The right salesperson and phone number per market, including the Swedish number for Pineline.</li>
+            <li><b>Language tags that point to real pages.</b> Correct hreflang for all eight, one sitemap per language, and no half-translated pages in the index.</li>
+            <li><b>Machine-readable in every language.</b> Schema, FAQ and llms.txt per language, so assistants answering in Polish find the Polish facts.</li>
+          </ul>
+        </div>
+        <div class="mside">
+          <div class="mbox pieces"><div class="k">pages localised</div><b>7 × 12</b><p>roughly 85 pages across seven languages, released language by language as each review finishes.</p></div>
+          <div class="mbox"><div class="k">from your side</div><p>A name per market who can answer "is this how our customers say it?" in a 30-minute review. I bring the native reviewers.</p></div>
+        </div>
+      </div>
+
+      <div class="mpanel" data-m="4" style="--c:var(--green)">
+        <div>
+          <span class="chip" style="--c:var(--green)">weeks 11 to 12, then three months</span>
+          <h3>launch, then make the assistants notice</h3>
+          <p class="goal">Go live cleanly, then do the content and listings work that takes organic AI inclusion off zero.</p>
+          <h5>ships at launch</h5>
+          <ul>
+            <li><b>Redirects for every old URL</b>, in all four current languages, tested before and after.</li>
+            <li><b>Bing Webmaster Tools and IndexNow.</b> ChatGPT search runs on Bing, and Copilot is what procurement teams at Microsoft-based companies use.</li>
+            <li><b>Launch posts for LinkedIn</b> from Jouni's and Esa's profiles, pointing at the buyer pages.</li>
+          </ul>
+          <h5 class="alt">ships in the three months after</h5>
+          <ul>
+            <li><b>The educational pages the audit asked for.</b> "What is an unattended car wash payment system", "how to run car wash memberships and recurring revenue", "car wash subscription pricing in the Nordics", each with EasyWash and OKQ8 as the worked example.</li>
+            <li><b>Comparison pages.</b> EasyWash vs Superoperator, EasyWash alternatives, and the dealer's view of Washtec bundling. Neutral, factual, cited to the competitor's own site.</li>
+            <li><b>Outside sources.</b> Listings on the directories and comparison pages assistants cite today, plus G2 and Capterra profiles so there's a review footprint at all.</li>
+            <li><b>The same 50 questions, re-run every month</b> in five languages, compared with the baseline. Mentions, citations and how you're described.</li>
+          </ul>
+        </div>
+        <div class="mside">
+          <div class="mbox pieces"><div class="k">new pages after launch</div><b>6 to 10</b><p>a month across languages, weighted to the ones that move the question set.</p></div>
+          <div class="mbox"><div class="k">you get</div><p>A monthly report with the AI re-run, leads by source and language, and the next month's list.</p></div>
+        </div>
+      </div>
+      <div class="mnote">Dates are a working assumption: start in November, launch before the February trade fair season, AI visibility work through spring. The order holds whatever the start date.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 LANGUAGES -->
+<section id="languages">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--sky)"><i>06</i>languages</span>
+      <h2>eight languages, each with its own reason</h2>
+      <p class="lede">The four you have get rewritten from the new English. The four new ones follow the markets you're already selling into.</p>
+    </div>
+    <div class="lgrid">
+      <div class="lg rv"><b>FI</b><p><strong>Finland, home market</strong>Neste, the zero-emission reference sites, Kai's contacts. Also where Pineline's chemical story starts.</p></div>
+      <div class="lg rv"><b>EN</b><p><strong>Everyone else, and the assistants</strong>The master version. Most AI answers are built from English pages, whatever language the question is asked in.</p></div>
+      <div class="lg rv"><b>SV</b><p><strong>Sweden, 2026 priority</strong>OKQ8's 100,000 subscriptions, 200+ Pineline stations, the Würth delivery gap. Inköpschef and Driftsansvarig as the readers.</p></div>
+      <div class="lg rv"><b>NO</b><p><strong>Norway</strong>100+ Shell and Esso sites on Pineline, Circle K subscriptions in the market. The reader is a category or procurement manager.</p></div>
+      <div class="lg new rv" style="--c:var(--green)"><b>DE<small>new</small></b><p><strong>Germany and Austria</strong>The dealer channel: independent Christ and WashTec-free installers who need something to bundle. Geschäftsführer and Vertrieb as the readers.</p></div>
+      <div class="lg new rv" style="--c:var(--green)"><b>PL<small>new</small></b><p><strong>Poland, via Corrimex</strong>Best Product at Petrol Station 2025, the EKOstatuetka award. Myjnia operators and the fuel networks (Orlen, Moya, Circle K PL). Glossary already written.</p></div>
+      <div class="lg new rv" style="--c:var(--green)"><b>LT<small>new</small></b><p><strong>Lithuania</strong>Fuel networks and the self-service wash chains that are consolidating. Same pages as Latvia, local references where they exist.</p></div>
+      <div class="lg new rv" style="--c:var(--green)"><b>LV<small>new</small></b><p><strong>Latvia</strong>Europe's first self-service car wash subscription model launched here in 2025. That's the headline of the Latvian site.</p></div>
+    </div>
+    <p class="body rv" style="max-width:820px;margin-top:30px"><b>Estonian and Danish</b> are easy to add later with the same process, if the markets ask for it. I'd rather launch eight languages that are properly local than ten that are translated.</p>
+  </div>
+</section>
+
+<!-- 07 AI VISIBILITY -->
+<section id="ai" class="band">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--cyan)"><i>07</i>ai visibility</span>
+      <h2>what it takes to be the answer</h2>
+      <p class="lede">Each item below answers one finding from the audit. Most of them are built into the new site, so they don't cost extra; the rest is the content work after launch.</p>
+    </div>
+    <div class="fixes">
+      <div class="fx1 rv" style="--c:var(--pink)"><i>1</i><div><b>say the category, everywhere</b><span>Homepage, about page, titles, schema, llms.txt. Takes category placement from 50% towards 100%.</span></div></div>
+      <div class="fx1 rv" style="--c:var(--orange)"><i>2</i><div><b>rewrite claims as facts</b><span>Specifications, named customers, dates and numbers on every product page. Moves the 11% capability mention rate.</span></div></div>
+      <div class="fx1 rv" style="--c:var(--yellow)"><i>3</i><div><b>teach the category</b><span>Educational pages on unattended payment, memberships and subscription pricing, with EasyWash as the example. This is what moves organic inclusion off 0%.</span></div></div>
+      <div class="fx1 rv" style="--c:var(--green)"><i>4</i><div><b>be in the comparison set</b><span>EasyWash vs Superoperator, alternatives pages, and listings on the directories assistants cite today.</span></div></div>
+      <div class="fx1 rv" style="--c:var(--teal)"><i>5</i><div><b>make every page fast and readable</b><span>Under one second, server-rendered, FAQ and Product schema, llms.txt, a real robots.txt, Bing and IndexNow.</span></div></div>
+      <div class="fx1 rv" style="--c:var(--sky)"><i>6</i><div><b>give articles an author and a date</b><span>Esa and Jouni as named authors with their roles. Assistants weight provenance when deciding what to cite.</span></div></div>
+      <div class="fx1 rv" style="--c:var(--cyan)"><i>7</i><div><b>answer in the buyer's language</b><span>Schema, FAQ and educational pages per language, so a Polish question gets a Polish answer that names EasyWash.</span></div></div>
+      <div class="fx1 rv" style="--c:var(--pink)"><i>8</i><div><b>measure monthly</b><span>The same 50 questions, five languages, every month. Mentions, citations and description, side by side with the baseline.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 KPIS -->
+<section id="kpis">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--pink)"><i>08</i>kpis</span>
+      <h2>how we'll know it's working</h2>
+      <p class="lede">A new site is judged on what it brings Jouni to call. Everything else is an early sign.</p>
+    </div>
+    <div class="kpi">
+      <div class="kmain rv">
+        <span class="chip">main kpi</span>
+        <h3>qualified leads from the website</h3>
+        <p>Contact requests from operators with three or more sites, fuel networks and dealers, in any of the eight languages, who found you through Google or an AI assistant.</p>
+        <p>Counted two ways, because analytics alone misses most AI traffic: the CRM source, and what people write when the form asks.</p>
+        <div class="form">
+          <div class="q">how did you hear about us?</div>
+          <div class="opts"><span class="hit">Google search</span><span class="hit">ChatGPT or another AI</span><span>trade fair</span><span>a dealer</span><span>LinkedIn</span><span>other</span></div>
+          <div class="fnote">Plus "how many sites do you run?" so the first call goes to the right person.</div>
+        </div>
+      </div>
+      <div class="kside">
+        <div class="ksec rv">
+          <span class="chip" style="--c:var(--yellow)">leading signals</span>
+          <h4>what moves before leads do</h4>
+          <ul>
+            <li>AI readiness score, from 69 to above 90 at launch</li>
+            <li>Category placement, from 50% to every time</li>
+            <li>Mentions and citations across the 50 questions, per language</li>
+            <li>Page speed under one second on every page</li>
+            <li>Non-brand clicks to the buyer pages, per language</li>
+            <li>Compliance downloads by procurement teams</li>
+          </ul>
+        </div>
+        <div class="kwatch rv">
+          <span class="chip" style="--c:var(--green)">early indicators</span>
+          <h4>the first wins to share</h4>
+          <ul>
+            <li>Impressions in Google and AI answers in the new languages</li>
+            <li>The first Polish, German or Baltic contact request</li>
+          </ul>
+          <p>Targets get set against the baseline in week two, once we've seen the numbers per language.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 PROOF -->
+<section id="proof" class="band">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--green)"><i>09</i>proof</span>
+      <h2>the same approach, on a site i rebuilt this summer</h2>
+    </div>
+    <div class="proof2 rv">
+      <div>
+        <span class="chip" style="--c:var(--yellow)">hello customer · live 18 July 2026</span>
+        <p class="body" style="margin-top:14px">Hello Customer is a B2B software company selling to procurement-heavy buyers in three languages. I rebuilt their site with search and AI assistants in mind from the first page, in English, French and Dutch, and measured it seven weeks in.</p>
+        <div class="p3">
+          <div style="--c:var(--yellow)"><b>3×</b><span>impressions a day in Google's AI answers</span></div>
+          <div style="--c:var(--green)"><b>2.2×</b><span>queries on page one of Google</span></div>
+          <div style="--c:var(--teal)"><b>24%</b><span>citation share in Copilot across 146 buyer questions</span></div>
+        </div>
+        <p class="body muted">Three languages on every page, written from native glossaries and reviewed line by line. The same process scales to eight.</p>
+        <a class="golink" href="/case-studies/hello-customer/">read the hello customer case study <span>&rarr;</span></a>
+      </div>
+      <div>
+        <span class="chip" style="--c:var(--pink)">what new demo requests wrote in "how did you hear about us?"</span>
+        <div class="said" style="margin-top:14px">
+          <div style="--c:var(--pink)"><q>Claude</q><small>customer success manager · now an opportunity</small></div>
+          <div style="--c:var(--orange)"><q>By asking an AI</q><small>voice of customer lead · translated from French</small></div>
+          <div style="--c:var(--teal)"><q>Found online while searching for a Belgian/European NPS provider</q><small>insurance company · now an opportunity</small></div>
+        </div>
+        <p class="body muted" style="margin-top:16px;font-size:14.5px">And for ECW specifically: I've written your outreach, built your German and Polish prospect lists and the Polish glossary. I know the ICPs, the OKQ8 story and the dealer angle before the project starts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 WHY ME -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--orange)"><i>10</i>working together</span>
+      <h2>why work with me</h2>
+    </div>
+    <div class="why5">
+      <div class="wy rv"><span class="chip" style="--c:var(--pink)">i already know ecw</span><h3>no onboarding month</h3><p>The ICPs, the personas, the Superoperator story, the Würth gap, the Polish vocabulary. We've been working on your outreach; the site is the next step of the same work.</p></div>
+      <div class="wy rv"><span class="chip" style="--c:var(--yellow)">one person</span><h3>design, copy, languages and the technical side</h3><p>I build the pages, write the copy, run the native reviewers and do the schema and speed work myself. AI helps me move fast; I check every page before it goes live.</p></div>
+      <div class="wy rv"><span class="chip" style="--c:var(--green)">three in one</span><h3>no three suppliers who never meet</h3><p>A design agency, a translation agency and an AI visibility consultant would each charge for understanding the other two. Here it's one brief and one person.</p></div>
+      <div class="wy rv"><span class="chip" style="--c:var(--teal)">measured</span><h3>leads, not a launch party</h3><p>The site is judged on contact requests Jouni wants to call, by language, every month. The monthly report is short and honest.</p></div>
+      <div class="wy rv"><span class="chip" style="--c:var(--sky)">a few clients</span><h3>real attention</h3><p>I only work with a few clients at a time, so you get quick answers and a site I keep thinking about between meetings.</p></div>
+      <div class="wy bonus rv"><span class="chip" style="--c:#fff">bonus</span><h3>traffic for the new pages</h3><p>Once the buyer pages exist, LinkedIn ads to category managers and dealers in Sweden, Poland and Germany have somewhere to land. That's a separate conversation, and one I'm happy to have.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap">
+    <span class="eyebrow rv" style="--eb:var(--pink)"><i>finally</i>from me</span>
+    <h2 class="rv">let's talk scope and numbers on a call</h2>
+    <p class="lede rv">Each workstream is scoped on its own, so you can start with the redesign and add languages and AI visibility as the markets open, or do all three at once. Click through the concept homepage, show it to Esa, and send me whatever comes up.</p>
+    <div class="cta-row rv">
+      <a class="btn btn-pink" href="https://calendar.app.google/DE57tdntDCfmr17U7" target="_blank" rel="noopener">book a call <span>&rarr;</span></a>
+      <a class="btn btn-ghost" href="mailto:anna@awesomemarketers.fi?subject=ecw.fi%20proposal">or reply by email</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>prepared for euro car wash · october 2026 · anna pogrebniak</div>
+      <div class="foot-links"><a href="/">the work</a><a href="/about/">about</a><a href="https://www.linkedin.com/in/annapogrebniak/" target="_blank" rel="noopener">linkedin</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+function tabs(btnSel,panelSel,key){
+  var btns=document.querySelectorAll(btnSel),panels=document.querySelectorAll(panelSel);
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var v=b.getAttribute(key);
+    btns.forEach(function(x){var on=x===b;x.classList.toggle('on',on);if(x.hasAttribute('aria-selected'))x.setAttribute('aria-selected',on?'true':'false');});
+    panels.forEach(function(p){p.classList.toggle('on',p.getAttribute(key)===v);});
+  });});
+}
+tabs('.mtabs button','.mpanel','data-m');
+var els=document.querySelectorAll('.rv');if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -6% 0px',threshold:0.04});els.forEach(function(e){io.observe(e)});}else{els.forEach(function(e){e.classList.add('in')});}
+var prog=document.getElementById('progress');function onScroll(){var h=document.documentElement;prog.style.width=((h.scrollTop/(h.scrollHeight-h.clientHeight))*100).toFixed(2)+'%';}window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script>
+</body>
+</html>
