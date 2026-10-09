@@ -594,6 +594,19 @@
   .fx1 b{display:block;font-family:var(--display);font-weight:700;letter-spacing:-.01em}
   .fx1 span{color:var(--muted);font-size:14px}
   @media(max-width:760px){.fixes{grid-template-columns:1fr}}
+
+  /* why */
+  .whys{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .why{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px 26px 26px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .why .big{font-family:var(--display);font-weight:800;font-size:clamp(30px,2.6vw,38px);letter-spacing:-.045em;line-height:1;margin:14px 0 14px}
+  .why .big em{font-style:normal;background:var(--c);padding:0 .12em;border-radius:6px}
+  .why .chip{align-self:flex-start}
+  .why h3{font-size:22px;margin-bottom:10px}
+  .why p{font-size:15px;color:var(--muted);line-height:1.55}
+  .why p b{color:var(--ink);font-weight:600}
+  .why .so{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line-2);font-size:14.5px;color:var(--ink);line-height:1.5}
+  .why .so::before{content:'so';display:inline-block;font-family:var(--display);font-weight:700;font-size:12.5px;background:var(--c);padding:2px 7px 3px;border-radius:5px;margin-right:8px}
+  @media(max-width:900px){.whys{grid-template-columns:1fr}}
   .mtabs.four{grid-template-columns:repeat(4,minmax(0,1fr))}
   @media(max-width:860px){.mtabs.four{grid-template-columns:repeat(2,minmax(0,1fr))}.mtabs.four button:nth-child(2){border-right:0}.mtabs.four button:nth-child(-n+2){border-bottom:1px solid var(--line)}.mtabs.four button:nth-child(3){border-right:1px solid var(--line)}}
 </style>
@@ -605,6 +618,7 @@
   <div class="nav-in">
     <a href="/" class="brand"><span class="brand-dot"></span>anna pogrebniak</a>
     <div class="nav-links">
+      <a href="#why-now">why</a>
       <a href="#today">where we start</a>
       <a href="#audit">the audit</a>
       <a href="#homepage">new homepage</a>
@@ -654,11 +668,45 @@
   </div>
 </section>
 
-<!-- 01 WHERE WE START -->
-<section id="today" class="band">
+<!-- 01 WHY -->
+<section id="why-now" class="band">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--pink)"><i>01</i>where we start</span>
+      <span class="eyebrow" style="--eb:var(--yellow)"><i>01</i>why this matters</span>
+      <h2>three reasons the website is the next move</h2>
+      <p class="lede">Before the audit and the plan, the part that decides whether any of this is worth doing. ECW is expanding into markets that buy in their own language and research with AI. Today the website serves neither.</p>
+    </div>
+    <div class="whys">
+      <div class="why rv" style="--c:var(--yellow)">
+        <span class="chip" style="--c:var(--yellow)">local first</span>
+        <div class="big">The site <em>is</em> the entry into the market.</div>
+        <h3>Poland, the Baltics and Germany are not English-first markets</h3>
+        <p>A myjnia owner in Poznań, a Tankstelle operator in Bavaria or a fuel network's procurement team in Riga search, read and tender in their own language. An English page isn't "good enough" for them; <b>it's a page they never open</b>. Outreach can start a conversation, but the first thing a prospect does after a cold email is look you up. In Polish.</p>
+        <p class="so">Localised pages aren't a translation line item. They are how a Finnish company shows up as a local option in eight markets, with the local reference, the local phone number and the local words.</p>
+      </div>
+      <div class="why rv" style="--c:var(--pink)">
+        <span class="chip" style="--c:var(--pink)">ai and search</span>
+        <div class="big">Not optimised means <em>invisible</em>.</div>
+        <h3>Buyers ask ChatGPT and Google before they ask a salesperson</h3>
+        <p>"Which car wash payment system supports subscriptions?" "Superoperator alternatives?" "Myjnia abonament system płatności?" Those questions get answered today, by superoperator.com, drb.com and paygasus.com. <b>ECW is in 0% of those answers.</b> Not ranked low. Not there. A site that assistants can't read or quote is, for this part of the buying process, the same as having no site.</p>
+        <p class="so">A fast, factual, machine-readable site in eight languages puts EasyWash into the shortlist before Jouni ever gets a reply.</p>
+      </div>
+      <div class="why rv" style="--c:var(--green)">
+        <span class="chip" style="--c:var(--green)">the proof is wasted</span>
+        <div class="big">OKQ8 sells, <em>if it's visible</em>.</div>
+        <h3>The best references in the industry are not on the site</h3>
+        <p>100,000 subscriptions, €3M a month, Neste, Circle K, Shell, Best Product in Warsaw, the first self-service subscription in Latvia. These numbers close deals in cold emails every week. <b>On ecw.fi they don't exist</b>, so a prospect who checks the site after that email sees a 2019 page selling four products at once, and the credibility built in the email drains away.</p>
+        <p class="so">The website becomes the salesperson that works in eight languages, 24 hours a day, and says the same things the sales team does.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 WHERE WE START -->
+<section id="today">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" style="--eb:var(--pink)"><i>02</i>where we start</span>
       <h2>what ecw.fi says today, and what it doesn't</h2>
       <p class="lede">From the public site and the work we've already done together on outreach. If I've got something wrong, tell me and the plan changes with it.</p>
     </div>
@@ -676,10 +724,10 @@
 </section>
 
 <!-- 02 AUDIT -->
-<section id="audit">
+<section id="audit" class="band">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--orange)"><i>02</i>the audit</span>
+      <span class="eyebrow" style="--eb:var(--orange)"><i>03</i>the audit</span>
       <h2>what AI assistants see when they look at ecw.fi</h2>
       <p class="lede">I ran ecw.fi through an AI visibility audit on 9 October: 13 technical checks, around 100 buyer prompts across the main assistants, and the pages they cite instead of yours.</p>
     </div>
@@ -704,10 +752,10 @@
 </section>
 
 <!-- 03 NEW HOMEPAGE -->
-<section id="homepage" class="band">
+<section id="homepage">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--yellow)"><i>03</i>the new homepage</span>
+      <span class="eyebrow" style="--eb:var(--yellow)"><i>04</i>the new homepage</span>
       <h2>a concept you can click through</h2>
       <p class="lede">Built in your colours, with your terminal and your numbers. The copy is a first draft and the links are placeholders; the structure is the point. Open it in a new tab and scroll.</p>
     </div>
@@ -734,12 +782,12 @@
 </section>
 
 <!-- 04 APPROACH -->
-<section id="approach">
+<section id="approach" class="band">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--green)"><i>04</i>the approach</span>
+      <span class="eyebrow" style="--eb:var(--green)"><i>05</i>the approach</span>
       <h2>three workstreams, one project</h2>
-      <p class="lede">Redesign, localisation and AI visibility are usually sold by three different suppliers who never meet. Done together, each one makes the other two cheaper: the copy is written once in a form that works in every language and that assistants can quote.</p>
+      <p class="lede">Redesign, localisation and AI visibility are usually sold by three different suppliers who never meet. Done together, each one makes the other two cheaper: the facts are agreed once, then written for each market in a form that assistants can quote.</p>
     </div>
     <div class="princ">
       <div class="pr rv" style="--c:var(--pink)"><div class="n">1</div><h3>one site, one category</h3><p>EasyWash first, the group second. Every page says what ECW is in the same words, in the title, the first line and the schema. The current four-products-at-once homepage becomes one story with three doors.</p></div>
@@ -752,10 +800,10 @@
 </section>
 
 <!-- 05 PLAN -->
-<section id="plan" class="band">
+<section id="plan">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--teal)"><i>05</i>the plan</span>
+      <span class="eyebrow" style="--eb:var(--teal)"><i>06</i>the plan</span>
       <h2>twelve weeks to launch, then three months of AI visibility</h2>
       <p class="lede">Quick fixes go live on the current site in week one, so nothing waits for the new one. Click through the phases.</p>
     </div>
@@ -862,16 +910,16 @@
 </section>
 
 <!-- 06 LANGUAGES -->
-<section id="languages">
+<section id="languages" class="band">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--sky)"><i>06</i>languages</span>
+      <span class="eyebrow" style="--eb:var(--sky)"><i>07</i>languages</span>
       <h2>eight languages, each with its own reason</h2>
       <p class="lede">The four you have get rewritten from the new English. The four new ones follow the markets you're already selling into.</p>
     </div>
     <div class="lgrid">
       <div class="lg rv"><b>FI</b><p><strong>Finland, home market</strong>Neste, the zero-emission reference sites, Kai's contacts. Also where Pineline's chemical story starts.</p></div>
-      <div class="lg rv"><b>EN</b><p><strong>Everyone else, and the assistants</strong>The master version. Most AI answers are built from English pages, whatever language the question is asked in.</p></div>
+      <div class="lg rv"><b>EN</b><p><strong>International buyers and the assistants</strong>For Nordic head offices that work in English and for AI answers, which still lean on English sources. Not the master the others are translated from: each language is written for its own market.</p></div>
       <div class="lg rv"><b>SV</b><p><strong>Sweden, 2026 priority</strong>OKQ8's 100,000 subscriptions, 200+ Pineline stations, the Würth delivery gap. Inköpschef and Driftsansvarig as the readers.</p></div>
       <div class="lg rv"><b>NO</b><p><strong>Norway</strong>100+ Shell and Esso sites on Pineline, Circle K subscriptions in the market. The reader is a category or procurement manager.</p></div>
       <div class="lg new rv" style="--c:var(--green)"><b>DE<small>new</small></b><p><strong>Germany and Austria</strong>The dealer channel: independent Christ and WashTec-free installers who need something to bundle. Geschäftsführer and Vertrieb as the readers.</p></div>
@@ -884,10 +932,10 @@
 </section>
 
 <!-- 07 AI VISIBILITY -->
-<section id="ai" class="band">
+<section id="ai">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--cyan)"><i>07</i>ai visibility</span>
+      <span class="eyebrow" style="--eb:var(--cyan)"><i>08</i>ai visibility</span>
       <h2>what it takes to be the answer</h2>
       <p class="lede">Each item below answers one finding from the audit. Most of them are built into the new site, so they don't cost extra; the rest is the content work after launch.</p>
     </div>
@@ -905,10 +953,10 @@
 </section>
 
 <!-- 08 KPIS -->
-<section id="kpis">
+<section id="kpis" class="band">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--pink)"><i>08</i>kpis</span>
+      <span class="eyebrow" style="--eb:var(--pink)"><i>09</i>kpis</span>
       <h2>how we'll know it's working</h2>
       <p class="lede">A new site is judged on what it brings Jouni to call. Everything else is an early sign.</p>
     </div>
@@ -952,10 +1000,10 @@
 </section>
 
 <!-- 09 PROOF -->
-<section id="proof" class="band">
+<section id="proof">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--green)"><i>09</i>proof</span>
+      <span class="eyebrow" style="--eb:var(--green)"><i>10</i>proof</span>
       <h2>the same approach, on a site i rebuilt this summer</h2>
     </div>
     <div class="proof2 rv">
@@ -984,10 +1032,10 @@
 </section>
 
 <!-- 10 WHY ME -->
-<section id="why">
+<section id="why" class="band">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow" style="--eb:var(--orange)"><i>10</i>working together</span>
+      <span class="eyebrow" style="--eb:var(--orange)"><i>11</i>working together</span>
       <h2>why work with me</h2>
     </div>
     <div class="why5">
