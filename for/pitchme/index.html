@@ -595,6 +595,23 @@
   .warm div span{font-weight:600}
   .warm div i{display:block;height:9px;border-radius:2px;background:var(--pink);width:var(--w)}
   .warm .lab{font-size:12px;color:var(--muted);display:flex;justify-content:space-between}
+  .streams{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .sm{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px 22px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .smh{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+  .smh b{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--c);font-family:var(--display);font-weight:800;font-size:16px}
+  .smh .chip{background:var(--c)}
+  .sm h3{font-size:23px;margin-bottom:10px}
+  .sm > p{font-size:15px;color:var(--muted);line-height:1.55;margin-bottom:16px}
+  .sm .warm{background:var(--surface);border-radius:12px;padding:12px 14px;margin:0 0 16px}
+  .sm .warm div{grid-template-columns:minmax(0,1fr) 70px}
+  .sm .warm div i{background:var(--c)}
+  .ppl{display:grid;gap:6px;background:var(--surface);border-radius:12px;padding:12px 14px;margin-bottom:16px}
+  .ppl div{display:flex;gap:9px;align-items:center;font-size:13.5px;font-weight:600}
+  .ppl i{font-style:normal;width:26px;height:26px;border-radius:8px;background:var(--c);display:grid;place-items:center;font-size:13px;flex:none}
+  .sm .use{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line-2);font-size:14px;line-height:1.45;color:var(--ink)}
+  .sm .use b{display:block;font-family:var(--display);font-size:13px;color:var(--muted);font-weight:600;margin-bottom:2px}
+  .fnote2{font-size:13px;color:var(--muted);margin-top:16px;max-width:820px}
+  @media(max-width:900px){.streams{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -732,48 +749,45 @@
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow" style="--eb:var(--pink)"><i>04</i>linkedin, meet sales</span>
-      <h2>your sales team calls firms that already know you</h2>
-      <p class="lede">LinkedIn tells us which companies see and engage with your posts. Put that next to your website visits and your CRM, and your sales team knows which firms are warming up before anyone books a demo.</p>
+      <h2>three new streams of leads for your sales team</h2>
+      <p class="lede">Thought leadership ads build awareness, and every week they also create signals your sales team can act on, from firms warming up to people asking for a demo.</p>
     </div>
-    <div class="kpi rv">
-      <div class="kmain">
-        <span class="chip">what sales gets every week</span>
-        <h3>a list of warm accounts, ranked</h3>
-        <p>Recruitment firms that saw your people's posts again and again, engaged, or visited your product pages. Sales reaches out with context instead of a cold first touch, so more conversations turn into meetings.</p>
-        <div class="form">
-          <div class="q">example: warm firms this week</div>
-          <div class="warm">
-            <div class="lab"><span>firm</span><span>engagement</span></div>
-            <div><span>healthcare staffing firm, 400 staff</span><i style="--w:100%"></i></div>
-            <div><span>IT recruitment agency, 60 staff</span><i style="--w:78%"></i></div>
-            <div><span>executive search boutique, 25 staff</span><i style="--w:55%"></i></div>
-            <div><span>engineering staffing firm, 150 staff</span><i style="--w:41%"></i></div>
-          </div>
-          <p class="fnote">Illustration only. The real list comes from LinkedIn company engagement, your website and your CRM.</p>
+    <div class="streams rv">
+      <div class="sm" style="--c:var(--yellow)">
+        <div class="smh"><b>1</b><span class="chip">warm</span></div>
+        <h3>company engagement</h3>
+        <p>LinkedIn shows which companies see and engage with your posts. Sales gets a ranked list of recruitment firms warming up, before anyone there has raised a hand.</p>
+        <div class="warm">
+          <div><span>healthcare staffing firm</span><i style="--w:100%"></i></div>
+          <div><span>IT recruitment agency</span><i style="--w:74%"></i></div>
+          <div><span>executive search boutique</span><i style="--w:52%"></i></div>
         </div>
+        <p class="use"><b>sales uses it for</b>account-based outreach to firms that already know your name</p>
       </div>
-      <div class="kside">
-        <div class="ksec">
-          <span class="chip" style="--c:var(--yellow)">what we connect</span>
-          <h4>three sources, one view</h4>
-          <ul>
-            <li>LinkedIn company engagement: which firms see and react to each post</li>
-            <li>Website visits by company, so product-page interest shows up</li>
-            <li>Your CRM, so we can see which engaged firms become demos and deals</li>
-          </ul>
+      <div class="sm" style="--c:var(--orange)">
+        <div class="smh"><b>2</b><span class="chip">warmer</span></div>
+        <h3>personal engagement</h3>
+        <p>The actual people who like and comment on your team's posts. Named recruitment leaders who just showed interest in your topic, in public.</p>
+        <div class="ppl">
+          <div><i>&#128077;</i><span>Head of Delivery, staffing firm</span></div>
+          <div><i>&#128172;</i><span>Founder, recruitment agency</span></div>
+          <div><i>&#128077;</i><span>Recruitment Ops Lead</span></div>
         </div>
-        <div class="kwatch">
-          <span class="chip" style="--c:var(--green)">how we judge it</span>
-          <h4>engagement first, then pipeline</h4>
-          <ul>
-            <li>Are the right firms and roles seeing and engaging with your people?</li>
-            <li>Do they visit the product pages and ask for a demo?</li>
-            <li>Do those demos become meetings and real opportunities?</li>
-          </ul>
-          <p>Engagement is how awareness grows. Pipeline is how we know it pays off. We track both.</p>
+        <p class="use"><b>sales uses it for</b>a personal follow-up that starts from the post they engaged with</p>
+      </div>
+      <div class="sm" style="--c:var(--pink)">
+        <div class="smh"><b>3</b><span class="chip">hot</span></div>
+        <h3>demo requests and direct interest</h3>
+        <p>People who book a demo, fill in a form or reach out to your team directly after seeing your posts and retargeting ads.</p>
+        <div class="ppl">
+          <div><i>&#128197;</i><span>demo booked</span></div>
+          <div><i>&#9993;&#65039;</i><span>form filled on the product page</span></div>
+          <div><i>&#128172;</i><span>direct message to your founder</span></div>
         </div>
+        <p class="use"><b>sales uses it for</b>fast follow-up while the interest is fresh</p>
       </div>
     </div>
+    <p class="fnote2 rv">Illustrations only. The real signals come from LinkedIn, your website and your CRM, connected so you can see which engaged firms and people become demos and deals.</p>
   </div>
 </section>
 
