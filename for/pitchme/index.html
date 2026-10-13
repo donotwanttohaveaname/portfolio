@@ -612,6 +612,53 @@
   .sm .use b{display:block;font-family:var(--display);font-size:13px;color:var(--muted);font-weight:600;margin-bottom:2px}
   .fnote2{font-size:13px;color:var(--muted);margin-top:16px;max-width:820px}
   @media(max-width:900px){.streams{grid-template-columns:minmax(0,1fr)}}
+  .rsn{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .rc{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
+  .rc:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+  .rc .vis{background:var(--c);height:168px;padding:20px;display:flex;align-items:center;justify-content:center;gap:12px;position:relative}
+  .rc .tx{padding:20px 22px 22px}
+  .rc .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--ink);color:#fff;font-family:var(--display);font-weight:800;font-size:13px;margin-bottom:12px}
+  .rc h3{font-size:24px;margin-bottom:8px}
+  .rc p{font-size:15.5px;color:var(--muted);line-height:1.5}
+  /* 1 */
+  .mini{background:#fff;border-radius:12px;padding:12px;width:42%;display:flex;flex-direction:column;gap:7px;position:relative;box-shadow:0 6px 16px -8px rgba(0,0,0,.25)}
+  .mini .ln{height:6px;border-radius:3px;background:rgba(0,0,0,.14)}
+  .mini .ln.s{width:60%}
+  .mini .lg{font-family:var(--display);font-size:11px;font-weight:700;background:rgba(0,0,0,.08);border-radius:6px;padding:6px;text-align:center}
+  .mini .av{width:30px;height:30px;border-radius:50%;background:var(--surface);display:grid;place-items:center;font-size:17px}
+  .mini em{font-style:normal;font-family:var(--display);font-size:11.5px;font-weight:700;align-self:flex-start;padding:2px 7px;border-radius:5px;background:var(--surface)}
+  .mini.dim{opacity:.55;transform:scale(.92)}
+  .mini.hot{transform:rotate(2deg)}
+  .mini.hot em{background:var(--ink);color:#fff}
+  /* 2 */
+  .lot{display:flex;gap:10px;align-items:flex-end;height:100%;width:100%;padding-bottom:22px}
+  .lot .col{flex:1;display:flex;gap:3px;align-items:flex-end;height:100%}
+  .lot i,.lot b{display:block;flex:1;border-radius:3px 3px 0 0;height:var(--h)}
+  .lot i{background:rgba(255,255,255,.75)}
+  .lot b{background:var(--ink)}
+  .rc .key{position:absolute;left:20px;bottom:10px;display:flex;gap:12px;font-family:var(--display);font-size:12px;font-weight:600}
+  .rc .key i{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--ink);margin-right:5px;vertical-align:-1px}
+  .rc .key i.g{background:rgba(255,255,255,.75)}
+  /* 3 */
+  .chips{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
+  .chips span{background:#fff;border-radius:999px;padding:6px 11px;font-family:var(--display);font-size:12.5px;font-weight:600;box-shadow:0 4px 10px -6px rgba(0,0,0,.25)}
+  .chips span:last-child{background:var(--ink);color:#fff}
+  /* 4 */
+  .feed{width:58%;display:grid;gap:7px}
+  .fp{background:#fff;border-radius:10px;padding:9px 10px;display:flex;align-items:center;gap:8px;position:relative;opacity:.7}
+  .fp .av{width:20px;height:20px;border-radius:50%;background:rgba(0,0,0,.12);flex:none}
+  .fp .ln{height:6px;border-radius:3px;background:rgba(0,0,0,.14);flex:1}
+  .fp.on{opacity:1;box-shadow:0 8px 18px -8px rgba(0,0,0,.35)}
+  .fp em{font-style:normal;font-family:var(--display);font-size:10.5px;font-weight:700;color:var(--muted)}
+  /* 5 */
+  .steps4{display:grid;gap:6px;width:100%}
+  .steps4 span{display:block;width:var(--w);min-width:max-content;background:#fff;border-radius:7px;padding:5px 10px;font-family:var(--display);font-size:12.5px;font-weight:600}
+  .steps4 span:last-child{background:var(--ink);color:#fff}
+  /* 6 */
+  .grow{position:absolute;left:20px;right:20px;bottom:22px;width:calc(100% - 40px);height:60%}
+  .rc .badge{position:absolute;top:18px;right:20px;background:#fff;border-radius:8px;padding:5px 10px;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:-.02em;box-shadow:0 6px 14px -8px rgba(0,0,0,.3)}
+  @media(max-width:980px){.rsn{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:620px){.rsn{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -714,13 +761,52 @@
       <h2>six reasons this is the right format for you</h2>
       <p class="lede">A thought leadership ad is a real post from a real person at your company, promoted as an ad. It looks and reads like any other post in the feed, and it reaches the people you choose. These reasons come from running them every week for B2B SaaS companies.</p>
     </div>
-    <div class="princ eight rv">
-      <div class="pr"><div class="n" style="--c:var(--pink)">1</div><h3>people trust people</h3><p>Buyers follow and believe individuals. A post from someone with a face and a name gets read; a company logo gets skipped.</p></div>
-      <div class="pr"><div class="n" style="--c:var(--orange)">2</div><h3>organic is a lottery</h3><p>A good post can reach thousands or forty people, and you can't predict which. Paid reach makes sure the right recruitment leaders actually see it.</p></div>
-      <div class="pr"><div class="n" style="--c:var(--yellow)">3</div><h3>you pick who sees it</h3><p>Target by company, industry, job title and seniority: owners, heads of delivery, recruitment ops, COOs at staffing and recruitment firms. No wasted reach.</p></div>
-      <div class="pr"><div class="n" style="--c:var(--green)">4</div><h3>it feels native</h3><p>It sits in the feed like any other post and works on mobile, where recruiters spend their day. No banner blindness.</p></div>
-      <div class="pr"><div class="n" style="--c:var(--teal)">5</div><h3>it builds an audience</h3><p>Everyone who engages becomes an audience we can retarget with a direct product and demo message. Awareness turns into something you can convert.</p></div>
-      <div class="pr"><div class="n" style="--c:var(--sky)">6</div><h3>it lifts your people too</h3><p>Every ad grows the person behind it. I've seen a founder with almost no LinkedIn presence pass 100 likes on a single promoted post.</p></div>
+    <div class="rsn rv">
+      <article class="rc" style="--c:var(--pink)">
+        <div class="vis">
+          <div class="mini dim"><span class="lg">logo</span><span class="ln"></span><span class="ln s"></span><em>scrolled past</em></div>
+          <div class="mini hot"><span class="av">&#128578;</span><span class="ln"></span><span class="ln s"></span><em>read</em></div>
+        </div>
+        <div class="tx"><span class="n">1</span><h3>people trust people</h3><p>A face and a name get read. A company logo gets scrolled past.</p></div>
+      </article>
+      <article class="rc" style="--c:var(--orange)">
+        <div class="vis">
+          <div class="lot">
+            <div class="col"><i style="--h:78%"></i><b style="--h:70%"></b></div>
+            <div class="col"><i style="--h:12%"></i><b style="--h:72%"></b></div>
+            <div class="col"><i style="--h:40%"></i><b style="--h:74%"></b></div>
+            <div class="col"><i style="--h:6%"></i><b style="--h:73%"></b></div>
+            <div class="col"><i style="--h:55%"></i><b style="--h:75%"></b></div>
+          </div>
+          <div class="key"><span><i class="g"></i>organic</span><span><i></i>with ads</span></div>
+        </div>
+        <div class="tx"><span class="n">2</span><h3>organic is a lottery</h3><p>Paid reach makes sure the right people see every post, every week.</p></div>
+      </article>
+      <article class="rc" style="--c:var(--yellow)">
+        <div class="vis">
+          <div class="chips"><span>staffing &amp; recruiting</span><span>owner / founder</span><span>head of delivery</span><span>recruitment ops</span><span>COO</span><span>your target list</span></div>
+        </div>
+        <div class="tx"><span class="n">3</span><h3>you pick who sees it</h3><p>Recruitment firms by size and region, and the exact roles that buy.</p></div>
+      </article>
+      <article class="rc" style="--c:var(--green)">
+        <div class="vis">
+          <div class="feed"><div class="fp"><span class="av"></span><span class="ln"></span></div><div class="fp on"><span class="av"></span><span class="ln"></span><em>promoted</em></div><div class="fp"><span class="av"></span><span class="ln"></span></div></div>
+        </div>
+        <div class="tx"><span class="n">4</span><h3>it feels native</h3><p>It reads like any other post in the feed, on the phone where recruiters live.</p></div>
+      </article>
+      <article class="rc" style="--c:var(--teal)">
+        <div class="vis">
+          <div class="steps4"><span style="--w:100%">saw the post</span><span style="--w:66%">engaged</span><span style="--w:40%">sees your product ad</span><span style="--w:20%">demo</span></div>
+        </div>
+        <div class="tx"><span class="n">5</span><h3>it builds an audience</h3><p>Everyone who engages can be retargeted with a direct product and demo message.</p></div>
+      </article>
+      <article class="rc" style="--c:var(--sky)">
+        <div class="vis">
+          <svg class="grow" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,72 30,70 60,66 90,58 120,46 150,32 200,8" fill="none" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg>
+          <span class="badge">+ followers</span>
+        </div>
+        <div class="tx"><span class="n">6</span><h3>it lifts your people too</h3><p>Every ad grows the person behind it: more followers and more reach for their next organic post.</p></div>
+      </article>
     </div>
   </div>
 </section>
