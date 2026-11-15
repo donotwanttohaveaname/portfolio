@@ -1,0 +1,16 @@
+/* One screen per view for the ORIGINAL A and B design. Nothing here restyles: it only sizes each
+   section to the viewport on laptop and desktop widths. v1-fit.js measures the bars around the views
+   and scales a section's content down when a short screen cannot hold it. Phones keep the normal flow. */
+@media(min-width:941px){
+  html{scroll-snap-type:y proximity}
+  .hero,.proof,section.sec{scroll-snap-align:start}
+  .hero{min-height:calc(100svh - var(--top,121px));display:flex;align-items:center}
+  .hero .wrap{width:100%;padding-top:20px;padding-bottom:20px}
+  .proof{min-height:calc(100svh - var(--strip,112px));display:flex;align-items:center;padding-top:68px}
+  .proof .wrap{width:100%}
+  section.sec{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:88px 0 20px !important}
+  section.sec > .wrap{width:100%}
+  section.cta{min-height:calc(100svh - var(--foot,390px))}
+  footer{padding:40px 0 26px}
+  .fgrid{margin-bottom:26px}
+}

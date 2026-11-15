@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Builds the EasyWash B2B landing page concepts.
 
-  a/index.html  Variation A: platform first (memberships, app, plate recognition)
+  a/index.html  Variation A: platform first, original colour scheme (ew.css + ew-classic.css)
+  a-new/        the same page in the light scheme (ew.css only), kept for comparison
   b/index.html  Variation B: terminal first (hardware at the bay, platform behind it)
   c/index.html  Variation C: follow one car (scroll story; source in _src/c.html)
   index.html    the pitch page (head and styles lifted from ../index.html, body from _src/pitch.html)
@@ -30,7 +31,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/ew.css">
+%%CSS%%
 </head>
 <body>
 """
@@ -40,6 +41,7 @@ CONCEPT = """
   <div><b>EasyWash for business.</b> Concept %%VERSION%%.</div>
   <nav class="switch" aria-label="Concept variation">
     <a href="../a/"%%ON_A%%>A<span>: platform first</span></a>
+    <a href="../a-new/"%%ON_A-NEW%%>A-new<span>: light</span></a>
     <a href="../b/"%%ON_B%%>B<span>: terminal first</span></a>
     <a href="../c/"%%ON_C%%>C<span>: follow one car</span></a>
   </nav>
@@ -49,7 +51,7 @@ CONCEPT = """
 
 NAV = """
 <header class="nav"><div class="wrap">
-  <a class="logo" href="#top"><img src="../assets/easywash-blue.svg" alt="EasyWash" width="124" height="36"><span>for business</span></a>
+  <a class="logo" href="#top"><img src="../assets/%%LOGO%%" alt="EasyWash" width="124" height="36"><span>for business</span></a>
   <nav class="menu" aria-label="Page">
     <a href="#platform">Platform</a>
     <a href="#how">How it works</a>
@@ -60,7 +62,7 @@ NAV = """
   <div class="nav-r">
     <a class="txt" href="https://easywash.com">For drivers</a>
     <a class="txt" href="#">Operator login</a>
-    <a class="btn btn-blue btn-sm" href="#call">Book a call</a>
+    <a class="btn btn-main btn-sm" href="#call">Book a call</a>
   </div>
 </div></header>
 """
@@ -68,16 +70,16 @@ NAV = """
 HERO_A = """
 <section class="view hero" id="top"><div class="wrap">
   <div>
-    <h1>Wash revenue that arrives every month.</h1>
+    <h1>Wash revenue that arrives <em>every month.</em></h1>
     <p class="lead">EasyWash sells memberships in your app and at the bay, reads the plate, starts the wash and bills every month.</p>
-    <div class="cta-row"><a class="btn btn-blue" href="#call">Book a call</a><a class="btn btn-line" href="#how">See how it works</a></div>
+    <div class="cta-row"><a class="btn btn-main" href="#call">Book a call</a><a class="btn btn-alt" href="#how">See how it works</a></div>
   </div>
   <form class="bay" id="bay">
     <img class="cam" src="../assets/camera.webp" alt="" width="500" height="420">
     <label for="plate">Try it. Type a licence plate and drive in.</label>
     <div class="bay-in">
       <span class="pin"><i></i><input id="plate" value="ABC-123" maxlength="8" autocomplete="off" spellcheck="false" aria-label="Licence plate"></span>
-      <button class="btn btn-white" type="submit">Drive in</button>
+      <button class="btn btn-inv" type="submit">Drive in</button>
     </div>
     <ol class="log" aria-live="polite">
       <li><small>07:42</small><span>Camera reads <b data-plate>ABC-123</b></span></li>
@@ -93,9 +95,9 @@ HERO_A = """
 HERO_B = """
 <section class="view hero" id="top"><div class="wrap">
   <div>
-    <h1>The payment terminal that sells memberships.</h1>
+    <h1>The payment terminal that <em>sells memberships.</em></h1>
     <p class="lead">It takes cards and phones, signs a driver up for a monthly plan in five seconds, and starts the wash.</p>
-    <div class="cta-row"><a class="btn btn-blue" href="#call">Book a call</a><a class="btn btn-line" href="#hardware">See the hardware</a></div>
+    <div class="cta-row"><a class="btn btn-main" href="#call">Book a call</a><a class="btn btn-alt" href="#hardware">See the hardware</a></div>
   </div>
   <div class="hw-hero">
     <img class="cam" src="../assets/camera.webp" alt="EasyWash licence plate camera" width="500" height="420">
@@ -105,7 +107,7 @@ HERO_B = """
 """
 
 PROOF = """
-<section class="view" id="proof"><div class="wrap">
+<section class="view dark" id="proof"><div class="wrap">
   <h2 class="say">Every month, <b>100,000 drivers</b> pay one Nordic fuel retailer for their car wash. That is <b>€3 million</b> of recurring revenue, on EasyWash.</h2>
   <div class="facts">
     <div><b>700+ sites</b>live in Finland, Sweden, Norway, Denmark and Latvia</div>
@@ -213,7 +215,7 @@ MODS = """
 """
 
 WAYS = """
-<section class="view tint" id="start"><div class="wrap">
+<section class="view tint dark" id="start"><div class="wrap">
   <div class="head">
     <h2>Keep the terminals you already paid for.</h2>
     <p class="lead">Most operators we meet have working terminals and no wish to replace them. Start with the app and the camera.</p>
@@ -227,7 +229,7 @@ WAYS = """
 """
 
 HARDWARE = """
-<section class="view tint" id="hardware"><div class="wrap">
+<section class="view tint dark" id="hardware"><div class="wrap">
   <h2 class="head">Two units at the bay.</h2>
   <div class="hw">
     <div class="hwc"><img src="../assets/terminal.webp" alt="EasyWash payment terminal" width="689" height="1035" loading="lazy">
@@ -266,7 +268,7 @@ CALC = """
       <span>Recurring revenue a month</span>
       <div class="n" id="o-month">€29,000</div>
       <div class="y"><b id="o-year">€348,000</b> a year, before single washes</div>
-      <a class="btn btn-white" href="#call">Book a call</a>
+      <a class="btn btn-inv" href="#call">Book a call</a>
     </div>
   </div>
 </div></section>
@@ -331,7 +333,7 @@ ROLLOUT = """
       <li>A price for your setup</li>
       <li>In English, Finnish or Swedish</li>
     </ul>
-    <a class="btn btn-white" href="#call">Book a call</a>
+    <a class="btn btn-inv" href="#call">Book a call</a>
   </div>
 </div></section>
 """
@@ -393,7 +395,7 @@ CTA = """
         <label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name">
         <label for="f-mail">Work email</label><input id="f-mail" type="email" autocomplete="email" inputmode="email">
         <label for="f-co">Company</label><input id="f-co" type="text" autocomplete="organization">
-        <button class="btn btn-blue" type="button" data-next>Pick a time</button>
+        <button class="btn btn-main" type="button" data-next>Pick a time</button>
         <button class="back" type="button" data-back>Back</button>
       </div>
       <div class="fstep" data-step="3" hidden>
@@ -418,8 +420,11 @@ CTA = """
 </html>
 """
 
+LIGHT = '<link rel="stylesheet" href="../assets/ew.css">'
+CLASSIC = LIGHT + '\n<link rel="stylesheet" href="../assets/ew-classic.css">'   # original colour scheme on top
+
 VARIANTS = {
-    "a": dict(
+    "a": dict(css=CLASSIC, logo="easywash-white.svg",
         title="EasyWash for business: car wash subscription and payment platform",
         desc="EasyWash sells memberships in your app and at the bay, reads the plate, starts the wash and bills every month. 700+ wash sites.",
         hero=HERO_A, stop1=STOP1_A,
@@ -427,7 +432,7 @@ VARIANTS = {
         mods_h2="Seven parts. Take all of them, or the ones you are missing.",
         order=["PROOF", "GAP", "HOW", "MODS", "WAYS", "CALC", "CASES", "DOORS", "ROLLOUT", "COMPARE", "FAQ", "CTA"],
     ),
-    "b": dict(
+    "b": dict(css=CLASSIC, logo="easywash-white.svg",
         title="EasyWash: the car wash payment terminal that sells memberships",
         desc="The EasyWash payment terminal and plate recognition camera sell monthly wash memberships at the bay. 700+ wash sites.",
         hero=HERO_B, stop1=STOP1_B,
@@ -436,6 +441,8 @@ VARIANTS = {
         order=["PROOF", "HOW", "HARDWARE", "MODS", "CASES", "CALC", "DOORS", "ROLLOUT", "COMPARE", "FAQ", "CTA"],
     ),
 }
+VARIANTS = {"a-new": dict(VARIANTS["a"], css=LIGHT, logo="easywash-blue.svg",
+                         title="EasyWash for business (A-new, light): car wash subscription and payment platform")}
 SECTIONS = dict(PROOF=PROOF, GAP=GAP, HOW=HOW, MODS=MODS, WAYS=WAYS, HARDWARE=HARDWARE, CALC=CALC,
                 CASES=CASES, DOORS=DOORS, ROLLOUT=ROLLOUT, COMPARE=COMPARE, FAQ=FAQ, CTA=CTA)
 
@@ -450,14 +457,14 @@ def check(html, key):
 
 def concept(key):
     c = CONCEPT.replace("%%VERSION%%", VERSION)
-    for k in "abc":
+    for k in ("a", "a-new", "b", "c"):
         c = c.replace(f"%%ON_{k.upper()}%%", ' class="on" aria-current="page"' if k == key else "")
     return c
 
 
 def build(key, v):
     html = HEAD + concept(key) + NAV + v["hero"] + "".join(SECTIONS[s] for s in v["order"])
-    for k, val in {"%%TITLE%%": v["title"], "%%DESC%%": v["desc"], "%%HOW_H2%%": v["how_h2"],
+    for k, val in {"%%CSS%%": v["css"], "%%LOGO%%": v["logo"], "%%TITLE%%": v["title"], "%%DESC%%": v["desc"], "%%HOW_H2%%": v["how_h2"],
                    "%%STOP1%%": v["stop1"], "%%MODS_H2%%": v["mods_h2"]}.items():
         html = html.replace(k, val)
     check(html, key)
@@ -481,13 +488,13 @@ def build_pitch():
     old = (ROOT.parent / "index.html").read_text(encoding="utf-8")
     head = old[: old.index("</head>")].rstrip()
     script = old[old.rindex("<script>"): old.rindex("</script>") + len("</script>")]
-    title = "easywash for business: a b2b landing page concept, three ways · anna pogrebniak"
-    desc = "For Euro Car Wash: a dedicated EasyWash B2B landing page in three clickable versions, with the reasoning behind each."
+    title = "easywash for business: a b2b landing page concept, twice · anna pogrebniak"
+    desc = "For Euro Car Wash: a dedicated EasyWash B2B landing page in two clickable variations, platform first and terminal first, with the reasoning behind each."
     head = re.sub(r"<title>.*?</title>", "<title>" + title + "</title>", head, flags=re.S)
     head = re.sub(r'(<meta name="description" content=")[^"]*', r"\\g<1>" + desc, head)
     head = re.sub(r'(<meta property="og:title" content=")[^"]*', r"\\g<1>" + title, head)
     head = re.sub(r'(<meta property="og:description" content=")[^"]*', r"\\g<1>" + desc, head)
-    head = re.sub(r'(<meta property="og:image" content=")[^"]*', r"\\g<1>https://awesomemarketer.fi/for/ecw/easywash/assets/shot-c.webp", head)
+    head = re.sub(r'(<meta property="og:image" content=")[^"]*', r"\\g<1>https://awesomemarketer.fi/for/ecw/easywash/assets/shot-a.webp", head)
     body = (SRC / "pitch.html").read_text(encoding="utf-8").replace("%%VERSION%%", VERSION)
     html = head + "\\n" + (SRC / "pitch.css").read_text(encoding="utf-8") + "\\n</head>\\n" + body + "\\n" + script + "\\n</body>\\n</html>\\n"
     assert "\\u2014" not in body, "em dash in pitch"
@@ -496,6 +503,8 @@ def build_pitch():
 
 
 if __name__ == "__main__":
+    import runpy
+    runpy.run_path(str(SRC / "build_ab.py"), run_name="__main__")   # A and B, original design
     for key, v in VARIANTS.items():
         build(key, v)
     if (SRC / "c.html").exists():
