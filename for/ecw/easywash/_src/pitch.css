@@ -1,0 +1,19 @@
+<style>
+  /* additions for the EasyWash B2B pitch, on top of the October proposal's stylesheet */
+  .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
+  .two .shot-card{margin:0}
+  .two .shot{aspect-ratio:16/11}
+  .two .shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .vcol{display:flex;flex-direction:column;gap:16px}
+  .vs{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 24px 22px;box-shadow:var(--shadow)}
+  .vs h3{margin:12px 0 10px}
+  .vs p{font-size:15.5px;line-height:1.6;margin:0 0 10px}
+  .vs p b{font-weight:700}
+  .vs p:last-child{margin-bottom:0}
+  .vs .lab{font-family:var(--mono);font-size:10px;letter-spacing:.14em;font-weight:700;color:var(--muted-2);display:block;margin-top:14px;margin-bottom:4px}
+  .pick{margin-top:22px;background:var(--ink);color:#fff;border-radius:20px;padding:26px 28px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+  .pick .chip{white-space:nowrap}
+  .pick p{font-size:17px;line-height:1.55;margin:0}
+  .pick b{color:#fff}
+  @media(max-width:860px){.two{grid-template-columns:1fr}.pick{grid-template-columns:1fr;gap:12px}}
+</style>
