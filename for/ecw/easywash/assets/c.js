@@ -34,19 +34,33 @@
 
   // each view plays once when it arrives; the HUD follows the car
   var t = $('#hud-t'), s = $('#hud-s'), views = $$('.v');
+  function arrive(v) {
+    v.classList.add('in');
+    t.textContent = v.dataset.t || '';
+    s.textContent = v.dataset.s || '';
+  }
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        en.target.classList.add('in');
-        t.textContent = en.target.dataset.t || '';
-        s.textContent = en.target.dataset.s || '';
-      });
+      entries.forEach(function (en) { if (en.isIntersecting) arrive(en.target); });
     }, { threshold: 0.55 });
     views.forEach(function (v) { io.observe(v); });
   } else {
     views.forEach(function (v) { v.classList.add('in'); });
   }
+  // safety net: the door must never stay shut over its content. If the observer has not fired for a view
+  // that fills the screen, open it from a slow timer; the timer stops once every view has played.
+  var net = setInterval(function () {
+    var waiting = 0, mid = window.innerHeight / 2;
+    views.forEach(function (v) {
+      if (v.classList.contains('in')) return;
+      var r = v.getBoundingClientRect();
+      if (r.top < mid && r.bottom > mid) arrive(v); else waiting++;
+    });
+    if (!waiting) clearInterval(net);
+  }, 500);
+  // and any click or key inside the door view opens it
+  var doorView = $('#door');
+  ['pointerdown', 'keydown'].forEach(function (ev) { doorView.addEventListener(ev, function () { arrive(doorView); }); });
 
   // the rating is a real control
   var out = $('#rate-out');
