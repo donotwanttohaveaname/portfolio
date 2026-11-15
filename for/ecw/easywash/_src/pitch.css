@@ -1,6 +1,6 @@
 <style>
   /* additions for the EasyWash B2B pitch, on top of the October proposal's stylesheet */
-  .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
+  .two{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
   .two .shot-card{margin:0}
   .two .shot{aspect-ratio:16/11}
   .two .shot img{width:100%;height:100%;object-fit:cover;object-position:top}
@@ -15,5 +15,6 @@
   .pick .chip{white-space:nowrap}
   .pick p{font-size:17px;line-height:1.55;margin:0}
   .pick b{color:#fff}
-  @media(max-width:860px){.two{grid-template-columns:1fr}.pick{grid-template-columns:1fr;gap:12px}}
+  .two .act{flex-wrap:wrap}.two .act .btn{font-size:15px;padding:12px 18px}.vs h3{font-size:21px}
+  @media(max-width:1000px){.two{grid-template-columns:1fr}.pick{grid-template-columns:1fr;gap:12px}}
 </style>

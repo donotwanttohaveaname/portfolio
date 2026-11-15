@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>EasyWash for business: follow one car</title>
+<meta name="description" content="Follow one car through an EasyWash site: the first visit, the camera, the door, the rating, the monthly renewal, and what it adds up to for the operator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Schibsted+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/c.css">
+</head>
+<body>
+%%CONCEPT%%
+<header class="hud"><div class="wrap">
+  <a class="logo" href="#top"><img src="../assets/easywash-white.svg" alt="EasyWash for business" width="124" height="36"></a>
+  <div class="tele" aria-live="polite"><span class="plate"><i></i><span data-plate>ABC-123</span></span><span id="hud-t"></span><b id="hud-s">Type a plate</b></div>
+  <a class="btn btn-go btn-sm" href="#call">Book a call</a>
+</div></header>
+
+<main>
+<section class="v v0" id="top" data-t="" data-s="Type a plate"><div class="wrap">
+  <h1>Follow one car.</h1>
+  <p class="b">Type a plate. Watch what happens at your bay, on the 1st of the month, and in your accounts.</p>
+  <form class="start" id="start">
+    <span class="pin"><i></i><input id="plate" value="ABC-123" maxlength="8" autocomplete="off" spellcheck="false" aria-label="Licence plate"></span>
+    <button class="btn btn-go" type="submit">Follow it</button>
+  </form>
+</div></section>
+
+<section class="v" id="first" data-t="Mon 07:42" data-s="First visit"><div class="wrap two">
+  <div>
+    <h2><em>Monday, 07:42.</em> One tap, and <span data-plate>ABC-123</span> is a member.</h2>
+    <p class="b">The terminal shows the plate the camera has read. The driver picks the monthly plan and taps a card or a phone. <b>At WashXL in Finland it takes under five seconds.</b></p>
+  </div>
+  <div class="shot"><img src="../assets/pillar.webp" alt="EasyWash terminal at a wash bay, showing three wash programmes and an unlimited wash club at 29.90 a month" width="1097" height="1500"></div>
+</div></section>
+
+<section class="v" id="scan" data-t="Thu 18:10" data-s="Recognised"><div class="wrap two flip">
+  <div>
+    <h2><em>Thursday, 18:10.</em> The camera knows the car.</h2>
+    <p class="b">No card, tag or app to find. The image is processed inside the camera, and <b>only the plate number leaves the site.</b></p>
+  </div>
+  <div class="finder" role="img" aria-label="Camera view: the licence plate is read and matched to a membership">
+    <span class="beam"></span>
+    <span class="plate"><i></i><span data-plate>ABC-123</span></span>
+    <span class="hit">Member. Unlimited Premium.</span>
+  </div>
+</div></section>
+
+<section class="v v3" id="door" data-t="Thu 18:10" data-s="Door open">
+  <div class="door" aria-hidden="true"><img src="../assets/easywash-white.svg" alt="" width="360" height="104"></div>
+  <div class="wrap">
+    <h2><em>Still 18:10.</em> The door opens. Nobody pressed anything.</h2>
+    <p class="b">EasyWash starts the right programme on the machine you already own, and runs the door, the boom and the dryer.</p>
+    <ul class="brands"><li>Christ</li><li>Sonny's</li><li>PDQ</li><li>Kärcher</li><li>Rollover, tunnel or jet wash</li></ul>
+  </div>
+</section>
+
+<section class="v" id="rate" data-t="Thu 18:17" data-s="Washed"><div class="wrap two">
+  <div>
+    <h2><em>18:17.</em> Clean car. One question.</h2>
+    <p class="b">Every wash can end with a rating in your app. A low one alerts the site manager straight away. <b>At Washman in Finland, 60% of customers use the app.</b></p>
+  </div>
+  <div class="rate">
+    <h3 id="rq">How was your wash, <span data-plate>ABC-123</span>?</h3>
+    <div class="scale" role="group" aria-labelledby="rq">
+      <button type="button" aria-pressed="false">1</button><button type="button" aria-pressed="false">2</button><button type="button" aria-pressed="false">3</button><button type="button" aria-pressed="false">4</button><button type="button" aria-pressed="false">5</button>
+    </div>
+    <div class="ends"><span>Poor</span><span>Excellent</span></div>
+    <output id="rate-out" aria-live="polite">Tap a number to answer as the driver.</output>
+  </div>
+</div></section>
+
+<section class="v" id="renews" data-t="The 1st" data-s="€29.90 paid"><div class="wrap two flip">
+  <div>
+    <h2><em>The 1st.</em> It rained all week. €29.90 arrived anyway.</h2>
+    <p class="b">Members pay in advance, every month, whether they wash five times or stay home.</p>
+    <blockquote class="said">“With subscriptions, profit per wash is lower, but there are many more washes.”<cite>Ronalds Vītols, Divi Vienā, Latvia. Revenue tripled in 90 days.</cite></blockquote>
+  </div>
+  <div>
+    <div class="month" id="month" role="img" aria-label="One month: the plan renews on day 1, the car is washed on five days, and it rains for seven"></div>
+    <div class="key"><span><i style="background:var(--go)"></i>Plan renews</span><span><i style="background:var(--blue)"></i>Washed</span><span><i style="background:repeating-linear-gradient(135deg,rgba(255,255,255,.4) 0 3px,rgba(255,255,255,.1) 3px 8px)"></i>Rain</span></div>
+  </div>
+</div></section>
+
+<section class="v" id="numbers" data-t="One year" data-s="€358.80"><div class="wrap two">
+  <div>
+    <h2><span data-plate>ABC-123</span> pays €358.80 a year. Now count the cars like it.</h2>
+    <div class="fields">
+      <div class="field"><label for="c-sites">Wash sites <output id="o-sites">5</output></label><input type="range" id="c-sites" min="1" max="200" value="5"></div>
+      <div class="field"><label for="c-mem">Members per site <output id="o-mem">200</output></label><input type="range" id="c-mem" min="25" max="800" step="25" value="200"></div>
+    </div>
+    <p class="b">One Nordic fuel retailer averages about 500 members per station. Company cars go on a single invoice, billed by plate.</p>
+  </div>
+  <div class="sum" aria-live="polite">
+    <span>Recurring revenue a month</span>
+    <div class="n" id="o-month">€29,900</div>
+    <div class="y"><b id="o-year">€358,800</b> a year, before single washes</div>
+  </div>
+</div></section>
+
+<section class="v" id="proof" data-t="" data-s="Other operators"><div class="wrap">
+  <h2>It already happened to them.</h2>
+  <div class="ledger">
+    <div><b>3x</b><span>Divi Vienā, Latvia</span><p>Revenue tripled within 90 days. Each station was fitted in three to four hours.</p></div>
+    <div><b>60%</b><span>Washman, Finland</span><p>of customers use the app. Average spend per wash is €11 to 14.</p></div>
+    <div><b>5 sec</b><span>WashXL, Finland</span><p>to join a monthly plan at the bay. A car can drive in every 30 seconds.</p></div>
+    <div><b>100,000</b><span>A Nordic fuel retailer</span><p>members paying every month: €3 million of recurring revenue. The name comes on a call.</p></div>
+  </div>
+</div></section>
+
+<section class="v v8" id="call" data-t="" data-s="Your turn">
+  <div class="wrap two">
+    <div>
+      <h2>Your bay next.</h2>
+      <p class="b">Keep the terminals you have. Start with the app and a camera per lane, on your busiest site. The first call takes 15 minutes.</p>
+    </div>
+    <form class="form" id="form" novalidate>
+      <div class="prog" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+      <div class="fstep" data-step="1">
+        <h3 id="fq">How many wash sites do you run?</h3>
+        <div class="chips" role="group" aria-labelledby="fq" data-sites>
+          <button class="chip" type="button" data-v="1" aria-pressed="false">1</button>
+          <button class="chip" type="button" data-v="3" aria-pressed="false">2 to 4</button>
+          <button class="chip" type="button" data-v="10" aria-pressed="false">5 to 20</button>
+          <button class="chip" type="button" data-v="50" aria-pressed="false">20+</button>
+          <button class="chip" type="button" data-v="dealer" aria-pressed="false" style="flex-basis:100%">I sell or install wash equipment</button>
+        </div>
+      </div>
+      <div class="fstep" data-step="2" hidden>
+        <h3>Where should we send the invite?</h3>
+        <label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name">
+        <label for="f-mail">Work email</label><input id="f-mail" type="email" autocomplete="email" inputmode="email">
+        <label for="f-co">Company</label><input id="f-co" type="text" autocomplete="organization">
+        <button class="btn btn-go" type="button" data-next>Pick a time</button>
+        <button class="back" type="button" data-back>Back</button>
+      </div>
+      <div class="fstep" data-step="3" hidden>
+        <h3>Pick a time</h3>
+        <div class="cal-d">Tue 24 Nov</div>
+        <div class="cal"><span>09:00</span><span class="pick">10:30</span><span>13:00</span></div>
+        <div class="cal-d">Wed 25 Nov</div>
+        <div class="cal"><span>09:30</span><span>11:00</span><span>14:30</span></div>
+        <small>In the live page this is your booking calendar.</small>
+        <button class="back" type="button" data-back>Back</button>
+      </div>
+    </form>
+  </div>
+  <footer class="foot"><div class="wrap">
+    <span>Euro Car Wash Oy Ltd, Riihimäki, Finland. Part of Pineline Group.</span>
+    <nav aria-label="Elsewhere"><a href="https://easywash.com">For drivers: easywash.com</a><a href="https://ecw.fi">Machines, chemicals and water: ecw.fi</a><a href="#">Operator login</a></nav>
+  </div></footer>
+</section>
+</main>
+<script src="../assets/c.js" defer></script>
+</body>
+</html>

@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
-"""Builds the two EasyWash B2B landing page concepts from shared sections.
+"""Builds the EasyWash B2B landing page concepts.
 
   a/index.html  Variation A: platform first (memberships, app, plate recognition)
   b/index.html  Variation B: terminal first (hardware at the bay, platform behind it)
-
+  c/index.html  Variation C: follow one car (scroll story; source in _src/c.html)
   index.html    the pitch page (head and styles lifted from ../index.html, body from _src/pitch.html)
 
 Run:  python3 _src/build.py
-Rules for the copy: no em dashes, no oil company names (not public references),
-the camera reads the plate (not the terminal), WashXL and Washman are single sites.
+
+Rules for the copy: no em dashes, no oil company names (not public references), the camera reads the
+plate (not the terminal), WashXL and Washman are single sites. Design rules for A and B: every .view
+fits one screen, no label above a heading, one theme, one accent, real photos instead of drawn screens.
 """
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent   # .../for/ecw/easywash
 SRC = Path(__file__).parent
-VERSION = "v0.1 · 15 Nov 2026"
-
-# ───────────────────────── shared fragments ─────────────────────────
+VERSION = "v0.2, 15 Nov 2026"
+BANNED = ("OKQ8", "Circle K", "Neste", "Shell", "Esso", "7-Eleven", "\u2014", "\u2013")
 
 HEAD = """<!DOCTYPE html>
 <html lang="en">
@@ -28,7 +29,7 @@ HEAD = """<!DOCTYPE html>
 <meta name="description" content="%%DESC%%">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/ew.css">
 </head>
 <body>
@@ -36,10 +37,11 @@ HEAD = """<!DOCTYPE html>
 
 CONCEPT = """
 <div class="concept"><div class="wrap">
-  <div><b>EasyWash for business.</b> Concept, first draft. Screens show illustrative data.</div>
+  <div><b>EasyWash for business.</b> Concept %%VERSION%%.</div>
   <nav class="switch" aria-label="Concept variation">
-    <a href="../a/"%%ON_A%%>A · Platform first</a>
-    <a href="../b/"%%ON_B%%>B · Terminal first</a>
+    <a href="../a/"%%ON_A%%>A<span>: platform first</span></a>
+    <a href="../b/"%%ON_B%%>B<span>: terminal first</span></a>
+    <a href="../c/"%%ON_C%%>C<span>: follow one car</span></a>
   </nav>
   <a class="pitch" href="../">Read the pitch</a>
 </div></div>
@@ -47,7 +49,7 @@ CONCEPT = """
 
 NAV = """
 <header class="nav"><div class="wrap">
-  <a class="logo" href="#top" aria-label="EasyWash for business"><img src="../assets/easywash-white.svg" alt="EasyWash" width="131" height="38"><span>for business</span></a>
+  <a class="logo" href="#top"><img src="../assets/easywash-blue.svg" alt="EasyWash" width="124" height="36"><span>for business</span></a>
   <nav class="menu" aria-label="Page">
     <a href="#platform">Platform</a>
     <a href="#how">How it works</a>
@@ -58,321 +60,180 @@ NAV = """
   <div class="nav-r">
     <a class="txt" href="https://easywash.com">For drivers</a>
     <a class="txt" href="#">Operator login</a>
-    <a class="btn btn-green btn-sm" href="#call">Book a call</a>
+    <a class="btn btn-blue btn-sm" href="#call">Book a call</a>
   </div>
 </div></header>
 """
 
-ASK = """
-    <div class="ask">
-      <p id="askq">How many wash sites do you run?</p>
-      <div class="chips" role="group" aria-labelledby="askq" data-sites>
-        <button class="chip" type="button" data-v="1" aria-pressed="false">1</button>
-        <button class="chip" type="button" data-v="3" aria-pressed="false">2 to 4</button>
-        <button class="chip" type="button" data-v="10" aria-pressed="false">5 to 20</button>
-        <button class="chip" type="button" data-v="50" aria-pressed="false">20+</button>
-        <button class="chip alt" type="button" data-v="dealer" aria-pressed="false">I sell or install wash equipment</button>
-      </div>
-      <small>Pick one to see what memberships could add on your sites. No email needed.</small>
-    </div>
-    <div class="hero-links">
-      <a href="#how">See how it works</a>
-      <a href="#customers">Revenue tripled in 90 days: the Latvian case</a>
-    </div>
-"""
-
-TOAST = """<div class="toast"><span class="plate"><i></i><span>ABC-123</span></span><div><b>Member recognised</b><span class="ok">Unlimited Premium. Wash starts.</span></div></div>"""
-
 HERO_A = """
-<section class="hero" id="top"><div class="wrap">
+<section class="view hero" id="top"><div class="wrap">
   <div>
-    <span class="eyebrow" style="color:var(--blue-l)">Car wash subscription and payment platform</span>
-    <h1>Wash revenue that arrives <em>every month.</em></h1>
-    <p class="lead">EasyWash runs memberships, payments and licence plate recognition for car wash operators and fuel retailers. Drivers subscribe in your app or at the bay. The camera reads the plate, the wash starts, and <b>the plan renews every month, rain or shine.</b></p>
-""" + ASK + """
+    <h1>Wash revenue that arrives every month.</h1>
+    <p class="lead">EasyWash sells memberships in your app and at the bay, reads the plate, starts the wash and bills every month.</p>
+    <div class="cta-row"><a class="btn btn-blue" href="#call">Book a call</a><a class="btn btn-line" href="#how">See how it works</a></div>
   </div>
-  <div class="stage" aria-hidden="true">
-    <div class="phone"><div class="scr">
-      <div class="app-top"><small>Your brand · Wash club</small><b>Unlimited washes, one monthly price</b></div>
-      <div class="app-body">
-        <div class="plan on"><div><b>Unlimited Premium</b><span>Wax, underbody, dry</span></div><em>€34.90<small> /mo</small></em></div>
-        <div class="plan"><div><b>Unlimited Basic</b><span>Wash and dry</span></div><em>€24.90<small> /mo</small></em></div>
-        <div class="plan"><div><b>Single wash</b><span>Pay as you go</span></div><em>€12<small> from</small></em></div>
-        <div class="app-plate"><span>Your car</span><span class="plate"><i></i><span>ABC-123</span></span></div>
-        <div class="app-buy">Start membership</div>
-      </div>
-    </div></div>
-    <div class="dash">
-      <div class="dash-h"><span>All sites · this month</span><i>Live</i></div>
-      <div class="kpis">
-        <div class="kpi"><span>Active members</span><b>4,812<small>+212</small></b></div>
-        <div class="kpi"><span>Recurring revenue</span><b>€142k</b></div>
-        <div class="kpi"><span>Washes today</span><b>1,306</b></div>
-        <div class="kpi"><span>Avg. rating</span><b>4.7</b></div>
-      </div>
-      <div class="bars"><i style="--h:22"></i><i style="--h:27"></i><i style="--h:31"></i><i style="--h:38"></i><i style="--h:44"></i><i style="--h:52"></i><i style="--h:58"></i><i style="--h:66"></i><i style="--h:73"></i><i style="--h:81"></i><i style="--h:90"></i><i class="s" style="--h:100"></i></div>
-      <div class="bars-l"><span>Members, last 12 months</span><span>now</span></div>
+  <form class="bay" id="bay">
+    <img class="cam" src="../assets/camera.webp" alt="" width="500" height="420">
+    <label for="plate">Try it. Type a licence plate and drive in.</label>
+    <div class="bay-in">
+      <span class="pin"><i></i><input id="plate" value="ABC-123" maxlength="8" autocomplete="off" spellcheck="false" aria-label="Licence plate"></span>
+      <button class="btn btn-white" type="submit">Drive in</button>
     </div>
-    """ + TOAST + """
-  </div>
+    <ol class="log" aria-live="polite">
+      <li><small>07:42</small><span>Camera reads <b data-plate>ABC-123</b></span></li>
+      <li><small>07:42</small><span>Member found: Unlimited Premium</span></li>
+      <li><small>07:42</small><span>Door opens, programme 3 starts</span></li>
+      <li><small>07:49</small><span>Car leaves. The app asks for a rating.</span></li>
+      <li class="last"><small>The 1st</small><b>€29.90 renews</b></li>
+    </ol>
+  </form>
 </div></section>
 """
 
 HERO_B = """
-<section class="hero" id="top"><div class="wrap">
+<section class="view hero" id="top"><div class="wrap">
   <div>
-    <span class="eyebrow" style="color:var(--blue-l)">EasyWash payment terminal and plate recognition</span>
-    <h1>The payment terminal that <em>sells memberships.</em></h1>
-    <p class="lead">One unit at the bay takes cards and phones, signs a driver up for a monthly plan in under five seconds and starts the wash. <b>From the next visit, the camera reads the plate and the door opens.</b></p>
-""" + ASK + """
+    <h1>The payment terminal that sells memberships.</h1>
+    <p class="lead">It takes cards and phones, signs a driver up for a monthly plan in five seconds, and starts the wash.</p>
+    <div class="cta-row"><a class="btn btn-blue" href="#call">Book a call</a><a class="btn btn-line" href="#hardware">See the hardware</a></div>
   </div>
-  <div class="stage-b" aria-hidden="true">
-    <img class="cam" src="../assets/camera.webp" alt="" width="500" height="420">
-    <div class="note"><b>Built for the bay</b>5-inch touchscreen, IP55, PIN on screen</div>
-    <div class="led"></div>
-    <img class="term" src="../assets/terminal.webp" alt="" width="689" height="1035">
-    """ + TOAST + """
+  <div class="hw-hero">
+    <img class="cam" src="../assets/camera.webp" alt="EasyWash licence plate camera" width="500" height="420">
+    <img class="pillar" src="../assets/pillar.webp" alt="EasyWash terminal at a wash bay, showing wash programmes and a monthly wash club" width="1097" height="1500">
   </div>
 </div></section>
 """
 
 PROOF = """
-<section class="proof" aria-label="Results"><div class="wrap">
-  <div><b>100,000+</b><span>active monthly memberships at <strong>one Nordic fuel retailer</strong></span></div>
-  <div><b>€3M</b><span>recurring wash revenue a month across that network</span></div>
-  <div><b>700+</b><span>wash sites live across <strong>the Nordics and the Baltics</strong></span></div>
-  <div><b>3×</b><span>revenue within 90 days at <strong>Divi Vienā, Latvia</strong></span></div>
+<section class="view" id="proof"><div class="wrap">
+  <h2 class="say">Every month, <b>100,000 drivers</b> pay one Nordic fuel retailer for their car wash. That is <b>€3 million</b> of recurring revenue, on EasyWash.</h2>
+  <div class="facts">
+    <div><b>700+ sites</b>live in Finland, Sweden, Norway, Denmark and Latvia</div>
+    <div><b>1,000,000+ drivers</b>have washed through EasyWash</div>
+    <div><b>3x revenue</b>within 90 days at Divi Vienā, Latvia</div>
+    <div><b>Best Product</b>Petrol Station 2025 fair, Warsaw</div>
+  </div>
 </div></section>
-<div class="strip"><div class="wrap">
-  <span><b>Running at</b> fuel retailers, wash chains and independent operators in</span>
-  <ul><li>Finland</li><li>Sweden</li><li>Norway</li><li>Denmark</li><li>Latvia</li></ul>
-  <span><b>1,000,000+</b> drivers · Best Product, Petrol Station 2025, Warsaw</span>
-</div></div>
 """
 
 GAP = """
-<section class="sec" id="gap"><div class="wrap gap">
-  <div class="gauge">
-    <h3>Capacity sold at a typical wash site</h3>
-    <div class="big">15%</div>
-    <div class="gauge-bar"><i></i></div>
-    <div class="gauge-l"><span><b>Sold today</b></span><span>Unsold: 85%</span></div>
-  </div>
+<section class="view tint" id="gap"><div class="wrap ba">
   <div>
-    <span class="eyebrow">The gap</span>
-    <h2>Most wash sites sell a fraction of what the machine can do.</h2>
-    <p class="lead" style="margin-bottom:26px">One sales channel, counter hours and single washes leave the bay empty most of the day. This is what changes when a site sells memberships around the clock.</p>
-    <table class="ba">
-      <thead><tr><th>Today</th><th>With EasyWash</th></tr></thead>
-      <tbody>
-        <tr><td>5,000 washes a year</td><td>20,000 washes a year</td></tr>
-        <tr><td>Sales over the counter</td><td>App, bay terminal, web shop, company portal<span>plus payment links you share in social media</span></td></tr>
-        <tr><td>Staffed opening hours</td><td>Open 24/7, unattended</td></tr>
-        <tr><td>Single washes</td><td>Single washes and monthly memberships</td></tr>
-      </tbody>
-    </table>
-    <p class="src">Source: EasyWash Business Impact figures, Euro Car Wash.</p>
+    <h2>The machine can wash 20,000 cars a year. Most sites sell 5,000.</h2>
+    <p class="lead">A typical site sells about 15% of its capacity: one counter, staffed hours, single washes. This is what changes.</p>
   </div>
+  <table>
+    <thead><tr><th>Today</th><th>With EasyWash</th></tr></thead>
+    <tbody>
+      <tr><td>5,000 washes a year</td><td>20,000 washes a year</td></tr>
+      <tr><td>Sold at the counter</td><td>Sold in the app, at the bay, on the web and to companies</td></tr>
+      <tr><td>Open when staffed</td><td>Open 24/7, unattended</td></tr>
+      <tr><td>Single washes</td><td>Single washes and monthly memberships</td></tr>
+    </tbody>
+  </table>
 </div></section>
 """
 
 HOW = """
-<section class="sec how" id="how"><div class="wrap">
-  <div class="sec-head">
-    <span class="eyebrow">%%HOW_EYEBROW%%</span>
-    <h2>%%HOW_H2%%</h2>
-    <p class="lead">No card, tag or code to carry. The plan is tied to the licence plate, so one plan covers one car.</p>
-  </div>
-  <div class="steps">
-    <div class="step">%%STEP1%%</div>
-    <div class="step"><h3>The camera reads the plate</h3><p>The picture is processed inside the camera. Only the plate number goes to the cloud.</p><div class="vis"><span class="plate"><i></i><span>ABC-123</span></span></div></div>
-    <div class="step"><h3>The wash starts</h3><p>EasyWash starts the right programme on the machine and runs the door, the boom and the dryer.</p><div class="vis"><span class="pill g">Programme 3 running</span></div></div>
-    <div class="step"><h3>You get paid every month</h3><p>The plan renews by itself. Members keep buying single washes and upgrades in the app.</p><div class="vis"><div class="money">€29.90<small>renews monthly, per car</small></div></div></div>
+<section class="view" id="how"><div class="wrap">
+  <h2 class="wide head">%%HOW_H2%%</h2>
+  <div class="lane" id="lane">
+    <div class="run" aria-hidden="true"><span class="plate"><i></i><span data-plate>ABC-123</span></span></div>
+    <div class="stop">%%STOP1%%</div>
+    <div class="stop"><h3>The camera reads the plate</h3><p>The image is processed inside the camera. Only the plate number goes to the cloud.</p></div>
+    <div class="stop"><h3>The wash starts</h3><p>EasyWash starts the right programme and runs the door, the boom and the dryer.</p></div>
+    <div class="stop"><h3>You get paid monthly</h3><p>The plan renews by itself. Members keep buying single washes and upgrades in the app.</p></div>
   </div>
 </div></section>
 """
-STEP1_A = """<h3>The driver picks a plan</h3><p>In your branded app, on the web or at the bay. At WashXL in Finland, joining at the terminal takes under five seconds.</p><div class="vis"><div class="pills"><span class="pill">App</span><span class="pill">Web</span><span class="pill">Bay terminal</span></div></div>"""
-STEP1_B = """<h3>The driver taps a card</h3><p>The screen shows the plate the camera has read. One tap of a card or phone starts a monthly plan. At WashXL in Finland it takes under five seconds.</p><div class="vis"><div class="pills"><span class="pill">Card</span><span class="pill">Phone</span><span class="pill">PIN on screen</span></div></div>"""
+STOP1_A = "<h3>The driver picks a plan</h3><p>In your app, on the web or at the bay. At WashXL in Finland, joining at the bay takes under five seconds.</p>"
+STOP1_B = "<h3>The driver taps a card</h3><p>The screen shows the plate the camera has read. One tap of a card or phone starts a monthly plan.</p>"
+
+
+def panel(pid, tid, hidden, h3, p, facts, aside):
+    lis = "".join(f"<li>{f}</li>" for f in facts)
+    return (f'<div class="panel" role="tabpanel" id="{pid}" aria-labelledby="{tid}"{" hidden" if hidden else ""}>'
+            f"<div><h3>{h3}</h3><p>{p}</p><ul>{lis}</ul></div>{aside}</div>")
+
+
+PANELS = "".join([
+    panel("p-subs", "t-subs", False, "Memberships that renew themselves",
+          "Sell monthly, annual and pay-per-wash plans under your own brand, with the rules you set.",
+          ["Unlimited and capped plans, one contract per car", "Network plans valid at every station you run",
+           "Happy hour and campaign prices per site", "Members pay in advance, before the wash"],
+          '<div class="aside"><img src="../assets/screen.webp" alt="EasyWash terminal menu with three wash programmes and a monthly contract at 29.90" width="432" height="739" loading="lazy"></div>'),
+    panel("p-pay", "t-pay", True, "Every way a driver wants to pay",
+          "At the bay, on the phone, on the web or on a company invoice. All of it lands in one report.",
+          ["Contactless cards and mobile wallets, PIN on screen", "Credit reservation: charge only the time used",
+           "QR, barcode and PIN codes for vouchers", "Payment links to share by email or social media"],
+          '<div class="aside photo"><img src="../assets/wet.webp" alt="EasyWash terminal in the rain at a self-service wash, showing credit reservations of 10, 30 and 50 euros" width="1400" height="1419" loading="lazy"></div>'),
+    panel("p-lpr", "t-lpr", True, "The car is the membership card",
+          "An EasyWash camera at the entrance reads the plate and checks the plan before the driver has stopped.",
+          ["The image is processed inside the camera", "Only the plate number is sent to the cloud",
+           "One plan per plate, so a membership stays with one car", "Remote support, so most faults need no site visit"],
+          '<div class="aside"><img src="../assets/camera.webp" alt="EasyWash licence plate camera" width="500" height="420" loading="lazy"></div>'),
+    panel("p-fleet", "t-fleet", True, "One invoice for every company car",
+          "Give fleets their own portal and bill them by plate, across every station in your network.",
+          ["Wash packages redeemed at any station", "Automated invoicing with VAT-correct receipts",
+           "Each wash allocated to the station that did it", "Invoice data sent to your finance system by API"],
+          '<div class="aside"><div class="big">1 invoice<small>for every car a company runs, at every station you operate</small></div></div>'),
+    panel("p-app", "t-app", True, "Your app, your brand, your offers",
+          "The app and the web portal carry your name. The marketing tools inside them bring members back.",
+          ["Push messages triggered by what a driver does", "Offers and rewards applied automatically",
+           "A rating after every wash", "An alert when a rating is low"],
+          '<div class="aside"><div class="big">60%<small>of customers at Washman in Finland use the app</small></div></div>'),
+    panel("p-bi", "t-bi", True, "See which site, plan and campaign earns",
+          "The cloud dashboard shows sales, members and capacity per site, as it happens.",
+          ["Revenue and usage per site and per campaign", "Top sellers and capacity per site",
+           "Customer satisfaction next to turnover", "Your ratings compared with other EasyWash operators"],
+          '<div class="aside"><div class="big">3x<small>revenue at Divi Vienā within three months of launch</small></div></div>'),
+    panel("p-int", "t-int", True, "Works with the machines you already own",
+          "EasyWash controls the wash machine and the devices around it, and passes the money data to your systems.",
+          ["Christ, Sonny's, PDQ, Kärcher and other machines", "Rollovers, tunnels and self-service jet wash bays",
+           "Doors, booms, dryers and other devices", "Invoicing API, and loyalty cards where you need them"],
+          '<div class="aside"><img src="../assets/terminal.webp" alt="EasyWash payment terminal" width="689" height="1035" loading="lazy"></div>'),
+])
 
 MODS = """
-<section class="sec" id="platform"><div class="wrap">
-  <div class="sec-head">
-    <span class="eyebrow">The platform</span>
-    <h2>%%MODS_H2%%</h2>
-    <p class="lead">%%MODS_LEAD%%</p>
-  </div>
+<section class="view" id="platform"><div class="wrap">
+  <h2 class="wide head">%%MODS_H2%%</h2>
   <div class="mods">
-    <div class="tabs" role="tablist" aria-label="Platform parts">
-      <button class="tab" role="tab" aria-selected="true" aria-controls="p-subs" id="t-subs"><b>Subscriptions</b><span>Plans, renewals, campaigns</span></button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p-pay" id="t-pay" tabindex="-1"><b>Payments</b><span>Bay, phone, web, invoice</span></button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p-lpr" id="t-lpr" tabindex="-1"><b>Plate recognition</b><span>The car is the membership card</span></button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p-fleet" id="t-fleet" tabindex="-1"><b>Fleet accounts</b><span>Company portal, billing by plate</span></button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p-app" id="t-app" tabindex="-1"><b>App and marketing</b><span>Your brand, your offers</span></button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p-bi" id="t-bi" tabindex="-1"><b>Business intelligence</b><span>Sales and capacity per site</span></button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p-int" id="t-int" tabindex="-1"><b>Integrations</b><span>Any wash machine, your systems</span></button>
+    <div class="tabs" role="tablist" aria-label="Platform parts" data-tabs>
+      <button class="tab" role="tab" aria-selected="true" aria-controls="p-subs" id="t-subs">Subscriptions</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-pay" id="t-pay" tabindex="-1">Payments</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-lpr" id="t-lpr" tabindex="-1">Plate recognition</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-fleet" id="t-fleet" tabindex="-1">Fleet accounts</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-app" id="t-app" tabindex="-1">App and marketing</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-bi" id="t-bi" tabindex="-1">Business intelligence</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-int" id="t-int" tabindex="-1">Integrations</button>
     </div>
-    <div>
-      <div class="panel" role="tabpanel" id="p-subs" aria-labelledby="t-subs">
-        <div>
-          <h3>Memberships that renew themselves</h3>
-          <p>Sell monthly, annual and pay-per-wash plans under your own brand, with the rules you set.</p>
-          <ul class="ticks">
-            <li>Unlimited and capped plans, one contract per car</li>
-            <li>Network plans valid at every station you run</li>
-            <li>Happy hour and campaign prices per site or for the whole network</li>
-            <li>Members pay in advance, so the cash arrives before the wash</li>
-          </ul>
-        </div>
-        <div class="ui">
-          <span class="lbl">Plans</span>
-          <div class="card"><div class="row"><div><b>Unlimited Premium</b><br><span>€34.90 a month</span></div><b>2,140 members</b></div><div class="row"><div><b>Unlimited Basic</b><br><span>€24.90 a month</span></div><b>1,930 members</b></div><div class="row"><div><b>Winter campaign</b><br><span>First month half price</span></div><span class="pill g">742 joined</span></div></div>
-          <span class="cap">Illustrative data</span>
-        </div>
-      </div>
-      <div class="panel" role="tabpanel" id="p-pay" aria-labelledby="t-pay" hidden>
-        <div>
-          <h3>Every way a driver wants to pay</h3>
-          <p>At the bay, on the phone, on the web or on a company invoice. All of it lands in one report.</p>
-          <ul class="ticks">
-            <li>Contactless cards and mobile wallets, with PIN on screen</li>
-            <li>Credit reservation: hold an amount, charge only the time used</li>
-            <li>QR, barcode and PIN codes for vouchers and campaigns</li>
-            <li>Payment links you can share by email or in social media</li>
-          </ul>
-        </div>
-        <div class="ui">
-          <span class="lbl">Ways to pay</span>
-          <div class="methods"><span>Contactless card</span><span>Mobile wallet</span><span>In the app</span><span>Web shop</span><span>Company invoice</span><span>QR or PIN code</span></div>
-          <div class="card"><div class="row"><span>Self-service bay 2, 14 min used</span><b>€12.60</b></div><div class="row"><span>Reserved €20.00, released</span><b>€7.40</b></div></div>
-          <span class="cap">Illustrative data</span>
-        </div>
-      </div>
-      <div class="panel" role="tabpanel" id="p-lpr" aria-labelledby="t-lpr" hidden>
-        <div>
-          <h3>The car is the membership card</h3>
-          <p>An EasyWash camera at the entrance reads the plate and checks the plan before the driver has stopped.</p>
-          <ul class="ticks">
-            <li>The image is processed inside the camera</li>
-            <li>Only the plate number is sent to the cloud</li>
-            <li>One plan per plate, so a membership stays with one car</li>
-            <li>Remote support software, so most faults are fixed without a site visit</li>
-          </ul>
-        </div>
-        <div class="ui">
-          <div class="view"><span class="plate"><i></i><span>ABC-123</span></span><small>LANE 1 · 08:42:17</small></div>
-          <div class="card"><div class="row"><span>Plan</span><b>Unlimited Premium</b></div><div class="row"><span>Status</span><span class="pill g">Active</span></div><div class="row"><span>Action</span><b>Door opens, wash starts</b></div></div>
-        </div>
-      </div>
-      <div class="panel" role="tabpanel" id="p-fleet" aria-labelledby="t-fleet" hidden>
-        <div>
-          <h3>One invoice for every company car</h3>
-          <p>Give fleets their own portal and bill them by plate, across every station in your network.</p>
-          <ul class="ticks">
-            <li>Wash packages redeemed at any station in the network</li>
-            <li>Automated invoicing with VAT-correct receipts</li>
-            <li>Each wash is allocated to the station that did it</li>
-            <li>Invoice data passed to your finance system by API</li>
-          </ul>
-        </div>
-        <div class="ui">
-          <span class="lbl">Company account · November</span>
-          <div class="card"><div class="row"><span>Vehicles on the account</span><b>38</b></div><div class="row"><span>Washes this month</span><b>214</b></div><div class="row"><span>Stations used</span><b>9</b></div><div class="row"><span>Invoice, incl. VAT</span><b>€2,996.00</b></div></div>
-          <div class="pills"><span class="pill g">Invoice sent automatically</span></div>
-          <span class="cap">Illustrative data</span>
-        </div>
-      </div>
-      <div class="panel" role="tabpanel" id="p-app" aria-labelledby="t-app" hidden>
-        <div>
-          <h3>Your app, your brand, your offers</h3>
-          <p>The app and the web portal carry your name. The marketing tools inside them bring members back.</p>
-          <ul class="ticks">
-            <li>Push messages triggered by what a driver does</li>
-            <li>Offers and rewards applied automatically</li>
-            <li>A rating after every wash, and an alert when one is low</li>
-            <li>At Washman in Finland, nearly 60% of customers use the app</li>
-          </ul>
-        </div>
-        <div class="ui">
-          <span class="lbl">Push message</span>
-          <div class="card"><b>Your brand</b> <span style="color:var(--muted)">· now</span><br>Three weeks since your last wash. The next one is 30% off until Sunday.</div>
-          <span class="lbl" style="margin-top:6px">After the wash</span>
-          <div class="card"><div class="row"><span>Rate your wash</span><b style="color:#E0A100;letter-spacing:2px">★★★★★</b></div><div class="row"><span>Low rating at site 4, 09:12</span><span class="pill">Alert sent</span></div></div>
-        </div>
-      </div>
-      <div class="panel" role="tabpanel" id="p-bi" aria-labelledby="t-bi" hidden>
-        <div>
-          <h3>See which site, plan and campaign earns</h3>
-          <p>The cloud dashboard shows sales, members and capacity per site, as it happens.</p>
-          <ul class="ticks">
-            <li>Revenue and usage per site and per campaign</li>
-            <li>Top sellers and capacity, so you spot a site that is overselling</li>
-            <li>Customer satisfaction next to turnover</li>
-            <li>Your ratings compared with other EasyWash operators</li>
-          </ul>
-        </div>
-        <div class="ui">
-          <span class="lbl">Recurring revenue by site · this month</span>
-          <div class="card hbars">
-            <div><span>Site 1</span><i style="--w:100"></i><b>€31k</b></div>
-            <div><span>Site 2</span><i style="--w:84"></i><b>€26k</b></div>
-            <div><span>Site 3</span><i style="--w:71"></i><b>€22k</b></div>
-            <div><span>Site 4</span><i style="--w:55"></i><b>€17k</b></div>
-            <div><span>Site 5</span><i style="--w:39"></i><b>€12k</b></div>
-          </div>
-          <span class="cap">Illustrative data</span>
-        </div>
-      </div>
-      <div class="panel" role="tabpanel" id="p-int" aria-labelledby="t-int" hidden>
-        <div>
-          <h3>Works with the machines you already own</h3>
-          <p>EasyWash controls the wash machine and the devices around it, and passes the money data to your systems.</p>
-          <ul class="ticks">
-            <li>Christ, Sonny's, PDQ, Kärcher and other wash machines</li>
-            <li>Rollovers, tunnels and self-service jet wash bays</li>
-            <li>Doors, booms, dryers and other external devices</li>
-            <li>Invoicing API, and loyalty cards where you need them</li>
-          </ul>
-        </div>
-        <div class="ui">
-          <div class="nodes">
-            <div class="col"><span>Wash machine</span><span>Doors and booms</span><span>Camera</span></div>
-            <div class="hub">Easy<br>Wash</div>
-            <div class="col"><span>Payments</span><span>Invoicing</span><span>Your app</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div>""" + PANELS + """</div>
   </div>
 </div></section>
 """
 
 WAYS = """
-<section class="sec dark" id="start"><div class="wrap">
-  <div class="sec-head">
-    <span class="eyebrow">Where to start</span>
+<section class="view tint" id="start"><div class="wrap">
+  <div class="head">
     <h2>Keep the terminals you already paid for.</h2>
-    <p class="lead">Most operators we meet have working payment terminals and no wish to replace them. Start with the app and the camera. The terminals stay.</p>
+    <p class="lead">Most operators we meet have working terminals and no wish to replace them. Start with the app and the camera.</p>
   </div>
-  <div class="ways">
-    <div class="way hl"><span class="k">Start here</span><h3>App and camera</h3><p>Launch memberships in your own app and fit a camera per lane. Members drive in on their plate. Your current terminals keep taking single payments.</p><ul><li>App</li><li>Camera</li><li>Dashboard</li></ul></div>
-    <div class="way"><span class="k">When a terminal is due</span><h3>Add the EasyWash terminal</h3><p>Replace old units one by one. Drivers can then join a plan at the bay with one tap of a card.</p><ul><li>+ Terminal</li></ul></div>
-    <div class="way"><span class="k">New or rebuilt sites</span><h3>The whole site</h3><p>Terminal, camera, app, company portal and dashboard from one supplier, installed together.</p><ul><li>Everything</li></ul></div>
+  <div class="ladder">
+    <div class="rung"><small>Start here</small><h3>App and camera</h3><p>Launch memberships in your own app and fit a camera per lane. Members drive in on their plate. Your terminals keep taking single payments.</p></div>
+    <div class="rung"><small>When a terminal is due</small><h3>Add the EasyWash terminal</h3><p>Replace old units one at a time. Drivers can then join a plan at the bay with one tap.</p></div>
+    <div class="rung"><small>New or rebuilt sites</small><h3>The whole site</h3><p>Terminal, camera, app, company portal and dashboard, installed together.</p></div>
   </div>
 </div></section>
 """
 
 HARDWARE = """
-<section class="sec dark" id="hardware"><div class="wrap">
-  <div class="sec-head">
-    <span class="eyebrow">The hardware</span>
-    <h2>Two units at the bay, both made for it.</h2>
-    <p class="lead">The terminal takes the payment and runs the machine. The camera recognises members. Each one is fitted in hours.</p>
-  </div>
+<section class="view tint" id="hardware"><div class="wrap">
+  <h2 class="head">Two units at the bay.</h2>
   <div class="hw">
     <div class="hwc"><img src="../assets/terminal.webp" alt="EasyWash payment terminal" width="689" height="1035" loading="lazy">
       <div><h3>EasyWash terminal</h3><dl>
         <div><dt>Screen</dt><dd>5-inch touchscreen, PIN on screen</dd></div>
-        <div><dt>Payments</dt><dd>Contactless, chip, magstripe, mobile wallets, QR</dd></div>
+        <div><dt>Payments</dt><dd>Contactless, chip, magstripe, wallets, QR</dd></div>
         <div><dt>Protection</dt><dd>IP55, for outdoor bays</dd></div>
         <div><dt>Network</dt><dd>4G, WiFi, Bluetooth, Ethernet</dd></div>
         <div><dt>Controls</dt><dd>Wash machine, doors, booms, dryers</dd></div>
@@ -383,262 +244,235 @@ HARDWARE = """
         <div><dt>Job</dt><dd>Reads the plate at the entrance</dd></div>
         <div><dt>Processing</dt><dd>Inside the camera</dd></div>
         <div><dt>Privacy</dt><dd>Only the plate number leaves the site</dd></div>
-        <div><dt>Computer</dt><dd>The site computer sits in the camera housing</dd></div>
+        <div><dt>Computer</dt><dd>The site computer sits in the housing</dd></div>
         <div><dt>Support</dt><dd>Remote control software</dd></div>
       </dl></div>
     </div>
   </div>
-  <div class="gate"><img src="../assets/camera-gate.webp" alt="EasyWash camera at a wash site entrance" loading="lazy" width="1500" height="844"><div><b>Three to four hours per station</b><span>That is how long each rollover took at Divi Vienā in Latvia. The system was in use the same day.</span></div></div>
+  <p class="note"><b>Three to four hours per station.</b> That is how long each rollover took at Divi Vienā in Latvia, and the system was in use the same day.</p>
 </div></section>
 """
 
 CALC = """
-<section class="sec" id="numbers"><div class="wrap">
-  <div class="sec-head">
-    <span class="eyebrow">Your numbers</span>
-    <h2>What would memberships add on your sites?</h2>
-    <p class="lead">Move the sliders. The maths is sites times members times price.</p>
-  </div>
+<section class="view" id="numbers"><div class="wrap">
+  <h2 class="head">What would memberships add on your sites?</h2>
   <div class="calc">
     <div class="calc-in">
       <div class="field"><label for="c-sites">Wash sites <output id="o-sites">5</output></label><input type="range" id="c-sites" min="1" max="200" value="5"></div>
-      <div class="field"><label for="c-mem">Members per site <output id="o-mem">200</output></label><input type="range" id="c-mem" min="25" max="800" step="25" value="200"><small>The Nordic fuel retailer in our reference averages about 500 per station.</small></div>
-      <div class="field"><label for="c-price">Price per month <output id="o-price">€29</output></label><input type="range" id="c-price" min="10" max="60" value="29"><small>That network's average works out at about €30 a month.</small></div>
+      <div class="field"><label for="c-mem">Members per site <output id="o-mem">200</output></label><input type="range" id="c-mem" min="25" max="800" step="25" value="200"><small>The Nordic fuel retailer averages about 500 per station.</small></div>
+      <div class="field"><label for="c-price">Price per month <output id="o-price">€29</output></label><input type="range" id="c-price" min="10" max="60" value="29"><small>That network's average works out at about €30.</small></div>
     </div>
     <div class="calc-out" aria-live="polite">
-      <span class="lbl">Recurring revenue a month</span>
+      <span>Recurring revenue a month</span>
       <div class="n" id="o-month">€29,000</div>
       <div class="y"><b id="o-year">€348,000</b> a year, before single washes</div>
-      <p>An illustration built on your own inputs. On a call we replace it with numbers from sites like yours.</p>
-      <a class="btn btn-green" href="#call">Walk me through it</a>
+      <a class="btn btn-white" href="#call">Book a call</a>
     </div>
   </div>
 </div></section>
 """
 
 CASES = """
-<section class="sec" id="customers" style="background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
-  <div class="sec-head">
-    <span class="eyebrow">Customers</span>
-    <h2>Operators who moved from single washes to memberships.</h2>
+<section class="view tint" id="customers"><div class="wrap">
+  <h2 class="wide head">Operators who moved from single washes to memberships.</h2>
+  <div class="case" role="tabpanel" id="c-dv" aria-labelledby="ct-dv">
+    <div><div class="n">3x</div><p>revenue within 90 days</p></div>
+    <div><blockquote>“With subscriptions, profit per wash is lower, but there are many more washes. At the end, the total profit is much higher.”</blockquote><cite><b>Ronalds Vītols</b>, owner of Divi Vienā, Latvia. Each station was fitted in three to four hours.</cite></div>
   </div>
-  <div class="flag">
-    <div><span class="k">Nordic fuel retailer · 200+ stations</span><h3>100,000 members, about 500 per station</h3><p>The wash club runs on EasyWash under the retailer's own brand and in its own app. We share the name and the full numbers on a call.</p></div>
-    <div class="n"><b>100,000+</b><span>active memberships</span></div>
-    <div class="n"><b>€3M</b><span>a month, recurring</span></div>
+  <div class="case" role="tabpanel" id="c-wm" aria-labelledby="ct-wm" hidden>
+    <div><div class="n">60%</div><p>of customers use the app</p></div>
+    <div><blockquote>“Many regular customers arrive, choose what they want on their phone, and practically drive straight into the hall without stopping.”</blockquote><cite><b>Markus Malinranta</b>, owner of Washman, Finland. Average spend per wash is now €11 to 14.</cite></div>
   </div>
-  <div class="cases">
-    <article class="case">
-      <div class="who"><b>Divi Vienā</b><span>Latvia · rollover and self-service</span></div>
-      <div class="n">3×</div><p>revenue within 90 days</p>
-      <ul><li><b>3 to 4 hours</b> to fit each station</li><li>Memberships did <b>not reduce</b> single washes</li></ul>
-      <blockquote>"With subscriptions, profit per wash is lower, but there are many more washes. At the end, the total profit is much higher."<cite>Ronalds Vītols, owner</cite></blockquote>
-    </article>
-    <article class="case">
-      <div class="who"><b>Washman</b><span>Finland · unmanned self-service</span></div>
-      <div class="n">60%</div><p>of customers use the app</p>
-      <ul><li><b>€11 to 14</b> average spend per wash</li><li>Drivers pay for <b>the time they use</b></li></ul>
-      <blockquote>"I got more than just a system. I got a Euro Car Wash partnership where I can ask any questions."<cite>Markus Malinranta, owner</cite></blockquote>
-    </article>
-    <article class="case">
-      <div class="who"><b>WashXL</b><span>Finland · high-volume wash</span></div>
-      <div class="n">5 sec</div><p>to join a monthly plan at the bay</p>
-      <ul><li><b>A car every 30 seconds</b>, 120 an hour</li><li>No waste water to the sewer</li></ul>
-      <blockquote>"Very few people ask anything, the use of the terminal is so clear."<cite>Harri Karhunsalo, owner</cite></blockquote>
-    </article>
+  <div class="case" role="tabpanel" id="c-xl" aria-labelledby="ct-xl" hidden>
+    <div><div class="n">5 sec</div><p>to join a monthly plan at the bay</p></div>
+    <div><blockquote>“Very few people ask anything, the use of the terminal is so clear.”</blockquote><cite><b>Harri Karhunsalo</b>, owner of WashXL, Finland. A car can drive in every 30 seconds.</cite></div>
+  </div>
+  <div class="case" role="tabpanel" id="c-fr" aria-labelledby="ct-fr" hidden>
+    <div><div class="n">100k</div><p>members at one fuel retailer</p></div>
+    <div><blockquote>About 500 members at each of 200+ stations, and €3 million of recurring wash revenue every month.</blockquote><cite><b>A Nordic fuel retailer.</b> We share the name and the full numbers on a call.</cite></div>
+  </div>
+  <div class="who-tabs" role="tablist" aria-label="Customers" data-tabs>
+    <button role="tab" aria-selected="true" aria-controls="c-dv" id="ct-dv">Divi Vienā</button>
+    <button role="tab" aria-selected="false" aria-controls="c-wm" id="ct-wm" tabindex="-1">Washman</button>
+    <button role="tab" aria-selected="false" aria-controls="c-xl" id="ct-xl" tabindex="-1">WashXL</button>
+    <button role="tab" aria-selected="false" aria-controls="c-fr" id="ct-fr" tabindex="-1">Nordic fuel retailer</button>
   </div>
 </div></section>
 """
 
 DOORS = """
-<section class="sec" id="who"><div class="wrap">
-  <div class="sec-head">
-    <span class="eyebrow">Who it's for</span>
-    <h2>Four kinds of business run on EasyWash.</h2>
-    <p class="lead">Each page shows the rollout for a business like yours, with a reference you can call.</p>
-  </div>
-  <div class="doors">
-    <a class="door" href="#call"><span class="who">Fuel retailers</span><h3>Wash income that runs itself</h3><p>A wash club under your own brand, with fleet invoicing and one dashboard across every station.</p><div class="ref">Reference: a Nordic fuel retailer with 200+ stations and 100,000 members.</div><span class="go">EasyWash for fuel retailers →</span></a>
-    <a class="door" href="#call"><span class="who">Wash chains</span><h3>The same plan at every site</h3><p>Central prices, campaigns and reporting. A member can wash at any site you run.</p><div class="ref">Reference: Divi Vienā, Latvia. Rollover and self-service sites on one plan.</div><span class="go">EasyWash for wash chains →</span></a>
-    <a class="door" href="#call"><span class="who">Single sites</span><h3>One site that sells around the clock</h3><p>Go unmanned, sell memberships at the bay and in the app, and see every sale on your phone.</p><div class="ref">References: Washman and WashXL, Riihimäki, Finland.</div><span class="go">EasyWash for single sites →</span></a>
-    <a class="door" href="#call"><span class="who">Dealers and installers</span><h3>A membership platform for any machine you sell</h3><p>Add EasyWash to your quotes for Christ, Sonny's, PDQ and other brands, and earn on the service contract.</p><div class="ref">Best Product, Petrol Station 2025 fair, Warsaw.</div><span class="go">Become a partner →</span></a>
+<section class="view" id="who"><div class="wrap">
+  <h2 class="head">Four kinds of business run on EasyWash.</h2>
+  <div class="rows">
+    <a class="rowl" href="#call"><h3>Fuel retailers</h3><p>A wash club under your own brand, with fleet invoicing and one dashboard across every station.</p><p class="ref">Reference: a Nordic fuel retailer with 200+ stations</p><span>See page</span></a>
+    <a class="rowl" href="#call"><h3>Wash chains</h3><p>Central prices, campaigns and reporting. A member can wash at any site you run.</p><p class="ref">Reference: Divi Vienā, Latvia</p><span>See page</span></a>
+    <a class="rowl" href="#call"><h3>Single sites</h3><p>Go unmanned, sell memberships at the bay and in the app, and see every sale on your phone.</p><p class="ref">References: Washman and WashXL, Finland</p><span>See page</span></a>
+    <a class="rowl" href="#call"><h3>Dealers and installers</h3><p>Add EasyWash to your quotes for Christ, Sonny's, PDQ and other machines, and earn on the service contract.</p><p class="ref">Best Product, Petrol Station 2025, Warsaw</p><span>See page</span></a>
   </div>
 </div></section>
 """
 
 ROLLOUT = """
-<section class="sec" id="rollout" style="padding-top:0"><div class="wrap roll">
+<section class="view tint" id="rollout"><div class="wrap roll">
   <div>
-    <span class="eyebrow">Getting started</span>
     <h2>Live in four stages. We do the work.</h2>
     <ol class="stages">
       <li><div><b>Agreement</b><span>One contract for software, hardware and support.</span></div></li>
       <li><div><b>Training</b><span>Your staff learn the dashboard and the questions drivers ask.</span></div></li>
-      <li><div><b>Configuration</b><span>We set up wash programmes, prices, plans, limits and user terms with you.</span></div></li>
-      <li><div><b>Installation</b><span>Trained installers fit the hardware, connect it to your machine and test it. At Divi Vienā each station took three to four hours.</span></div></li>
+      <li><div><b>Configuration</b><span>We set up wash programmes, prices, plans and user terms with you.</span></div></li>
+      <li><div><b>Installation</b><span>Trained installers fit the hardware, connect it to your machine and test it.</span></div></li>
     </ol>
   </div>
   <div class="call">
-    <span class="t">The first call</span>
-    <h3>15 minutes with the EasyWash team</h3>
-    <ul class="ticks">
+    <h3>The first call takes 15 minutes</h3>
+    <ul>
       <li>The fuel retailer's results, with the name</li>
-      <li>What a rollout looks like at your number of sites</li>
+      <li>A rollout plan for your number of sites</li>
       <li>A price for your setup</li>
       <li>In English, Finnish or Swedish</li>
     </ul>
-    <a class="btn btn-ink" href="#call">Book a 15-minute call</a>
+    <a class="btn btn-white" href="#call">Book a call</a>
   </div>
 </div></section>
 """
 
 COMPARE = """
-<section class="sec" id="compare" style="padding-top:0"><div class="wrap">
-  <div class="sec-head">
-    <span class="eyebrow">How it compares</span>
-    <h2>Three ways to take payment at a car wash.</h2>
-  </div>
+<section class="view" id="compare"><div class="wrap">
+  <h2 class="wide head">Three ways to take payment at a car wash.</h2>
   <div class="cmp-wrap"><table class="cmp">
     <thead><tr><th></th><th>Generic card terminal</th><th>App-only membership platform</th><th>EasyWash</th></tr></thead>
     <tbody>
-      <tr><td>Monthly memberships</td><td class="no">No</td><td>Yes</td><td>Yes, sold in the app, on the web and at the bay</td></tr>
-      <tr><td>How a member is recognised</td><td class="no">Not recognised</td><td>By phone, so a plan can be passed around</td><td>By licence plate, one plan per car</td></tr>
-      <tr><td>Hardware at the bay</td><td>Card reader only</td><td class="no">From a third party</td><td>EasyWash terminal and camera, same supplier</td></tr>
-      <tr><td>Your wash machine</td><td class="no">Needs custom integration</td><td>Depends on the kiosk maker</td><td>Any brand: rollover, tunnel or self-service</td></tr>
-      <tr><td>Fleet invoicing</td><td class="no">No</td><td>Varies</td><td>Built in, billed by plate</td></tr>
-      <tr><td>Who you call</td><td>The payment company</td><td>Two or three suppliers</td><td>One team, in the car wash business since 1987</td></tr>
+      <tr><td>Monthly memberships</td><td>No</td><td>Yes</td><td>Yes, sold in the app, on the web and at the bay</td></tr>
+      <tr><td>How a member is recognised</td><td>Not recognised</td><td>By phone, so a plan can be passed around</td><td>By licence plate, one plan per car</td></tr>
+      <tr><td>Hardware at the bay</td><td>Card reader only</td><td>From a third party</td><td>EasyWash terminal and camera, same supplier</td></tr>
+      <tr><td>Your wash machine</td><td>Needs custom integration</td><td>Depends on the kiosk maker</td><td>Any brand: rollover, tunnel or self-service</td></tr>
+      <tr><td>Fleet invoicing</td><td>No</td><td>Varies</td><td>Built in, billed by plate</td></tr>
+      <tr><td>Who you call</td><td>The payment company</td><td>Two or three suppliers</td><td>One team, in car washes since 1987</td></tr>
     </tbody>
   </table></div>
 </div></section>
 """
 
 FAQ = """
-<section class="sec" id="faq" style="padding-top:0"><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">FAQ</span><h2>Questions operators ask first.</h2></div>
-  <div class="faq">
-    <details open><summary>What is EasyWash?</summary><p>EasyWash is a car wash subscription and payment platform made by Euro Car Wash in Riihimäki, Finland. It covers the driver app, the payment terminal, licence plate recognition, fleet invoicing and the operator dashboard. More than 700 wash sites run on it.</p></details>
-    <details><summary>Do we have to replace our payment terminals?</summary><p>No. You can launch memberships with the app and a camera per lane and keep the terminals you have. Add EasyWash terminals later, when a unit is due for replacement.</p></details>
-    <details><summary>Which wash machines does it work with?</summary><p>Christ, Sonny's, PDQ, Kärcher and other brands, on rollovers, tunnels and self-service jet wash bays. EasyWash also controls doors, booms and dryers.</p></details>
-    <details><summary>Can a member share a plan with friends?</summary><p>A plan is tied to one licence plate, and the camera checks the plate at every visit. Each car needs its own plan.</p></details>
-    <details><summary>How long does installation take?</summary><p>At Divi Vienā in Latvia, each rollover station took three to four hours and was in use the same day. Larger rollouts follow the same four stages, site by site.</p></details>
-    <details><summary>What does it cost?</summary><p>The price depends on the number of sites and the parts you take. You get a price for your setup on the first call. <span class="tbc">pricing model to confirm</span></p></details>
-    <details><summary>Is there an app for drivers?</summary><p>Yes. Drivers find EasyWash stations and manage their plan at easywash.com. This page is for the businesses that run the washes.</p></details>
+<section class="view tint" id="faq"><div class="wrap faq">
+  <h2>Questions operators ask first.</h2>
+  <div>
+    <details name="faq" open><summary>What is EasyWash?</summary><p>A car wash subscription and payment platform made by Euro Car Wash in Riihimäki, Finland. It covers the driver app, the payment terminal, licence plate recognition, fleet invoicing and the operator dashboard. More than 700 wash sites run on it.</p></details>
+    <details name="faq"><summary>Do we have to replace our payment terminals?</summary><p>No. You can launch memberships with the app and a camera per lane and keep the terminals you have. Add EasyWash terminals later, when a unit is due for replacement.</p></details>
+    <details name="faq"><summary>Which wash machines does it work with?</summary><p>Christ, Sonny's, PDQ, Kärcher and other brands, on rollovers, tunnels and self-service jet wash bays. EasyWash also controls doors, booms and dryers.</p></details>
+    <details name="faq"><summary>Can a member share a plan with friends?</summary><p>A plan is tied to one licence plate, and the camera checks the plate at every visit. Each car needs its own plan.</p></details>
+    <details name="faq"><summary>How long does installation take?</summary><p>At Divi Vienā in Latvia, each rollover station took three to four hours and was in use the same day. Larger rollouts follow the same four stages, site by site.</p></details>
+    <details name="faq"><summary>What does it cost?</summary><p>The price depends on the number of sites and the parts you take. You get a price for your setup on the first call.</p></details>
+    <details name="faq"><summary>Is there an app for drivers?</summary><p>Yes. Drivers find EasyWash stations and manage their plan at easywash.com. This page is for the businesses that run the washes.</p></details>
   </div>
 </div></section>
 """
 
 CTA = """
-<section class="sec cta" id="call"><div class="wrap">
-  <div>
-    <h2>See the numbers for a network your size.</h2>
-    <p>A 15-minute call with the EasyWash team. You see the fuel retailer's results with the name, and a rollout plan for your sites.</p>
-    <ul class="ticks">
-      <li>No site visit needed</li>
-      <li>Most operators start with one site</li>
-      <li>A price for your setup on the call</li>
-    </ul>
-  </div>
-  <form class="form" id="form" novalidate>
-    <div class="prog" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
-    <div class="fstep" data-step="1">
-      <h3 id="fq">How many wash sites do you run?</h3>
-      <div class="chips" role="group" aria-labelledby="fq" data-sites>
-        <button class="chip" type="button" data-v="1" aria-pressed="false">1</button>
-        <button class="chip" type="button" data-v="3" aria-pressed="false">2 to 4</button>
-        <button class="chip" type="button" data-v="10" aria-pressed="false">5 to 20</button>
-        <button class="chip" type="button" data-v="50" aria-pressed="false">20+</button>
-        <button class="chip" type="button" data-v="dealer" aria-pressed="false" style="flex-basis:100%">I sell or install wash equipment</button>
+<section class="view end" id="call">
+  <div class="wrap top">
+    <div>
+      <h2>See the numbers for a network your size.</h2>
+      <p class="lead">A 15-minute call with the EasyWash team. You see the fuel retailer's results with the name, and a rollout plan for your sites.</p>
+    </div>
+    <form class="form" id="form" novalidate>
+      <div class="prog" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+      <div class="fstep" data-step="1">
+        <h3 id="fq">How many wash sites do you run?</h3>
+        <div class="chips" role="group" aria-labelledby="fq" data-sites>
+          <button class="chip" type="button" data-v="1" aria-pressed="false">1</button>
+          <button class="chip" type="button" data-v="3" aria-pressed="false">2 to 4</button>
+          <button class="chip" type="button" data-v="10" aria-pressed="false">5 to 20</button>
+          <button class="chip" type="button" data-v="50" aria-pressed="false">20+</button>
+          <button class="chip" type="button" data-v="dealer" aria-pressed="false" style="flex-basis:100%">I sell or install wash equipment</button>
+        </div>
+        <small>One question first. Your details come after.</small>
       </div>
-      <small>One question first. Your details come after.</small>
-    </div>
-    <div class="fstep" data-step="2" hidden>
-      <h3>Where should we send the invite?</h3>
-      <label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name">
-      <label for="f-mail">Work email</label><input id="f-mail" type="email" autocomplete="email" inputmode="email">
-      <label for="f-co">Company</label><input id="f-co" type="text" autocomplete="organization">
-      <button class="btn btn-green" type="button" data-next>Pick a time</button>
-      <small>We use this to book the call and for nothing else.</small>
-      <button class="back" type="button" data-back>Back</button>
-    </div>
-    <div class="fstep" data-step="3" hidden>
-      <h3>Pick a time</h3>
-      <div class="cal-d">Tue 24 Nov</div>
-      <div class="cal"><span>09:00</span><span class="pick">10:30</span><span>13:00</span></div>
-      <div class="cal-d">Wed 25 Nov</div>
-      <div class="cal"><span>09:30</span><span>11:00</span><span>14:30</span></div>
-      <small>Concept note: the booking calendar (HubSpot or Calendly) sits here, so the call is in the diary before the visitor leaves the page.</small>
-      <button class="back" type="button" data-back>Back</button>
-    </div>
-  </form>
-</div></section>
-"""
-
-FOOTER = """
-<footer><div class="wrap">
-  <div class="fgrid">
-    <div><img src="../assets/easywash-white.svg" alt="EasyWash" width="138" height="40" loading="lazy"><p>EasyWash is made by Euro Car Wash Oy Ltd, part of Pineline Group. In the car wash business since 1987.</p></div>
-    <div><h4>Platform</h4><ul><li><a href="#platform">Subscriptions</a></li><li><a href="#platform">Payments</a></li><li><a href="#platform">Plate recognition</a></li><li><a href="#platform">Fleet accounts</a></li><li><a href="#platform">Business intelligence</a></li><li><a href="#platform">Integrations</a></li></ul></div>
-    <div><h4>For</h4><ul><li><a href="#who">Fuel retailers</a></li><li><a href="#who">Wash chains</a></li><li><a href="#who">Single sites</a></li><li><a href="#who">Dealers and installers</a></li></ul></div>
-    <div><h4>Elsewhere</h4><ul><li><a href="https://easywash.com">Drivers: easywash.com</a></li><li><a href="https://ecw.fi">Machines, chemicals, water: ecw.fi</a></li><li><a href="#">Operator login</a></li><li><a href="#">Support</a></li><li>+358 10 326 3090 · info@ecw.fi</li></ul></div>
+      <div class="fstep" data-step="2" hidden>
+        <h3>Where should we send the invite?</h3>
+        <label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name">
+        <label for="f-mail">Work email</label><input id="f-mail" type="email" autocomplete="email" inputmode="email">
+        <label for="f-co">Company</label><input id="f-co" type="text" autocomplete="organization">
+        <button class="btn btn-blue" type="button" data-next>Pick a time</button>
+        <button class="back" type="button" data-back>Back</button>
+      </div>
+      <div class="fstep" data-step="3" hidden>
+        <h3>Pick a time</h3>
+        <div class="cal-d">Tue 24 Nov</div>
+        <div class="cal"><span>09:00</span><span class="pick">10:30</span><span>13:00</span></div>
+        <div class="cal-d">Wed 25 Nov</div>
+        <div class="cal"><span>09:30</span><span>11:00</span><span>14:30</span></div>
+        <small>In the live page this is your booking calendar, so the call is in the diary before the visitor leaves.</small>
+        <button class="back" type="button" data-back>Back</button>
+      </div>
+    </form>
   </div>
-  <div class="fbottom"><span>© Euro Car Wash Oy Ltd · Kynttilätie 17, 11710 Riihimäki, Finland · Concept %%VERSION%%</span><div class="certs"><span>ISO 9001</span><span>ISO 14001</span><span>EcoVadis Silver</span></div></div>
-</div></footer>
-<div class="mcta" id="mcta"><span>100,000+ members at one Nordic fuel retailer</span><a class="btn btn-green" href="#call">Book a call</a></div>
+  <footer class="foot"><div class="wrap">
+    <img src="../assets/easywash-white.svg" alt="EasyWash" width="104" height="30" loading="lazy">
+    <span>Euro Car Wash Oy Ltd, Riihimäki, Finland. Part of Pineline Group.</span>
+    <nav aria-label="Elsewhere"><a href="https://easywash.com">For drivers: easywash.com</a><a href="https://ecw.fi">Machines, chemicals and water: ecw.fi</a><a href="#">Operator login</a><a href="#">Support</a></nav>
+  </div></footer>
+</section>
 <script src="../assets/ew.js" defer></script>
 </body>
 </html>
 """
 
-# ───────────────────────── variations ─────────────────────────
-
 VARIANTS = {
     "a": dict(
         title="EasyWash for business: car wash subscription and payment platform",
-        desc="EasyWash runs memberships, payments and licence plate recognition for car wash operators and fuel retailers. 700+ wash sites, 100,000+ memberships at one Nordic fuel retailer.",
-        hero=HERO_A,
-        how_eyebrow="How it works",
+        desc="EasyWash sells memberships in your app and at the bay, reads the plate, starts the wash and bills every month. 700+ wash sites.",
+        hero=HERO_A, stop1=STOP1_A,
         how_h2="The driver signs up once. After that, the car is the membership.",
-        step1=STEP1_A,
-        mods_h2="Everything between the driver and your bank account.",
-        mods_lead="Seven parts, one supplier, one login. Take all of it, or start with the parts you are missing.",
+        mods_h2="Seven parts. Take all of them, or the ones you are missing.",
         order=["PROOF", "GAP", "HOW", "MODS", "WAYS", "CALC", "CASES", "DOORS", "ROLLOUT", "COMPARE", "FAQ", "CTA"],
     ),
     "b": dict(
         title="EasyWash: the car wash payment terminal that sells memberships",
-        desc="The EasyWash payment terminal and plate recognition camera sell monthly wash memberships at the bay. 700+ wash sites, 100,000+ memberships at one Nordic fuel retailer.",
-        hero=HERO_B,
-        how_eyebrow="At the bay",
+        desc="The EasyWash payment terminal and plate recognition camera sell monthly wash memberships at the bay. 700+ wash sites.",
+        hero=HERO_B, stop1=STOP1_B,
         how_h2="First visit: one tap. Every visit after that: nothing.",
-        step1=STEP1_B,
         mods_h2="Behind the terminal: the whole membership business.",
-        mods_lead="The terminal is the part drivers see. These seven parts are what you run the business with.",
         order=["PROOF", "HOW", "HARDWARE", "MODS", "CASES", "CALC", "DOORS", "ROLLOUT", "COMPARE", "FAQ", "CTA"],
     ),
 }
-
 SECTIONS = dict(PROOF=PROOF, GAP=GAP, HOW=HOW, MODS=MODS, WAYS=WAYS, HARDWARE=HARDWARE, CALC=CALC,
                 CASES=CASES, DOORS=DOORS, ROLLOUT=ROLLOUT, COMPARE=COMPARE, FAQ=FAQ, CTA=CTA)
 
 
-def build(key, v):
-    html = HEAD + CONCEPT + NAV + v["hero"] + "".join(SECTIONS[s] for s in v["order"]) + FOOTER
-    rep = {
-        "%%TITLE%%": v["title"], "%%DESC%%": v["desc"],
-        "%%ON_A%%": ' class="on" aria-current="page"' if key == "a" else "",
-        "%%ON_B%%": ' class="on" aria-current="page"' if key == "b" else "",
-        "%%HOW_EYEBROW%%": v["how_eyebrow"], "%%HOW_H2%%": v["how_h2"], "%%STEP1%%": v["step1"],
-        "%%MODS_H2%%": v["mods_h2"], "%%MODS_LEAD%%": v["mods_lead"], "%%VERSION%%": VERSION,
-    }
-    for k, val in rep.items():
-        html = html.replace(k, val)
+def check(html, key):
     assert "%%" not in html, "unreplaced token in " + key
-    assert "—" not in html, "em dash in " + key
-    for banned in ("OKQ8", "Circle K", "Neste", "Shell", "Esso", "7-Eleven"):
-        assert banned not in html, banned + " must not appear (not a public reference)"
+    low = html.lower()
+    for banned in BANNED:
+        assert banned not in html, repr(banned) + " must not appear in " + key
+    assert ">source" not in low and "source:" not in low, "the word 'source' is visible in " + key
+
+
+def concept(key):
+    c = CONCEPT.replace("%%VERSION%%", VERSION)
+    for k in "abc":
+        c = c.replace(f"%%ON_{k.upper()}%%", ' class="on" aria-current="page"' if k == key else "")
+    return c
+
+
+def build(key, v):
+    html = HEAD + concept(key) + NAV + v["hero"] + "".join(SECTIONS[s] for s in v["order"])
+    for k, val in {"%%TITLE%%": v["title"], "%%DESC%%": v["desc"], "%%HOW_H2%%": v["how_h2"],
+                   "%%STOP1%%": v["stop1"], "%%MODS_H2%%": v["mods_h2"]}.items():
+        html = html.replace(k, val)
+    check(html, key)
     out = ROOT / key / "index.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(html, encoding="utf-8")
     print(f"{key}/index.html  {len(html):,} bytes")
+
+
+def build_c():
+    html = (SRC / "c.html").read_text(encoding="utf-8").replace("%%CONCEPT%%", concept("c"))
+    check(html, "c")
+    (ROOT / "c").mkdir(exist_ok=True)
+    (ROOT / "c" / "index.html").write_text(html, encoding="utf-8")
+    print(f"c/index.html  {len(html):,} bytes")
 
 
 def build_pitch():
@@ -647,16 +481,16 @@ def build_pitch():
     old = (ROOT.parent / "index.html").read_text(encoding="utf-8")
     head = old[: old.index("</head>")].rstrip()
     script = old[old.rindex("<script>"): old.rindex("</script>") + len("</script>")]
-    title = "easywash for business: a b2b landing page concept, twice · anna pogrebniak"
-    desc = "For Euro Car Wash: a dedicated EasyWash B2B landing page in two clickable variations, platform first and terminal first, with the reasoning behind each."
+    title = "easywash for business: a b2b landing page concept, three ways · anna pogrebniak"
+    desc = "For Euro Car Wash: a dedicated EasyWash B2B landing page in three clickable versions, with the reasoning behind each."
     head = re.sub(r"<title>.*?</title>", "<title>" + title + "</title>", head, flags=re.S)
-    head = re.sub(r'(<meta name="description" content=")[^"]*', r"\g<1>" + desc, head)
-    head = re.sub(r'(<meta property="og:title" content=")[^"]*', r"\g<1>" + title, head)
-    head = re.sub(r'(<meta property="og:description" content=")[^"]*', r"\g<1>" + desc, head)
-    head = re.sub(r'(<meta property="og:image" content=")[^"]*', r"\g<1>https://awesomemarketer.fi/for/ecw/easywash/assets/shot-a.webp", head)
+    head = re.sub(r'(<meta name="description" content=")[^"]*', r"\\g<1>" + desc, head)
+    head = re.sub(r'(<meta property="og:title" content=")[^"]*', r"\\g<1>" + title, head)
+    head = re.sub(r'(<meta property="og:description" content=")[^"]*', r"\\g<1>" + desc, head)
+    head = re.sub(r'(<meta property="og:image" content=")[^"]*', r"\\g<1>https://awesomemarketer.fi/for/ecw/easywash/assets/shot-c.webp", head)
     body = (SRC / "pitch.html").read_text(encoding="utf-8").replace("%%VERSION%%", VERSION)
-    html = head + "\n" + (SRC / "pitch.css").read_text(encoding="utf-8") + "\n</head>\n" + body + "\n" + script + "\n</body>\n</html>\n"
-    assert "\u2014" not in body, "em dash in pitch"
+    html = head + "\\n" + (SRC / "pitch.css").read_text(encoding="utf-8") + "\\n</head>\\n" + body + "\\n" + script + "\\n</body>\\n</html>\\n"
+    assert "\\u2014" not in body, "em dash in pitch"
     (ROOT / "index.html").write_text(html, encoding="utf-8")
     print(f"index.html    {len(html):,} bytes")
 
@@ -664,4 +498,6 @@ def build_pitch():
 if __name__ == "__main__":
     for key, v in VARIANTS.items():
         build(key, v)
+    if (SRC / "c.html").exists():
+        build_c()
     build_pitch()
