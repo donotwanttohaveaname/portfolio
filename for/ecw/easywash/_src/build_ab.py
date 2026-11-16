@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent.parent   # .../for/ecw/easywash
 SRC = Path(__file__).parent
-VERSION = "v0.5 · 16 Nov 2026"
+VERSION = "v0.6 · 16 Nov 2026"
 
 # ───────────────────────── shared fragments ─────────────────────────
 
@@ -44,8 +44,6 @@ CONCEPT = """
   <nav class="switch" aria-label="Concept variation">
     <a href="../a/"%%ON_A%%>A<span> · Platform</span></a>
     <a href="../b/"%%ON_B%%>B<span> · Terminal</span></a>
-    <a href="../c/"%%ON_C%%>C<span> · Rain or shine</span></a>
-    <a href="../d/"%%ON_D%%>D<span> · Real sites</span></a>
     <a href="../a-new/">A-new</a>
   </nav>
   <a class="pitch" href="../">Read the pitch</a>
@@ -158,9 +156,9 @@ PROOF = """
     </div>
   </div>
   <div class="res-where">
-    <span><b>Running at</b> fuel retailers, wash chains and independent operators in</span>
-    <ul><li>Finland</li><li>Sweden</li><li>Norway</li><li>Denmark</li><li>Latvia</li></ul>
-    <span><b>1,000,000+</b> drivers. Best Product, Petrol Station 2025, Warsaw.</span>
+    <div class="res-in"><b>Running in</b><ul><li>Finland</li><li>Sweden</li><li>Norway</li><li>Denmark</li><li>Latvia</li></ul></div>
+    <div><b>1,000,000+</b> drivers use EasyWash</div>
+    <div><b>Best Product</b> award, Petrol Station 2025, Warsaw</div>
   </div>
 </div></section>
 """
@@ -808,6 +806,9 @@ def build(key, v):
     print(f"{key}/index.html  {len(html):,} bytes")
 
 
+# Anna dropped versions C and D on 16 Nov 2026. Their definitions stay above for reference; only A and B are built.
+LIVE = ("a", "b")
+
 if __name__ == "__main__":
-    for key, v in VARIANTS.items():
-        build(key, v)
+    for key in LIVE:
+        build(key, VARIANTS[key])

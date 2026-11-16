@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent.parent   # .../for/ecw/easywash
 SRC = Path(__file__).parent
-VERSION = "v0.2, 15 Nov 2026"
+VERSION = "v0.6, 16 Nov 2026"
 BANNED = ("OKQ8", "Circle K", "Neste", "Shell", "Esso", "7-Eleven", "\u2014", "\u2013")
 
 HEAD = """<!DOCTYPE html>
@@ -42,8 +42,6 @@ CONCEPT = """
   <nav class="switch" aria-label="Concept variation">
     <a href="../a/"%%ON_A%%>A<span>: platform</span></a>
     <a href="../b/"%%ON_B%%>B<span>: terminal</span></a>
-    <a href="../c/"%%ON_C%%>C<span>: rain or shine</span></a>
-    <a href="../d/">D<span>: real sites</span></a>
     <a href="../a-new/"%%ON_A-NEW%%>A-new<span>: light</span></a>
   </nav>
   <a class="pitch" href="../">Read the pitch</a>
@@ -492,13 +490,13 @@ def build_pitch():
     title = "easywash for business: a b2b landing page concept, twice · anna pogrebniak"
     desc = "For Euro Car Wash: a dedicated EasyWash B2B landing page in two clickable variations, platform first and terminal first, with the reasoning behind each."
     head = re.sub(r"<title>.*?</title>", "<title>" + title + "</title>", head, flags=re.S)
-    head = re.sub(r'(<meta name="description" content=")[^"]*', r"\\g<1>" + desc, head)
-    head = re.sub(r'(<meta property="og:title" content=")[^"]*', r"\\g<1>" + title, head)
-    head = re.sub(r'(<meta property="og:description" content=")[^"]*', r"\\g<1>" + desc, head)
-    head = re.sub(r'(<meta property="og:image" content=")[^"]*', r"\\g<1>https://awesomemarketer.fi/for/ecw/easywash/assets/shot-a.webp", head)
+    head = re.sub(r'(<meta name="description" content=")[^"]*', r"\g<1>" + desc, head)
+    head = re.sub(r'(<meta property="og:title" content=")[^"]*', r"\g<1>" + title, head)
+    head = re.sub(r'(<meta property="og:description" content=")[^"]*', r"\g<1>" + desc, head)
+    head = re.sub(r'(<meta property="og:image" content=")[^"]*', r"\g<1>https://awesomemarketer.fi/for/ecw/easywash/assets/shot-a.webp", head)
     body = (SRC / "pitch.html").read_text(encoding="utf-8").replace("%%VERSION%%", VERSION)
-    html = head + "\\n" + (SRC / "pitch.css").read_text(encoding="utf-8") + "\\n</head>\\n" + body + "\\n" + script + "\\n</body>\\n</html>\\n"
-    assert "\\u2014" not in body, "em dash in pitch"
+    html = head + "\n" + (SRC / "pitch.css").read_text(encoding="utf-8") + "\n</head>\n" + body + "\n" + script + "\n</body>\n</html>\n"
+    assert "\u2014" not in body, "em dash in pitch"
     (ROOT / "index.html").write_text(html, encoding="utf-8")
     print(f"index.html    {len(html):,} bytes")
 
