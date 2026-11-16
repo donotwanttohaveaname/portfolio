@@ -11,11 +11,12 @@ Run:  python3 _src/build.py
 Rules for the copy: no em dashes, no oil company names (not public references),
 the camera reads the plate (not the terminal), WashXL and Washman are single sites.
 """
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent   # .../for/ecw/easywash
 SRC = Path(__file__).parent
-VERSION = "v0.3 · 15 Nov 2026"
+VERSION = "v0.5 · 16 Nov 2026"
 
 # ───────────────────────── shared fragments ─────────────────────────
 
@@ -31,19 +32,21 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/v1.css">
-<link rel="stylesheet" href="../assets/v1-fit.css">%%XCSS%%
+<link rel="stylesheet" href="../assets/v1-fit.css">
+<link rel="stylesheet" href="../assets/v1-polish.css">%%XCSS%%
 </head>
-<body>
+<body%%BODY%%>
 """
 
 CONCEPT = """
 <div class="concept"><div class="wrap">
-  <div><b>EasyWash for business.</b> Concept, first draft. Screens show illustrative data.</div>
+  <div><b>EasyWash for business.</b> Concept draft. Screens show illustrative data.</div>
   <nav class="switch" aria-label="Concept variation">
-    <a href="../a/"%%ON_A%%>A · Platform first</a>
-    <a href="../b/"%%ON_B%%>B · Terminal first</a>
+    <a href="../a/"%%ON_A%%>A<span> · Platform</span></a>
+    <a href="../b/"%%ON_B%%>B<span> · Terminal</span></a>
+    <a href="../c/"%%ON_C%%>C<span> · Rain or shine</span></a>
+    <a href="../d/"%%ON_D%%>D<span> · Real sites</span></a>
     <a href="../a-new/">A-new</a>
-    <a href="../c/"%%ON_C%%>C · Rain or shine</a>
   </nav>
   <a class="pitch" href="../">Read the pitch</a>
 </div></div>
@@ -123,7 +126,7 @@ HERO_A = """
 """
 
 HERO_B = """
-<section class="hero" id="top"><div class="wrap">
+<section class="hero hero-b" id="top"><div class="wrap">
   <div>
     <span class="eyebrow" style="color:var(--blue-l)">EasyWash payment terminal and plate recognition</span>
     <h1>The payment terminal that <em>sells memberships.</em></h1>
@@ -141,17 +144,25 @@ HERO_B = """
 """
 
 PROOF = """
-<section class="proof" aria-label="Results"><div class="wrap">
-  <div><b>100,000+</b><span>active monthly memberships at <strong>one Nordic fuel retailer</strong></span></div>
-  <div><b>€3M</b><span>recurring wash revenue a month across that network</span></div>
-  <div><b>700+</b><span>wash sites live across <strong>the Nordics and the Baltics</strong></span></div>
-  <div><b>3×</b><span>revenue within 90 days at <strong>Divi Vienā, Latvia</strong></span></div>
+<section class="sec dark results" id="results" aria-label="Results"><div class="wrap">
+  <div class="res-grid">
+    <figure class="res-ph"><img src="../assets/%%PROOF_IMG%%" alt="%%PROOF_ALT%%" width="1000" height="1000" loading="lazy" style="object-position:%%PROOF_POS%%"><figcaption>%%PROOF_CAP%%</figcaption></figure>
+    <div>
+      <h2>Results from sites that already run it.</h2>
+      <div class="res-n">
+        <div><b>100,000+</b><span>active monthly memberships at <strong>one Nordic fuel retailer</strong></span></div>
+        <div><b>€3M</b><span>recurring wash revenue a month across that network</span></div>
+        <div><b>700+</b><span>wash sites live across <strong>the Nordics and the Baltics</strong></span></div>
+        <div><b>3×</b><span>revenue within 90 days at <strong>Divi Vienā, Latvia</strong></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="res-where">
+    <span><b>Running at</b> fuel retailers, wash chains and independent operators in</span>
+    <ul><li>Finland</li><li>Sweden</li><li>Norway</li><li>Denmark</li><li>Latvia</li></ul>
+    <span><b>1,000,000+</b> drivers. Best Product, Petrol Station 2025, Warsaw.</span>
+  </div>
 </div></section>
-<div class="strip"><div class="wrap">
-  <span><b>Running at</b> fuel retailers, wash chains and independent operators in</span>
-  <ul><li>Finland</li><li>Sweden</li><li>Norway</li><li>Denmark</li><li>Latvia</li></ul>
-  <span><b>1,000,000+</b> drivers · Best Product, Petrol Station 2025, Warsaw</span>
-</div></div>
 """
 
 GAP = """
@@ -621,6 +632,99 @@ RAIN = """
 </div></section>
 """
 
+
+# ───────────────────────── version D: same identity, recomposed ─────────────────────────
+
+HERO_D = """
+<section class="hero dhero" id="top">
+  <div class="wrap">
+    <div class="dhero-txt">
+      <h1>Wash revenue that arrives <em>every month.</em></h1>
+      <p class="lead">Memberships, payments and plate recognition for car washes and fuel retailers. <b>The plan renews every month, rain or shine.</b></p>
+      <div class="dhero-cta"><a class="btn btn-green" href="#call">Book a call</a><a class="lnk" href="#how">See how it works</a></div>
+    </div>
+  </div>
+  <figure class="dhero-ph">
+    <img src="../assets/washxl-splash.webp" alt="EasyWash payment terminal at the WashXL car wash in Finland, with wash water spraying past it" width="1400" height="2100" fetchpriority="high">
+    """ + TOAST + """
+    <figcaption>WashXL, Riihimäki, Finland</figcaption>
+  </figure>
+</section>
+"""
+
+STATE_D = """
+<section class="sec dstate" id="results"><div class="wrap">
+  <h2 class="dstate-say">One Nordic fuel retailer sells <b>100,000+</b> monthly wash memberships on EasyWash. That is <b>€3M</b> in recurring revenue, every month.</h2>
+  <dl class="dstate-facts">
+    <div><dt>700+</dt><dd>wash sites live in Finland, Sweden, Norway, Denmark and Latvia</dd></div>
+    <div><dt>3×</dt><dd>revenue within 90 days at Divi Vienā, Latvia</dd></div>
+    <div><dt>1,000,000+</dt><dd>drivers use EasyWash</dd></div>
+  </dl>
+</div></section>
+"""
+
+HOW_D = """
+<section class="sec how dhow" id="how"><div class="wrap">
+  <figure class="dhow-ph"><img src="../assets/camera-gate.webp" alt="EasyWash licence plate camera at the entrance of a wash site" width="1500" height="844" loading="lazy"><figcaption>The EasyWash camera at a wash site entrance.</figcaption></figure>
+  <div>
+    <h2>The driver signs up once. After that, the car is the membership.</h2>
+    <ol class="dsteps">
+      <li><b>The driver picks a plan</b><span>In your app, on the web or at the bay. At WashXL in Finland, joining at the terminal takes under five seconds.</span></li>
+      <li><b>The camera reads the plate</b><span>The picture is processed inside the camera. Only the plate number goes to the cloud.</span></li>
+      <li><b>The wash starts</b><span>EasyWash starts the right programme on the machine and runs the door, the boom and the dryer.</span></li>
+      <li><b>You get paid every month</b><span>The plan renews by itself, one plan per car. There is no card, tag or code to carry.</span></li>
+    </ol>
+  </div>
+</div></section>
+"""
+
+START_D = """
+<section class="sec dark dstart" id="start"><div class="wrap">
+  <div>
+    <h2>Keep the terminals you already paid for.</h2>
+    <p class="lead">Most operators we meet have working payment terminals and no wish to replace them. Start with the app and the camera.</p>
+    <ol class="dpath">
+      <li class="on"><b>App and camera <small>Start here</small></b><span>Launch memberships in your own app and fit a camera per lane. Your current terminals keep taking single payments.</span></li>
+      <li><b>Add the EasyWash terminal</b><span>When an old unit is due, replace it. Drivers can then join a plan at the bay with one tap of a card.</span></li>
+      <li><b>The whole site</b><span>For new or rebuilt sites: terminal, camera, app, company portal and dashboard from one supplier.</span></li>
+    </ol>
+  </div>
+  <div class="stage-b dstart-vis" aria-hidden="true">
+    <img class="cam" src="../assets/camera.webp" alt="" width="500" height="420" loading="lazy">
+    <div class="led"></div>
+    <img class="term" src="../assets/terminal.webp" alt="" width="689" height="1035" loading="lazy">
+  </div>
+</div></section>
+"""
+
+CASES_D = """
+<section class="sec dcases" id="customers"><div class="wrap">
+  <h2>Operators who moved from single washes to memberships.</h2>
+  <div class="dcases-grid">
+    <div class="dflag">
+      <span class="who">A Nordic fuel retailer with 200+ stations</span>
+      <b class="n">100,000+</b><span>active memberships, about 500 per station</span>
+      <b class="n">€3M</b><span>a month in recurring wash revenue</span>
+      <p>The wash club runs under the retailer's own brand and in its own app. We share the name and the full numbers on a call.</p>
+    </div>
+    <div class="drows">
+      <article>
+        <div class="n"><b>3×</b><span>revenue within 90 days</span></div>
+        <div><h3>Divi Vienā <small>Latvia, rollover and self-service</small></h3><blockquote>“With subscriptions, profit per wash is lower, but there are many more washes. At the end, the total profit is much higher.”<cite>Ronalds Vītols, owner</cite></blockquote></div>
+      </article>
+      <article>
+        <div class="n"><b>60%</b><span>of customers use the app</span></div>
+        <div><h3>Washman <small>Finland, unmanned self-service</small></h3><blockquote>“Many regular customers arrive, choose what they want on their phone, and practically drive straight into the hall without stopping.”<cite>Markus Malinranta, owner</cite></blockquote></div>
+      </article>
+      <article>
+        <div class="n"><b>5 sec</b><span>to join a monthly plan at the bay</span></div>
+        <div><h3>WashXL <small>Finland, a car every 30 seconds</small></h3><blockquote>“Very few people ask anything, the use of the terminal is so clear.”<cite>Harri Karhunsalo, owner</cite></blockquote></div>
+      </article>
+    </div>
+  </div>
+</div></section>
+"""
+
 # ───────────────────────── variations ─────────────────────────
 
 VARIANTS = {
@@ -628,6 +732,8 @@ VARIANTS = {
         title="EasyWash for business: car wash subscription and payment platform",
         desc="EasyWash runs memberships, payments and licence plate recognition for car wash operators and fuel retailers. 700+ wash sites, 100,000+ memberships at one Nordic fuel retailer.",
         hero=HERO_A,
+        proof_img="camera-gate.webp", proof_pos="100% 50%", proof_alt="EasyWash licence plate camera at the entrance of a wash site",
+        proof_cap="An EasyWash camera at a wash site entrance. It reads the plate before the driver has stopped.",
         how_eyebrow="How it works",
         how_h2="The driver signs up once. After that, the car is the membership.",
         step1=STEP1_A,
@@ -639,6 +745,8 @@ VARIANTS = {
         title="EasyWash: the car wash payment terminal that sells memberships",
         desc="The EasyWash payment terminal and plate recognition camera sell monthly wash memberships at the bay. 700+ wash sites, 100,000+ memberships at one Nordic fuel retailer.",
         hero=HERO_B,
+        proof_img="washxl-day.webp", proof_pos="50% 30%", proof_alt="EasyWash payment terminal at the WashXL car wash in Finland",
+        proof_cap="The EasyWash terminal at WashXL in Riihimäki, Finland.",
         how_eyebrow="At the bay",
         how_h2="First visit: one tap. Every visit after that: nothing.",
         step1=STEP1_B,
@@ -655,7 +763,15 @@ VARIANTS["c"] = dict(VARIANTS["a"],
     xcss='\n<link rel="stylesheet" href="../assets/rain.css">',
     xjs='\n<script src="../assets/rain.js" defer></script>')
 
-SECTIONS = dict(RAIN=RAIN, PROOF=PROOF, GAP=GAP, HOW=HOW, MODS=MODS, WAYS=WAYS, HARDWARE=HARDWARE, CALC=CALC,
+# D keeps A's story and identity; the compositions change (see assets/d.css)
+VARIANTS["d"] = dict(VARIANTS["a"],
+    title="EasyWash for business: memberships, payments and plate recognition for car washes",
+    hero=HERO_D, body=' class="pd"', plain=True,
+    order=["STATE_D", "RAIN", "HOW_D", "MODS", "START_D", "CALC", "CASES_D", "COMPARE", "ROLLOUT", "FAQ", "CTA"],
+    xcss='\n<link rel="stylesheet" href="../assets/rain.css">\n<link rel="stylesheet" href="../assets/d.css">',
+    xjs='\n<script src="../assets/rain.js" defer></script>')
+
+SECTIONS = dict(STATE_D=STATE_D, HOW_D=HOW_D, START_D=START_D, CASES_D=CASES_D, RAIN=RAIN, PROOF=PROOF, GAP=GAP, HOW=HOW, MODS=MODS, WAYS=WAYS, HARDWARE=HARDWARE, CALC=CALC,
                 CASES=CASES, DOORS=DOORS, ROLLOUT=ROLLOUT, COMPARE=COMPARE, FAQ=FAQ, CTA=CTA)
 
 
@@ -666,12 +782,22 @@ def build(key, v):
         "%%ON_A%%": ' class="on" aria-current="page"' if key == "a" else "",
         "%%ON_B%%": ' class="on" aria-current="page"' if key == "b" else "",
         "%%ON_C%%": ' class="on" aria-current="page"' if key == "c" else "",
+        "%%ON_D%%": ' class="on" aria-current="page"' if key == "d" else "",
+        "%%BODY%%": v.get("body", ""),
+        "%%PROOF_IMG%%": v["proof_img"], "%%PROOF_POS%%": v["proof_pos"], "%%PROOF_ALT%%": v["proof_alt"], "%%PROOF_CAP%%": v["proof_cap"],
         "%%XCSS%%": v.get("xcss", ""), "%%XJS%%": v.get("xjs", ""),
         "%%HOW_EYEBROW%%": v["how_eyebrow"], "%%HOW_H2%%": v["how_h2"], "%%STEP1%%": v["step1"],
         "%%MODS_H2%%": v["mods_h2"], "%%MODS_LEAD%%": v["mods_lead"], "%%VERSION%%": VERSION,
     }
     for k, val in rep.items():
         html = html.replace(k, val)
+    if v.get("plain"):
+        # D: no small labels above headings, one button label for the one action, no link to a screen it does not have
+        html = re.sub(r'\s*<span class="eyebrow"[^>]*>.*?</span>', "", html)
+        html = html.replace('<span class="t">The first call</span>', "")
+        html = html.replace(">Walk me through it<", ">Book a call<").replace(">Book a 15-minute call<", ">Book a call<")
+        html = html.replace('href="#who"', 'href="#customers"')
+        assert 'class="eyebrow"' not in html
     assert "%%" not in html, "unreplaced token in " + key
     assert "—" not in html, "em dash in " + key
     for banned in ("OKQ8", "Circle K", "Neste", "Shell", "Esso", "7-Eleven"):

@@ -1,0 +1,58 @@
+/* Review fixes on top of the original design (v1.css). Same colours, type and components.
+   1. The numbers screen is a full composition: a real photo, a heading and the four numbers.
+   2. Variation B's headline sits on three lines.
+   3. The platform, customers and FAQ screens have room to breathe on a laptop. */
+
+/* 1. numbers screen */
+.results{background:var(--ink-2)}
+.res-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:center}
+.res-ph{margin:0}
+.res-ph img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:22px;box-shadow:0 40px 70px -30px rgba(0,0,0,.7)}
+.res-ph figcaption{margin-top:12px;font-size:13.5px;color:#9BA7CC;line-height:1.4}
+.results h2{font-size:clamp(28px,3.3vw,44px);margin-bottom:clamp(18px,2.6vw,32px);max-width:16ch}
+.res-n{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.res-n > div{padding:22px 24px 22px 0;border-top:1px solid rgba(255,255,255,.14)}
+.res-n > div:nth-child(even){padding-left:24px;padding-right:0;border-left:1px solid rgba(255,255,255,.14)}
+.res-n > div:nth-child(n+3){padding-bottom:0}
+.res-n b{display:block;font-weight:800;font-size:clamp(34px,3.7vw,52px);letter-spacing:-.04em;line-height:1}
+.res-n span{display:block;font-size:14.5px;color:#9BA7CC;margin-top:10px;line-height:1.4;max-width:30ch}
+.res-n span strong{color:#fff;font-weight:600}
+.res-where{display:flex;gap:10px 26px;flex-wrap:wrap;align-items:center;margin-top:clamp(26px,4vw,44px);padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:14.5px;color:#9BA7CC}
+.res-where b{color:#fff;font-weight:700}
+.res-where ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap}
+.res-where li{border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 12px;font-weight:600;color:#fff;font-size:13.5px}
+@media(max-width:940px){
+  .res-grid{grid-template-columns:1fr;gap:26px}
+  .res-ph img{aspect-ratio:16/10}
+  .results h2{max-width:none}
+  .res-n > div{padding:18px 14px 18px 0}
+  .res-n > div:nth-child(even){padding-left:14px}
+}
+
+/* 2. variation B headline: three lines */
+.hero-b h1{font-size:clamp(38px,4.5vw,58px);max-width:none}
+
+/* 3. room to breathe */
+@media(min-width:941px){
+  #platform .sec-head,#customers .sec-head,#faq .sec-head{margin-bottom:28px}
+  .tabs{gap:3px}
+  .tab{padding:9px 14px}
+  .tab b{font-size:16px}
+  .tab span{font-size:13px}
+  .mods{align-items:stretch}
+  .mods > div:last-child{display:grid}
+  .flag{padding:26px 30px;margin-bottom:14px}
+  .cases{gap:14px}
+  .case{padding:24px 24px 22px;gap:12px}
+  .faq summary{padding:16px 0;font-size:18px}
+  .faq details p{padding-bottom:18px;font-size:16px}
+}
+
+/* 4. the version switch stays on one line on a phone */
+@media(max-width:760px){.switch a span{display:none}.switch a{padding:5px 11px}}
+
+/* 5. legibility: no text under 11px, green text dark enough to read on white, no glow on hover */
+:root{--green-d:#157F47}
+.logo span,.app-top small,.plan em small,.dash-h,.bars-l,.stage .cap,.ui .cap,.lbl,.view small,.day span{font-size:11px}
+.week .cap{font-family:var(--sans);font-size:12.5px;letter-spacing:0;text-transform:none;color:var(--muted)}
+.btn-green:hover{box-shadow:none}

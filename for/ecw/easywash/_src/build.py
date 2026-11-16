@@ -40,10 +40,11 @@ CONCEPT = """
 <div class="concept"><div class="wrap">
   <div><b>EasyWash for business.</b> Concept %%VERSION%%.</div>
   <nav class="switch" aria-label="Concept variation">
-    <a href="../a/"%%ON_A%%>A<span>: platform first</span></a>
-    <a href="../a-new/"%%ON_A-NEW%%>A-new<span>: light</span></a>
-    <a href="../b/"%%ON_B%%>B<span>: terminal first</span></a>
+    <a href="../a/"%%ON_A%%>A<span>: platform</span></a>
+    <a href="../b/"%%ON_B%%>B<span>: terminal</span></a>
     <a href="../c/"%%ON_C%%>C<span>: rain or shine</span></a>
+    <a href="../d/">D<span>: real sites</span></a>
+    <a href="../a-new/"%%ON_A-NEW%%>A-new<span>: light</span></a>
   </nav>
   <a class="pitch" href="../">Read the pitch</a>
 </div></div>
