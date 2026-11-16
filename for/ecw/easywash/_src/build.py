@@ -43,7 +43,7 @@ CONCEPT = """
     <a href="../a/"%%ON_A%%>A<span>: platform first</span></a>
     <a href="../a-new/"%%ON_A-NEW%%>A-new<span>: light</span></a>
     <a href="../b/"%%ON_B%%>B<span>: terminal first</span></a>
-    <a href="../c/"%%ON_C%%>C<span>: follow one car</span></a>
+    <a href="../c/"%%ON_C%%>C<span>: rain or shine</span></a>
   </nav>
   <a class="pitch" href="../">Read the pitch</a>
 </div></div>
@@ -507,6 +507,4 @@ if __name__ == "__main__":
     runpy.run_path(str(SRC / "build_ab.py"), run_name="__main__")   # A and B, original design
     for key, v in VARIANTS.items():
         build(key, v)
-    if (SRC / "c.html").exists():
-        build_c()
     build_pitch()

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds A and B in the ORIGINAL design (the first attempt, which Anna preferred), from shared sections.
+"""Builds A, B and C (C = A plus the rain or shine screen) in the ORIGINAL design (the first attempt, which Anna preferred), from shared sections.
 Only the fixes she asked for sit on top: no source line, sections sized to one screen (assets/v1-fit.css).
 
   a/index.html  Variation A: platform first (memberships, app, plate recognition)
@@ -31,7 +31,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/v1.css">
-<link rel="stylesheet" href="../assets/v1-fit.css">
+<link rel="stylesheet" href="../assets/v1-fit.css">%%XCSS%%
 </head>
 <body>
 """
@@ -43,7 +43,7 @@ CONCEPT = """
     <a href="../a/"%%ON_A%%>A · Platform first</a>
     <a href="../b/"%%ON_B%%>B · Terminal first</a>
     <a href="../a-new/">A-new</a>
-    <a href="../c/">C</a>
+    <a href="../c/"%%ON_C%%>C · Rain or shine</a>
   </nav>
   <a class="pitch" href="../">Read the pitch</a>
 </div></div>
@@ -588,9 +588,37 @@ FOOTER = """
 </div></footer>
 <div class="mcta" id="mcta"><span>100,000+ members at one Nordic fuel retailer</span><a class="btn btn-green" href="#call">Book a call</a></div>
 <script src="../assets/v1.js" defer></script>
-<script src="../assets/v1-fit.js" defer></script>
+<script src="../assets/v1-fit.js" defer></script>%%XJS%%
 </body>
 </html>
+"""
+
+RAIN = """
+<section class="sec dark rain" id="weather"><div class="wrap">
+  <div class="rain-grid">
+    <div>
+      <span class="eyebrow">Rain or shine</span>
+      <h2>It rains. You still get paid.</h2>
+      <p class="lead">Single washes follow the forecast. Memberships are paid in advance, so the money arrives on a wet week too.</p>
+      <div class="wx" role="group" aria-label="This week's weather">
+        <button class="chip" type="button" data-wx="dry" aria-pressed="true">Dry week</button>
+        <button class="chip" type="button" data-wx="wet" aria-pressed="false">Rainy week</button>
+      </div>
+      <p class="wx-note">At Divi Vienā in Latvia, memberships did not reduce the number of single washes.</p>
+    </div>
+    <div class="week" data-state="dry">
+      <div class="week-h"><span>One site, one week</span><span class="week-key"><i class="k1"></i>Single washes<i class="k2"></i>Memberships</span></div>
+      <div class="week-bars" aria-hidden="true"><div class="day"><i class="s" style="--d:0.41;--w:0.09"></i><i class="m"></i><span>Mon</span></div><div class="day"><i class="s" style="--d:0.47;--w:0.06"></i><i class="m"></i><span>Tue</span></div><div class="day"><i class="s" style="--d:0.53;--w:0.12"></i><i class="m"></i><span>Wed</span></div><div class="day"><i class="s" style="--d:0.59;--w:0.06"></i><i class="m"></i><span>Thu</span></div><div class="day"><i class="s" style="--d:0.76;--w:0.18"></i><i class="m"></i><span>Fri</span></div><div class="day"><i class="s" style="--d:1;--w:0.24"></i><i class="m"></i><span>Sat</span></div><div class="day"><i class="s" style="--d:0.65;--w:0.15"></i><i class="m"></i><span>Sun</span></div></div>
+      <div class="week-sum">
+        <div><span>Single washes</span><b id="wx-single">€1,800</b></div>
+        <div><span>Memberships</span><b id="wx-member">€1,380</b></div>
+        <div><span>Week total</span><b id="wx-total">€3,180</b></div>
+      </div>
+      <p class="week-say" id="wx-say" aria-live="polite">Dry week. Memberships bring in 43% of the income.</p>
+      <span class="cap">Illustrative: 200 members at €29.90 a month, single washes at €12</span>
+    </div>
+  </div>
+</div></section>
 """
 
 # ───────────────────────── variations ─────────────────────────
@@ -620,7 +648,14 @@ VARIANTS = {
     ),
 }
 
-SECTIONS = dict(PROOF=PROOF, GAP=GAP, HOW=HOW, MODS=MODS, WAYS=WAYS, HARDWARE=HARDWARE, CALC=CALC,
+# C is A plus one screen: the rain or shine switch, placed straight after the numbers band
+VARIANTS["c"] = dict(VARIANTS["a"],
+    title="EasyWash for business: wash revenue that arrives rain or shine",
+    order=["PROOF", "RAIN"] + VARIANTS["a"]["order"][1:],
+    xcss='\n<link rel="stylesheet" href="../assets/rain.css">',
+    xjs='\n<script src="../assets/rain.js" defer></script>')
+
+SECTIONS = dict(RAIN=RAIN, PROOF=PROOF, GAP=GAP, HOW=HOW, MODS=MODS, WAYS=WAYS, HARDWARE=HARDWARE, CALC=CALC,
                 CASES=CASES, DOORS=DOORS, ROLLOUT=ROLLOUT, COMPARE=COMPARE, FAQ=FAQ, CTA=CTA)
 
 
@@ -630,6 +665,8 @@ def build(key, v):
         "%%TITLE%%": v["title"], "%%DESC%%": v["desc"],
         "%%ON_A%%": ' class="on" aria-current="page"' if key == "a" else "",
         "%%ON_B%%": ' class="on" aria-current="page"' if key == "b" else "",
+        "%%ON_C%%": ' class="on" aria-current="page"' if key == "c" else "",
+        "%%XCSS%%": v.get("xcss", ""), "%%XJS%%": v.get("xjs", ""),
         "%%HOW_EYEBROW%%": v["how_eyebrow"], "%%HOW_H2%%": v["how_h2"], "%%STEP1%%": v["step1"],
         "%%MODS_H2%%": v["mods_h2"], "%%MODS_LEAD%%": v["mods_lead"], "%%VERSION%%": VERSION,
     }
