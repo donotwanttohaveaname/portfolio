@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent.parent   # .../for/ecw/easywash
 SRC = Path(__file__).parent
-VERSION = "v0.6, 16 Nov 2026"
+VERSION = "v0.7, 17 Nov 2026"
 BANNED = ("OKQ8", "Circle K", "Neste", "Shell", "Esso", "7-Eleven", "\u2014", "\u2013")
 
 HEAD = """<!DOCTYPE html>
@@ -43,6 +43,7 @@ CONCEPT = """
     <a href="../a/"%%ON_A%%>A<span>: platform</span></a>
     <a href="../b/"%%ON_B%%>B<span>: terminal</span></a>
     <a href="../a-new/"%%ON_A-NEW%%>A-new<span>: light</span></a>
+    <a href="../wash-chains/">Wash chains<span> page</span></a>
   </nav>
   <a class="pitch" href="../">Read the pitch</a>
 </div></div>
@@ -74,8 +75,10 @@ HERO_A = """
     <div class="cta-row"><a class="btn btn-main" href="#call">Book a call</a><a class="btn btn-alt" href="#how">See how it works</a></div>
   </div>
   <form class="bay" id="bay">
-    <img class="cam" src="../assets/camera.webp" alt="" width="500" height="420">
-    <label for="plate">Try it. Type a licence plate and drive in.</label>
+    <div class="bay-top">
+      <label for="plate">Try it. Type a licence plate and drive in.</label>
+      <img class="cam" src="../assets/camera.webp" alt="" width="500" height="420">
+    </div>
     <div class="bay-in">
       <span class="pin"><i></i><input id="plate" value="ABC-123" maxlength="8" autocomplete="off" spellcheck="false" aria-label="Licence plate"></span>
       <button class="btn btn-inv" type="submit">Drive in</button>
@@ -85,7 +88,7 @@ HERO_A = """
       <li><small>07:42</small><span>Member found: Unlimited Premium</span></li>
       <li><small>07:42</small><span>Door opens, programme 3 starts</span></li>
       <li><small>07:49</small><span>Car leaves. The app asks for a rating.</span></li>
-      <li class="last"><small>The 1st</small><b>€29.90 renews</b></li>
+      <li class="last"><small>In a month</small><b>The plan renews: €29.90</b></li>
     </ol>
   </form>
 </div></section>
@@ -109,10 +112,10 @@ PROOF = """
 <section class="view dark" id="proof"><div class="wrap">
   <h2 class="say">Every month, <b>100,000 drivers</b> pay one Nordic fuel retailer for their car wash. That is <b>€3 million</b> of recurring revenue, on EasyWash.</h2>
   <div class="facts">
-    <div><b>700+ sites</b>live in Finland, Sweden, Norway, Denmark and Latvia</div>
-    <div><b>1,000,000+ drivers</b>have washed through EasyWash</div>
-    <div><b>3x revenue</b>within 90 days at Divi Vienā, Latvia</div>
-    <div><b>Best Product</b>Petrol Station 2025 fair, Warsaw</div>
+    <div><b>700+ sites</b> live in Finland, Sweden, Norway, Denmark and Latvia</div>
+    <div><b>1,000,000+ drivers</b> have washed through EasyWash</div>
+    <div><b>3x revenue</b> within 90 days at Divi Vienā, Latvia</div>
+    <div><b>Best Product</b> Petrol Station 2025 fair, Warsaw</div>
   </div>
 </div></section>
 """
@@ -168,7 +171,7 @@ PANELS = "".join([
           ["Contactless cards and mobile wallets, PIN on screen", "Credit reservation: charge only the time used",
            "QR, barcode and PIN codes for vouchers", "Payment links to share by email or social media"],
           '<div class="aside photo"><img src="../assets/wet.webp" alt="EasyWash terminal in the rain at a self-service wash, showing credit reservations of 10, 30 and 50 euros" width="1400" height="1419" loading="lazy"></div>'),
-    panel("p-lpr", "t-lpr", True, "The car is the membership card",
+    panel("p-lpr", "t-lpr", True, "The licence plate is the membership card",
           "An EasyWash camera at the entrance reads the plate and checks the plan before the driver has stopped.",
           ["The image is processed inside the camera", "Only the plate number is sent to the cloud",
            "One plan per plate, so a membership stays with one car", "Remote support, so most faults need no site visit"],
@@ -306,7 +309,7 @@ DOORS = """
   <h2 class="head">Four kinds of business run on EasyWash.</h2>
   <div class="rows">
     <a class="rowl" href="#call"><h3>Fuel retailers</h3><p>A wash club under your own brand, with fleet invoicing and one dashboard across every station.</p><p class="ref">Reference: a Nordic fuel retailer with 200+ stations</p><span>See page</span></a>
-    <a class="rowl" href="#call"><h3>Wash chains</h3><p>Central prices, campaigns and reporting. A member can wash at any site you run.</p><p class="ref">Reference: Divi Vienā, Latvia</p><span>See page</span></a>
+    <a class="rowl" href="../wash-chains/"><h3>Wash chains</h3><p>Central prices, campaigns and reporting. A member can wash at any site you run.</p><p class="ref">Reference: Divi Vienā, Latvia</p><span>See page</span></a>
     <a class="rowl" href="#call"><h3>Single sites</h3><p>Go unmanned, sell memberships at the bay and in the app, and see every sale on your phone.</p><p class="ref">References: Washman and WashXL, Finland</p><span>See page</span></a>
     <a class="rowl" href="#call"><h3>Dealers and installers</h3><p>Add EasyWash to your quotes for Christ, Sonny's, PDQ and other machines, and earn on the service contract.</p><p class="ref">Best Product, Petrol Station 2025, Warsaw</p><span>See page</span></a>
   </div>
@@ -346,7 +349,7 @@ COMPARE = """
       <tr><td>Monthly memberships</td><td>No</td><td>Yes</td><td>Yes, sold in the app, on the web and at the bay</td></tr>
       <tr><td>How a member is recognised</td><td>Not recognised</td><td>By phone, so a plan can be passed around</td><td>By licence plate, one plan per car</td></tr>
       <tr><td>Hardware at the bay</td><td>Card reader only</td><td>From a third party</td><td>EasyWash terminal and camera, same supplier</td></tr>
-      <tr><td>Your wash machine</td><td>Needs custom integration</td><td>Depends on the kiosk maker</td><td>Any brand: rollover, tunnel or self-service</td></tr>
+      <tr><td>Your wash machine</td><td>Needs custom integration</td><td>Depends on the kiosk maker</td><td>Christ, Sonny's, PDQ, Kärcher and other brands</td></tr>
       <tr><td>Fleet invoicing</td><td>No</td><td>Varies</td><td>Built in, billed by plate</td></tr>
       <tr><td>Who you call</td><td>The payment company</td><td>Two or three suppliers</td><td>One team, in car washes since 1987</td></tr>
     </tbody>
@@ -427,7 +430,7 @@ VARIANTS = {
         title="EasyWash for business: car wash subscription and payment platform",
         desc="EasyWash sells memberships in your app and at the bay, reads the plate, starts the wash and bills every month. 700+ wash sites.",
         hero=HERO_A, stop1=STOP1_A,
-        how_h2="The driver signs up once. After that, the car is the membership.",
+        how_h2="The driver signs up once. After that, the licence plate is the membership card.",
         mods_h2="Seven parts. Take all of them, or the ones you are missing.",
         order=["PROOF", "GAP", "HOW", "MODS", "WAYS", "CALC", "CASES", "DOORS", "ROLLOUT", "COMPARE", "FAQ", "CTA"],
     ),

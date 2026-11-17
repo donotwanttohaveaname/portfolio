@@ -62,3 +62,12 @@
 .logo span,.app-top small,.plan em small,.dash-h,.bars-l,.stage .cap,.ui .cap,.lbl,.view small,.day span{font-size:11px}
 .week .cap{font-family:var(--sans);font-size:12.5px;letter-spacing:0;text-transform:none;color:var(--muted)}
 .btn-green:hover{box-shadow:none}
+
+/* 6. audience page (wash chains): the case quote under the numbers, and revenue per site in place of the gauge */
+.res-quote blockquote{font-size:clamp(17px,1.5vw,20px);line-height:1.45;color:#fff;max-width:74ch}
+.res-quote cite{display:block;font-style:normal;font-size:14.5px;color:#9BA7CC;margin-top:8px}
+.dash .hbars{margin-top:14px}
+.persite .hbars{gap:12px;margin:22px 0 18px}
+.persite .hbars div{grid-template-columns:64px 1fr 52px;gap:12px;font-size:14px}
+.persite .hbars i{height:16px;border-radius:8px}
+.hero-ch h1{font-size:clamp(36px,4.4vw,58px);max-width:none}

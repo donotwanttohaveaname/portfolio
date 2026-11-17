@@ -14,11 +14,12 @@
 <body>
 
 <div class="concept"><div class="wrap">
-  <div><b>EasyWash for business.</b> Concept v0.6, 16 Nov 2026.</div>
+  <div><b>EasyWash for business.</b> Concept v0.7, 17 Nov 2026.</div>
   <nav class="switch" aria-label="Concept variation">
     <a href="../a/">A<span>: platform</span></a>
     <a href="../b/">B<span>: terminal</span></a>
     <a href="../a-new/" class="on" aria-current="page">A-new<span>: light</span></a>
+    <a href="../wash-chains/">Wash chains<span> page</span></a>
   </nav>
   <a class="pitch" href="../">Read the pitch</a>
 </div></div>
@@ -46,8 +47,10 @@
     <div class="cta-row"><a class="btn btn-main" href="#call">Book a call</a><a class="btn btn-alt" href="#how">See how it works</a></div>
   </div>
   <form class="bay" id="bay">
-    <img class="cam" src="../assets/camera.webp" alt="" width="500" height="420">
-    <label for="plate">Try it. Type a licence plate and drive in.</label>
+    <div class="bay-top">
+      <label for="plate">Try it. Type a licence plate and drive in.</label>
+      <img class="cam" src="../assets/camera.webp" alt="" width="500" height="420">
+    </div>
     <div class="bay-in">
       <span class="pin"><i></i><input id="plate" value="ABC-123" maxlength="8" autocomplete="off" spellcheck="false" aria-label="Licence plate"></span>
       <button class="btn btn-inv" type="submit">Drive in</button>
@@ -57,7 +60,7 @@
       <li><small>07:42</small><span>Member found: Unlimited Premium</span></li>
       <li><small>07:42</small><span>Door opens, programme 3 starts</span></li>
       <li><small>07:49</small><span>Car leaves. The app asks for a rating.</span></li>
-      <li class="last"><small>The 1st</small><b>€29.90 renews</b></li>
+      <li class="last"><small>In a month</small><b>The plan renews: €29.90</b></li>
     </ol>
   </form>
 </div></section>
@@ -65,10 +68,10 @@
 <section class="view dark" id="proof"><div class="wrap">
   <h2 class="say">Every month, <b>100,000 drivers</b> pay one Nordic fuel retailer for their car wash. That is <b>€3 million</b> of recurring revenue, on EasyWash.</h2>
   <div class="facts">
-    <div><b>700+ sites</b>live in Finland, Sweden, Norway, Denmark and Latvia</div>
-    <div><b>1,000,000+ drivers</b>have washed through EasyWash</div>
-    <div><b>3x revenue</b>within 90 days at Divi Vienā, Latvia</div>
-    <div><b>Best Product</b>Petrol Station 2025 fair, Warsaw</div>
+    <div><b>700+ sites</b> live in Finland, Sweden, Norway, Denmark and Latvia</div>
+    <div><b>1,000,000+ drivers</b> have washed through EasyWash</div>
+    <div><b>3x revenue</b> within 90 days at Divi Vienā, Latvia</div>
+    <div><b>Best Product</b> Petrol Station 2025 fair, Warsaw</div>
   </div>
 </div></section>
 
@@ -89,7 +92,7 @@
 </div></section>
 
 <section class="view" id="how"><div class="wrap">
-  <h2 class="wide head">The driver signs up once. After that, the car is the membership.</h2>
+  <h2 class="wide head">The driver signs up once. After that, the licence plate is the membership card.</h2>
   <div class="lane" id="lane">
     <div class="run" aria-hidden="true"><span class="plate"><i></i><span data-plate>ABC-123</span></span></div>
     <div class="stop"><h3>The driver picks a plan</h3><p>In your app, on the web or at the bay. At WashXL in Finland, joining at the bay takes under five seconds.</p></div>
@@ -111,7 +114,7 @@
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-bi" id="t-bi" tabindex="-1">Business intelligence</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-int" id="t-int" tabindex="-1">Integrations</button>
     </div>
-    <div><div class="panel" role="tabpanel" id="p-subs" aria-labelledby="t-subs"><div><h3>Memberships that renew themselves</h3><p>Sell monthly, annual and pay-per-wash plans under your own brand, with the rules you set.</p><ul><li>Unlimited and capped plans, one contract per car</li><li>Network plans valid at every station you run</li><li>Happy hour and campaign prices per site</li><li>Members pay in advance, before the wash</li></ul></div><div class="aside"><img src="../assets/screen.webp" alt="EasyWash terminal menu with three wash programmes and a monthly contract at 29.90" width="432" height="739" loading="lazy"></div></div><div class="panel" role="tabpanel" id="p-pay" aria-labelledby="t-pay" hidden><div><h3>Every way a driver wants to pay</h3><p>At the bay, on the phone, on the web or on a company invoice. All of it lands in one report.</p><ul><li>Contactless cards and mobile wallets, PIN on screen</li><li>Credit reservation: charge only the time used</li><li>QR, barcode and PIN codes for vouchers</li><li>Payment links to share by email or social media</li></ul></div><div class="aside photo"><img src="../assets/wet.webp" alt="EasyWash terminal in the rain at a self-service wash, showing credit reservations of 10, 30 and 50 euros" width="1400" height="1419" loading="lazy"></div></div><div class="panel" role="tabpanel" id="p-lpr" aria-labelledby="t-lpr" hidden><div><h3>The car is the membership card</h3><p>An EasyWash camera at the entrance reads the plate and checks the plan before the driver has stopped.</p><ul><li>The image is processed inside the camera</li><li>Only the plate number is sent to the cloud</li><li>One plan per plate, so a membership stays with one car</li><li>Remote support, so most faults need no site visit</li></ul></div><div class="aside"><img src="../assets/camera.webp" alt="EasyWash licence plate camera" width="500" height="420" loading="lazy"></div></div><div class="panel" role="tabpanel" id="p-fleet" aria-labelledby="t-fleet" hidden><div><h3>One invoice for every company car</h3><p>Give fleets their own portal and bill them by plate, across every station in your network.</p><ul><li>Wash packages redeemed at any station</li><li>Automated invoicing with VAT-correct receipts</li><li>Each wash allocated to the station that did it</li><li>Invoice data sent to your finance system by API</li></ul></div><div class="aside"><div class="big">1 invoice<small>for every car a company runs, at every station you operate</small></div></div></div><div class="panel" role="tabpanel" id="p-app" aria-labelledby="t-app" hidden><div><h3>Your app, your brand, your offers</h3><p>The app and the web portal carry your name. The marketing tools inside them bring members back.</p><ul><li>Push messages triggered by what a driver does</li><li>Offers and rewards applied automatically</li><li>A rating after every wash</li><li>An alert when a rating is low</li></ul></div><div class="aside"><div class="big">60%<small>of customers at Washman in Finland use the app</small></div></div></div><div class="panel" role="tabpanel" id="p-bi" aria-labelledby="t-bi" hidden><div><h3>See which site, plan and campaign earns</h3><p>The cloud dashboard shows sales, members and capacity per site, as it happens.</p><ul><li>Revenue and usage per site and per campaign</li><li>Top sellers and capacity per site</li><li>Customer satisfaction next to turnover</li><li>Your ratings compared with other EasyWash operators</li></ul></div><div class="aside"><div class="big">3x<small>revenue at Divi Vienā within three months of launch</small></div></div></div><div class="panel" role="tabpanel" id="p-int" aria-labelledby="t-int" hidden><div><h3>Works with the machines you already own</h3><p>EasyWash controls the wash machine and the devices around it, and passes the money data to your systems.</p><ul><li>Christ, Sonny's, PDQ, Kärcher and other machines</li><li>Rollovers, tunnels and self-service jet wash bays</li><li>Doors, booms, dryers and other devices</li><li>Invoicing API, and loyalty cards where you need them</li></ul></div><div class="aside"><img src="../assets/terminal.webp" alt="EasyWash payment terminal" width="689" height="1035" loading="lazy"></div></div></div>
+    <div><div class="panel" role="tabpanel" id="p-subs" aria-labelledby="t-subs"><div><h3>Memberships that renew themselves</h3><p>Sell monthly, annual and pay-per-wash plans under your own brand, with the rules you set.</p><ul><li>Unlimited and capped plans, one contract per car</li><li>Network plans valid at every station you run</li><li>Happy hour and campaign prices per site</li><li>Members pay in advance, before the wash</li></ul></div><div class="aside"><img src="../assets/screen.webp" alt="EasyWash terminal menu with three wash programmes and a monthly contract at 29.90" width="432" height="739" loading="lazy"></div></div><div class="panel" role="tabpanel" id="p-pay" aria-labelledby="t-pay" hidden><div><h3>Every way a driver wants to pay</h3><p>At the bay, on the phone, on the web or on a company invoice. All of it lands in one report.</p><ul><li>Contactless cards and mobile wallets, PIN on screen</li><li>Credit reservation: charge only the time used</li><li>QR, barcode and PIN codes for vouchers</li><li>Payment links to share by email or social media</li></ul></div><div class="aside photo"><img src="../assets/wet.webp" alt="EasyWash terminal in the rain at a self-service wash, showing credit reservations of 10, 30 and 50 euros" width="1400" height="1419" loading="lazy"></div></div><div class="panel" role="tabpanel" id="p-lpr" aria-labelledby="t-lpr" hidden><div><h3>The licence plate is the membership card</h3><p>An EasyWash camera at the entrance reads the plate and checks the plan before the driver has stopped.</p><ul><li>The image is processed inside the camera</li><li>Only the plate number is sent to the cloud</li><li>One plan per plate, so a membership stays with one car</li><li>Remote support, so most faults need no site visit</li></ul></div><div class="aside"><img src="../assets/camera.webp" alt="EasyWash licence plate camera" width="500" height="420" loading="lazy"></div></div><div class="panel" role="tabpanel" id="p-fleet" aria-labelledby="t-fleet" hidden><div><h3>One invoice for every company car</h3><p>Give fleets their own portal and bill them by plate, across every station in your network.</p><ul><li>Wash packages redeemed at any station</li><li>Automated invoicing with VAT-correct receipts</li><li>Each wash allocated to the station that did it</li><li>Invoice data sent to your finance system by API</li></ul></div><div class="aside"><div class="big">1 invoice<small>for every car a company runs, at every station you operate</small></div></div></div><div class="panel" role="tabpanel" id="p-app" aria-labelledby="t-app" hidden><div><h3>Your app, your brand, your offers</h3><p>The app and the web portal carry your name. The marketing tools inside them bring members back.</p><ul><li>Push messages triggered by what a driver does</li><li>Offers and rewards applied automatically</li><li>A rating after every wash</li><li>An alert when a rating is low</li></ul></div><div class="aside"><div class="big">60%<small>of customers at Washman in Finland use the app</small></div></div></div><div class="panel" role="tabpanel" id="p-bi" aria-labelledby="t-bi" hidden><div><h3>See which site, plan and campaign earns</h3><p>The cloud dashboard shows sales, members and capacity per site, as it happens.</p><ul><li>Revenue and usage per site and per campaign</li><li>Top sellers and capacity per site</li><li>Customer satisfaction next to turnover</li><li>Your ratings compared with other EasyWash operators</li></ul></div><div class="aside"><div class="big">3x<small>revenue at Divi Vienā within three months of launch</small></div></div></div><div class="panel" role="tabpanel" id="p-int" aria-labelledby="t-int" hidden><div><h3>Works with the machines you already own</h3><p>EasyWash controls the wash machine and the devices around it, and passes the money data to your systems.</p><ul><li>Christ, Sonny's, PDQ, Kärcher and other machines</li><li>Rollovers, tunnels and self-service jet wash bays</li><li>Doors, booms, dryers and other devices</li><li>Invoicing API, and loyalty cards where you need them</li></ul></div><div class="aside"><img src="../assets/terminal.webp" alt="EasyWash payment terminal" width="689" height="1035" loading="lazy"></div></div></div>
   </div>
 </div></section>
 
@@ -174,7 +177,7 @@
   <h2 class="head">Four kinds of business run on EasyWash.</h2>
   <div class="rows">
     <a class="rowl" href="#call"><h3>Fuel retailers</h3><p>A wash club under your own brand, with fleet invoicing and one dashboard across every station.</p><p class="ref">Reference: a Nordic fuel retailer with 200+ stations</p><span>See page</span></a>
-    <a class="rowl" href="#call"><h3>Wash chains</h3><p>Central prices, campaigns and reporting. A member can wash at any site you run.</p><p class="ref">Reference: Divi Vienā, Latvia</p><span>See page</span></a>
+    <a class="rowl" href="../wash-chains/"><h3>Wash chains</h3><p>Central prices, campaigns and reporting. A member can wash at any site you run.</p><p class="ref">Reference: Divi Vienā, Latvia</p><span>See page</span></a>
     <a class="rowl" href="#call"><h3>Single sites</h3><p>Go unmanned, sell memberships at the bay and in the app, and see every sale on your phone.</p><p class="ref">References: Washman and WashXL, Finland</p><span>See page</span></a>
     <a class="rowl" href="#call"><h3>Dealers and installers</h3><p>Add EasyWash to your quotes for Christ, Sonny's, PDQ and other machines, and earn on the service contract.</p><p class="ref">Best Product, Petrol Station 2025, Warsaw</p><span>See page</span></a>
   </div>
@@ -210,7 +213,7 @@
       <tr><td>Monthly memberships</td><td>No</td><td>Yes</td><td>Yes, sold in the app, on the web and at the bay</td></tr>
       <tr><td>How a member is recognised</td><td>Not recognised</td><td>By phone, so a plan can be passed around</td><td>By licence plate, one plan per car</td></tr>
       <tr><td>Hardware at the bay</td><td>Card reader only</td><td>From a third party</td><td>EasyWash terminal and camera, same supplier</td></tr>
-      <tr><td>Your wash machine</td><td>Needs custom integration</td><td>Depends on the kiosk maker</td><td>Any brand: rollover, tunnel or self-service</td></tr>
+      <tr><td>Your wash machine</td><td>Needs custom integration</td><td>Depends on the kiosk maker</td><td>Christ, Sonny's, PDQ, Kärcher and other brands</td></tr>
       <tr><td>Fleet invoicing</td><td>No</td><td>Varies</td><td>Built in, billed by plate</td></tr>
       <tr><td>Who you call</td><td>The payment company</td><td>Two or three suppliers</td><td>One team, in car washes since 1987</td></tr>
     </tbody>
